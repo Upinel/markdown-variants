@@ -47,15 +47,15 @@ LaTeX Footer:	mmd-memoir-footer
 	- @gfm: GitHub-Favored Markdown
 	- @mmd: MultiMarkdown 
 	- @pandoc: pandoc-favored markdown
-	- @phpextra: PHP Markdown Extra (inspired some syntax in pandoc and mmd)
+	- @phpextra: PHP Markdown Extra (inspired some syntax in pandoc and mmd, not exhaustive and studied here)
 
 # Examples #
 
-## Header ##
+## Header @markdown
 
 See [Emphasis][] and [Others][] to see alternative Setext-style header styles
 
-### Header *Containing* ***Styling*** and a [Link](Https://www.wikipedia.org/) ###
+### Header *Containing* ***Styling*** and a [Link](Https://www.wikipedia.org/) @markdown
 
 ### Header Containing Attributes {#identifier .class .class key=value key=value} @pandoc @phpextra
 
@@ -99,20 +99,20 @@ Emphasis
 ## Links
 
 - https://www.wikipedia.org @pandoc(extension:autolink_bare_uris)
-- <https://www.wikipedia.org>
-- [Wikipedia.org](https://www.wikipedia.org)
-- [Wikipedia.org](https://www.wikipedia.org "a title") @pandoc
+- <https://www.wikipedia.org> @markdown
+- [Wikipedia.org](https://www.wikipedia.org) @markdown
+- [Wikipedia.org](https://www.wikipedia.org "a title") @markdown
 - [email GitHub](support@github.com)
-- [Mail to GitHub](mailto:support@github.com)
+- [Mail to GitHub](mailto:support@github.com) @markdown
 
 ### Reference Links
 
-- [Search here][Google]
+- [Search here][Google] @markdown
 - A [link][] with attributes. @mmd
 - [Another link to the link above][link]. @mmd
-- A [link1][] with attributes. @pandoc
-- [Another link][link2]. @pandoc
-- [link3]. @pandoc
+- A [link1][] with attributes. @markdown
+- [Another link][link2]. @markdown
+- [link3]. @markdown
 
 [Google]: https://www.google.com
 [link]:  https://www.wikipedia.org/portal/wikipedia.org/assets/img/Wikipedia-logo-v2@2x.png "Title" class=external
@@ -124,7 +124,9 @@ Emphasis
 
 ## Image Links
 
-- ![Alt Text](https://www.wikipedia.org/portal/wikipedia.org/assets/img/Wikipedia-logo-v2@2x.png "Optional Title")
+- ![Alt Text](https://www.wikipedia.org/portal/wikipedia.org/assets/img/Wikipedia-logo-v2@2x.png "Optional Title") @markdown
+
+<!-- todo @markdown -->
 
 ### Reference Images
 
