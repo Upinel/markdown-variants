@@ -40,9 +40,14 @@ LaTeX Footer:	mmd-memoir-footer
 
 ## Organization ##
 
-- Header levels (except the last one): features in groups
-- Last header levels: different syntaxes
+- Header levels (except possibly the last header level): features in groups
+- Last header level or a list: different syntaxes
 - TaskPaper-styled tags to indicate in what favor of Markdown such syntax is supported
+	- @markdown: supported by original markdown, hence understood to be supported by all variants of markdown
+	- @gfm: GitHub-Favored Markdown
+	- @mmd: MultiMarkdown 
+	- @pandoc: pandoc-favored markdown
+	- @phpextra: PHP Markdown Extra (inspired some syntax in pandoc and mmd)
 
 # Examples #
 
@@ -70,92 +75,72 @@ Emphasis
 
 ## Links
 
-### Direct Links
-
-<http://google.com>
-
-### In Line Links
-
-[Google](http://google.com)
+- https://www.wikipedia.org
+- <https://www.wikipedia.org>
+- [Wikipedia.org](https://www.wikipedia.org)
 
 ### Reference Links
 
-[Search][Google]
-[Google]: http://google.com
+- [Search here][Google]
+- A [link][] with attributes. @mmd
 
-### Cross Reference
-
-#### MultiMarkDown [userdefinedreference] ####
-
-- Auto-reference: [Cross Reference][]
-- User defined reference: [userdefinedreference][]
-
-#### MacDown Cross Reference
-Use ToC to find the link ID
-[Link to Math](#toc_47)
-
-### Link Attribute ###
-
-#### MultiMarkdown ####
-
-A [link][] with attributes.
-
+[Google]: https://www.google.com
 [link]:  https://www.wikipedia.org/portal/wikipedia.org/assets/img/Wikipedia-logo-v2@2x.png "Title" class=external
          style="border: solid black 1px;"
 
+### Cross Reference [userdefinedreference]
+
+- Auto-reference: [Links][]
+- User defined reference: [userdefinedreference][]
+
 ## Image Links
 
-### Direct Image Link
-
-![Alt Text](https://www.wikipedia.org/portal/wikipedia.org/assets/img/Wikipedia-logo-v2@2x.png "Optional Title")
+- ![Alt Text](https://www.wikipedia.org/portal/wikipedia.org/assets/img/Wikipedia-logo-v2@2x.png "Optional Title")
 
 ### Reference Images
 
-![Alt Text][id]
+- ![Alt Text][imageid]
+- ![An Image with Attributes][wikipedia] @mmd
 
-[id]: https://www.wikipedia.org/portal/wikipedia.org/assets/img/Wikipedia-logo-v2@2x.png "Optional Title"
-
-### Block Level or Not ###
-
-![***Block*** **Level**](https://www.wikipedia.org/portal/wikipedia.org/assets/img/Wikipedia-logo-v2@2x.png "Optional Title")
-
-Not a block level: ![Alt Text](https://www.wikipedia.org/portal/wikipedia.org/assets/img/Wikipedia-logo-v2@2x.png "Optional Title")
-
-Block level: HTML `figure` element in MultiMarkdown
-
-### Image Links by Nesting Image and Link ###
-
-[![Image Link](https://www.wikipedia.org/portal/wikipedia.org/assets/img/Wikipedia-logo-v2@2x.png)](https://www.wikipedia.org/)
-
-### MultiMarkdown Only ###
-
-![Wiki logo][wikipedia]
-
+[imageid]: https://www.wikipedia.org/portal/wikipedia.org/assets/img/Wikipedia-logo-v2@2x.png "Optional Title"
 [wikipedia]: https://www.wikipedia.org/portal/wikipedia.org/assets/img/Wikipedia-logo-v2@2x.png "Title of the Image" width=40px height=40px
+
+### Image with Links by Nesting Image and Link ###
+
+- [![Image Link](https://www.wikipedia.org/portal/wikipedia.org/assets/img/Wikipedia-logo-v2@2x.png)](https://www.wikipedia.org/)
+
+### Block Level Images ###
+
+- Block level: HTML `figure` element in MultiMarkdown @mmd
+
+![***Block*** **Level** @mmd](https://www.wikipedia.org/portal/wikipedia.org/assets/img/Wikipedia-logo-v2@2x.png "Optional Title")
 
 ## Lists
 
-### Ordered Lists
+### Ordered Lists ###
+
 1. test
 3. test
 2. test
 
-### Unordered Lists
+### Unordered Lists ###
+
 - test
 * test
-- test
++ test
 
-### Nested Lists
-*   test
+### Nested Lists ###
+
+* test
     * test
-*   test
-    1.  test
-    3.  test
+* test
+    1. test
+    2. test
         * test
 	        1. test
-	        1. test
-    2. test
-*   test
+	        2. test
+    3. test
+* test
 
 ## Blockquotes
 
@@ -173,7 +158,7 @@ Block level: HTML `figure` element in MultiMarkdown
 
 ## Code
 
-`testing`
+- `testing`
 
 ### Fenced Code Blocks
 
@@ -186,15 +171,13 @@ Block level: HTML `figure` element in MultiMarkdown
 
 #### Method 2
 
-``` Optional language ID here
-test
-test
-	test
-	# test
+```latex
+\nabla \times \mathbf{E} = - \frac{\partial \mathbf{B}}{\partial t}
 ```
 
-#### Method 3 (MacDown Only)
-~~~ Optional language ID here
+#### Method 3 ####
+
+~~~markdown
 test
 test
 	test
@@ -203,31 +186,60 @@ test
 
 ## Horizontal Rules (Asterisk also works)
 
-Test1
+### Hyphen ###
+
+#### Test1
 
 -
 
-Test2
+#### Test2
 
 --
 
-Test3
+#### Test3
 
 ---
 
-Test4
+#### Test4
 
 ----
 
-Test5
+#### Test5
 
 -----
 
-test6
+#### test6
 
 ------
 
-## Break
+### Asterisks ###
+
+#### Test1
+
+*
+
+#### Test2
+
+**
+
+#### Test3
+
+***
+
+#### Test4
+
+****
+
+#### Test5
+
+*****
+
+#### test6
+
+******
+
+## Break ##
+
 No break
 like this
 
@@ -240,13 +252,13 @@ like this
 
 ## Tables
 
-### MarkDown
+### Method 1
 
 | 1 | 2 | 3 |
 |:--- | :---: | ---:|
 |**test** | _test_ | test|
 
-### MultiMarkDown
+### Method 1 @mmd
 
 [Table Caption]
 |            |        Grouping           ||
@@ -263,9 +275,7 @@ like this
 
 ## Definition Lists
 
-### PHP Markdown Extra ###
-
-Works in MultiMarkdown
+@mmd @phpextra
 
 Physics
 : The Fundamental of Science
@@ -274,20 +284,17 @@ Physics
 
 ## Glossaries ##
 
-### MultiMarkdown ###
-
-A special kind of footnote [^glossaryfootnote].
+A special kind of footnote [^glossaryfootnote]. @mmd
 
 [^glossaryfootnote]: glossary: term (optional sort key)
     The actual definition belongs on a new line, and can continue on
     just as other footnotes.
 
-See [Glossary---MultiMarkdown Documentation](http://fletcher.github.io/MultiMarkdown-5/glossary.html).
+See more at [Glossary---MultiMarkdown Documentation](http://fletcher.github.io/MultiMarkdown-5/glossary.html).
 
 ## Superscript & Subscript
 
-### MultiMarkdown ###
-
+@mmd
 
 - x^2
 - d~o
@@ -305,134 +312,95 @@ See [Glossary---MultiMarkdown Documentation](http://fletcher.github.io/MultiMark
 
 ## Abbreviations (PHP Markdown Extra) ##
 
-Works in MultiMarkdown
+@mmd @phpextra
 
 *[HTML]: HyperText Markup Language
 *[W3C]:  World Wide Web Consortium
 
 Testing abbreviations: HTML, W3C (mouseover it to see)
 
-## Math (by MathJax) ##
+## Math ##
 
-Use an extra `\` to escape from MarkDown
+HTML Math assumes MathJax.
+
+Notes: an extra `\` can be used to escape from MarkDown
+
 For MultiMarkDown, add
-```
+```html
 HTML header:    <script type="text/javascript"
-    src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML-full">
     </script>
 ```
 
+For pandoc, add `--mathjax` in the command-line argument.
 
-### Inline Math
-testing \\( 1 + 1 \\) testing
+There are subtleties how math should be used in HTML+MathJax and LaTeX output from single markdown source. See more in [Testing LaTeX Environments Usage in MathJax From Markdown Convertion (including mmd and pandoc)](https://github.com/ickc/mathjax-latex-md-mmd-pandoc).
 
-### Block Math
-\\[
-    A^T_S = B
-\\]
+### Inline Math ###
+
+- $1+1$
+- \\( 1 + 1 \\)
+
+### Block Math ###
+
+- $$R R^T = I$$
+- \\[A^T_S = B\\]
 
 ### Other Examples
 
-\\[
-x = {-b \pm \sqrt{b^2-4ac} \over 2a}
-\\]
-
-\\[
+- \\[x = {-b \pm \sqrt{b^2-4ac} \over 2a}\\]
+- \\[
 \begin{aligned}
 \dot{x} & = \sigma(y-x) \\\
 \dot{y} & = \rho x - y - xz \\\
 \dot{z} & = -\beta z + xy
 \end{aligned}
 \\]
-
-\\[
-\left( \sum_{k=1}^n a_k b_k \right)^2 \leq \left( \sum_{k=1}^n a_k^2 \right) \left( \sum_{k=1}^n b_k^2 \right)
-\\]
-
-\\[
-\mathbf{V}_1 \times \mathbf{V}_2 =  \begin{vmatrix}
+- \\[\left( \sum_{k=1}^n a_k b_k \right)^2 \leq \left( \sum_{k=1}^n a_k^2 \right) \left( \sum_{k=1}^n b_k^2 \right)\\]
+- \\[\mathbf{V}_1 \times \mathbf{V}_2 =  \begin{vmatrix}
 \mathbf{i} & \mathbf{j} & \mathbf{k} \\\
 \frac{\partial X}{\partial u} &  \frac{\partial Y}{\partial u} & 0 \\\
 \frac{\partial X}{\partial v} &  \frac{\partial Y}{\partial v} & 0
-\end{vmatrix}
-\\]
-
-\\[
-P(E) = {n \choose k} p^k (1-p)^{n-k}
-\\]
-
-\\[
-\frac{1}{\Bigl(\sqrt{\phi \sqrt{5}}-\phi\Bigr) e^{\frac25 \pi}} =
+\end{vmatrix}\\]
+- \\[P(E) = {n \choose k} p^k (1-p)^{n-k}\\]
+- \\[\frac{1}{\Bigl(\sqrt{\phi \sqrt{5}}-\phi\Bigr) e^{\frac25 \pi}} =
 1+\frac{e^{-2\pi}} {1+\frac{e^{-4\pi}} {1+\frac{e^{-6\pi}}
-{1+\frac{e^{-8\pi}} {1+\ldots} } } }
-\\]
-
-\\[
+{1+\frac{e^{-8\pi}} {1+\ldots} } } }\\]
+- \\[
 \begin{aligned}
 \nabla \times \vec{\mathbf{B}} -\, \frac1c\, \frac{\partial\vec{\mathbf{E}}}{\partial t} & = \frac{4\pi}{c}\vec{\mathbf{j}} \\\
 \nabla \cdot \vec{\mathbf{E}} & = 4 \pi \rho \\\
 \nabla \times \vec{\mathbf{E}}\, +\, \frac1c\, \frac{\partial\vec{\mathbf{B}}}{\partial t} & = \vec{\mathbf{0}} \\\
 \nabla \cdot \vec{\mathbf{B}} & = 0 \end{aligned}
 \\]
-
-\\[
-1 +  \frac{q^2}{(1-q)}+\frac{q^6}{(1-q)(1-q^2)}+\cdots =
+- \\[1 +  \frac{q^2}{(1-q)}+\frac{q^6}{(1-q)(1-q^2)}+\cdots =
 \prod_{j=0}^{\infty}\frac{1}{(1-q^{5j+2})(1-q^{5j+3})},
-\quad\quad \text{for $|q|<1$}.
-\\]
-
-\\[αβδγε\\]
-## Incompatibility
-- Superscript and
-	- LaTeX
-	- Footnotes
-- Quote and Smartypants
-
-## MultiMarkDown & LaTeX Specific
-
-- Add to `mmd-article-header.tex`:
-	- `\usepackage{amssymb}` for `\mathbb`
-	- `\usepackage{graphicx}`
-- `<!--  This is raw \LaTeX \[ {e}^{i\pi }+1=0 \] -->` to include RAW LaTeX command (doesn't work for `\usepackage` though since it has to be in the preamble
-- The Maximum nesting level of LaTeX is 4. The quick solution is to mix itemize and enumerate alternatively to go beyond this
-
+\quad\quad \text{for $|q|<1$}.\\]
 
 ## Footnotes ##
 
+- Footnotes [^This is a footnote] @mmd
+
 ### Reference ###
 
+Footnotes[^1]
 
-Footnotes[^1]    
-
-
-
-[^1]: This is a footnote
-
-### Inline ###
-
-#### MultiMarkdown ####
-
-Footnotes [^This is another footnote]
+[^1]: This is another footnote
 
 ## Citations ##
 
-### MultiMarkDown ###
+- This is a statement that should be attributed to its source [p. 23][#Doe:2006]. @mmd
 
-And following is the description of the reference to be used in the bibliography.
-
-This is a statement that should be attributed to its source [p. 23][#Doe:2006].
+[Not cited][#notcited] @mmd
 
 [#Doe:2006]: John Doe. *Some Big Fancy Book*.  Vanity Press, 2006.    
-
-[Not cited][#notcited]
-
 [#notcited]:  John Doe. *Another Big Fancy Book*.  Vanity Press, 2016.    
 
 See citation styles in detail at [Citations---MultiMarkdown Documentation](http://fletcher.github.io/MultiMarkdown-5/citations.html).
 
 ## CriticMarkup ##
 
-MultiMarkdown Only
+@mmd
 
 - Deletions from the original text: This is {--is --}a test.
 - Additions: This {++is ++}a test.
@@ -446,26 +414,21 @@ See [CriticMarkup---MultiMarkdown Documentation](http://fletcher.github.io/Multi
 
 ### HTML ###
 
-#### MultiMarkdown ####
-
-<div>This is *not* MultiMarkdown</div>
-
-<div markdown=1>This *is* MultiMarkdown</div>
+- <div>This is *not* markdown</div> (a good thing to check is if the *not* is italic or not)
+- <div markdown=1>This *is* markdown</div> @mmd
 
 See more at [](http://fletcher.github.io/MultiMarkdown-5/raw.html).
 
 ### LaTeX ###
 
-#### MultiMarkdown ####
+<!-- \newcommand\rawlatex{} --> @mmd
 
-<!-- \newcommand\rawlatex{} -->
-
-Others
-======
+Other Syntax
+============
 
 ## Metadata ##
 
-### MultiMarkdown ###
+### MultiMarkdown Metadata Block @mmd
 
 ```md
 Title:    A Sample MultiMarkdown Document  
@@ -481,13 +444,18 @@ See more at [Metadata---MultiMarkdown Documentation](http://fletcher.github.io/M
 
 ## File Transclusion ##
 
-### MultiMarkdown ###
-
+@mmd
 
 [](http://fletcher.github.io/MultiMarkdown-5/transclusion.html).
 
 ## TOC ##
 
-### MultiMarkdown ###
+### MultiMarkdown @mmd
 
 `{{TOC}}`, see beginning. It preprocess the headings and generate a ToC on its own, and doesn't give instruction for LaTeX to generate one. A hack is like this:
+
+# Other Notes #
+
+When multiple format outputs are targeted, note that in LaTeX:
+
+- The Maximum nesting level of lists in LaTeX is 4. The quick hack is to mix itemize and enumerate alternatively to go beyond this.
