@@ -51,7 +51,9 @@ LaTeX Footer:	mmd-memoir-footer
 
 # Examples #
 
-## Header @markdown
+## Header
+
+@markdown
 
 See [Emphasis][] and [Others][] to see alternative Setext-style header styles @markdown
 
