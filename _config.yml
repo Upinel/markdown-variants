@@ -1,0 +1,4 @@
+kramdown:
+  input: GFM
+  hard_wrap: false
+exclude: [.git, .gitignore, .sass-cache, Gemfile, Gemfile.lock]

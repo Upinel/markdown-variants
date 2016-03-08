@@ -33,10 +33,10 @@ All Rights Reserved."/>
 <li><a href="#examples">Examples</a>
 
 <ul>
-<li><a href="#header">Header</a>
+<li><a href="#headermarkdown">Header @markdown</a>
 
 <ul>
-<li><a href="#headercontainingstylingandalink">Header <em>Containing</em> <strong><em>Styling</em></strong> and a Link</a></li>
+<li><a href="#headercontainingstylingandalinkmarkdown">Header <em>Containing</em> <strong><em>Styling</em></strong> and a Link @markdown</a></li>
 <li><a href="#headercontainingattributesidentifier.class.classkeyvaluekeyvaluepandocphpextra">Header Containing Attributes {#identifier .class .class key=value key=value} @pandoc @phpextra</a></li>
 <li><a href="#headerunnumbered-pandoc">Header Unnumbered {-} @pandoc</a></li>
 <li><a href="#headerunnumbered2.unnumberedpandoc">Header Unnumbered 2 {.Unnumbered} @Pandoc</a></li>
@@ -148,13 +148,6 @@ All Rights Reserved."/>
 <li><a href="#superscriptsubscript">Superscript &amp; Subscript</a></li>
 <li><a href="#smartypants">Smarty Pants</a></li>
 <li><a href="#abbreviationsphpmarkdownextra">Abbreviations (PHP Markdown Extra)</a></li>
-<li><a href="#math">Math</a>
-
-<ul>
-<li><a href="#inlinemath">Inline Math</a></li>
-<li><a href="#blockmath">Block Math</a></li>
-<li><a href="#otherexamples">Other Examples</a></li>
-</ul></li>
 <li><a href="#footnotes">Footnotes</a>
 
 <ul>
@@ -191,7 +184,22 @@ All Rights Reserved."/>
 <li><a href="#toc">TOC</a>
 
 <ul>
+<li><a href="#pandoc">Pandoc</a></li>
 <li><a href="#multimarkdownmmd">MultiMarkdown @mmd</a></li>
+</ul></li>
+<li><a href="#math">Math</a>
+
+<ul>
+<li><a href="#markdown">Markdown</a></li>
+<li><a href="#multimarkdownandpandoc">MultiMarkdown and Pandoc</a>
+
+<ul>
+<li><a href="#multimarkdown">MultiMarkdown</a></li>
+<li><a href="#pandoc">Pandoc</a></li>
+</ul></li>
+<li><a href="#inlinemath">Inline Math</a></li>
+<li><a href="#blockmath">Block Math</a></li>
+<li><a href="#otherexamples">Other Examples</a></li>
 </ul></li>
 </ul></li>
 <li><a href="#othernotes">Other Notes</a>
@@ -223,17 +231,17 @@ All Rights Reserved."/>
 <li>@gfm: GitHub-Favored Markdown</li>
 <li>@mmd: MultiMarkdown </li>
 <li>@pandoc: pandoc-favored markdown</li>
-<li>@phpextra: PHP Markdown Extra (inspired some syntax in pandoc and mmd)</li>
+<li>@phpextra: PHP Markdown Extra (inspired some syntax in pandoc and mmd, not exhaustive and studied here)</li>
 </ul></li>
 </ul>
 
 <h1 id="examples">Examples</h1>
 
-<h2 id="header">Header</h2>
+<h2 id="headermarkdown">Header @markdown</h2>
 
-<p>See <a href="#emphasis">Emphasis</a> and [Others][] to see alternative Setext-style header styles</p>
+<p>See <a href="#emphasis">Emphasis</a> and [Others][] to see alternative Setext-style header styles @markdown</p>
 
-<h3 id="headercontainingstylingandalink">Header <em>Containing</em> <strong><em>Styling</em></strong> and a <a href="Https://www.wikipedia.org/">Link</a></h3>
+<h3 id="headercontainingstylingandalinkmarkdown">Header <em>Containing</em> <strong><em>Styling</em></strong> and a <a href="Https://www.wikipedia.org/">Link</a> @markdown</h3>
 
 <h3 id="headercontainingattributesidentifier.class.classkeyvaluekeyvaluepandocphpextra">Header Containing Attributes {#identifier .class .class key=value key=value} @pandoc @phpextra</h3>
 
@@ -244,10 +252,10 @@ All Rights Reserved."/>
 <h3 id="autocrossreference">Auto Cross Reference</h3>
 
 <ul>
-<li><a href="#header">Header</a> @mmd @pandoc</li>
-<li><a href="#header">Header</a> @pandoc</li>
+<li>[Header][] @mmd @pandoc</li>
+<li>[Header] @pandoc</li>
 <li><a href="#header">Link to Header</a> @pandoc</li>
-<li><a href="#header">Link to Header</a> @pandoc</li>
+<li>[Link to Header][Header] @pandoc</li>
 </ul>
 
 <h3 id="userdefinedreference">User defined reference</h3>
@@ -272,7 +280,7 @@ All Rights Reserved."/>
 <li><em>italic</em> or <em>italic</em> @markdown</li>
 <li><strong>bold</strong> or <strong>bold</strong> @markdown</li>
 <li><strong><em>bold italic</em></strong> or <strong><em>bold italic</em></strong> @markdown</li>
-<li>~~strikethrough~~ @pandoc</li>
+<li>~~strikethrough~~ @pandoc @gfm</li>
 <li><em>Underline</em></li>
 <li>==Highlight==</li>
 </ul>
@@ -281,22 +289,22 @@ All Rights Reserved."/>
 
 <ul>
 <li>https://www.wikipedia.org @pandoc(extension:autolink_bare_uris)</li>
-<li><a href="https://www.wikipedia.org">https://www.wikipedia.org</a></li>
-<li><a href="https://www.wikipedia.org">Wikipedia.org</a></li>
-<li><a href="https://www.wikipedia.org" title="a title">Wikipedia.org</a> @pandoc</li>
+<li><a href="https://www.wikipedia.org">https://www.wikipedia.org</a> @markdown</li>
+<li><a href="https://www.wikipedia.org">Wikipedia.org</a> @markdown</li>
+<li><a href="https://www.wikipedia.org" title="a title">Wikipedia.org</a> @markdown</li>
 <li><a href="support@github.com">email GitHub</a></li>
-<li><a href="&#109;&#97;&#105;&#108;&#x74;&#111;&#x3a;&#x73;&#x75;&#112;&#x70;&#x6f;&#x72;&#x74;&#64;&#103;&#105;&#116;&#104;&#117;&#98;&#46;&#x63;&#111;&#109;">&#x4d;&#x61;&#x69;&#x6c; &#116;&#x6f; &#x47;&#105;&#116;&#72;&#x75;&#98;</a></li>
+<li><a href="&#109;&#97;&#105;&#108;&#x74;&#111;&#x3a;&#x73;&#x75;&#112;&#x70;&#x6f;&#x72;&#x74;&#64;&#103;&#105;&#116;&#104;&#117;&#98;&#46;&#x63;&#111;&#109;">&#x4d;&#x61;&#x69;&#x6c; &#116;&#x6f; &#x47;&#105;&#116;&#72;&#x75;&#98;</a> @markdown</li>
 </ul>
 
 <h3 id="referencelinks">Reference Links</h3>
 
 <ul>
-<li><a href="https://www.google.com">Search here</a></li>
+<li><a href="https://www.google.com">Search here</a> @markdown</li>
 <li>A <a href="https://www.wikipedia.org/portal/wikipedia.org/assets/img/Wikipedia-logo-v2@2x.png" title="Title" class="external" style="border: solid black 1px;">link</a> with attributes. @mmd</li>
 <li><a href="https://www.wikipedia.org/portal/wikipedia.org/assets/img/Wikipedia-logo-v2@2x.png" title="Title" class="external" style="border: solid black 1px;">Another link to the link above</a>. @mmd</li>
-<li>A [link1][] with attributes. @pandoc</li>
-<li>[Another link][link2]. @pandoc</li>
-<li>[link3]. @pandoc</li>
+<li>A [link1][] with attributes. @markdown</li>
+<li>[Another link][link2]. @markdown</li>
+<li>[link3]. @markdown</li>
 </ul>
 
 <ul>
@@ -308,13 +316,13 @@ All Rights Reserved."/>
 <h2 id="imagelinks">Image Links</h2>
 
 <ul>
-<li><img src="https://www.wikipedia.org/portal/wikipedia.org/assets/img/Wikipedia-logo-v2@2x.png" alt="Alt Text" title="Optional Title" /></li>
+<li><img src="https://www.wikipedia.org/portal/wikipedia.org/assets/img/Wikipedia-logo-v2@2x.png" alt="Alt Text" title="Optional Title" /> @markdown</li>
 </ul>
 
 <h3 id="referenceimages">Reference Images</h3>
 
 <ul>
-<li><img src="https://www.wikipedia.org/portal/wikipedia.org/assets/img/Wikipedia-logo-v2@2x.png" alt="Alt Text" id="imageid" title="Optional Title" /></li>
+<li><img src="https://www.wikipedia.org/portal/wikipedia.org/assets/img/Wikipedia-logo-v2@2x.png" alt="Alt Text" id="imageid" title="Optional Title" /> @markdown</li>
 <li><img src="https://www.wikipedia.org/portal/wikipedia.org/assets/img/Wikipedia-logo-v2@2x.png" alt="An Image with Attributes" id="wikipedia" title="Title of the Image" style="height:40px;width:40px;" /> @mmd @pandoc(extension:mmd_link_attributes)</li>
 <li><img src="foo.jpg" alt="An Image with Attributes" />{#id .class width=30 height=20px} @pandoc @phpextra(partial)</li>
 <li>a reference ![image][ref] with attributes. @pandoc @phpextra(partial)</li>
@@ -325,13 +333,13 @@ All Rights Reserved."/>
 <h3 id="imagewithlinksbynestingimageandlink">Image with Links by Nesting Image and Link</h3>
 
 <ul>
-<li><a href="https://www.wikipedia.org/"><img src="https://www.wikipedia.org/portal/wikipedia.org/assets/img/Wikipedia-logo-v2@2x.png" alt="Image Link" /></a></li>
+<li><a href="https://www.wikipedia.org/"><img src="https://www.wikipedia.org/portal/wikipedia.org/assets/img/Wikipedia-logo-v2@2x.png" alt="Image Link" /></a> @markdown</li>
 </ul>
 
 <h3 id="blocklevelimages">Block Level Images</h3>
 
 <ul>
-<li>Block level: <abbr title="HyperText Markup Language">HTML</abbr> <code>figure</code> element in MultiMarkdown @mmd @pandoc</li>
+<li>Block level: <abbr title="HyperText Markup Language">HTML</abbr> <code>figure</code> element in MultiMarkdown @mmd @pandoc @markdown(non-block-level)</li>
 </ul>
 
 <figure>
@@ -346,6 +354,8 @@ All Rights Reserved."/>
 
 <h3 id="orderedlists">Ordered Lists</h3>
 
+<p>@markdown</p>
+
 <ol>
 <li>test</li>
 <li>test</li>
@@ -354,6 +364,8 @@ All Rights Reserved."/>
 
 <h3 id="unorderedlists">Unordered Lists</h3>
 
+<p>@markdown</p>
+
 <ul>
 <li>test</li>
 <li>test</li>
@@ -361,6 +373,8 @@ All Rights Reserved."/>
 </ul>
 
 <h3 id="nestedlists">Nested Lists</h3>
+
+<p>@markdown</p>
 
 <ul>
 <li>test
@@ -408,12 +422,14 @@ All Rights Reserved."/>
 
 <h3 id="cutoffalist">Cutoff a List</h3>
 
+<p>@markdown</p>
+
 <ul>
 <li>item one</li>
 <li>item two</li>
 </ul>
 
-<!-- end of list -->
+<p><!-- end of list --> @pandoc(required-by-pandoc-only?)</p>
 
 <pre><code>{ my code block }
 </code></pre>
@@ -434,7 +450,7 @@ All Rights Reserved."/>
 
 <h3 id="listiteminablock">List Item in a Block</h3>
 
-<p>@pandoc</p>
+<p>@pandoc @commonmark @markdown?</p>
 
 <ul>
 <li><p>First paragraph.</p>
@@ -448,6 +464,8 @@ eight spaces:</p>
 </ul>
 
 <h2 id="blockquotes">Blockquotes</h2>
+
+<p>@markdown</p>
 
 <blockquote>
 <h4 id="test">Test</h4>
@@ -468,6 +486,8 @@ eight spaces:</p>
 
 <h3 id="blockquotesquotingcodes">Blockquotes Quoting Codes</h3>
 
+<p>@markdown</p>
+
 <blockquote>
 <pre><code>\newcommand...
 </code></pre>
@@ -476,13 +496,15 @@ eight spaces:</p>
 <h2 id="code">Code</h2>
 
 <ul>
-<li><code>testing</code></li>
+<li><code>testing</code> @markdown</li>
 <li><code>\[\ket{a}\]</code>{.latex} @pandoc</li>
 </ul>
 
 <h3 id="fencedcodeblocks">Fenced Code Blocks</h3>
 
 <h4 id="method1">Method 1</h4>
+
+<p>@markdown</p>
 
 <pre><code>test
 test
@@ -491,6 +513,8 @@ test
 </code></pre>
 
 <h4 id="method2">Method 2</h4>
+
+<p>@markdown(partial:language-not-supported)</p>
 
 <pre><code class="latex">\nabla \times \mathbf{E} = - \frac{\partial \mathbf{B}}{\partial t}
 </code></pre>
@@ -538,17 +562,25 @@ test
 
 <h4 id="test3">Test3</h4>
 
+<p>@markdown</p>
+
 <hr />
 
 <h4 id="test4">Test4</h4>
+
+<p>@markdown</p>
 
 <hr />
 
 <h4 id="test5">Test5</h4>
 
+<p>@markdown</p>
+
 <hr />
 
 <h4 id="test6">test6</h4>
+
+<p>@markdown</p>
 
 <hr />
 
@@ -564,21 +596,31 @@ test
 
 <h4 id="test3">Test3</h4>
 
+<p>@markdown</p>
+
 <hr />
 
 <h4 id="test4">Test4</h4>
+
+<p>@markdown</p>
 
 <hr />
 
 <h4 id="test5">Test5</h4>
 
+<p>@markdown</p>
+
 <hr />
 
 <h4 id="test6">test6</h4>
 
+<p>@markdown</p>
+
 <hr />
 
 <h2 id="break">Break</h2>
+
+<p>@markdown</p>
 
 <p>No break
 like this</p>
@@ -806,7 +848,7 @@ multiple lines.</p>
 
 <h2 id="smartypants">Smarty Pants</h2>
 
-<p>@markdown? @pandoc(&#8211;smart)</p>
+<p>@markdown(extension:smartypants) @pandoc(&#8211;smart)</p>
 
 <ul>
 <li>&#8220;Example 1&#8221;</li>
@@ -822,70 +864,6 @@ multiple lines.</p>
 <p>@mmd @phpextra @pandoc(partial-with-extension:abbreviations)</p>
 
 <p>Testing abbreviations: <abbr title="HyperText Markup Language">HTML</abbr>, <abbr title="World Wide Web Consortium">W3C</abbr> (mouseover it to see)</p>
-
-<h2 id="math">Math</h2>
-
-<p><abbr title="HyperText Markup Language">HTML</abbr> Math assumes MathJax.</p>
-
-<p>Notes: an extra <code>\</code> can be used to escape from MarkDown</p>
-
-<p>For MultiMarkDown, add
-<code>html
-HTML header:    &lt;script type=&quot;text/javascript&quot;
-    src=&quot;https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML-full&quot;&gt;
-    &lt;/script&gt;
-</code></p>
-
-<p>For pandoc, add <code>--mathjax</code> in the command-line argument.</p>
-
-<p>There are subtleties how math should be used in HTML+MathJax and LaTeX output from single markdown source. See more in <a href="https://github.com/ickc/mathjax-latex-md-mmd-pandoc">Testing LaTeX Environments Usage in MathJax From Markdown Convertion (including mmd and pandoc)</a>.</p>
-
-<h3 id="inlinemath">Inline Math</h3>
-
-<ul>
-<li><span class="math">\(1+1\)</span></li>
-<li><span class="math">\(1 + 1\)</span></li>
-</ul>
-
-<h3 id="blockmath">Block Math</h3>
-
-<ul>
-<li><span class="math">\[R R^T = I\]</span></li>
-<li><span class="math">\[A^T_S = B\]</span></li>
-</ul>
-
-<h3 id="otherexamples">Other Examples</h3>
-
-<ul>
-<li><span class="math">\[x = {-b \pm \sqrt{b^2-4ac} \over 2a}\]</span></li>
-<li>$$
-\begin{aligned}
-\dot{x} &amp; = \sigma(y-x) \
-\dot{y} &amp; = \rho x - y - xz \
-\dot{z} &amp; = -\beta z + xy
-\end{aligned}
-$$</li>
-<li><span class="math">\[\left( \sum_{k=1}^n a_k b_k \right)^2 \leq \left( \sum_{k=1}^n a_k^2 \right) \left( \sum_{k=1}^n b_k^2 \right)\]</span></li>
-<li><span class="math">\[\mathbf{V}_1 \times \mathbf{V}_2 =  \begin{vmatrix}
-\mathbf{i} & \mathbf{j} & \mathbf{k} \\\
-\frac{\partial X}{\partial u} &  \frac{\partial Y}{\partial u} & 0 \\\
-\frac{\partial X}{\partial v} &  \frac{\partial Y}{\partial v} & 0
-\end{vmatrix}\]</span></li>
-<li><span class="math">\[P(E) = {n \choose k} p^k (1-p)^{n-k}\]</span></li>
-<li><span class="math">\[\frac{1}{\Bigl(\sqrt{\phi \sqrt{5}}-\phi\Bigr) e^{\frac25 \pi}} =
-1+\frac{e^{-2\pi}} {1+\frac{e^{-4\pi}} {1+\frac{e^{-6\pi}}
-{1+\frac{e^{-8\pi}} {1+\ldots} } } }\]</span></li>
-<li>$$
-\begin{aligned}
-\nabla \times \vec{\mathbf{B}} -\, \frac1c\, \frac{\partial\vec{\mathbf{E}}}{\partial t} &amp; = \frac{4\pi}{c}\vec{\mathbf{j}} \
-\nabla \cdot \vec{\mathbf{E}} &amp; = 4 \pi \rho \
-\nabla \times \vec{\mathbf{E}}\, +\, \frac1c\, \frac{\partial\vec{\mathbf{B}}}{\partial t} &amp; = \vec{\mathbf{0}} \
-\nabla \cdot \vec{\mathbf{B}} &amp; = 0 \end{aligned}
-$$</li>
-<li><span class="math">\[1 +  \frac{q^2}{(1-q)}+\frac{q^6}{(1-q)(1-q^2)}+\cdots =
-\prod_{j=0}^{\infty}\frac{1}{(1-q^{5j+2})(1-q^{5j+3})},
-\quad\quad \text{for $|q|<1$}.\]</span></li>
-</ul>
 
 <h2 id="footnotes">Footnotes</h2>
 
@@ -1001,13 +979,119 @@ abstract: |
 
 <h2 id="toc">TOC</h2>
 
+<h3 id="pandoc">Pandoc</h3>
+
+<p>Use <code>--toc</code> as a command argument.</p>
+
 <h3 id="multimarkdownmmd">MultiMarkdown @mmd</h3>
 
 <p><code>{{TOC}}</code>, see beginning. It preprocess the headings and generate a ToC on its own, and doesn&#8217;t give instruction for LaTeX to generate one. A hack is like this:</p>
 
+<pre><code class="markdown">---
+...
+LaTeX Input:    mmd-load-toc-setcounter
+LaTeX Input:    mmd-load-toc
+LaTeX Footer:   mmd-memoir-footer
+---
+&lt;!-- \begin{comment} --&gt;
+{{TOC}}
+&lt;!-- \end{comment} --&gt;
+</code></pre>
+
+<p>See more at <a href="https://github.com/ickc/peg-multimarkdown-latex-support">ickc/peg-multimarkdown-latex-support: Default support files for generating LaTeX documents with MMD 3 through MMD 5</a>.</p>
+
+<h2 id="math">Math</h2>
+
+<p>MathJax is assumed. MathJax has many configurable options. See <a href="http://mathjax.readthedocs.org/en/latest/tex.html">MathJax TeX and LaTeX Support — MathJax 2.6 documentation</a>.</p>
+
+<h3 id="markdown">Markdown</h3>
+
+<p>Add the following at the beginning of the document:</p>
+
+<pre><code class="html">&lt;script type=&quot;text/javascript&quot;
+    src=&quot;https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML-full&quot;&gt;
+    &lt;/script&gt;
+</code></pre>
+
+<p>MathJax.js is used and any codes within math delimiters are treated as raw <abbr title="HyperText Markup Language">HTML</abbr> and to be processed by MathJax.</p>
+
+<p>MathJax delimiter are <code>$$...$$</code>, <code>\\(...\\)</code> and <code>\\[...\\]</code> (because an extra <code>\</code> can be used to escape from MarkDown).</p>
+
+<p>Depending on the markdown parser, extra tricks might be needed to make sure nothing within the math delimiter is treated as markdown (see <a href="http://mathjax.readthedocs.org/en/latest/tex.html#tex-and-latex-in-html-documents">TeX and LaTeX in <abbr title="HyperText Markup Language">HTML</abbr> documents — MathJax 2.6 documentation</a>). <code>$...$</code> can be used with MathJax configuration (see <a href="http://mathjax.readthedocs.org/en/latest/tex.html#tex-and-latex-math-delimiters">TeX and LaTeX math delimiters — MathJax 2.6 documentation</a>).</p>
+
+<h3 id="multimarkdownandpandoc">MultiMarkdown and Pandoc</h3>
+
+<p>There are subtleties how math should be used in HTML+MathJax and LaTeX output from single markdown source. See more in <a href="https://github.com/ickc/mathjax-latex-md-mmd-pandoc">Testing LaTeX Environments Usage in MathJax From Markdown Convertion (including mmd and pandoc)</a>.</p>
+
+<h4 id="multimarkdown">MultiMarkdown</h4>
+
+<p>Add the following metadata at the beginning of the document:</p>
+
+<pre><code class="html">HTML header:    &lt;script type=&quot;text/javascript&quot;
+    src=&quot;https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML-full&quot;&gt;
+    &lt;/script&gt;
+</code></pre>
+
+<p>MultiMarkdown math delimiter are <code>$...$</code>, <code>$$...$$</code>, <code>\\(...\\)</code> and <code>\\[...\\]</code>.</p>
+
+<h4 id="pandoc">Pandoc</h4>
+
+<p>For pandoc, add <code>--mathjax</code> in the command-line argument.</p>
+
+<p>Default math delimiter for pandoc is <code>$...$</code>, <code>$$...$$</code>. Other options are configurable. See more in <a href="http://pandoc.org/README.html#non-pandoc-extensions">Pandoc - Pandoc User’s Guide</a>.</p>
+
+<h3 id="inlinemath">Inline Math</h3>
+
+<ul>
+<li><span class="math">\(1+1\)</span></li>
+<li><span class="math">\(1 + 1\)</span></li>
+</ul>
+
+<h3 id="blockmath">Block Math</h3>
+
+<ul>
+<li><span class="math">\[R R^T = I\]</span></li>
+<li><span class="math">\[A^T_S = B\]</span></li>
+</ul>
+
+<h3 id="otherexamples">Other Examples</h3>
+
+<ul>
+<li><span class="math">\[x = {-b \pm \sqrt{b^2-4ac} \over 2a}\]</span></li>
+<li>$$
+\begin{aligned}
+\dot{x} &amp; = \sigma(y-x) \
+\dot{y} &amp; = \rho x - y - xz \
+\dot{z} &amp; = -\beta z + xy
+\end{aligned}
+$$</li>
+<li><span class="math">\[\left( \sum_{k=1}^n a_k b_k \right)^2 \leq \left( \sum_{k=1}^n a_k^2 \right) \left( \sum_{k=1}^n b_k^2 \right)\]</span></li>
+<li><span class="math">\[\mathbf{V}_1 \times \mathbf{V}_2 =  \begin{vmatrix}
+\mathbf{i} & \mathbf{j} & \mathbf{k} \\\
+\frac{\partial X}{\partial u} &  \frac{\partial Y}{\partial u} & 0 \\\
+\frac{\partial X}{\partial v} &  \frac{\partial Y}{\partial v} & 0
+\end{vmatrix}\]</span></li>
+<li><span class="math">\[P(E) = {n \choose k} p^k (1-p)^{n-k}\]</span></li>
+<li><span class="math">\[\frac{1}{\Bigl(\sqrt{\phi \sqrt{5}}-\phi\Bigr) e^{\frac25 \pi}} =
+1+\frac{e^{-2\pi}} {1+\frac{e^{-4\pi}} {1+\frac{e^{-6\pi}}
+{1+\frac{e^{-8\pi}} {1+\ldots} } } }\]</span></li>
+<li>$$
+\begin{aligned}
+\nabla \times \vec{\mathbf{B}} -\, \frac1c\, \frac{\partial\vec{\mathbf{E}}}{\partial t} &amp; = \frac{4\pi}{c}\vec{\mathbf{j}} \
+\nabla \cdot \vec{\mathbf{E}} &amp; = 4 \pi \rho \
+\nabla \times \vec{\mathbf{E}}\, +\, \frac1c\, \frac{\partial\vec{\mathbf{B}}}{\partial t} &amp; = \vec{\mathbf{0}} \
+\nabla \cdot \vec{\mathbf{B}} &amp; = 0 \end{aligned}
+$$</li>
+<li><span class="math">\[1 +  \frac{q^2}{(1-q)}+\frac{q^6}{(1-q)(1-q^2)}+\cdots =
+\prod_{j=0}^{\infty}\frac{1}{(1-q^{5j+2})(1-q^{5j+3})},
+\quad\quad \text{for $|q|<1$}.\]</span></li>
+</ul>
+
 <h1 id="othernotes">Other Notes</h1>
 
 <h2 id="markdown">Markdown</h2>
+
+<p>@markdown</p>
 
 <p>Backslash escapes: *testing*</p>
 

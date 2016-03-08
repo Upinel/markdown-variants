@@ -53,7 +53,7 @@ LaTeX Footer:	mmd-memoir-footer
 
 ## Header @markdown
 
-See [Emphasis][] and [Others][] to see alternative Setext-style header styles
+See [Emphasis][] and [Others][] to see alternative Setext-style header styles @markdown
 
 ### Header *Containing* ***Styling*** and a [Link](Https://www.wikipedia.org/) @markdown
 
@@ -92,7 +92,7 @@ Emphasis
 - *italic* or _italic_ @markdown
 - **bold** or __bold__ @markdown
 - ***bold italic*** or ___bold italic___ @markdown
-- ~~strikethrough~~ @pandoc
+- ~~strikethrough~~ @pandoc @gfm
 - _Underline_
 - ==Highlight==
 
@@ -126,11 +126,9 @@ Emphasis
 
 - ![Alt Text](https://www.wikipedia.org/portal/wikipedia.org/assets/img/Wikipedia-logo-v2@2x.png "Optional Title") @markdown
 
-<!-- todo @markdown -->
-
 ### Reference Images
 
-- ![Alt Text][imageid]
+- ![Alt Text][imageid] @markdown
 - ![An Image with Attributes][wikipedia] @mmd @pandoc(extension:mmd_link_attributes)
 - ![An Image with Attributes](foo.jpg){#id .class width=30 height=20px} @pandoc @phpextra(partial)
 - a reference ![image][ref] with attributes. @pandoc @phpextra(partial)
@@ -142,11 +140,11 @@ Emphasis
 
 ### Image with Links by Nesting Image and Link ###
 
-- [![Image Link](https://www.wikipedia.org/portal/wikipedia.org/assets/img/Wikipedia-logo-v2@2x.png)](https://www.wikipedia.org/)
+- [![Image Link](https://www.wikipedia.org/portal/wikipedia.org/assets/img/Wikipedia-logo-v2@2x.png)](https://www.wikipedia.org/) @markdown
 
 ### Block Level Images ###
 
-- Block level: HTML `figure` element in MultiMarkdown @mmd @pandoc
+- Block level: HTML `figure` element in MultiMarkdown @mmd @pandoc @markdown(non-block-level)
 
 ![***Block*** **Level**](https://www.wikipedia.org/portal/wikipedia.org/assets/img/Wikipedia-logo-v2@2x.png "Optional Title")
 
@@ -156,17 +154,23 @@ Emphasis
 
 ### Ordered Lists ###
 
+@markdown
+
 1. test
 3. test
 2. test
 
 ### Unordered Lists ###
 
+@markdown
+
 - test
 * test
 + test
 
 ### Nested Lists ###
+
+@markdown
 
 * test
     * test
@@ -198,10 +202,12 @@ Emphasis
 
 ### Cutoff a List ###
 
+@markdown
+
 -   item one
 -   item two
 
-<!-- end of list -->
+<!-- end of list --> @pandoc(required-by-pandoc-only?)
 
     { my code block }
 
@@ -217,7 +223,7 @@ Emphasis
 
 ### List Item in a Block ###
 
-@pandoc
+@pandoc @commonmark @markdown?
 
   * First paragraph.
 
@@ -229,6 +235,8 @@ Emphasis
         { code }
 
 ## Blockquotes
+
+@markdown
 
 > #### Test
 > 
@@ -244,16 +252,20 @@ Emphasis
 
 ### Blockquotes Quoting Codes ###
 
+@markdown
+
 >     \newcommand...
 
 ## Code
 
-- `testing`
+- `testing` @markdown
 - `\[\ket{a}\]`{.latex} @pandoc
 
 ### Fenced Code Blocks
 
 #### Method 1
+
+@markdown
 
 	test
 	test
@@ -261,6 +273,8 @@ Emphasis
 		# test
 
 #### Method 2
+
+@markdown(partial:language-not-supported)
 
 ```latex
 \nabla \times \mathbf{E} = - \frac{\partial \mathbf{B}}{\partial t}
@@ -309,17 +323,25 @@ test
 
 #### Test3
 
+@markdown
+
 ---
 
 #### Test4
+
+@markdown
 
 ----
 
 #### Test5
 
+@markdown
+
 -----
 
 #### test6
+
+@markdown
 
 ------
 
@@ -335,21 +357,31 @@ test
 
 #### Test3
 
+@markdown
+
 ***
 
 #### Test4
+
+@markdown
 
 ****
 
 #### Test5
 
+@markdown
+
 *****
 
 #### test6
 
+@markdown
+
 ******
 
 ## Break ##
+
+@markdown
 
 No break
 like this
@@ -503,7 +535,7 @@ See more at [Glossary---MultiMarkdown Documentation](http://fletcher.github.io/M
 
 ## Smarty Pants ##
 
-@markdown? @pandoc(--smart)
+@markdown(extension:smartypants) @pandoc(--smart)
 
 - "Example 1"
 - 'Example 2'
@@ -520,64 +552,6 @@ See more at [Glossary---MultiMarkdown Documentation](http://fletcher.github.io/M
 *[W3C]:  World Wide Web Consortium
 
 Testing abbreviations: HTML, W3C (mouseover it to see)
-
-## Math ##
-
-HTML Math assumes MathJax.
-
-Notes: an extra `\` can be used to escape from MarkDown
-
-For MultiMarkDown, add
-```html
-HTML header:    <script type="text/javascript"
-    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML-full">
-    </script>
-```
-
-For pandoc, add `--mathjax` in the command-line argument.
-
-There are subtleties how math should be used in HTML+MathJax and LaTeX output from single markdown source. See more in [Testing LaTeX Environments Usage in MathJax From Markdown Convertion (including mmd and pandoc)](https://github.com/ickc/mathjax-latex-md-mmd-pandoc).
-
-### Inline Math ###
-
-- $1+1$
-- \\(1 + 1\\)
-
-### Block Math ###
-
-- $$R R^T = I$$
-- \\[A^T_S = B\\]
-
-### Other Examples
-
-- $$x = {-b \pm \sqrt{b^2-4ac} \over 2a}$$
-- $$
-\begin{aligned}
-\dot{x} & = \sigma(y-x) \\\
-\dot{y} & = \rho x - y - xz \\\
-\dot{z} & = -\beta z + xy
-\end{aligned}
-$$
-- $$\left( \sum_{k=1}^n a_k b_k \right)^2 \leq \left( \sum_{k=1}^n a_k^2 \right) \left( \sum_{k=1}^n b_k^2 \right)$$
-- $$\mathbf{V}_1 \times \mathbf{V}_2 =  \begin{vmatrix}
-\mathbf{i} & \mathbf{j} & \mathbf{k} \\\
-\frac{\partial X}{\partial u} &  \frac{\partial Y}{\partial u} & 0 \\\
-\frac{\partial X}{\partial v} &  \frac{\partial Y}{\partial v} & 0
-\end{vmatrix}$$
-- $$P(E) = {n \choose k} p^k (1-p)^{n-k}$$
-- $$\frac{1}{\Bigl(\sqrt{\phi \sqrt{5}}-\phi\Bigr) e^{\frac25 \pi}} =
-1+\frac{e^{-2\pi}} {1+\frac{e^{-4\pi}} {1+\frac{e^{-6\pi}}
-{1+\frac{e^{-8\pi}} {1+\ldots} } } }$$
-- $$
-\begin{aligned}
-\nabla \times \vec{\mathbf{B}} -\, \frac1c\, \frac{\partial\vec{\mathbf{E}}}{\partial t} & = \frac{4\pi}{c}\vec{\mathbf{j}} \\\
-\nabla \cdot \vec{\mathbf{E}} & = 4 \pi \rho \\\
-\nabla \times \vec{\mathbf{E}}\, +\, \frac1c\, \frac{\partial\vec{\mathbf{B}}}{\partial t} & = \vec{\mathbf{0}} \\\
-\nabla \cdot \vec{\mathbf{B}} & = 0 \end{aligned}
-$$
-- $$1 +  \frac{q^2}{(1-q)}+\frac{q^6}{(1-q)(1-q^2)}+\cdots =
-\prod_{j=0}^{\infty}\frac{1}{(1-q^{5j+2})(1-q^{5j+3})},
-\quad\quad \text{for $|q|<1$}.$$
 
 ## Footnotes ##
 
@@ -702,13 +676,116 @@ See more at [File Transclusion---MultiMarkdown Documentation](http://fletcher.gi
 
 ## TOC ##
 
+### Pandoc ###
+
+Use `--toc` as a command argument.
+
 ### MultiMarkdown @mmd
 
 `{{TOC}}`, see beginning. It preprocess the headings and generate a ToC on its own, and doesn't give instruction for LaTeX to generate one. A hack is like this:
 
+```markdown
+---
+...
+LaTeX Input:	mmd-load-toc-setcounter
+LaTeX Input:	mmd-load-toc
+LaTeX Footer:	mmd-memoir-footer
+---
+<!-- \begin{comment} -->
+{{TOC}}
+<!-- \end{comment} -->
+```
+
+See more at [ickc/peg-multimarkdown-latex-support: Default support files for generating LaTeX documents with MMD 3 through MMD 5](https://github.com/ickc/peg-multimarkdown-latex-support).
+
+## Math ##
+
+MathJax is assumed. MathJax has many configurable options. See [MathJax TeX and LaTeX Support — MathJax 2.6 documentation](http://mathjax.readthedocs.org/en/latest/tex.html).
+
+### Markdown ###
+
+Add the following at the beginning of the document:
+
+```html
+<script type="text/javascript"
+    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML-full">
+    </script>
+```
+
+MathJax.js is used and any codes within math delimiters are treated as raw HTML and to be processed by MathJax.
+
+MathJax delimiter are `$$...$$`, `\\(...\\)` and `\\[...\\]` (because an extra `\` can be used to escape from MarkDown).
+
+Depending on the markdown parser, extra tricks might be needed to make sure nothing within the math delimiter is treated as markdown (see [TeX and LaTeX in HTML documents — MathJax 2.6 documentation](http://mathjax.readthedocs.org/en/latest/tex.html#tex-and-latex-in-html-documents)). `$...$` can be used with MathJax configuration (see [TeX and LaTeX math delimiters — MathJax 2.6 documentation](http://mathjax.readthedocs.org/en/latest/tex.html#tex-and-latex-math-delimiters)).
+
+### MultiMarkdown and Pandoc ###
+
+There are subtleties how math should be used in HTML+MathJax and LaTeX output from single markdown source. See more in [Testing LaTeX Environments Usage in MathJax From Markdown Convertion (including mmd and pandoc)](https://github.com/ickc/mathjax-latex-md-mmd-pandoc).
+
+#### MultiMarkdown ####
+
+Add the following metadata at the beginning of the document:
+
+```html
+HTML header:    <script type="text/javascript"
+    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML-full">
+    </script>
+```
+
+MultiMarkdown math delimiter are `$...$`, `$$...$$`, `\\(...\\)` and `\\[...\\]`.
+
+#### Pandoc ####
+
+For pandoc, add `--mathjax` in the command-line argument.
+
+Default math delimiter for pandoc is `$...$`, `$$...$$`. Other options are configurable. See more in [Pandoc - Pandoc User’s Guide](http://pandoc.org/README.html#non-pandoc-extensions).
+
+### Inline Math ###
+
+- $1+1$
+- \\(1 + 1\\)
+
+### Block Math ###
+
+- $$R R^T = I$$
+- \\[A^T_S = B\\]
+
+### Other Examples
+
+- $$x = {-b \pm \sqrt{b^2-4ac} \over 2a}$$
+- $$
+\begin{aligned}
+\dot{x} & = \sigma(y-x) \\\
+\dot{y} & = \rho x - y - xz \\\
+\dot{z} & = -\beta z + xy
+\end{aligned}
+$$
+- $$\left( \sum_{k=1}^n a_k b_k \right)^2 \leq \left( \sum_{k=1}^n a_k^2 \right) \left( \sum_{k=1}^n b_k^2 \right)$$
+- $$\mathbf{V}_1 \times \mathbf{V}_2 =  \begin{vmatrix}
+\mathbf{i} & \mathbf{j} & \mathbf{k} \\\
+\frac{\partial X}{\partial u} &  \frac{\partial Y}{\partial u} & 0 \\\
+\frac{\partial X}{\partial v} &  \frac{\partial Y}{\partial v} & 0
+\end{vmatrix}$$
+- $$P(E) = {n \choose k} p^k (1-p)^{n-k}$$
+- $$\frac{1}{\Bigl(\sqrt{\phi \sqrt{5}}-\phi\Bigr) e^{\frac25 \pi}} =
+1+\frac{e^{-2\pi}} {1+\frac{e^{-4\pi}} {1+\frac{e^{-6\pi}}
+{1+\frac{e^{-8\pi}} {1+\ldots} } } }$$
+- $$
+\begin{aligned}
+\nabla \times \vec{\mathbf{B}} -\, \frac1c\, \frac{\partial\vec{\mathbf{E}}}{\partial t} & = \frac{4\pi}{c}\vec{\mathbf{j}} \\\
+\nabla \cdot \vec{\mathbf{E}} & = 4 \pi \rho \\\
+\nabla \times \vec{\mathbf{E}}\, +\, \frac1c\, \frac{\partial\vec{\mathbf{B}}}{\partial t} & = \vec{\mathbf{0}} \\\
+\nabla \cdot \vec{\mathbf{B}} & = 0 \end{aligned}
+$$
+- $$1 +  \frac{q^2}{(1-q)}+\frac{q^6}{(1-q)(1-q^2)}+\cdots =
+\prod_{j=0}^{\infty}\frac{1}{(1-q^{5j+2})(1-q^{5j+3})},
+\quad\quad \text{for $|q|<1$}.$$
+
 # Other Notes #
 
 ## Markdown ##
+
+@markdown
 
 Backslash escapes: \*testing\*
 
