@@ -44,7 +44,7 @@ LaTeX Footer:	mmd-memoir-footer
 - Last header level or a list: different syntaxes
 - TaskPaper-styled tags to indicate in what favor of Markdown such syntax is supported
 	- @markdown: supported by original markdown, hence understood to be supported by all variants of markdown
-	- @gfm: GitHub-Favored Markdown, built by kramdown using GFM config
+	- @gfm: GitHub-Favored Markdown, built by kramdown using GFM config. i.e. GitHub Pages' GitHub-Favored Markdown
 	- @mmd: MultiMarkdown 
 	- @pandoc: pandoc-favored markdown
 	- @phpextra: PHP Markdown Extra (inspired some syntax in pandoc and mmd, not exhaustively tested here)
@@ -69,7 +69,7 @@ See [Emphasis][] and [Others][] to see alternative Setext-style header styles @m
 
 - [Header][] @mmd @pandoc
 - [Header] @pandoc
-- [Link to Header](#header) @pandoc
+- [Link to Header](#header) @pandoc @gfm
 - [Link to Header][Header] @pandoc
 
 ### User defined reference [userdefinedreference]
@@ -94,7 +94,7 @@ Emphasis
 - *italic* or _italic_ @markdown
 - **bold** or __bold__ @markdown
 - ***bold italic*** or ___bold italic___ @markdown
-- ~~strikethrough~~ @pandoc @gfm
+- ~~strikethrough~~ @pandoc
 - _Underline_
 - ==Highlight==
 
@@ -120,9 +120,9 @@ Emphasis
 [link]:  https://www.wikipedia.org/portal/wikipedia.org/assets/img/Wikipedia-logo-v2@2x.png "Title" class=external
          style="border: solid black 1px;"
 
-- [link1]: /foo/bar.html  "My title, optional"
-- [link2]: http://fsf.org (The free software foundation)
-- [link3]: /bar#special  'A title in single quotes'
+[link1]: /foo/bar.html  "My title, optional"
+[link2]: http://fsf.org (The free software foundation)
+[link3]: /bar#special  'A title in single quotes'
 
 ## Image Links
 
@@ -146,11 +146,13 @@ Emphasis
 
 ### Block Level Images ###
 
-- Block level: HTML `figure` element in MultiMarkdown @mmd @pandoc @markdown(non-block-level)
+- Block level: HTML `figure` element in MultiMarkdown @mmd @pandoc
 
 ![***Block*** **Level**](https://www.wikipedia.org/portal/wikipedia.org/assets/img/Wikipedia-logo-v2@2x.png "Optional Title")
 
 ![***Not*** Block **Level**](https://www.wikipedia.org/portal/wikipedia.org/assets/img/Wikipedia-logo-v2@2x.png "Optional Title")\
+
+The last trick above doesn't work in gfm @gfm(not-supported)
 
 ## Lists
 
@@ -206,12 +208,6 @@ Emphasis
 
 @markdown
 
--   item one
--   item two
-
-<!-- end of list --> @pandoc(required-by-pandoc-only?)
-
-    { my code block }
 
 1.  one
 2.  two
@@ -223,9 +219,19 @@ Emphasis
 2.  dos
 3.  tres
 
+<!-- -->
+
+-   item one
+-   item two
+
+<!-- end of list -->
+
+    { my code block }
+
+
 ### List Item in a Block ###
 
-@pandoc @commonmark @markdown?
+@markdown
 
   * First paragraph.
 
@@ -399,9 +405,9 @@ like this
 
 ### Method 1
 
-| 1 | 2 | 3 |
-|:--- | :---: | ---:|
-|**test** | _test_ | test|
+| 1 | 2 | 3 |  
+| -------- | -----: | ---: |  
+| **test** | _test_ | test |  
 
 ### Method 2
 
@@ -411,7 +417,7 @@ like this
 |  123  |  123 |   123   |   123  |
 |    1  |    1 |     1   |     1  |
 
-  : Demonstration of pipe table syntax. @pandoc
+  : Table Caption @pandoc
 
 [Table Caption @mmd]
 |            |        Grouping           ||
@@ -472,6 +478,24 @@ multiple lines.
 |               |               | - tasty            |
 +---------------+---------------+--------------------+  
 
+### Method 6 ###
+
+@gfm
+
+|-----------------+------------+-----------------+----------------|
+| Default aligned |Left aligned| Center aligned  | Right aligned  |
+|-----------------|:-----------|:---------------:|---------------:|
+| First body part |Second cell | Third cell      | fourth cell    |
+| Second line     |foo         | **strong**      | baz            |
+| Third line      |quux        | baz             | bar            |
+|-----------------+------------+-----------------+----------------|
+| Second body     |            |                 |                |
+| 2 line          |            |                 |                |
+|=================+============+=================+================|
+| Footer row      |            |                 |                |
+|-----------------+------------+-----------------+----------------|
+
+See [Syntax | kramdown](http://kramdown.gettalong.org/syntax.html#tables)  
 
 ## Definition Lists
 
