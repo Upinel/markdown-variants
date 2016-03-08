@@ -46,12 +46,117 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
   <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
 </head>
 <body>
-<!-- \begin{comment} -->
-<p>{{TOC}} <!-- \end{comment} --></p>
+<div id="TOC">
+<ul>
+<li><a href="#contents">Contents</a></li>
+<li><a href="#introduction">Introduction</a><ul>
+<li><a href="#organization">Organization</a></li>
+</ul></li>
+<li><a href="#examples">Examples</a><ul>
+<li><a href="#header">Header</a><ul>
+<li><a href="#header-containing-styling-and-a-link">Header <em>Containing</em> <strong><em>Styling</em></strong> and a <a href="Https://www.wikipedia.org/">Link</a></a></li>
+<li><a href="#identifier">Header Containing Attributes</a></li>
+<li><a href="#header-unnumbered">Header Unnumbered</a></li>
+<li><a href="#header-unnumbered-2">Header Unnumbered 2</a></li>
+<li><a href="#auto-cross-reference">Auto Cross Reference</a></li>
+<li><a href="#user-defined-reference-userdefinedreference">User defined reference [userdefinedreference]</a></li>
+<li><a href="#deeper-levels-of-headers">Deeper Levels of Headers</a></li>
+</ul></li>
+<li><a href="#emphasis">Emphasis</a></li>
+<li><a href="#links">Links</a><ul>
+<li><a href="#reference-links">Reference Links</a></li>
+</ul></li>
+<li><a href="#image-links">Image Links</a><ul>
+<li><a href="#reference-images">Reference Images</a></li>
+<li><a href="#image-with-links-by-nesting-image-and-link">Image with Links by Nesting Image and Link</a></li>
+<li><a href="#block-level-images">Block Level Images</a></li>
+<li><a href="#ordered-lists">Ordered Lists</a></li>
+<li><a href="#unordered-lists">Unordered Lists</a></li>
+<li><a href="#nested-lists">Nested Lists</a></li>
+<li><a href="#fancy-lists">Fancy Lists</a></li>
+<li><a href="#cutoff-a-list">Cutoff a List</a></li>
+<li><a href="#list-item-in-a-block">List Item in a Block</a></li>
+</ul></li>
+<li><a href="#blockquotes">Blockquotes</a><ul>
+<li><a href="#blockquotes-quoting-codes">Blockquotes Quoting Codes</a></li>
+</ul></li>
+<li><a href="#code">Code</a><ul>
+<li><a href="#fenced-code-blocks">Fenced Code Blocks</a></li>
+</ul></li>
+<li><a href="#line-blocks">Line Blocks</a></li>
+<li><a href="#horizontal-rules-asterisk-also-works">Horizontal Rules (Asterisk also works)</a><ul>
+<li><a href="#hyphen">Hyphen</a></li>
+<li><a href="#asterisks">Asterisks</a></li>
+</ul></li>
+<li><a href="#break">Break</a></li>
+<li><a href="#tables">Tables</a><ul>
+<li><a href="#method-1-1">Method 1</a></li>
+<li><a href="#method-2-1">Method 2</a></li>
+<li><a href="#method-3-1">Method 3</a></li>
+<li><a href="#method-4">Method 4</a></li>
+<li><a href="#method-5">Method 5</a></li>
+<li><a href="#method-6">Method 6</a></li>
+</ul></li>
+<li><a href="#definition-lists">Definition Lists</a><ul>
+<li><a href="#method-1-2">Method 1</a></li>
+<li><a href="#method-2-2">Method 2</a></li>
+</ul></li>
+<li><a href="#numbered-example-lists">Numbered Example Lists</a></li>
+<li><a href="#glossaries">Glossaries</a></li>
+<li><a href="#superscript-subscript">Superscript &amp; Subscript</a></li>
+<li><a href="#smarty-pants">Smarty Pants</a></li>
+<li><a href="#abbreviations-php-markdown-extra">Abbreviations (PHP Markdown Extra)</a></li>
+<li><a href="#footnotes">Footnotes</a><ul>
+<li><a href="#reference">Reference</a></li>
+</ul></li>
+<li><a href="#citations">Citations</a><ul>
+<li><a href="#multimarkdown">MultiMarkdown</a></li>
+<li><a href="#pandoc">Pandoc</a></li>
+</ul></li>
+<li><a href="#criticmarkup">CriticMarkup</a></li>
+<li><a href="#small-caps">Small Caps</a></li>
+<li><a href="#raw">RAW</a><ul>
+<li><a href="#html">HTML</a></li>
+<li><a href="#latex">LaTeX</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#other-syntaxes">Other Syntaxes</a><ul>
+<li><a href="#metadata">Metadata</a><ul>
+<li><a href="#multimarkdown-metadata-block-mmd-pandocextensionmmd_title_block">MultiMarkdown Metadata Block <span class="citation">@mmd</span> <span class="citation">@pandoc</span>(extension:mmd_title_block)</a></li>
+<li><a href="#pandoc-title-block-pandoc">Pandoc Title Block <span class="citation">@pandoc</span></a></li>
+<li><a href="#yaml-metadata-block-mmdpartial-pandoc-gfm">YAML Metadata Block <span class="citation">@mmd</span>(partial) <span class="citation">@pandoc</span> <span class="citation">@gfm</span></a></li>
+</ul></li>
+<li><a href="#file-transclusion">File Transclusion</a></li>
+<li><a href="#toc">TOC</a><ul>
+<li><a href="#pandoc-1">Pandoc</a></li>
+<li><a href="#multimarkdown-mmd">MultiMarkdown <span class="citation">@mmd</span></a></li>
+<li><a href="#gfm-via-kramdown">Gfm (via kramdown)</a></li>
+</ul></li>
+<li><a href="#math">Math</a><ul>
+<li><a href="#markdown">Markdown</a></li>
+<li><a href="#multimarkdown-and-pandoc">MultiMarkdown and Pandoc</a></li>
+<li><a href="#inline-math">Inline Math</a></li>
+<li><a href="#block-math">Block Math</a></li>
+<li><a href="#other-examples">Other Examples</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#other-notes">Other Notes</a><ul>
+<li><a href="#markdown-1">Markdown</a></li>
+<li><a href="#latex-1">LaTeX</a></li>
+</ul></li>
+</ul>
+</div>
 <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML-full"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/styles/default.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/highlight.min.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
+<h1 id="contents">Contents</h1>
+<p>{:.no_toc}</p>
+<ul>
+<li>Will be replaced with the ToC, excluding the &quot;Contents&quot; header {:toc}</li>
+</ul>
+<!-- \begin{comment} -->
+<p>{{TOC}} <!-- \end{comment} --></p>
 <h1 id="introduction">Introduction</h1>
 <p><a href="#examples">Examples</a> shows explicit examples for different syntaxes. <a href="#other-syntaxes">Other Syntaxes</a> show the syntaxes that can't be shown explicitly.</p>
 <h2 id="organization">Organization</h2>
