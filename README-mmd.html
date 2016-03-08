@@ -2,22 +2,16 @@
 <html>
 <head>
 	<meta charset="utf-8"/>
-<script type="text/x-mathjax-config">MathJax.Ajax.config.path.Contrib="https://cdn.mathjax.org/mathjax/contrib",MathJax.Hub.Register.StartupHook("TeX Jax Ready",function(){MathJax.Hub.Insert(MathJax.InputJax.TeX.Definitions.macros,{cancel:["Extension","cancel"],bcancel:["Extension","cancel"],xcancel:["Extension","cancel"],cancelto:["Extension","cancel"]})}),MathJax.Hub.Config({TeX:{equationNumbers:{autoNumber:"AMS"},extensions:["[Contrib]/physics/physics.js","[Contrib]/siunitx/siunitx.js"]}});</script><script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML-full"></script>
-	<link type="text/css" rel="stylesheet" href="https://ickc.github.io/multimarkdown-latex-css/combined-css/multimarkdown-latex.css"/>
-	<meta name="latexheaderlevel" content="2"/>
-	<meta name="thmd" content="chapter"/>
-	<title>Kolen's MarkDown Notes</title>
-	<meta name="subtitle" content="Inlcuding MarkDown, MultiMarkdown, and LaTeX Math Syntax"/>
-	<meta name="keywords" content="MarkDown, MultiMarkDown, LaTeX"/>
-	<meta name="revision" content="0.1"/>
+	<title>Yet Another Markdown Cheatsheet</title>
+	<meta name="subtitle" content="Including MarkDown, MultiMarkdown, pandoc, GFM and LaTeX Math Syntax by MathJax"/>
+	<meta name="keywords" content="MarkDown, MultiMarkDown, LaTeX, pandoc, gfm"/>
+	<meta name="revision" content="0.9"/>
 	<meta name="language" content="English"/>
 	<meta name="author" content="Kolen Cheung"/>
 	<meta name="email" content="khcheung@berkeley.edu"/>
 	<meta name="affiliation" content="University of California, Berkeley"/>
 	<meta name="copyright" content="2016 Kolen Cheung  
 All Rights Reserved."/>
-	<meta name="tocd" content="5"/>
-	<meta name="secd" content="5"/>
 </head>
 <body>
 
@@ -36,10 +30,10 @@ All Rights Reserved."/>
 <li><a href="#header">Header</a>
 
 <ul>
-<li><a href="#headercontainingstylingandalinkmarkdown">Header <em>Containing</em> <strong><em>Styling</em></strong> and a Link @markdown</a></li>
-<li><a href="#headercontainingattributesidentifier.class.classkeyvaluekeyvaluepandocphpextra">Header Containing Attributes {#identifier .class .class key=value key=value} @pandoc @phpextra</a></li>
-<li><a href="#headerunnumbered-pandoc">Header Unnumbered {-} @pandoc</a></li>
-<li><a href="#headerunnumbered2.unnumberedpandoc">Header Unnumbered 2 {.Unnumbered} @Pandoc</a></li>
+<li><a href="#headercontainingstylingandalink">Header <em>Containing</em> <strong><em>Styling</em></strong> and a Link</a></li>
+<li><a href="#headercontainingattributesidentifier.class1keyvalue1">Header Containing Attributes {#identifier .class1 key=value1}</a></li>
+<li><a href="#headerunnumbered-">Header Unnumbered {-}</a></li>
+<li><a href="#headerunnumbered2.unnumbered">Header Unnumbered 2 {.Unnumbered}</a></li>
 <li><a href="#autocrossreference">Auto Cross Reference</a></li>
 <li><a href="#userdefinedreference">User defined reference</a></li>
 <li><a href="#deeperlevelsofheaders">Deeper Levels of Headers</a>
@@ -136,6 +130,7 @@ All Rights Reserved."/>
 
 <ul>
 <li><a href="#method5">Method 5</a></li>
+<li><a href="#method6">Method 6</a></li>
 </ul></li>
 <li><a href="#definitionlists">Definition Lists</a>
 
@@ -168,7 +163,7 @@ All Rights Reserved."/>
 <li><a href="#latex">LaTeX</a></li>
 </ul></li>
 </ul></li>
-<li><a href="#othersyntax">Other Syntax</a>
+<li><a href="#othersyntaxes">Other Syntaxes</a>
 
 <ul>
 <li><a href="#metadata">Metadata</a>
@@ -186,6 +181,7 @@ All Rights Reserved."/>
 <ul>
 <li><a href="#pandoc">Pandoc</a></li>
 <li><a href="#multimarkdownmmd">MultiMarkdown @mmd</a></li>
+<li><a href="#gfmviakramdown">Gfm (via kramdown)</a></li>
 </ul></li>
 <li><a href="#math">Math</a>
 
@@ -213,11 +209,13 @@ All Rights Reserved."/>
 
 <!-- \end{comment} -->
 
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML-full"></script>
+
 <p><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/styles/default.min.css"><script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/highlight.min.js"></script><script>hljs.initHighlightingOnLoad();</script></p>
 
 <h1 id="introduction">Introduction</h1>
 
-<p><a href="#examples">Examples</a> shows explicit examples for different syntaxes. [Others][] show the syntaxes that can&#8217;t be shown explicitly.</p>
+<p><a href="#examples">Examples</a> shows explicit examples for different syntaxes. <a href="#othersyntaxes">Other Syntaxes</a> show the syntaxes that can&#8217;t be shown explicitly.</p>
 
 <h2 id="organization">Organization</h2>
 
@@ -228,10 +226,10 @@ All Rights Reserved."/>
 
 <ul>
 <li>@markdown: supported by original markdown, hence understood to be supported by all variants of markdown</li>
-<li>@gfm: GitHub-Favored Markdown, built by kramdown using GFM config</li>
+<li>@gfm: GitHub-Favored Markdown, built by kramdown with GFM option. i.e. GitHub Pages&#8217; GitHub-Favored Markdown</li>
 <li>@mmd: MultiMarkdown </li>
 <li>@pandoc: pandoc-favored markdown</li>
-<li>@phpextra: PHP Markdown Extra (inspired some syntax in pandoc and mmd, not exhaustively tested here)</li>
+<li>@phpextra: PHP Markdown Extra (inspired some syntax in pandoc and mmd and gfm, not exhaustively tested here)</li>
 </ul></li>
 </ul>
 
@@ -241,23 +239,31 @@ All Rights Reserved."/>
 
 <p>@markdown</p>
 
-<p>See <a href="#emphasis">Emphasis</a> and [Others][] to see alternative Setext-style header styles @markdown</p>
+<p>See <a href="#emphasis">Emphasis</a> and <a href="#othersyntaxes">Other Syntaxes</a> to see alternative Setext-style header styles @markdown</p>
 
-<h3 id="headercontainingstylingandalinkmarkdown">Header <em>Containing</em> <strong><em>Styling</em></strong> and a <a href="Https://www.wikipedia.org/">Link</a> @markdown</h3>
+<h3 id="headercontainingstylingandalink">Header <em>Containing</em> <strong><em>Styling</em></strong> and a <a href="Https://www.wikipedia.org/">Link</a></h3>
 
-<h3 id="headercontainingattributesidentifier.class.classkeyvaluekeyvaluepandocphpextra">Header Containing Attributes {#identifier .class .class key=value key=value} @pandoc @phpextra</h3>
+<p>@markdown</p>
 
-<h3 id="headerunnumbered-pandoc">Header Unnumbered {-} @pandoc</h3>
+<h3 id="headercontainingattributesidentifier.class1keyvalue1">Header Containing Attributes {#identifier .class1 key=value1}</h3>
 
-<h3 id="headerunnumbered2.unnumberedpandoc">Header Unnumbered 2 {.Unnumbered} @Pandoc</h3>
+<p>@pandoc @phpextra</p>
+
+<h3 id="headerunnumbered-">Header Unnumbered {-}</h3>
+
+<p>@pandoc</p>
+
+<h3 id="headerunnumbered2.unnumbered">Header Unnumbered 2 {.Unnumbered}</h3>
+
+<p>@pandoc</p>
 
 <h3 id="autocrossreference">Auto Cross Reference</h3>
 
 <ul>
+<li><a href="#header">Link to Header</a> @pandoc @gfm @mmd</li>
+<li><a href="#header">Link to Header</a> @pandoc @mmd</li>
 <li><a href="#header">Header</a> @mmd @pandoc</li>
-<li><a href="#header">Header</a> @pandoc</li>
-<li><a href="#header">Link to Header</a> @pandoc</li>
-<li><a href="#header">Link to Header</a> @pandoc</li>
+<li><a href="#header">Header</a> @mmd @pandoc</li>
 </ul>
 
 <h3 id="userdefinedreference">User defined reference</h3>
@@ -282,9 +288,7 @@ All Rights Reserved."/>
 <li><em>italic</em> or <em>italic</em> @markdown</li>
 <li><strong>bold</strong> or <strong>bold</strong> @markdown</li>
 <li><strong><em>bold italic</em></strong> or <strong><em>bold italic</em></strong> @markdown</li>
-<li>~~strikethrough~~ @pandoc @gfm</li>
-<li><em>Underline</em></li>
-<li>==Highlight==</li>
+<li>~~strikethrough~~ @pandoc</li>
 </ul>
 
 <h2 id="links">Links</h2>
@@ -294,7 +298,6 @@ All Rights Reserved."/>
 <li><a href="https://www.wikipedia.org">https://www.wikipedia.org</a> @markdown</li>
 <li><a href="https://www.wikipedia.org">Wikipedia.org</a> @markdown</li>
 <li><a href="https://www.wikipedia.org" title="a title">Wikipedia.org</a> @markdown</li>
-<li><a href="support@github.com">email GitHub</a></li>
 <li><a href="&#109;&#97;&#105;&#108;&#x74;&#111;&#x3a;&#x73;&#x75;&#112;&#x70;&#x6f;&#x72;&#x74;&#64;&#103;&#105;&#116;&#104;&#117;&#98;&#46;&#x63;&#111;&#109;">&#x4d;&#x61;&#x69;&#x6c; &#116;&#x6f; &#x47;&#105;&#116;&#72;&#x75;&#98;</a> @markdown</li>
 </ul>
 
@@ -304,15 +307,9 @@ All Rights Reserved."/>
 <li><a href="https://www.google.com">Search here</a> @markdown</li>
 <li>A <a href="https://www.wikipedia.org/portal/wikipedia.org/assets/img/Wikipedia-logo-v2@2x.png" title="Title" class="external" style="border: solid black 1px;">link</a> with attributes. @mmd</li>
 <li><a href="https://www.wikipedia.org/portal/wikipedia.org/assets/img/Wikipedia-logo-v2@2x.png" title="Title" class="external" style="border: solid black 1px;">Another link to the link above</a>. @mmd</li>
-<li>A [link1][] with attributes. @markdown</li>
-<li>[Another link][link2]. @markdown</li>
-<li>[link3]. @markdown</li>
-</ul>
-
-<ul>
-<li></li>
-<li></li>
-<li></li>
+<li>A <a href="/foo/bar.html" title="My title, optional">link1</a> with attributes. @markdown</li>
+<li><a href="http://fsf.org" title="The free software foundation">Another link</a>. @markdown</li>
+<li><a href="/bar#special" title="A title in single quotes">link3</a>. @markdown</li>
 </ul>
 
 <h2 id="imagelinks">Image Links</h2>
@@ -326,11 +323,11 @@ All Rights Reserved."/>
 <ul>
 <li><img src="https://www.wikipedia.org/portal/wikipedia.org/assets/img/Wikipedia-logo-v2@2x.png" alt="Alt Text" id="imageid" title="Optional Title" /> @markdown</li>
 <li><img src="https://www.wikipedia.org/portal/wikipedia.org/assets/img/Wikipedia-logo-v2@2x.png" alt="An Image with Attributes" id="wikipedia" title="Title of the Image" style="height:40px;width:40px;" /> @mmd @pandoc(extension:mmd_link_attributes)</li>
-<li><img src="foo.jpg" alt="An Image with Attributes" />{#id .class width=30 height=20px} @pandoc @phpextra(partial)</li>
+<li><img src="https://www.wikipedia.org/portal/wikipedia.org/assets/img/Wikipedia-logo-v2@2x.png" alt="An Image with Attributes" />{#id .class width=30 height=20px} @pandoc @phpextra(partial)</li>
 <li>a reference ![image][ref] with attributes. @pandoc @phpextra(partial)</li>
 </ul>
 
-<p>[ref]: foo.jpg &#8220;optional title&#8221; {#id .class key=val key2=&#8220;val 2&#8221;}</p>
+<p>[ref]: https://www.wikipedia.org/portal/wikipedia.org/assets/img/Wikipedia-logo-v2@2x.png &#8220;optional title&#8221; {#id .class key=val key2=&#8220;val 2&#8221;}</p>
 
 <h3 id="imagewithlinksbynestingimageandlink">Image with Links by Nesting Image and Link</h3>
 
@@ -341,7 +338,7 @@ All Rights Reserved."/>
 <h3 id="blocklevelimages">Block Level Images</h3>
 
 <ul>
-<li>Block level: <abbr title="HyperText Markup Language">HTML</abbr> <code>figure</code> element in MultiMarkdown @mmd @pandoc @markdown(non-block-level)</li>
+<li>Block level: <abbr title="HyperText Markup Language">HTML</abbr> <code>figure</code> element in MultiMarkdown @mmd @pandoc</li>
 </ul>
 
 <figure>
@@ -426,16 +423,6 @@ All Rights Reserved."/>
 
 <p>@markdown</p>
 
-<ul>
-<li>item one</li>
-<li>item two</li>
-</ul>
-
-<p><!-- end of list --> @pandoc(required-by-pandoc-only?)</p>
-
-<pre><code>{ my code block }
-</code></pre>
-
 <ol>
 <li>one</li>
 <li>two</li>
@@ -450,9 +437,21 @@ All Rights Reserved."/>
 <li>tres</li>
 </ol>
 
+<!-- -->
+
+<ul>
+<li>item one</li>
+<li>item two</li>
+</ul>
+
+<!-- end of list -->
+
+<pre><code>{ my code block }
+</code></pre>
+
 <h3 id="listiteminablock">List Item in a Block</h3>
 
-<p>@pandoc @commonmark @markdown?</p>
+<p>@markdown</p>
 
 <ul>
 <li><p>First paragraph.</p>
@@ -516,12 +515,14 @@ test
 
 <h4 id="method2">Method 2</h4>
 
-<p>@markdown(partial:language-not-supported)</p>
+<p>@markdown(partial:language-not-supported) @gfm @pandoc @mmd</p>
 
 <pre><code class="latex">\nabla \times \mathbf{E} = - \frac{\partial \mathbf{B}}{\partial t}
 </code></pre>
 
 <h4 id="method3">Method 3</h4>
+
+<p>@pandoc</p>
 
 <p>~~~markdown
 test
@@ -539,7 +540,7 @@ test
 
 <h2 id="lineblocks">Line Blocks</h2>
 
-<p>@pandoc</p>
+<p>@gfm(partial) @pandoc</p>
 
 <p>| The limerick packs laughs anatomical
 | In space that is quite economical.
@@ -638,25 +639,27 @@ like this</p>
 
 <h3 id="method1">Method 1</h3>
 
+<p>@gfm @pandoc @mmd</p>
+
 <table>
 <colgroup>
-<col style="text-align:left;"/>
-<col style="text-align:center;"/>
+<col/>
+<col style="text-align:right;"/>
 <col style="text-align:right;"/>
 </colgroup>
 
 <thead>
 <tr>
-	<th style="text-align:left;">1</th>
-	<th style="text-align:center;">2</th>
+	<th>1</th>
+	<th style="text-align:right;">2</th>
 	<th style="text-align:right;">3</th>
 </tr>
 </thead>
 
 <tbody>
 <tr>
-	<td style="text-align:left;"><strong>test</strong></td>
-	<td style="text-align:center;"><em>test</em></td>
+	<td><strong>test</strong></td>
+	<td style="text-align:right;"><em>test</em></td>
 	<td style="text-align:right;">test</td>
 </tr>
 </tbody>
@@ -670,7 +673,7 @@ like this</p>
 <dt>| 12 | 12 | 12 | 12 |</dt>
 <dt>| 123 | 123 | 123 | 123 |</dt>
 <dt>| 1 | 1 | 1 | 1 |</dt>
-<dd>Demonstration of pipe table syntax. @pandoc</dd>
+<dd>Table Caption @pandoc</dd>
 </dl>
 
 <table>
@@ -782,11 +785,90 @@ multiple lines.</p>
 | | | - tasty |
 +&#8212;&#8212;&#8212;&#8212;&#8212;+&#8212;&#8212;&#8212;&#8212;&#8212;+&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8211;+ </p>
 
+<h3 id="method6">Method 6</h3>
+
+<p>@gfm</p>
+
+<table>
+<colgroup>
+<col/>
+<col style="text-align:left;"/>
+<col style="text-align:center;"/>
+<col style="text-align:right;"/>
+</colgroup>
+
+<thead>
+<tr>
+	<th>&#8212;&#8212;&#8212;&#8212;&#8212;&#8211;+&#8212;&#8212;&#8212;&#8212;+&#8212;&#8212;&#8212;&#8212;&#8212;&#8211;+&#8212;&#8212;&#8212;&#8212;&#8212;-</th>
+</tr>
+<tr>
+	<th>Default aligned</th>
+	<th style="text-align:left;">Left aligned</th>
+	<th style="text-align:center;">Center aligned</th>
+	<th style="text-align:right;">Right aligned</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td>First body part</td>
+	<td style="text-align:left;">Second cell</td>
+	<td style="text-align:center;">Third cell</td>
+	<td style="text-align:right;">fourth cell</td>
+</tr>
+<tr>
+	<td>Second line</td>
+	<td style="text-align:left;">foo</td>
+	<td style="text-align:center;"><strong>strong</strong></td>
+	<td style="text-align:right;">baz</td>
+</tr>
+<tr>
+	<td>Third line</td>
+	<td style="text-align:left;">quux</td>
+	<td style="text-align:center;">baz</td>
+	<td style="text-align:right;">bar</td>
+</tr>
+<tr>
+	<td>&#8212;&#8212;&#8212;&#8212;&#8212;&#8211;+&#8212;&#8212;&#8212;&#8212;+&#8212;&#8212;&#8212;&#8212;&#8212;&#8211;+&#8212;&#8212;&#8212;&#8212;&#8212;-</td>
+</tr>
+<tr>
+	<td>Second body</td>
+	<td style="text-align:left;"></td>
+	<td style="text-align:center;"></td>
+	<td style="text-align:right;"></td>
+</tr>
+<tr>
+	<td>2 line</td>
+	<td style="text-align:left;"></td>
+	<td style="text-align:center;"></td>
+	<td style="text-align:right;"></td>
+</tr>
+<tr>
+	<td>=================+============+=================+================</td>
+</tr>
+<tr>
+	<td>Footer row</td>
+	<td style="text-align:left;"></td>
+	<td style="text-align:center;"></td>
+	<td style="text-align:right;"></td>
+</tr>
+<tr>
+	<td>&#8212;&#8212;&#8212;&#8212;&#8212;&#8211;+&#8212;&#8212;&#8212;&#8212;+&#8212;&#8212;&#8212;&#8212;&#8212;&#8211;+&#8212;&#8212;&#8212;&#8212;&#8212;-</td>
+</tr>
+</tbody>
+
+<tbody>
+<tr>
+	<td>See <a href="http://kramdown.gettalong.org/syntax.html#tables">Syntax | kramdown</a> </td>
+</tr>
+</tbody>
+</table>
+
 <h2 id="definitionlists">Definition Lists</h2>
 
 <h3 id="method1">Method 1</h3>
 
-<p>@mmd @phpextra @pandoc</p>
+<p>@mmd @phpextra @pandoc @gfm</p>
 
 <dl>
 <dt>Physics</dt>
@@ -799,7 +881,7 @@ multiple lines.</p>
 
 <h3 id="method2">Method 2</h3>
 
-<p>@pandoc</p>
+<p>@gfm @pandoc @mmd</p>
 
 <dl>
 <dt>Term 1</dt>
@@ -832,25 +914,23 @@ multiple lines.</p>
 
 <h2 id="glossaries">Glossaries</h2>
 
-<p>A special kind of footnote <a href="#fn:1" id="fnref:1" title="see footnote" class="footnote glossary">[1]</a>. @mmd</p>
+<p>A special kind of footnote <a href="#fn:1" id="fnref:1" title="see footnote" class="footnote glossary">[1]</a>. @mmd @markdown(regarded-as-footnote)</p>
 
 <p>See more at <a href="http://fletcher.github.io/MultiMarkdown-5/glossary.html">Glossary&#8212;MultiMarkdown Documentation</a>.</p>
 
 <h2 id="superscriptsubscript">Superscript &amp; Subscript</h2>
 
-<p>@pandoc @mmd</p>
-
 <ul>
-<li>x<sup>2</sup></li>
-<li>d<sub>o</sub></li>
-<li>x<sup>a+b</sup></li>
-<li>x<sub>y,z</sub></li>
-<li>P<sub>a</sub>\ cat~</li>
+<li>x<sup>2</sup> @mmd</li>
+<li>d<sub>o</sub> @mmd</li>
+<li>x<sup>a+b</sup> @mmd @pandoc</li>
+<li>x<sub>y,z</sub> @mmd @pandoc</li>
+<li>P<sub>a</sub>\ cat~ @pandoc</li>
 </ul>
 
 <h2 id="smartypants">Smarty Pants</h2>
 
-<p>@markdown(extension:smartypants) @pandoc(&#8211;smart)</p>
+<p>@markdown(extension:smartypants) @pandoc(&#8211;smart) @gfm</p>
 
 <ul>
 <li>&#8220;Example 1&#8221;</li>
@@ -877,8 +957,8 @@ multiple lines.</p>
 <h3 id="reference">Reference</h3>
 
 <ul>
-<li>Footnotes<a href="#fn:3" id="fnref:3" title="see footnote" class="footnote">[3]</a></li>
-<li>Long Footnotes <a href="#fn:4" id="fnref:4" title="see footnote" class="footnote">[4]</a> @pandoc</li>
+<li>Footnotes<a href="#fn:3" id="fnref:3" title="see footnote" class="footnote">[3]</a> @markdown</li>
+<li>Long Footnotes <a href="#fn:4" id="fnref:4" title="see footnote" class="footnote">[4]</a> @pandoc @gfm @mmd</li>
 </ul>
 
 <p>This paragraph won&#8217;t be part of the note, because it
@@ -916,14 +996,14 @@ isn&#8217;t indented.</p>
 
 <h2 id="smallcaps">Small Caps</h2>
 
-<p><span style="font-variant:small-caps;">Small caps</span> @pandoc @markdown @mmd(html)</p>
+<p><span style="font-variant:small-caps;">Small caps</span> @pandoc @markdown(html) @mmd(html) @gfm(html)</p>
 
 <h2 id="raw">RAW</h2>
 
 <h3 id="html">HTML</h3>
 
 <ul>
-<li><div>This is <em>not</em> markdown</div> (a good thing to check is if the <em>not</em> is italic or not)</li>
+<li><div>This is <em>not</em> markdown</div> (a good thing to check is if the <em>not</em> is italic or not) @markdown @gfm</li>
 <li><div>This <em>is</em> markdown</div> @mmd @pandoc(non-default-extension:markdown_attribute)</li>
 </ul>
 
@@ -931,11 +1011,13 @@ isn&#8217;t indented.</p>
 
 <h3 id="latex">LaTeX</h3>
 
-<p><!-- \newcommand\rawlatex{} --> @mmd
-\newcommand\rawlatex{} @pandoc(parsed)
-\begin{&#8230;} @pandoc</p>
+<ul>
+<li><!-- \newcommand\rawlatex{} --> @mmd</li>
+<li>\newcommand\rawlatex{} @pandoc(parsed)</li>
+<li>\begin{&#8230;} @pandoc</li>
+</ul>
 
-<h1 id="othersyntax">Other Syntax</h1>
+<h1 id="othersyntaxes">Other Syntaxes</h1>
 
 <h2 id="metadata">Metadata</h2>
 
@@ -1001,6 +1083,15 @@ LaTeX Footer:   mmd-memoir-footer
 </code></pre>
 
 <p>See more at <a href="https://github.com/ickc/peg-multimarkdown-latex-support">ickc/peg-multimarkdown-latex-support: Default support files for generating LaTeX documents with MMD 3 through MMD 5</a>.</p>
+
+<h3 id="gfmviakramdown">Gfm (via kramdown)</h3>
+
+<pre><code class="markdown"># Contents
+{:.no_toc}
+
+* Will be replaced with the ToC, excluding the &quot;Contents&quot; header
+{:toc}
+</code></pre>
 
 <h2 id="math">Math</h2>
 

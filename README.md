@@ -1,42 +1,26 @@
 ---
-HTML Header:	<script type="text/x-mathjax-config">MathJax.Ajax.config.path.Contrib="https://cdn.mathjax.org/mathjax/contrib",MathJax.Hub.Register.StartupHook("TeX Jax Ready",function(){MathJax.Hub.Insert(MathJax.InputJax.TeX.Definitions.macros,{cancel:["Extension","cancel"],bcancel:["Extension","cancel"],xcancel:["Extension","cancel"],cancelto:["Extension","cancel"]})}),MathJax.Hub.Config({TeX:{equationNumbers:{autoNumber:"AMS"},extensions:["[Contrib]/physics/physics.js","[Contrib]/siunitx/siunitx.js"]}});</script><script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML-full"></script>
-CSS:	https://ickc.github.io/multimarkdown-latex-css/combined-css/multimarkdown-latex.css
-HTML Header Level:	1
-LaTeX Header Level:	2
-LaTeX Input:	mmd-article-header
-LaTeX input:	mmd-natbib-plain
-LaTeX Input:	mmd-load-physics-related
-LaTeX Input:	mmd-load-tables-related
-LaTeX Input:	mmd-load-pdfpages
-LaTeX Input:	mmd-load-headings
-thmd:	chapter
-LaTeX Input:	mmd-load-amsthm
-Title:	Kolen's MarkDown Notes  
-Subtitle:	Inlcuding MarkDown, MultiMarkdown, and LaTeX Math Syntax  
-Keywords:	MarkDown, MultiMarkDown, LaTeX  
-Revision:	0.1
+Title:	Yet Another Markdown Cheatsheet
+Subtitle:	Including MarkDown, MultiMarkdown, pandoc, GFM and LaTeX Math Syntax by MathJax  
+Keywords:	MarkDown, MultiMarkDown, LaTeX, pandoc, gfm  
+Revision:	0.9
 Language:	English
 Author:	Kolen Cheung
 Email:	khcheung@berkeley.edu
 Affiliation:	University of California, Berkeley
 Copyright:	2016 Kolen Cheung  
  	All Rights Reserved.
-LaTeX Mode:	memoir
-LaTeX Input:	mmd-article-begin-doc
-tocd:	5
-secd:	5
-LaTeX Input:	mmd-load-toc-setcounter
-LaTeX Input:	mmd-load-toc
-LaTeX Footer:	mmd-memoir-footer
 ---
+
 <!-- \begin{comment} -->
 {{TOC}}
 <!-- \end{comment} -->
+
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML-full"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/styles/default.min.css"><script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/highlight.min.js"></script><script>hljs.initHighlightingOnLoad();</script>
 
 # Introduction #
 
-[Examples][] shows explicit examples for different syntaxes. [Others][] show the syntaxes that can't be shown explicitly.
+[Examples][] shows explicit examples for different syntaxes. [Other Syntaxes][] show the syntaxes that can't be shown explicitly.
 
 ## Organization ##
 
@@ -44,10 +28,10 @@ LaTeX Footer:	mmd-memoir-footer
 - Last header level or a list: different syntaxes
 - TaskPaper-styled tags to indicate in what favor of Markdown such syntax is supported
 	- @markdown: supported by original markdown, hence understood to be supported by all variants of markdown
-	- @gfm: GitHub-Favored Markdown, built by kramdown using GFM config. i.e. GitHub Pages' GitHub-Favored Markdown
+	- @gfm: GitHub-Favored Markdown, built by kramdown with GFM option. i.e. GitHub Pages' GitHub-Favored Markdown
 	- @mmd: MultiMarkdown 
 	- @pandoc: pandoc-favored markdown
-	- @phpextra: PHP Markdown Extra (inspired some syntax in pandoc and mmd, not exhaustively tested here)
+	- @phpextra: PHP Markdown Extra (inspired some syntax in pandoc and mmd and gfm, not exhaustively tested here)
 
 # Examples #
 
@@ -55,22 +39,30 @@ LaTeX Footer:	mmd-memoir-footer
 
 @markdown
 
-See [Emphasis][] and [Others][] to see alternative Setext-style header styles @markdown
+See [Emphasis][] and [Other Syntaxes][] to see alternative Setext-style header styles @markdown
 
-### Header *Containing* ***Styling*** and a [Link](Https://www.wikipedia.org/) @markdown
+### Header *Containing* ***Styling*** and a [Link](Https://www.wikipedia.org/) ###
 
-### Header Containing Attributes {#identifier .class .class key=value key=value} @pandoc @phpextra
+@markdown
 
-### Header Unnumbered {-} @pandoc
+### Header Containing Attributes {#identifier .class1 key=value1}
 
-### Header Unnumbered 2 {.Unnumbered} @Pandoc ###
+@pandoc @phpextra
+
+### Header Unnumbered {-}
+
+@pandoc
+
+### Header Unnumbered 2 {.Unnumbered}
+
+@pandoc
 
 ### Auto Cross Reference
 
+- [Link to Header](#header) @pandoc @gfm @mmd
+- [Link to Header][Header] @pandoc @mmd
 - [Header][] @mmd @pandoc
-- [Header] @pandoc
-- [Link to Header](#header) @pandoc @gfm
-- [Link to Header][Header] @pandoc
+- [Header] @mmd @pandoc
 
 ### User defined reference [userdefinedreference]
 
@@ -95,8 +87,6 @@ Emphasis
 - **bold** or __bold__ @markdown
 - ***bold italic*** or ___bold italic___ @markdown
 - ~~strikethrough~~ @pandoc
-- _Underline_
-- ==Highlight==
 
 ## Links
 
@@ -104,7 +94,6 @@ Emphasis
 - <https://www.wikipedia.org> @markdown
 - [Wikipedia.org](https://www.wikipedia.org) @markdown
 - [Wikipedia.org](https://www.wikipedia.org "a title") @markdown
-- [email GitHub](support@github.com)
 - [Mail to GitHub](mailto:support@github.com) @markdown
 
 ### Reference Links
@@ -132,13 +121,15 @@ Emphasis
 
 - ![Alt Text][imageid] @markdown
 - ![An Image with Attributes][wikipedia] @mmd @pandoc(extension:mmd_link_attributes)
-- ![An Image with Attributes](foo.jpg){#id .class width=30 height=20px} @pandoc @phpextra(partial)
+- ![An Image with Attributes](https://www.wikipedia.org/portal/wikipedia.org/assets/img/Wikipedia-logo-v2@2x.png){#id .class width=30 height=20px} @pandoc @phpextra(partial)
 - a reference ![image][ref] with attributes. @pandoc @phpextra(partial)
 
 
 [imageid]: https://www.wikipedia.org/portal/wikipedia.org/assets/img/Wikipedia-logo-v2@2x.png "Optional Title"
+
 [wikipedia]: https://www.wikipedia.org/portal/wikipedia.org/assets/img/Wikipedia-logo-v2@2x.png "Title of the Image" width=40px height=40px
-[ref]: foo.jpg "optional title" {#id .class key=val key2="val 2"}
+
+[ref]: https://www.wikipedia.org/portal/wikipedia.org/assets/img/Wikipedia-logo-v2@2x.png "optional title" {#id .class key=val key2="val 2"}
 
 ### Image with Links by Nesting Image and Link ###
 
@@ -151,8 +142,6 @@ Emphasis
 ![***Block*** **Level**](https://www.wikipedia.org/portal/wikipedia.org/assets/img/Wikipedia-logo-v2@2x.png "Optional Title")
 
 ![***Not*** Block **Level**](https://www.wikipedia.org/portal/wikipedia.org/assets/img/Wikipedia-logo-v2@2x.png "Optional Title")\
-
-The last trick above doesn't work in gfm @gfm(not-supported)
 
 ## Lists
 
@@ -282,13 +271,15 @@ The last trick above doesn't work in gfm @gfm(not-supported)
 
 #### Method 2
 
-@markdown(partial:language-not-supported)
+@markdown(partial:language-not-supported) @gfm @pandoc @mmd
 
 ```latex
 \nabla \times \mathbf{E} = - \frac{\partial \mathbf{B}}{\partial t}
 ```
 
 #### Method 3 ####
+
+@pandoc
 
 ~~~markdown
 test
@@ -306,7 +297,7 @@ test
 
 ## Line Blocks ##
 
-@pandoc
+@gfm(partial) @pandoc
 
 | The limerick packs laughs anatomical
 | In space that is quite economical.
@@ -405,6 +396,8 @@ like this
 
 ### Method 1
 
+@gfm @pandoc @mmd
+
 | 1 | 2 | 3 |  
 | -------- | -----: | ---: |  
 | **test** | _test_ | test |  
@@ -417,7 +410,7 @@ like this
 |  123  |  123 |   123   |   123  |
 |    1  |    1 |     1   |     1  |
 
-  : Table Caption @pandoc
+: Table Caption @pandoc
 
 [Table Caption @mmd]
 |            |        Grouping           ||
@@ -501,7 +494,7 @@ See [Syntax | kramdown](http://kramdown.gettalong.org/syntax.html#tables)
 
 ### Method 1 ###
 
-@mmd @phpextra @pandoc
+@mmd @phpextra @pandoc @gfm
 
 Physics
 : The Fundamental of Science
@@ -510,7 +503,7 @@ Physics
 
 ### Method 2
 
-@pandoc
+@gfm @pandoc @mmd
 
 Term 1
 
@@ -541,7 +534,7 @@ As (@good) illustrates, ...
 
 ## Glossaries ##
 
-A special kind of footnote [^glossaryfootnote]. @mmd
+A special kind of footnote [^glossaryfootnote]. @mmd @markdown(regarded-as-footnote)
 
 [^glossaryfootnote]: glossary: term (optional sort key)
     The actual definition belongs on a new line, and can continue on
@@ -551,17 +544,15 @@ See more at [Glossary---MultiMarkdown Documentation](http://fletcher.github.io/M
 
 ## Superscript & Subscript
 
-@pandoc @mmd
-
-- x^2
-- d~o
-- x^a+b^
-- x~y,z~
-- P~a\ cat~
+- x^2 @mmd
+- d~o @mmd
+- x^a+b^ @mmd @pandoc
+- x~y,z~ @mmd @pandoc
+- P~a\ cat~ @pandoc
 
 ## Smarty Pants ##
 
-@markdown(extension:smartypants) @pandoc(--smart)
+@markdown(extension:smartypants) @pandoc(--smart) @gfm
 
 - "Example 1"
 - 'Example 2'
@@ -586,8 +577,8 @@ Testing abbreviations: HTML, W3C (mouseover it to see)
 
 ### Reference ###
 
-- Footnotes[^1]
-- Long Footnotes [^longnote] @pandoc
+- Footnotes[^1] @markdown
+- Long Footnotes [^longnote] @pandoc @gfm @mmd
 
 [^1]: This is another footnote
 [^longnote]: Here's one with multiple blocks.
@@ -635,25 +626,25 @@ See more at [CriticMarkup---MultiMarkdown Documentation](http://fletcher.github.
 
 ## Small Caps ##
 
-<span style="font-variant:small-caps;">Small caps</span> @pandoc @markdown @mmd(html)
+<span style="font-variant:small-caps;">Small caps</span> @pandoc @markdown(html) @mmd(html) @gfm(html)
 
 ## RAW ##
 
 ### HTML ###
 
-- <div>This is *not* markdown</div> (a good thing to check is if the *not* is italic or not)
+- <div>This is *not* markdown</div> (a good thing to check is if the *not* is italic or not) @markdown @gfm
 - <div markdown=1>This *is* markdown</div> @mmd @pandoc(non-default-extension:markdown_attribute)
 
 See more at [Raw---MultiMarkdown Documentation](http://fletcher.github.io/MultiMarkdown-5/raw.html).
 
 ### LaTeX ###
 
-<!-- \newcommand\rawlatex{} --> @mmd
-\newcommand\rawlatex{} @pandoc(parsed)
-\begin{...} @pandoc
+- <!-- \newcommand\rawlatex{} --> @mmd
+- \newcommand\rawlatex{} @pandoc(parsed)
+- \begin{...} @pandoc
 
-Other Syntax
-============
+Other Syntaxes
+==============
 
 ## Metadata ##
 
@@ -723,6 +714,17 @@ LaTeX Footer:	mmd-memoir-footer
 ```
 
 See more at [ickc/peg-multimarkdown-latex-support: Default support files for generating LaTeX documents with MMD 3 through MMD 5](https://github.com/ickc/peg-multimarkdown-latex-support).
+
+### Gfm (via kramdown) ###
+
+```markdown
+# Contents
+{:.no_toc}
+
+* Will be replaced with the ToC, excluding the "Contents" header
+{:toc}
+```
+
 
 ## Math ##
 
