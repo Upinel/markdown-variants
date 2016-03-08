@@ -44,10 +44,10 @@ LaTeX Footer:	mmd-memoir-footer
 - Last header level or a list: different syntaxes
 - TaskPaper-styled tags to indicate in what favor of Markdown such syntax is supported
 	- @markdown: supported by original markdown, hence understood to be supported by all variants of markdown
-	- @gfm: GitHub-Favored Markdown
+	- @gfm: GitHub-Favored Markdown, built by kramdown using GFM config
 	- @mmd: MultiMarkdown 
 	- @pandoc: pandoc-favored markdown
-	- @phpextra: PHP Markdown Extra (inspired some syntax in pandoc and mmd, not exhaustive and studied here)
+	- @phpextra: PHP Markdown Extra (inspired some syntax in pandoc and mmd, not exhaustively tested here)
 
 # Examples #
 
