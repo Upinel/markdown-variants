@@ -54,94 +54,110 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </div>
 <div id="TOC">
 <ul>
-<li><a href="#contents">Contents</a></li>
-<li><a href="#introduction">Introduction</a><ul>
-<li><a href="#organization">Organization</a></li>
+<li><a href="#contents"><span class="toc-section-number">1</span> Contents</a></li>
+<li><a href="#introduction"><span class="toc-section-number">2</span> Introduction</a><ul>
+<li><a href="#organization"><span class="toc-section-number">2.1</span> Organization</a></li>
 </ul></li>
-<li><a href="#examples">Examples</a><ul>
-<li><a href="#header">Header</a><ul>
-<li><a href="#header-containing-styling-and-a-link">Header <em>Containing</em> <strong><em>Styling</em></strong> and a <a href="Https://www.wikipedia.org/">Link</a></a></li>
-<li><a href="#identifier">Header Containing Attributes</a></li>
+<li><a href="#examples"><span class="toc-section-number">3</span> Examples</a><ul>
+<li><a href="#header"><span class="toc-section-number">3.1</span> Header</a><ul>
+<li><a href="#header-containing-styling-and-a-link"><span class="toc-section-number">3.1.1</span> Header <em>Containing</em> <strong><em>Styling</em></strong> and a <a href="Https://www.wikipedia.org/">Link</a></a></li>
+<li><a href="#identifier"><span class="toc-section-number">3.1.2</span> Header Containing Attributes</a></li>
 <li><a href="#header-unnumbered">Header Unnumbered</a></li>
-<li><a href="#header-unnumbered-2">Header Unnumbered 2</a></li>
-<li><a href="#auto-cross-reference">Auto Cross Reference</a></li>
-<li><a href="#userdefinedreference">User defined reference</a></li>
-<li><a href="#deeper-levels-of-headers">Deeper Levels of Headers</a></li>
-</ul></li>
-<li><a href="#backslash-escapes">Backslash Escapes</a></li>
-<li><a href="#emphasis">Emphasis</a><ul>
-<li><a href="#criticmarkup">CriticMarkup</a></li>
-</ul></li>
-<li><a href="#horizontal-rules">Horizontal Rules</a></li>
-<li><a href="#break">Break</a></li>
-<li><a href="#superscript-subscript">Superscript &amp; Subscript</a></li>
-<li><a href="#smarty-pants">Smarty Pants</a></li>
-<li><a href="#abbreviations-php-markdown-extra">Abbreviations (PHP Markdown Extra)</a></li>
-<li><a href="#lists">Lists</a><ul>
-<li><a href="#ordered-lists">Ordered Lists</a></li>
-<li><a href="#unordered-lists">Unordered Lists</a></li>
-<li><a href="#nested-lists">Nested Lists</a></li>
-<li><a href="#cutoff-a-list">Cutoff a List</a></li>
-<li><a href="#list-item-in-a-block">List Item in a Block</a></li>
-<li><a href="#fancy-lists">Fancy Lists</a></li>
-</ul></li>
-<li><a href="#definition-lists">Definition Lists</a><ul>
-<li><a href="#method-1">Method 1</a></li>
-<li><a href="#method-2">Method 2</a></li>
-</ul></li>
-<li><a href="#numbered-example-lists">Numbered Example Lists</a></li>
-<li><a href="#code">Code</a><ul>
-<li><a href="#fenced-code-blocks">Fenced Code Blocks</a></li>
-</ul></li>
-<li><a href="#block-quotes">Block-quotes</a><ul>
-<li><a href="#block-quotes-quoting-codes">Block-quotes Quoting Codes</a></li>
-</ul></li>
-<li><a href="#line-blocks">Line Blocks</a></li>
-<li><a href="#tables">Tables</a><ul>
-<li><a href="#method-1-2">Method 1</a></li>
-<li><a href="#method-2-2">Method 2</a></li>
-<li><a href="#method-3-1">Method 3</a></li>
-<li><a href="#method-4">Method 4</a></li>
-<li><a href="#method-5">Method 5</a></li>
-<li><a href="#method-6">Method 6</a></li>
-</ul></li>
-<li><a href="#links">Links</a><ul>
-<li><a href="#reference-links">Reference Links</a></li>
-</ul></li>
-<li><a href="#footnotes">Footnotes</a><ul>
-<li><a href="#reference-footnotes">Reference Footnotes</a></li>
-<li><a href="#glossaries">Glossaries</a></li>
-<li><a href="#citations">Citations</a></li>
-</ul></li>
-<li><a href="#images">Images</a><ul>
-<li><a href="#reference-images">Reference Images</a></li>
-<li><a href="#image-with-links-by-nesting-image-and-link">Image with Links by Nesting Image and Link</a></li>
-<li><a href="#block-level-images">Block Level Images</a></li>
-<li><a href="#html">HTML</a></li>
-<li><a href="#latex">LaTeX</a></li>
+<li><a href="#header-unnumbered-2"><span class="toc-section-number">3.1.3</span> Header Unnumbered 2</a></li>
+<li><a href="#auto-cross-reference"><span class="toc-section-number">3.1.4</span> Auto Cross Reference</a></li>
+<li><a href="#userdefinedreference"><span class="toc-section-number">3.1.5</span> User defined reference</a></li>
+<li><a href="#deeper-levels-of-headers"><span class="toc-section-number">3.1.6</span> Deeper Levels of Headers</a><ul>
+<li><a href="#header4"><span class="toc-section-number">3.1.6.1</span> Header4</a><ul>
+<li><a href="#header5"><span class="toc-section-number">3.1.6.1.1</span> Header5</a><ul>
+<li><a href="#header6"><span class="toc-section-number">3.1.6.1.1.1</span> Header6</a></li>
 </ul></li>
 </ul></li>
-<li><a href="#other-syntaxes">Other Syntaxes</a><ul>
-<li><a href="#metadata">Metadata</a><ul>
-<li><a href="#multimarkdown-metadata-block">MultiMarkdown Metadata Block</a></li>
-<li><a href="#pandoc-title-block">Pandoc Title Block</a></li>
-<li><a href="#yaml-metadata-block">YAML Metadata Block</a></li>
 </ul></li>
-<li><a href="#toc">TOC</a><ul>
-<li><a href="#pandoc-1">Pandoc</a></li>
-<li><a href="#multimarkdown-1">MultiMarkdown</a></li>
-<li><a href="#kramdown">Kramdown</a></li>
 </ul></li>
-<li><a href="#math">Math</a><ul>
-<li><a href="#markdown">Markdown</a></li>
-<li><a href="#multimarkdown-and-pandoc">MultiMarkdown and Pandoc</a></li>
-<li><a href="#inline-math">Inline Math</a></li>
-<li><a href="#block-math">Block Math</a></li>
-<li><a href="#other-examples">Other Examples</a></li>
+<li><a href="#backslash-escapes"><span class="toc-section-number">3.2</span> Backslash Escapes</a></li>
+<li><a href="#emphasis"><span class="toc-section-number">3.3</span> Emphasis</a><ul>
+<li><a href="#criticmarkup"><span class="toc-section-number">3.3.1</span> CriticMarkup</a></li>
 </ul></li>
-<li><a href="#file-transclusion">File Transclusion</a></li>
+<li><a href="#horizontal-rules"><span class="toc-section-number">3.4</span> Horizontal Rules</a></li>
+<li><a href="#break"><span class="toc-section-number">3.5</span> Break</a></li>
+<li><a href="#superscript-subscript"><span class="toc-section-number">3.6</span> Superscript &amp; Subscript</a></li>
+<li><a href="#smarty-pants"><span class="toc-section-number">3.7</span> Smarty Pants</a></li>
+<li><a href="#abbreviations-php-markdown-extra"><span class="toc-section-number">3.8</span> Abbreviations (PHP Markdown Extra)</a></li>
+<li><a href="#lists"><span class="toc-section-number">3.9</span> Lists</a><ul>
+<li><a href="#ordered-lists"><span class="toc-section-number">3.9.1</span> Ordered Lists</a></li>
+<li><a href="#unordered-lists"><span class="toc-section-number">3.9.2</span> Unordered Lists</a></li>
+<li><a href="#nested-lists"><span class="toc-section-number">3.9.3</span> Nested Lists</a></li>
+<li><a href="#cutoff-a-list"><span class="toc-section-number">3.9.4</span> Cutoff a List</a></li>
+<li><a href="#list-item-in-a-block"><span class="toc-section-number">3.9.5</span> List Item in a Block</a></li>
+<li><a href="#fancy-lists"><span class="toc-section-number">3.9.6</span> Fancy Lists</a></li>
 </ul></li>
-<li><a href="#references">References</a></li>
+<li><a href="#definition-lists"><span class="toc-section-number">3.10</span> Definition Lists</a><ul>
+<li><a href="#method-1"><span class="toc-section-number">3.10.1</span> Method 1</a></li>
+<li><a href="#method-2"><span class="toc-section-number">3.10.2</span> Method 2</a></li>
+</ul></li>
+<li><a href="#numbered-example-lists"><span class="toc-section-number">3.11</span> Numbered Example Lists</a></li>
+<li><a href="#code"><span class="toc-section-number">3.12</span> Code</a><ul>
+<li><a href="#fenced-code-blocks"><span class="toc-section-number">3.12.1</span> Fenced Code Blocks</a><ul>
+<li><a href="#method-1-1"><span class="toc-section-number">3.12.1.1</span> Method 1</a></li>
+<li><a href="#method-2-1"><span class="toc-section-number">3.12.1.2</span> Method 2</a></li>
+<li><a href="#method-3"><span class="toc-section-number">3.12.1.3</span> Method 3</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#block-quotes"><span class="toc-section-number">3.13</span> Block-quotes</a><ul>
+<li><a href="#block-quotes-quoting-codes"><span class="toc-section-number">3.13.1</span> Block-quotes Quoting Codes</a></li>
+</ul></li>
+<li><a href="#line-blocks"><span class="toc-section-number">3.14</span> Line Blocks</a></li>
+<li><a href="#tables"><span class="toc-section-number">3.15</span> Tables</a><ul>
+<li><a href="#method-1-2"><span class="toc-section-number">3.15.1</span> Method 1</a></li>
+<li><a href="#method-2-2"><span class="toc-section-number">3.15.2</span> Method 2</a></li>
+<li><a href="#method-3-1"><span class="toc-section-number">3.15.3</span> Method 3</a></li>
+<li><a href="#method-4"><span class="toc-section-number">3.15.4</span> Method 4</a></li>
+<li><a href="#method-5"><span class="toc-section-number">3.15.5</span> Method 5</a></li>
+<li><a href="#method-6"><span class="toc-section-number">3.15.6</span> Method 6</a></li>
+</ul></li>
+<li><a href="#links"><span class="toc-section-number">3.16</span> Links</a><ul>
+<li><a href="#reference-links"><span class="toc-section-number">3.16.1</span> Reference Links</a></li>
+</ul></li>
+<li><a href="#footnotes"><span class="toc-section-number">3.17</span> Footnotes</a><ul>
+<li><a href="#reference-footnotes"><span class="toc-section-number">3.17.1</span> Reference Footnotes</a></li>
+<li><a href="#glossaries"><span class="toc-section-number">3.17.2</span> Glossaries</a></li>
+<li><a href="#citations"><span class="toc-section-number">3.17.3</span> Citations</a><ul>
+<li><a href="#multimarkdown"><span class="toc-section-number">3.17.3.1</span> MultiMarkdown</a></li>
+<li><a href="#pandoc"><span class="toc-section-number">3.17.3.2</span> Pandoc</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#images"><span class="toc-section-number">3.18</span> Images</a><ul>
+<li><a href="#reference-images"><span class="toc-section-number">3.18.1</span> Reference Images</a></li>
+<li><a href="#image-with-links-by-nesting-image-and-link"><span class="toc-section-number">3.18.2</span> Image with Links by Nesting Image and Link</a></li>
+<li><a href="#block-level-images"><span class="toc-section-number">3.18.3</span> Block Level Images</a></li>
+<li><a href="#html"><span class="toc-section-number">3.18.4</span> HTML</a></li>
+<li><a href="#latex"><span class="toc-section-number">3.18.5</span> LaTeX</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#other-syntaxes"><span class="toc-section-number">4</span> Other Syntaxes</a><ul>
+<li><a href="#metadata"><span class="toc-section-number">4.1</span> Metadata</a><ul>
+<li><a href="#multimarkdown-metadata-block"><span class="toc-section-number">4.1.1</span> MultiMarkdown Metadata Block</a></li>
+<li><a href="#pandoc-title-block"><span class="toc-section-number">4.1.2</span> Pandoc Title Block</a></li>
+<li><a href="#yaml-metadata-block"><span class="toc-section-number">4.1.3</span> YAML Metadata Block</a></li>
+</ul></li>
+<li><a href="#toc"><span class="toc-section-number">4.2</span> TOC</a><ul>
+<li><a href="#pandoc-1"><span class="toc-section-number">4.2.1</span> Pandoc</a></li>
+<li><a href="#multimarkdown-1"><span class="toc-section-number">4.2.2</span> MultiMarkdown</a></li>
+<li><a href="#kramdown"><span class="toc-section-number">4.2.3</span> Kramdown</a></li>
+</ul></li>
+<li><a href="#math"><span class="toc-section-number">4.3</span> Math</a><ul>
+<li><a href="#markdown"><span class="toc-section-number">4.3.1</span> Markdown</a></li>
+<li><a href="#multimarkdown-and-pandoc"><span class="toc-section-number">4.3.2</span> MultiMarkdown and Pandoc</a><ul>
+<li><a href="#multimarkdown-2"><span class="toc-section-number">4.3.2.1</span> MultiMarkdown</a></li>
+<li><a href="#pandoc-2"><span class="toc-section-number">4.3.2.2</span> Pandoc</a></li>
+</ul></li>
+<li><a href="#inline-math"><span class="toc-section-number">4.3.3</span> Inline Math</a></li>
+<li><a href="#block-math"><span class="toc-section-number">4.3.4</span> Block Math</a></li>
+<li><a href="#other-examples"><span class="toc-section-number">4.3.5</span> Other Examples</a></li>
+</ul></li>
+<li><a href="#file-transclusion"><span class="toc-section-number">4.4</span> File Transclusion</a></li>
+</ul></li>
+<li><a href="#references"><span class="toc-section-number">5</span> References</a></li>
 </ul>
 </div>
 <!-- \begin{comment} -->
@@ -149,16 +165,16 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/styles/default.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/highlight.min.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
-<h1 id="contents">Contents</h1>
+<h1 id="contents"><span class="header-section-number">1</span> Contents</h1>
 <p>{:.no_toc}</p>
 <ul>
 <li>Will be replaced with the ToC, excluding the “Contents” header {:toc}</li>
 </ul>
 <p>{{TOC}}</p>
 <!-- \end{comment} -->
-<h1 id="introduction">Introduction</h1>
+<h1 id="introduction"><span class="header-section-number">2</span> Introduction</h1>
 <p><a href="#examples">Examples</a> shows explicit examples for different syntaxes. <a href="#other-syntaxes">Other Syntaxes</a> show the syntaxes that can’t be shown explicitly.</p>
-<h2 id="organization">Organization</h2>
+<h2 id="organization"><span class="header-section-number">2.1</span> Organization</h2>
 <ul>
 <li>Header levels (except possibly the last header level): features in groups</li>
 <li>Last header level or a list: different syntaxes</li>
@@ -182,39 +198,39 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <ul>
 <li>You might see <code>&lt;!-- \begin{comment} --&gt;...&lt;!-- \end{comment} --&gt;</code>. This is for mmd to tex to pdf use only. Ignore this.</li>
 </ul>
-<h1 id="examples">Examples</h1>
-<h2 id="header">Header</h2>
+<h1 id="examples"><span class="header-section-number">3</span> Examples</h1>
+<h2 id="header"><span class="header-section-number">3.1</span> Header</h2>
 <p><span class="citation">@markdown</span></p>
 <p>See <a href="#emphasis">Emphasis</a> and <a href="#other-syntaxes">Other Syntaxes</a> to see alternative Setext-style header styles <span class="citation">@markdown</span></p>
-<h3 id="header-containing-styling-and-a-link">Header <em>Containing</em> <strong><em>Styling</em></strong> and a <a href="Https://www.wikipedia.org/">Link</a></h3>
+<h3 id="header-containing-styling-and-a-link"><span class="header-section-number">3.1.1</span> Header <em>Containing</em> <strong><em>Styling</em></strong> and a <a href="Https://www.wikipedia.org/">Link</a></h3>
 <p><span class="citation">@markdown</span></p>
-<h3 id="identifier" class="class1" key="value1">Header Containing Attributes</h3>
+<h3 id="identifier" class="class1" key="value1"><span class="header-section-number">3.1.2</span> Header Containing Attributes</h3>
 <p><span class="citation">@pandoc</span> <span class="citation">@phpextra</span></p>
 <h3 id="header-unnumbered" class="unnumbered">Header Unnumbered</h3>
 <p><span class="citation">@pandoc</span></p>
-<h3 id="header-unnumbered-2" class="Unnumbered">Header Unnumbered 2</h3>
+<h3 id="header-unnumbered-2" class="Unnumbered"><span class="header-section-number">3.1.3</span> Header Unnumbered 2</h3>
 <p><span class="citation">@pandoc</span></p>
-<h3 id="auto-cross-reference">Auto Cross Reference</h3>
+<h3 id="auto-cross-reference"><span class="header-section-number">3.1.4</span> Auto Cross Reference</h3>
 <ul>
 <li><a href="#header">Link to Header</a> <span class="citation">@pandoc</span> <span class="citation">@ghpages</span> <span class="citation">@mmd</span></li>
 <li><a href="#header">Link to Header</a> <span class="citation">@pandoc</span> <span class="citation">@mmd</span></li>
 <li><a href="#header">Header</a> <span class="citation">@mmd</span> @pandoc</li>
 <li><a href="#header">Header</a> <span class="citation">@mmd</span> @pandoc</li>
 </ul>
-<h3 id="userdefinedreference">User defined reference</h3>
+<h3 id="userdefinedreference"><span class="header-section-number">3.1.5</span> User defined reference</h3>
 <ul>
 <li>[userdefinedreference][] <span class="citation">@mmd</span></li>
 <li><a href="#userdefinedreference">Link to userdefinedreference</a> <span class="citation">@mmd</span> <span class="citation">@pandoc</span>(+mmd_header_identifiers)</li>
 <li><a href="#identifier">Link to “Header Containing Attributes”</a> <span class="citation">@pandoc</span></li>
 <li><a href="#identifier">another-link</a> <span class="citation">@pandoc</span></li>
 </ul>
-<h3 id="deeper-levels-of-headers">Deeper Levels of Headers</h3>
-<h4 id="header4">Header4</h4>
-<h5 id="header5">Header5</h5>
-<h6 id="header6">Header6</h6>
-<h2 id="backslash-escapes">Backslash Escapes</h2>
+<h3 id="deeper-levels-of-headers"><span class="header-section-number">3.1.6</span> Deeper Levels of Headers</h3>
+<h4 id="header4"><span class="header-section-number">3.1.6.1</span> Header4</h4>
+<h5 id="header5"><span class="header-section-number">3.1.6.1.1</span> Header5</h5>
+<h6 id="header6"><span class="header-section-number">3.1.6.1.1.1</span> Header6</h6>
+<h2 id="backslash-escapes"><span class="header-section-number">3.2</span> Backslash Escapes</h2>
 <p>*testing* <span class="citation">@markdown</span></p>
-<h2 id="emphasis">Emphasis</h2>
+<h2 id="emphasis"><span class="header-section-number">3.3</span> Emphasis</h2>
 <ul>
 <li><em>italic</em> or <em>italic</em> <span class="citation">@markdown</span></li>
 <li><strong>bold</strong> or <strong>bold</strong> <span class="citation">@markdown</span></li>
@@ -222,7 +238,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li><del>strikethrough</del> <span class="citation">@pandoc</span></li>
 <li><span style="font-variant: small-caps;">Small caps</span> <span class="citation">@pandoc</span> <span class="citation">@markdown</span>(html)</li>
 </ul>
-<h3 id="criticmarkup">CriticMarkup</h3>
+<h3 id="criticmarkup"><span class="header-section-number">3.3.1</span> CriticMarkup</h3>
 <p>Visually it looks like emphasis. Functionally it is much more, and called Critic Markup <span class="citation">@mmd</span></p>
 <!-- \begin{comment} -->
 <ul>
@@ -234,19 +250,19 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </ul>
 <!-- \end{comment} -->
 <p>See more at <a href="http://fletcher.github.io/MultiMarkdown-5/criticmarkup.html">CriticMarkup—MultiMarkdown Documentation</a>.</p>
-<h2 id="horizontal-rules">Horizontal Rules</h2>
+<h2 id="horizontal-rules"><span class="header-section-number">3.4</span> Horizontal Rules</h2>
 <p><span class="citation">@markdown</span></p>
 <hr />
 <p>3 or more hyphens or asterisks</p>
 <hr />
-<h2 id="break">Break</h2>
+<h2 id="break"><span class="header-section-number">3.5</span> Break</h2>
 <p><span class="citation">@markdown</span></p>
 <p>No break like this</p>
 <p>Soft break<br />
 like this</p>
 <p>Hard break</p>
 <p>like this</p>
-<h2 id="superscript-subscript">Superscript &amp; Subscript</h2>
+<h2 id="superscript-subscript"><span class="header-section-number">3.6</span> Superscript &amp; Subscript</h2>
 <ul>
 <li>x^2 <span class="citation">@mmd</span></li>
 <li>d~o <span class="citation">@mmd</span></li>
@@ -254,7 +270,7 @@ like this</p>
 <li>x<sub>y,z</sub> <span class="citation">@mmd</span> <span class="citation">@pandoc</span></li>
 <li>P<sub>a cat</sub> <span class="citation">@pandoc</span></li>
 </ul>
-<h2 id="smarty-pants">Smarty Pants</h2>
+<h2 id="smarty-pants"><span class="header-section-number">3.7</span> Smarty Pants</h2>
 <p><span class="citation">@markdown</span>(+smartypants) <span class="citation">@pandoc</span>(–smart) <span class="citation">@ghpages</span></p>
 <ul>
 <li>“Example 1”</li>
@@ -267,25 +283,25 @@ like this</p>
 <ul>
 <li>``Example 3’’</li>
 </ul>
-<h2 id="abbreviations-php-markdown-extra">Abbreviations (PHP Markdown Extra)</h2>
+<h2 id="abbreviations-php-markdown-extra"><span class="header-section-number">3.8</span> Abbreviations (PHP Markdown Extra)</h2>
 <p><span class="citation">@mmd</span> <span class="citation">@phpextra</span> <span class="citation">@pandoc</span>(+abbreviations)</p>
 <p>Testing abbreviations: HTML, W3C (mouseover it to see)</p>
-<h2 id="lists">Lists</h2>
-<h3 id="ordered-lists">Ordered Lists</h3>
+<h2 id="lists"><span class="header-section-number">3.9</span> Lists</h2>
+<h3 id="ordered-lists"><span class="header-section-number">3.9.1</span> Ordered Lists</h3>
 <p><span class="citation">@markdown</span></p>
 <ol style="list-style-type: decimal">
 <li>test</li>
 <li>test</li>
 <li>test</li>
 </ol>
-<h3 id="unordered-lists">Unordered Lists</h3>
+<h3 id="unordered-lists"><span class="header-section-number">3.9.2</span> Unordered Lists</h3>
 <p><span class="citation">@markdown</span></p>
 <ul>
 <li>test</li>
 <li>test</li>
 <li>test</li>
 </ul>
-<h3 id="nested-lists">Nested Lists</h3>
+<h3 id="nested-lists"><span class="header-section-number">3.9.3</span> Nested Lists</h3>
 <p><span class="citation">@markdown</span></p>
 <ul>
 <li>test
@@ -311,7 +327,7 @@ like this</p>
 <ul>
 <li>The Maximum nesting level of lists in LaTeX is 4. The quick hack is to mix itemize and enumerate alternatively to go beyond this.</li>
 </ul>
-<h3 id="cutoff-a-list">Cutoff a List</h3>
+<h3 id="cutoff-a-list"><span class="header-section-number">3.9.4</span> Cutoff a List</h3>
 <p><span class="citation">@markdown</span></p>
 <ol style="list-style-type: decimal">
 <li>one</li>
@@ -331,7 +347,7 @@ like this</p>
 </ul>
 <!-- end of list -->
 <pre><code>{ my code block }</code></pre>
-<h3 id="list-item-in-a-block">List Item in a Block</h3>
+<h3 id="list-item-in-a-block"><span class="header-section-number">3.9.5</span> List Item in a Block</h3>
 <p><span class="citation">@markdown</span></p>
 <ul>
 <li><p>First paragraph.</p>
@@ -339,7 +355,7 @@ like this</p>
 <li><p>Second paragraph. With a code block, which must be indented eight spaces:</p>
 <pre><code>{ code }</code></pre></li>
 </ul>
-<h3 id="fancy-lists">Fancy Lists</h3>
+<h3 id="fancy-lists"><span class="header-section-number">3.9.6</span> Fancy Lists</h3>
 <p><span class="citation">@pandoc</span></p>
 <ol>
 <li>one</li>
@@ -365,8 +381,8 @@ like this</p>
 <ul>
 <li>Five</li>
 </ul>
-<h2 id="definition-lists">Definition Lists</h2>
-<h3 id="method-1">Method 1</h3>
+<h2 id="definition-lists"><span class="header-section-number">3.10</span> Definition Lists</h2>
+<h3 id="method-1"><span class="header-section-number">3.10.1</span> Method 1</h3>
 <p><span class="citation">@mmd</span> <span class="citation">@phpextra</span> <span class="citation">@pandoc</span> <span class="citation">@ghpages</span></p>
 <dl>
 <dt>Physics</dt>
@@ -377,7 +393,7 @@ like this</p>
 <dd>Make Prediction
 </dd>
 </dl>
-<h3 id="method-2">Method 2</h3>
+<h3 id="method-2"><span class="header-section-number">3.10.2</span> Method 2</h3>
 <p><span class="citation">@ghpages</span> <span class="citation">@pandoc</span> <span class="citation">@mmd</span></p>
 <dl>
 <dt>Term 1</dt>
@@ -389,7 +405,7 @@ like this</p>
 <p>Third paragraph of definition 2.</p>
 </dd>
 </dl>
-<h2 id="numbered-example-lists">Numbered Example Lists</h2>
+<h2 id="numbered-example-lists"><span class="header-section-number">3.11</span> Numbered Example Lists</h2>
 <p><span class="citation">@pandoc</span></p>
 <ol class="example" style="list-style-type: decimal">
 <li>My first example will be numbered (1).</li>
@@ -401,22 +417,22 @@ like this</p>
 <li><p>This is a good example.</p></li>
 </ol>
 <p>As (4) illustrates, …</p>
-<h2 id="code">Code</h2>
+<h2 id="code"><span class="header-section-number">3.12</span> Code</h2>
 <ul>
 <li><code>testing</code> <span class="citation">@markdown</span></li>
 <li><code class="sourceCode latex">\[\ket{a}\]</code> <span class="citation">@pandoc</span></li>
 </ul>
-<h3 id="fenced-code-blocks">Fenced Code Blocks</h3>
-<h4 id="method-1-1">Method 1</h4>
+<h3 id="fenced-code-blocks"><span class="header-section-number">3.12.1</span> Fenced Code Blocks</h3>
+<h4 id="method-1-1"><span class="header-section-number">3.12.1.1</span> Method 1</h4>
 <p><span class="citation">@markdown</span></p>
 <pre><code>test
 test
     test
     # test</code></pre>
-<h4 id="method-2-1">Method 2</h4>
+<h4 id="method-2-1"><span class="header-section-number">3.12.1.2</span> Method 2</h4>
 <p><span class="citation">@markdown</span>(partial:language-not-supported) <span class="citation">@ghpages</span> <span class="citation">@pandoc</span> <span class="citation">@mmd</span></p>
 <pre class="tex"><code>\nabla \times \mathbf{E} = - \frac{\partial \mathbf{B}}{\partial t}</code></pre>
-<h4 id="method-3">Method 3</h4>
+<h4 id="method-3"><span class="header-section-number">3.12.1.3</span> Method 3</h4>
 <p><span class="citation">@pandoc</span></p>
 <div class="sourceCode"><pre class="sourceCode markdown"><code class="sourceCode markdown">test
 test
@@ -430,10 +446,10 @@ test
 test
 <span class="bn">    test</span>
 <span class="bn">    # test</span></code></pre></td></tr></table></div>
-<h2 id="block-quotes">Block-quotes</h2>
+<h2 id="block-quotes"><span class="header-section-number">3.13</span> Block-quotes</h2>
 <p><span class="citation">@markdown</span></p>
 <blockquote>
-<h4 id="test">Test</h4>
+<h4 id="test"><span class="header-section-number">3.13</span> Test</h4>
 <p>test</p>
 <blockquote>
 <p>test</p>
@@ -452,12 +468,12 @@ test
 <li>test</li>
 </ul>
 </blockquote>
-<h3 id="block-quotes-quoting-codes">Block-quotes Quoting Codes</h3>
+<h3 id="block-quotes-quoting-codes"><span class="header-section-number">3.13.1</span> Block-quotes Quoting Codes</h3>
 <p><span class="citation">@markdown</span></p>
 <blockquote>
 <pre><code>\newcommand...</code></pre>
 </blockquote>
-<h2 id="line-blocks">Line Blocks</h2>
+<h2 id="line-blocks"><span class="header-section-number">3.14</span> Line Blocks</h2>
 <p><span class="citation">@ghpages</span>(partial) <span class="citation">@pandoc</span></p>
 <p>The limerick packs laughs anatomical<br />
 In space that is quite economical.<br />
@@ -466,8 +482,8 @@ In space that is quite economical.<br />
 And the clean ones so seldom are comical</p>
 <p>200 Main St.<br />
 Berkeley, CA 94718</p>
-<h2 id="tables">Tables</h2>
-<h3 id="method-1-2">Method 1</h3>
+<h2 id="tables"><span class="header-section-number">3.15</span> Tables</h2>
+<h3 id="method-1-2"><span class="header-section-number">3.15.1</span> Method 1</h3>
 <p><span class="citation">@ghpages</span> <span class="citation">@pandoc</span> <span class="citation">@mmd</span></p>
 <table>
 <caption>Notice how pandoc can have optional caption like this</caption>
@@ -500,11 +516,11 @@ Berkeley, CA 94718</p>
 </tr>
 </tbody>
 </table>
-<h3 id="method-2-2">Method 2</h3>
+<h3 id="method-2-2"><span class="header-section-number">3.15.2</span> Method 2</h3>
 <p><span class="citation">@mmd</span></p>
 <p>[Table Caption] | | Grouping || | Left align | Right align | Center align | |:———–|————:|:————:| | This | This | This | | column | column | column | | will | will | will | | be | be | be | | left | right | center | | aligned | aligned | aligned |<br />
 | And a big grouping is like this |||</p>
-<h3 id="method-3-1">Method 3</h3>
+<h3 id="method-3-1"><span class="header-section-number">3.15.3</span> Method 3</h3>
 <p><span class="citation">@pandoc</span></p>
 <table>
 <caption>Demonstration of simple table syntax.</caption>
@@ -537,7 +553,7 @@ Berkeley, CA 94718</p>
 </tr>
 </tbody>
 </table>
-<h3 id="method-4">Method 4</h3>
+<h3 id="method-4"><span class="header-section-number">3.15.4</span> Method 4</h3>
 <p><span class="citation">@pandoc</span></p>
 <table style="width:85%;">
 <caption>Here’s the caption. It, too, may span multiple lines.</caption>
@@ -570,7 +586,7 @@ Berkeley, CA 94718</p>
 </tr>
 </tbody>
 </table>
-<h3 id="method-5">Method 5</h3>
+<h3 id="method-5"><span class="header-section-number">3.15.5</span> Method 5</h3>
 <p><span class="citation">@pandoc</span></p>
 <table style="width:74%;">
 <caption>Sample grid table.</caption>
@@ -605,13 +621,13 @@ Berkeley, CA 94718</p>
 </tr>
 </tbody>
 </table>
-<h3 id="method-6">Method 6</h3>
+<h3 id="method-6"><span class="header-section-number">3.15.6</span> Method 6</h3>
 <p><span class="citation">@ghpages</span></p>
 <!-- \begin{comment} -->
 <p>|—————–+————+—————–+—————-| | Default aligned |Left aligned| Center aligned | Right aligned | |—————–|:———–|:—————:|—————:| | First body part |Second cell | Third cell | fourth cell | | Second line |foo | <strong>strong</strong> | blah | | Third line |blah | blah | bar | |—————–+————+—————–+—————-| | Second body | | | | | 2 line | | | | |=================+============+=================+================| | Footer row | | | | |—————–+————+—————–+—————-|</p>
 <!-- \end{comment} -->
 <p>See <a href="http://kramdown.gettalong.org/syntax.html#tables">Syntax | kramdown</a></p>
-<h2 id="links">Links</h2>
+<h2 id="links"><span class="header-section-number">3.16</span> Links</h2>
 <ul>
 <li><a href="https://www.wikipedia.org" class="uri">https://www.wikipedia.org</a> <span class="citation">@pandoc</span>(+autolink_bare_uris)</li>
 <li><a href="https://www.wikipedia.org" class="uri">https://www.wikipedia.org</a> <span class="citation">@markdown</span></li>
@@ -624,7 +640,7 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'" clas'+'s="em' + 'ail">'+'&#x4
 // -->
 </script><noscript>&#x4d;&#x61;&#x69;&#108;&#32;&#116;&#x6f;&#32;&#x47;&#x69;&#116;&#72;&#x75;&#98;&#32;&#40;&#x73;&#x75;&#112;&#112;&#x6f;&#114;&#116;&#32;&#x61;&#116;&#32;&#x67;&#x69;&#116;&#104;&#x75;&#98;&#32;&#100;&#x6f;&#116;&#32;&#x63;&#x6f;&#x6d;&#x29;</noscript> <span class="citation">@markdown</span></li>
 </ul>
-<h3 id="reference-links">Reference Links</h3>
+<h3 id="reference-links"><span class="header-section-number">3.16.1</span> Reference Links</h3>
 <ul>
 <li><a href="https://www.google.com">Search here</a> <span class="citation">@markdown</span></li>
 <li>A <a href="image.png" class="external" style="border: solid black 1px;" title="Title">link</a> with attributes. <span class="citation">@mmd</span></li>
@@ -633,48 +649,48 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'" clas'+'s="em' + 'ail">'+'&#x4
 <li><a href="http://fsf.org" title="The free software foundation">Another link</a>. <span class="citation">@markdown</span></li>
 <li><a href="/bar#special" title="A title in single quotes">link3</a>. <span class="citation">@markdown</span></li>
 </ul>
-<h2 id="footnotes">Footnotes</h2>
+<h2 id="footnotes"><span class="header-section-number">3.17</span> Footnotes</h2>
 <ul>
 <li>Footnotes [^This is a mmd inline footnote] <span class="citation">@mmd</span></li>
 <li>Footnotes <a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a> <span class="citation">@pandoc</span></li>
 </ul>
-<h3 id="reference-footnotes">Reference Footnotes</h3>
+<h3 id="reference-footnotes"><span class="header-section-number">3.17.1</span> Reference Footnotes</h3>
 <ul>
 <li>Footnotes<a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a> <span class="citation">@markdown</span></li>
 <li>Long Footnotes <a href="#fn3" class="footnoteRef" id="fnref3"><sup>3</sup></a> <span class="citation">@pandoc</span> <span class="citation">@ghpages</span> <span class="citation">@mmd</span></li>
 </ul>
 <p>This paragraph won’t be part of the note, because it isn’t indented.</p>
-<h3 id="glossaries">Glossaries</h3>
+<h3 id="glossaries"><span class="header-section-number">3.17.2</span> Glossaries</h3>
 <p>A special kind of footnote <a href="#fn4" class="footnoteRef" id="fnref4"><sup>4</sup></a>. <span class="citation">@mmd</span></p>
 <p>See more at <a href="http://fletcher.github.io/MultiMarkdown-5/glossary.html">Glossary—MultiMarkdown Documentation</a>.</p>
-<h3 id="citations">Citations</h3>
+<h3 id="citations"><span class="header-section-number">3.17.3</span> Citations</h3>
 <p>It can looks like footnotes in HTML output.</p>
-<h4 id="multimarkdown">MultiMarkdown</h4>
+<h4 id="multimarkdown"><span class="header-section-number">3.17.3.1</span> MultiMarkdown</h4>
 <p><span class="citation">@mmd</span></p>
 <ul>
 <li>This is a statement that should be attributed to its source <a href="John%20Doe.%20*Some%20Big%20Fancy%20Book*.%20Vanity%20Press,%202006.">p. 23</a>.</li>
 </ul>
 <p><a href="John%20Doe.%20*Another%20Big%20Fancy%20Book*.%20Vanity%20Press,%202016.">Not cited</a></p>
 <p>See more at <a href="http://fletcher.github.io/MultiMarkdown-5/citations.html">Citations—MultiMarkdown Documentation</a>.</p>
-<h4 id="pandoc">Pandoc</h4>
+<h4 id="pandoc"><span class="header-section-number">3.17.3.2</span> Pandoc</h4>
 <p><span class="citation">@pandoc</span></p>
 <p>Very powerful but complicated. See more at <a href="http://pandoc.org/README.html#citations">Citations—Pandoc Documentation</a>.</p>
-<h2 id="images">Images</h2>
+<h2 id="images"><span class="header-section-number">3.18</span> Images</h2>
 <ul>
 <li><img src="image.png" title="Optional Title" alt="Alt Text" /> <span class="citation">@markdown</span></li>
 </ul>
-<h3 id="reference-images">Reference Images</h3>
+<h3 id="reference-images"><span class="header-section-number">3.18.1</span> Reference Images</h3>
 <ul>
 <li><img src="image.png" title="Optional Title" alt="Alt Text" /> <span class="citation">@markdown</span></li>
 <li><img src="image.png" title="Title of the Image" alt="An Image with Attributes" width="40" height="40" /> <span class="citation">@mmd</span> <span class="citation">@pandoc</span>(+mmd_link_attributes)</li>
 <li><img src="image.png" alt="An Image with Attributes" id="id" class="class" width="30" height="20" /> <span class="citation">@pandoc</span> <span class="citation">@phpextra</span>(partial)</li>
 <li>a reference <img src="image.png" title="optional title" alt="image" id="id" class="class" key="val" key2="val 2" /> with attributes. <span class="citation">@pandoc</span> <span class="citation">@phpextra</span>(partial)</li>
 </ul>
-<h3 id="image-with-links-by-nesting-image-and-link">Image with Links by Nesting Image and Link</h3>
+<h3 id="image-with-links-by-nesting-image-and-link"><span class="header-section-number">3.18.2</span> Image with Links by Nesting Image and Link</h3>
 <ul>
 <li><a href="https://www.wikipedia.org/"><img src="image.png" alt="Image Link" /></a> <span class="citation">@markdown</span></li>
 </ul>
-<h3 id="block-level-images">Block Level Images</h3>
+<h3 id="block-level-images"><span class="header-section-number">3.18.3</span> Block Level Images</h3>
 <ul>
 <li>Block level: HTML <code>figure</code> element in MultiMarkdown <span class="citation">@mmd</span> <span class="citation">@pandoc</span></li>
 </ul>
@@ -684,7 +700,7 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'" clas'+'s="em' + 'ail">'+'&#x4
 </div>
 <p><img src="image.png" title="Optional Title" alt="Not Block Level" /><br />
 ## RAW ##</p>
-<h3 id="html">HTML</h3>
+<h3 id="html"><span class="header-section-number">3.18.4</span> HTML</h3>
 <ul>
 <li><div>
 This should <em>not</em> be markdown (or is it?)
@@ -696,17 +712,17 @@ This <em>is</em> markdown
 <span class="citation">@mmd</span> <span class="citation">@pandoc</span>(+markdown_attribute)</li>
 </ul>
 <p>See more at <a href="http://fletcher.github.io/MultiMarkdown-5/raw.html">Raw—MultiMarkdown Documentation</a>. See test in [Babelmark 2 - Compare markdown implementations](<a href="http://johnmacfarlane.net/babelmark2/?normalize=1&amp;text=%3Cdiv%3EThis+should+*not*+be+markdown+(or+is+it%3F%29+%3C%2Fdiv%3E%0A%3Cdiv+markdown%3D1%3EThis+*is*+markdown%3C%2Fdiv%3E)">http://johnmacfarlane.net/babelmark2/?normalize=1&amp;text=%3Cdiv%3EThis+should+*not*+be+markdown+(or+is+it%3F%29+%3C%2Fdiv%3E%0A%3Cdiv+markdown%3D1%3EThis+*is*+markdown%3C%2Fdiv%3E)</a>.</p>
-<h3 id="latex">LaTeX</h3>
+<h3 id="latex"><span class="header-section-number">3.18.5</span> LaTeX</h3>
 <ul>
 <li><!-- \newcommand\rawlatex{} -->
 <span class="citation">@mmd</span></li>
 <li><span class="citation">@pandoc</span>(parsed)</li>
 <li>\begin{…} <span class="citation">@pandoc</span></li>
 </ul>
-<h1 id="other-syntaxes">Other Syntaxes</h1>
-<h2 id="metadata">Metadata</h2>
+<h1 id="other-syntaxes"><span class="header-section-number">4</span> Other Syntaxes</h1>
+<h2 id="metadata"><span class="header-section-number">4.1</span> Metadata</h2>
 <p>Note: mmd accepts capitalized metadata keys but others do not. For maximum compatibility, <code>author(s)</code>, <code>title</code>, etc. should be in lower cases.</p>
-<h3 id="multimarkdown-metadata-block">MultiMarkdown Metadata Block</h3>
+<h3 id="multimarkdown-metadata-block"><span class="header-section-number">4.1.1</span> MultiMarkdown Metadata Block</h3>
 <p><span class="citation">@mmd</span> <span class="citation">@pandoc</span>(+mmd_title_block)</p>
 <pre><code>title:    A Sample MultiMarkdown Document  
 author:   Fletcher T. Penney  
@@ -716,12 +732,12 @@ comment:  This is a comment intended to demonstrate
           is treated as a single value.  
 CSS:      http://example.com/standard.css</code></pre>
 <p>See more at <a href="http://fletcher.github.io/MultiMarkdown-5/metadata.html">Metadata—MultiMarkdown Documentation</a>.</p>
-<h3 id="pandoc-title-block">Pandoc Title Block</h3>
+<h3 id="pandoc-title-block"><span class="header-section-number">4.1.2</span> Pandoc Title Block</h3>
 <p><span class="citation">@pandoc</span></p>
 <pre><code>% title
 % author(s) (separated by semicolons)
 % date</code></pre>
-<h3 id="yaml-metadata-block">YAML Metadata Block</h3>
+<h3 id="yaml-metadata-block"><span class="header-section-number">4.1.3</span> YAML Metadata Block</h3>
 <p><span class="citation">@Mmd</span>(partial)</p>
 <p><span class="citation">@pandoc</span> <span class="citation">@ghpages</span></p>
 <pre><code>---
@@ -734,11 +750,11 @@ abstract: |
 
   It consists of two paragraphs.
 ---</code></pre>
-<h2 id="toc">TOC</h2>
-<h3 id="pandoc-1">Pandoc</h3>
+<h2 id="toc"><span class="header-section-number">4.2</span> TOC</h2>
+<h3 id="pandoc-1"><span class="header-section-number">4.2.1</span> Pandoc</h3>
 <p><span class="citation">@pandoc</span></p>
 <p>Use <code>--toc</code> as a command argument.</p>
-<h3 id="multimarkdown-1">MultiMarkdown</h3>
+<h3 id="multimarkdown-1"><span class="header-section-number">4.2.2</span> MultiMarkdown</h3>
 <p><span class="citation">@mmd</span></p>
 <p><code>{{TOC}}</code>, see beginning. It preprocess the headings and generate a ToC on its own, and doesn’t give instruction for LaTeX to generate one. A hack is like this:</p>
 <pre><code>---
@@ -752,16 +768,16 @@ LaTeX Input:    mmd-load-toc
 &lt;!-- \end{comment} --&gt;
 ...</code></pre>
 <p>See more at <a href="https://github.com/ickc/peg-multimarkdown-latex-support">ickc/peg-multimarkdown-latex-support: Default support files for generating LaTeX documents with MMD 3 through MMD 5</a>.</p>
-<h3 id="kramdown">Kramdown</h3>
+<h3 id="kramdown"><span class="header-section-number">4.2.3</span> Kramdown</h3>
 <p><span class="citation">@ghpages</span></p>
 <pre><code># Contents
 {:.no_toc}
 
 * Will be replaced with the ToC, excluding the &quot;Contents&quot; header
 {:toc}</code></pre>
-<h2 id="math">Math</h2>
+<h2 id="math"><span class="header-section-number">4.3</span> Math</h2>
 <p>MathJax is assumed. MathJax has many configurable options. See <a href="http://mathjax.readthedocs.org/en/latest/tex.html">MathJax TeX and LaTeX Support — MathJax 2.6 documentation</a>.</p>
-<h3 id="markdown">Markdown</h3>
+<h3 id="markdown"><span class="header-section-number">4.3.1</span> Markdown</h3>
 <p><span class="citation">@markdown</span></p>
 <p>Add the following at the beginning of the document:</p>
 <div class="sourceCode"><pre class="sourceCode html"><code class="sourceCode html"><span class="kw">&lt;script</span><span class="ot"> type=</span><span class="st">&quot;text/javascript&quot;</span>
@@ -770,30 +786,30 @@ LaTeX Input:    mmd-load-toc
 <p>MathJax.js is used and any codes within math delimiters are treated as raw HTML and to be processed by MathJax.</p>
 <p>MathJax delimiter are <code>$$...$$</code>, <code>\\(...\\)</code> and <code>\\[...\\]</code> (because an extra <code>\</code> can be used to escape from MarkDown).</p>
 <p>Depending on the markdown parser, extra tricks might be needed to make sure nothing within the math delimiter is treated as markdown (see <a href="http://mathjax.readthedocs.org/en/latest/tex.html#tex-and-latex-in-html-documents">TeX and LaTeX in HTML documents — MathJax 2.6 documentation</a>). <code>$...$</code> can be used with MathJax configuration (see <a href="http://mathjax.readthedocs.org/en/latest/tex.html#tex-and-latex-math-delimiters">TeX and LaTeX math delimiters — MathJax 2.6 documentation</a>).</p>
-<h3 id="multimarkdown-and-pandoc">MultiMarkdown and Pandoc</h3>
+<h3 id="multimarkdown-and-pandoc"><span class="header-section-number">4.3.2</span> MultiMarkdown and Pandoc</h3>
 <p>There are subtleties how math should be used in HTML+MathJax and LaTeX output from single markdown source. See more in <a href="https://github.com/ickc/mathjax-latex-md-mmd-pandoc">Testing LaTeX Environments Usage in MathJax From Markdown Conversion (including mmd and pandoc)</a>.</p>
-<h4 id="multimarkdown-2">MultiMarkdown</h4>
+<h4 id="multimarkdown-2"><span class="header-section-number">4.3.2.1</span> MultiMarkdown</h4>
 <p><span class="citation">@mmd</span></p>
 <p>Add the following metadata at the beginning of the document:</p>
 <div class="sourceCode"><pre class="sourceCode html"><code class="sourceCode html">HTML header:    <span class="kw">&lt;script</span><span class="ot"> type=</span><span class="st">&quot;text/javascript&quot;</span>
 <span class="ot">    src=</span><span class="st">&quot;https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML-full&quot;</span><span class="kw">&gt;</span>
     <span class="kw">&lt;/script&gt;</span></code></pre></div>
 <p>MultiMarkdown math delimiter are <code>$...$</code>, <code>$$...$$</code>, <code>\\(...\\)</code> and <code>\\[...\\]</code>.</p>
-<h4 id="pandoc-2">Pandoc</h4>
+<h4 id="pandoc-2"><span class="header-section-number">4.3.2.2</span> Pandoc</h4>
 <p><span class="citation">@pandoc</span>(–mathjax)</p>
 <p>For pandoc, add <code>--mathjax</code> in the command-line argument.</p>
 <p>Default math delimiter for pandoc is <code>$...$</code>, <code>$$...$$</code>. Other options are configurable. See more in <a href="http://pandoc.org/README.html#non-pandoc-extensions">Pandoc - Pandoc User’s Guide</a>.</p>
-<h3 id="inline-math">Inline Math</h3>
+<h3 id="inline-math"><span class="header-section-number">4.3.3</span> Inline Math</h3>
 <ul>
 <li><span class="math inline">\(1+1\)</span></li>
 <li><span class="math inline">\(1 + 1\)</span> <span class="citation">@pandoc</span>(+tex_math_double_backslash)</li>
 </ul>
-<h3 id="block-math">Block Math</h3>
+<h3 id="block-math"><span class="header-section-number">4.3.4</span> Block Math</h3>
 <ul>
 <li><span class="math display">\[R R^T = I\]</span></li>
 <li><span class="math display">\[A^T_S = B\]</span></li>
 </ul>
-<h3 id="other-examples">Other Examples</h3>
+<h3 id="other-examples"><span class="header-section-number">4.3.5</span> Other Examples</h3>
 <ul>
 <li><span class="math display">\[x = {-b \pm \sqrt{b^2-4ac} \over 2a}\]</span></li>
 <li><span class="math display">\[
@@ -824,10 +840,10 @@ LaTeX Input:    mmd-load-toc
 \prod_{j=0}^{\infty}\frac{1}{(1-q^{5j+2})(1-q^{5j+3})},
 \quad\quad \text{for $|q|&lt;1$}.\]</span></li>
 </ul>
-<h2 id="file-transclusion">File Transclusion</h2>
+<h2 id="file-transclusion"><span class="header-section-number">4.4</span> File Transclusion</h2>
 <p><span class="citation">@mmd</span></p>
 <p>See more at <a href="http://fletcher.github.io/MultiMarkdown-5/transclusion.html">File Transclusion—MultiMarkdown Documentation</a>.</p>
-<h1 id="references">References</h1>
+<h1 id="references"><span class="header-section-number">5</span> References</h1>
 <p>Some examples are directly or indirectly copied from the following documentations:</p>
 <ol style="list-style-type: decimal">
 <li><a href="http://pandoc.org/README.html">Pandoc - Pandoc User’s Guide</a></li>
