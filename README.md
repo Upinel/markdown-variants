@@ -2,7 +2,7 @@
 Title:	Yet Another Markdown Cheatsheet
 Subtitle:	Including MarkDown, MultiMarkdown, pandoc, GFM and LaTeX Math Syntax by MathJax  
 Keywords:	MarkDown, MultiMarkDown, LaTeX, pandoc, gfm  
-Revision:	0.9
+Revision:	0.10
 Language:	English
 Author:	Kolen Cheung
 Email:	khcheung@berkeley.edu
@@ -20,9 +20,7 @@ Copyright:	2016 Kolen Cheung
 * Will be replaced with the ToC, excluding the "Contents" header
 {:toc}
 
-<!-- \begin{comment} -->
 {{TOC}}
-<!-- \end{comment} -->
 
 # Introduction #
 
@@ -33,11 +31,11 @@ Copyright:	2016 Kolen Cheung
 - Header levels (except possibly the last header level): features in groups
 - Last header level or a list: different syntaxes
 - TaskPaper-styled tags to indicate in what favor of Markdown such syntax is supported
-	- @markdown: supported by original markdown, hence understood to be supported by all variants of markdown
-	- @gfm: GitHub-Favored Markdown, built by kramdown with GFM option. i.e. GitHub Pages' GitHub-Favored Markdown
-	- @mmd: MultiMarkdown 
-	- @pandoc: pandoc-favored markdown
-	- @phpextra: PHP Markdown Extra (inspired some syntax in pandoc and mmd and gfm, not exhaustively tested here)
+	- `@markdown`: supported by original markdown, hence understood to be supported by all variants of markdown
+	- `@ghpages`: GitHub-Favored Markdown, built by kramdown with GFM option. i.e. GitHub Pages' GitHub-Favored Markdown
+	- `@mmd`: MultiMarkdown 
+	- `@pandoc`: pandoc-favored markdown
+	- `@phpextra`: PHP Markdown Extra (inspired some syntax in pandoc and mmd and gfm, not exhaustively tested here)
 
 # Examples #
 
@@ -65,7 +63,7 @@ See [Emphasis][] and [Other Syntaxes][] to see alternative Setext-style header s
 
 ### Auto Cross Reference
 
-- [Link to Header](#header) @pandoc @gfm @mmd
+- [Link to Header](#header) @pandoc @ghpages @mmd
 - [Link to Header][Header] @pandoc @mmd
 - [Header][] @mmd @pandoc
 - [Header] @mmd @pandoc
@@ -85,6 +83,10 @@ See [Emphasis][] and [Other Syntaxes][] to see alternative Setext-style header s
 ##### Header5 ########################
 
 ###### Header6 ######
+
+## Backslash Escapes ##
+
+\*testing\* @markdown
 
 Emphasis
 --------
@@ -277,7 +279,7 @@ Emphasis
 
 #### Method 2
 
-@markdown(partial:language-not-supported) @gfm @pandoc @mmd
+@markdown(partial:language-not-supported) @ghpages @pandoc @mmd
 
 ```latex
 \nabla \times \mathbf{E} = - \frac{\partial \mathbf{B}}{\partial t}
@@ -303,7 +305,7 @@ test
 
 ## Line Blocks ##
 
-@gfm(partial) @pandoc
+@ghpages(partial) @pandoc
 
 | The limerick packs laughs anatomical
 | In space that is quite economical.
@@ -402,7 +404,7 @@ like this
 
 ### Method 1
 
-@gfm @pandoc @mmd
+@ghpages @pandoc @mmd
 
 | 1 | 2 | 3 |  
 | -------- | -----: | ---: |  
@@ -410,15 +412,21 @@ like this
 
 ### Method 2
 
+@pandoc
+
 | Right | Left | Default | Center |
 |------:|:-----|---------|:------:|
 |   12  |  12  |    12   |    12  |
 |  123  |  123 |   123   |   123  |
 |    1  |    1 |     1   |     1  |
 
-: Table Caption @pandoc
+: Table Caption
 
-[Table Caption @mmd]
+### Method 3
+
+@mmd
+
+[Table Caption]
 |            |        Grouping           ||
 | Left align | Right align | Center align |
 |:-----------|------------:|:------------:|
@@ -428,9 +436,9 @@ like this
 | be         |          be |      be      |
 | left       |       right |    center    |
 | aligned    |     aligned |   aligned    |  
-| And a big grouping is like this	||| 
+| And a big grouping is like this	|||  
 
-### Method 3 ###
+### Method 4 ###
 
 @pandoc
 
@@ -442,7 +450,7 @@ like this
 
 Table:  Demonstration of simple table syntax.
 
-### Method 4 ###
+### Method 5 ###
 
 @pandoc
 
@@ -461,7 +469,7 @@ Table:  Demonstration of simple table syntax.
 Table: Here's the caption. It, too, may span
 multiple lines.
 
-### Method 5 ###
+### Method 6 ###
 
 @pandoc
 
@@ -477,9 +485,9 @@ multiple lines.
 |               |               | - tasty            |
 +---------------+---------------+--------------------+  
 
-### Method 6 ###
+### Method 7 ###
 
-@gfm
+@ghpages
 
 |-----------------+------------+-----------------+----------------|
 | Default aligned |Left aligned| Center aligned  | Right aligned  |
@@ -500,7 +508,7 @@ See [Syntax | kramdown](http://kramdown.gettalong.org/syntax.html#tables)
 
 ### Method 1 ###
 
-@mmd @phpextra @pandoc @gfm
+@mmd @phpextra @pandoc @ghpages
 
 Physics
 : The Fundamental of Science
@@ -509,7 +517,7 @@ Physics
 
 ### Method 2
 
-@gfm @pandoc @mmd
+@ghpages @pandoc @mmd
 
 Term 1
 
@@ -558,7 +566,7 @@ See more at [Glossary---MultiMarkdown Documentation](http://fletcher.github.io/M
 
 ## Smarty Pants ##
 
-@markdown(extension:smartypants) @pandoc(--smart) @gfm
+@markdown(extension:smartypants) @pandoc(--smart) @ghpages
 
 - "Example 1"
 - 'Example 2'
@@ -584,7 +592,7 @@ Testing abbreviations: HTML, W3C (mouseover it to see)
 ### Reference ###
 
 - Footnotes[^1] @markdown
-- Long Footnotes [^longnote] @pandoc @gfm @mmd
+- Long Footnotes [^longnote] @pandoc @ghpages @mmd
 
 [^1]: This is another footnote
 [^longnote]: Here's one with multiple blocks.
@@ -632,13 +640,13 @@ See more at [CriticMarkup---MultiMarkdown Documentation](http://fletcher.github.
 
 ## Small Caps ##
 
-<span style="font-variant:small-caps;">Small caps</span> @pandoc @markdown(html) @mmd(html) @gfm(html)
+<span style="font-variant:small-caps;">Small caps</span> @pandoc @markdown(html) @mmd(html) @ghpages(html)
 
 ## RAW ##
 
 ### HTML ###
 
-- <div>This is *not* markdown</div> (a good thing to check is if the *not* is italic or not) @markdown @gfm
+- <div>This is *not* markdown</div> (a good thing to check is if the *not* is italic or not) @markdown @ghpages
 - <div markdown=1>This *is* markdown</div> @mmd @pandoc(non-default-extension:markdown_attribute)
 
 See more at [Raw---MultiMarkdown Documentation](http://fletcher.github.io/MultiMarkdown-5/raw.html).
@@ -676,7 +684,7 @@ See more at [Metadata---MultiMarkdown Documentation](http://fletcher.github.io/M
 % date
 ```
 
-### YAML Metadata Block @mmd(partial) @pandoc @gfm
+### YAML Metadata Block @mmd(partial) @pandoc @ghpages
 
 ```yaml
 ---
@@ -712,16 +720,17 @@ Use `--toc` as a command argument.
 ...
 LaTeX Input:	mmd-load-toc-setcounter
 LaTeX Input:	mmd-load-toc
-LaTeX Footer:	mmd-memoir-footer
+...
 ---
 <!-- \begin{comment} -->
 {{TOC}}
 <!-- \end{comment} -->
+...
 ```
 
 See more at [ickc/peg-multimarkdown-latex-support: Default support files for generating LaTeX documents with MMD 3 through MMD 5](https://github.com/ickc/peg-multimarkdown-latex-support).
 
-### Gfm (via kramdown) ###
+### ghpages (via kramdown) ###
 
 ```markdown
 # Contents
@@ -816,12 +825,6 @@ $$
 \quad\quad \text{for $|q|<1$}.$$
 
 # Other Notes #
-
-## Markdown ##
-
-@markdown
-
-Backslash escapes: \*testing\*
 
 ## LaTeX ##
 
