@@ -138,6 +138,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li><a href="#references">References</a></li>
 </ul>
 </div>
+<!-- \begin{comment} -->
 <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML-full"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/styles/default.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/highlight.min.js"></script>
@@ -148,6 +149,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li>Will be replaced with the ToC, excluding the &quot;Contents&quot; header {:toc}</li>
 </ul>
 <p>{{TOC}}</p>
+<!-- \end{comment} -->
 <h1 id="introduction">Introduction</h1>
 <p><a href="#examples">Examples</a> shows explicit examples for different syntaxes. <a href="#other-syntaxes">Other Syntaxes</a> show the syntaxes that can't be shown explicitly.</p>
 <h2 id="organization">Organization</h2>
@@ -162,6 +164,10 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li><code>@pandoc</code>: pandoc-favored markdown</li>
 <li><code>@phpextra</code>: PHP Markdown Extra (inspired some syntax in pandoc and mmd and gfm, not exhaustively tested here)</li>
 </ul></li>
+</ul>
+<p>Note:</p>
+<ul>
+<li>You might see <code>&lt;!-- \begin{comment} --&gt;...&lt;!-- \end{comment} --&gt;</code>. This is for mmd to tex to pdf use only. Ignore this.</li>
 </ul>
 <h1 id="examples">Examples</h1>
 <h2 id="header">Header</h2>
@@ -204,6 +210,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </ul>
 <h3 id="criticmarkup">CriticMarkup</h3>
 <p>Visually it looks like emphasis. Functionally it is much more, and called Critic Markup <span class="citation">@mmd</span></p>
+<!-- \begin{comment} -->
 <ul>
 <li>Deletions from the original text: This is {--is --}a test.</li>
 <li>Additions: This {++is ++}a test.</li>
@@ -211,6 +218,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li>Highlighting: This is a {==test==}.</li>
 <li>Comments: This is a test{&gt;&gt;What is it a test of?&lt;&lt;}.</li>
 </ul>
+<!-- \end{comment} -->
 <p>See more at <a href="http://fletcher.github.io/MultiMarkdown-5/criticmarkup.html">CriticMarkup---MultiMarkdown Documentation</a>.</p>
 <h2 id="horizontal-rules">Horizontal Rules</h2>
 <p><span class="citation">@markdown</span></p>
@@ -391,7 +399,7 @@ test
     # test</code></pre>
 <h4 id="method-2-1">Method 2</h4>
 <p><span class="citation">@markdown</span>(partial:language-not-supported) <span class="citation">@ghpages</span> <span class="citation">@pandoc</span> <span class="citation">@mmd</span></p>
-<div class="sourceCode"><pre class="sourceCode latex"><code class="sourceCode latex">\nabla \times \mathbf{E} = - \frac{\partial \mathbf{B}}{\partial t}</code></pre></div>
+<pre class="tex"><code>\nabla \times \mathbf{E} = - \frac{\partial \mathbf{B}}{\partial t}</code></pre>
 <h4 id="method-3">Method 3</h4>
 <p><span class="citation">@pandoc</span></p>
 <div class="sourceCode"><pre class="sourceCode markdown"><code class="sourceCode markdown">test
@@ -583,7 +591,9 @@ Berkeley, CA 94718</p>
 </table>
 <h3 id="method-6">Method 6</h3>
 <p><span class="citation">@ghpages</span></p>
+<!-- \begin{comment} -->
 <p>|-----------------+------------+-----------------+----------------| | Default aligned |Left aligned| Center aligned | Right aligned | |-----------------|:-----------|:---------------:|---------------:| | First body part |Second cell | Third cell | fourth cell | | Second line |foo | <strong>strong</strong> | blah | | Third line |blah | blah | bar | |-----------------+------------+-----------------+----------------| | Second body | | | | | 2 line | | | | |=================+============+=================+================| | Footer row | | | | |-----------------+------------+-----------------+----------------|</p>
+<!-- \end{comment} -->
 <p>See <a href="http://kramdown.gettalong.org/syntax.html#tables">Syntax | kramdown</a></p>
 <h2 id="links">Links</h2>
 <ul>
@@ -607,7 +617,7 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'" clas'+'s="em' + 'ail">'+'&#x4
 <li><a href="http://fsf.org" title="The free software foundation">Another link</a>. <span class="citation">@markdown</span></li>
 <li><a href="/bar#special" title="A title in single quotes">link3</a>. <span class="citation">@markdown</span></li>
 </ul>
-<p>[link]: https://www.wikipedia.org/portal/wikipedia.org/assets/img/Wikipedia-logo-v2@2x.png &quot;Title&quot; class=external style=&quot;border: solid black 1px;&quot;</p>
+<p>[link]: image.png &quot;Title&quot; class=external style=&quot;border: solid black 1px;&quot;</p>
 <h2 id="footnotes">Footnotes</h2>
 <ul>
 <li>Footnotes [^This is a mmd inline footnote] <span class="citation">@mmd</span></li>
@@ -636,29 +646,29 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'" clas'+'s="em' + 'ail">'+'&#x4
 <p>Very powerful but complicated. See more at <a href="http://pandoc.org/README.html#citations">Citations---Pandoc Documentation</a>.</p>
 <h2 id="images">Images</h2>
 <ul>
-<li><img src="https://www.wikipedia.org/portal/wikipedia.org/assets/img/Wikipedia-logo-v2@2x.png" title="Optional Title" alt="Alt Text" /> <span class="citation">@markdown</span></li>
+<li><img src="image.png" title="Optional Title" alt="Alt Text" /> <span class="citation">@markdown</span></li>
 </ul>
 <h3 id="reference-images">Reference Images</h3>
 <ul>
-<li><img src="https://www.wikipedia.org/portal/wikipedia.org/assets/img/Wikipedia-logo-v2@2x.png" title="Optional Title" alt="Alt Text" /> <span class="citation">@markdown</span></li>
+<li><img src="image.png" title="Optional Title" alt="Alt Text" /> <span class="citation">@markdown</span></li>
 <li>[An Image with Attributes][wikipedia] <span class="citation">@mmd</span> <span class="citation">@pandoc</span>(extension:mmd_link_attributes)</li>
-<li><img src="https://www.wikipedia.org/portal/wikipedia.org/assets/img/Wikipedia-logo-v2@2x.png" alt="An Image with Attributes" id="id" class="class" width="30" height="20" /> <span class="citation">@pandoc</span> <span class="citation">@phpextra</span>(partial)</li>
-<li>a reference <img src="https://www.wikipedia.org/portal/wikipedia.org/assets/img/Wikipedia-logo-v2@2x.png" title="optional title" alt="image" id="id" class="class" key="val" key2="val 2" /> with attributes. <span class="citation">@pandoc</span> <span class="citation">@phpextra</span>(partial)</li>
+<li><img src="image.png" alt="An Image with Attributes" id="id" class="class" width="30" height="20" /> <span class="citation">@pandoc</span> <span class="citation">@phpextra</span>(partial)</li>
+<li>a reference <img src="image.png" title="optional title" alt="image" id="id" class="class" key="val" key2="val 2" /> with attributes. <span class="citation">@pandoc</span> <span class="citation">@phpextra</span>(partial)</li>
 </ul>
-<p>[wikipedia]: https://www.wikipedia.org/portal/wikipedia.org/assets/img/Wikipedia-logo-v2@2x.png &quot;Title of the Image&quot; width=40px height=40px</p>
+<p>[wikipedia]: image.png &quot;Title of the Image&quot; width=40px height=40px</p>
 <h3 id="image-with-links-by-nesting-image-and-link">Image with Links by Nesting Image and Link</h3>
 <ul>
-<li><a href="https://www.wikipedia.org/"><img src="https://www.wikipedia.org/portal/wikipedia.org/assets/img/Wikipedia-logo-v2@2x.png" alt="Image Link" /></a> <span class="citation">@markdown</span></li>
+<li><a href="https://www.wikipedia.org/"><img src="image.png" alt="Image Link" /></a> <span class="citation">@markdown</span></li>
 </ul>
 <h3 id="block-level-images">Block Level Images</h3>
 <ul>
 <li>Block level: HTML <code>figure</code> element in MultiMarkdown <span class="citation">@mmd</span> <span class="citation">@pandoc</span></li>
 </ul>
 <div class="figure">
-<img src="https://www.wikipedia.org/portal/wikipedia.org/assets/img/Wikipedia-logo-v2@2x.png" title="Optional Title" alt="Block Level" />
+<img src="image.png" title="Optional Title" alt="Block Level" />
 <p class="caption"><strong><em>Block</em></strong> <strong>Level</strong></p>
 </div>
-<p><img src="https://www.wikipedia.org/portal/wikipedia.org/assets/img/Wikipedia-logo-v2@2x.png" title="Optional Title" alt="Not Block Level" /><br />
+<p><img src="image.png" title="Optional Title" alt="Not Block Level" /><br />
 ## RAW ##</p>
 <h3 id="html">HTML</h3>
 <ul>
@@ -683,7 +693,7 @@ This <em>is</em> markdown
 <h2 id="metadata">Metadata</h2>
 <h3 id="multimarkdown-metadata-block">MultiMarkdown Metadata Block</h3>
 <p><span class="citation">@mmd</span> <span class="citation">@pandoc</span>(extension:mmd_title_block)</p>
-<pre class="md"><code>Title:    A Sample MultiMarkdown Document  
+<pre><code>Title:    A Sample MultiMarkdown Document  
 Author:   Fletcher T. Penney  
 Date:     February 9, 2011  
 Comment:  This is a comment intended to demonstrate  
@@ -699,16 +709,16 @@ CSS:      http://example.com/standard.css</code></pre>
 <h3 id="yaml-metadata-block">YAML Metadata Block</h3>
 <p><span class="citation">@Mmd</span>(Partial)</p>
 <p><span class="citation">@pandoc</span> <span class="citation">@ghpages</span></p>
-<div class="sourceCode"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span class="ot">---</span>
-<span class="fu">title:</span>    A Sample MultiMarkdown Document  
-<span class="fu">author:</span>   Fletcher T. Penney  
-<span class="fu">date:</span>     February 9, 2011  
-<span class="fu">tags:</span> <span class="kw">[</span>nothing<span class="kw">,</span> nothingness<span class="kw">]</span>
-<span class="fu">abstract:</span> |
+<pre><code>---
+title:    A Sample MultiMarkdown Document  
+author:   Fletcher T. Penney  
+date:     February 9, 2011  
+tags: [nothing, nothingness]
+abstract: |
   This is the abstract.
 
   It consists of two paragraphs.
-<span class="ot">---</span></code></pre></div>
+---</code></pre>
 <h2 id="toc">TOC</h2>
 <h3 id="pandoc-1">Pandoc</h3>
 <p><span class="citation">@pandoc</span></p>
@@ -716,24 +726,24 @@ CSS:      http://example.com/standard.css</code></pre>
 <h3 id="multimarkdown-1">MultiMarkdown</h3>
 <p><span class="citation">@mmd</span></p>
 <p><code>{{TOC}}</code>, see beginning. It preprocess the headings and generate a ToC on its own, and doesn't give instruction for LaTeX to generate one. A hack is like this:</p>
-<div class="sourceCode"><pre class="sourceCode markdown"><code class="sourceCode markdown">---
+<pre><code>---
 ...
 LaTeX Input:    mmd-load-toc-setcounter
 LaTeX Input:    mmd-load-toc
 ...
 ---
-&lt;!--<span class="co"> \begin{comment} --&gt;</span>
+&lt;!-- \begin{comment} --&gt;
 {{TOC}}
-&lt;!--<span class="co"> \end{comment} --&gt;</span>
-...</code></pre></div>
+&lt;!-- \end{comment} --&gt;
+...</code></pre>
 <p>See more at <a href="https://github.com/ickc/peg-multimarkdown-latex-support">ickc/peg-multimarkdown-latex-support: Default support files for generating LaTeX documents with MMD 3 through MMD 5</a>.</p>
 <h3 id="kramdown">Kramdown</h3>
 <p><span class="citation">@ghpages</span></p>
-<div class="sourceCode"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span class="fu"># Contents</span>
+<pre><code># Contents
 {:.no_toc}
 
-* <span class="fl">Will be replaced with the ToC, excluding the &quot;Contents&quot; header</span>
-<span class="fl">{:toc}</span></code></pre></div>
+* Will be replaced with the ToC, excluding the &quot;Contents&quot; header
+{:toc}</code></pre>
 <h2 id="math">Math</h2>
 <p>MathJax is assumed. MathJax has many configurable options. See <a href="http://mathjax.readthedocs.org/en/latest/tex.html">MathJax TeX and LaTeX Support — MathJax 2.6 documentation</a>.</p>
 <h3 id="markdown">Markdown</h3>

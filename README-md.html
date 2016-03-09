@@ -9,10 +9,11 @@
 </head>
 <body>
 <hr />
-<p>Title: Yet Another Markdown Cheatsheet Subtitle: Including MarkDown, MultiMarkdown, pandoc, GFM and LaTeX Math Syntax by MathJax<br />
+<p>HTML Header Level: 1 LaTeX Header Level: 1 LaTeX Input: mmd-article-header LaTeX input: mmd-natbib-plain LaTeX Input: mmd-load-physics-related LaTeX Input: mmd-load-tables-related LaTeX Input: mmd-load-pdfpages LaTeX Input: mmd-load-headings thmd: chapter LaTeX Input: mmd-load-amsthm Title: Yet Another Markdown Cheatsheet Subtitle: Including MarkDown, MultiMarkdown, pandoc, GFM and LaTeX Math Syntax by MathJax<br />
 Keywords: MarkDown, MultiMarkDown, LaTeX, pandoc, gfm<br />
 Revision: 0.10 Language: English Author: Kolen Cheung Email: khcheung@berkeley.edu Affiliation: University of California, Berkeley Copyright: 2016 Kolen Cheung<br />
-All Rights Reserved. ---</p>
+All Rights Reserved. LaTeX Mode: memoir LaTeX Input: mmd-article-begin-doc tocd: 5 secd: 5 LaTeX Input: mmd-load-toc-setcounter LaTeX Input: mmd-load-toc LaTeX Footer: mmd-memoir-footer ---</p>
+<!-- \begin{comment} -->
 <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML-full"></script>
 <p><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/styles/default.min.css"><script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/highlight.min.js"></script><script>hljs.initHighlightingOnLoad();</script></p>
 <h1>Contents</h1>
@@ -21,6 +22,7 @@ All Rights Reserved. ---</p>
 <li>Will be replaced with the ToC, excluding the &quot;Contents&quot; header {:toc}</li>
 </ul>
 <p>{{TOC}}</p>
+<!-- \end{comment} -->
 <h1>Introduction</h1>
 <p>[Examples][] shows explicit examples for different syntaxes. [Other Syntaxes][] show the syntaxes that can't be shown explicitly.</p>
 <h2>Organization</h2>
@@ -35,6 +37,10 @@ All Rights Reserved. ---</p>
 <li><code>@pandoc</code>: pandoc-favored markdown</li>
 <li><code>@phpextra</code>: PHP Markdown Extra (inspired some syntax in pandoc and mmd and gfm, not exhaustively tested here)</li>
 </ul></li>
+</ul>
+<p>Note:</p>
+<ul>
+<li>You might see <code>&lt;!-- \begin{comment} --&gt;...&lt;!-- \end{comment} --&gt;</code>. This is for mmd to tex to pdf use only. Ignore this.</li>
 </ul>
 <h1>Examples</h1>
 <h2>Header</h2>
@@ -77,6 +83,7 @@ All Rights Reserved. ---</p>
 </ul>
 <h3>CriticMarkup</h3>
 <p>Visually it looks like emphasis. Functionally it is much more, and called Critic Markup @mmd</p>
+<!-- \begin{comment} -->
 <ul>
 <li>Deletions from the original text: This is {--is --}a test.</li>
 <li>Additions: This {++is ++}a test.</li>
@@ -84,6 +91,7 @@ All Rights Reserved. ---</p>
 <li>Highlighting: This is a {==test==}.</li>
 <li>Comments: This is a test{&gt;&gt;What is it a test of?&lt;&lt;}.</li>
 </ul>
+<!-- \end{comment} -->
 <p>See more at <a href="http://fletcher.github.io/MultiMarkdown-5/criticmarkup.html">CriticMarkup---MultiMarkdown Documentation</a>.</p>
 <h2>Horizontal Rules</h2>
 <p>@markdown</p>
@@ -227,7 +235,7 @@ test
     # test</code></pre>
 <h4>Method 2</h4>
 <p>@markdown(partial:language-not-supported) @ghpages @pandoc @mmd</p>
-<p><code>latex \nabla \times \mathbf{E} = - \frac{\partial \mathbf{B}}{\partial t}</code></p>
+<p><code>tex \nabla \times \mathbf{E} = - \frac{\partial \mathbf{B}}{\partial t}</code></p>
 <h4>Method 3</h4>
 <p>@pandoc</p>
 <p>~~~markdown test test test # test ~~~</p>
@@ -288,7 +296,9 @@ test
 <p>+---------------+---------------+--------------------+ | Fruit | Price | Advantages | +===============+===============+====================+ | Bananas | $1.34 | - built-in wrapper | | | | - bright color | +---------------+---------------+--------------------+ | Oranges | $2.10 | - cures scurvy | | | | - tasty | +---------------+---------------+--------------------+</p>
 <h3>Method 6</h3>
 <p>@ghpages</p>
+<!-- \begin{comment} -->
 <p>|-----------------+------------+-----------------+----------------| | Default aligned |Left aligned| Center aligned | Right aligned | |-----------------|:-----------|:---------------:|---------------:| | First body part |Second cell | Third cell | fourth cell | | Second line |foo | <strong>strong</strong> | blah | | Third line |blah | blah | bar | |-----------------+------------+-----------------+----------------| | Second body | | | | | 2 line | | | | |=================+============+=================+================| | Footer row | | | | |-----------------+------------+-----------------+----------------|</p>
+<!-- \end{comment} -->
 <p>See <a href="http://kramdown.gettalong.org/syntax.html#tables">Syntax | kramdown</a></p>
 <h2>Links</h2>
 <ul>
@@ -312,7 +322,7 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'" clas'+'s="em' + 'ail">'+'&#x4
 <li><a href="http://fsf.org" title="The free software foundation">Another link</a>. @markdown</li>
 <li><a href="/bar#special" title="A title in single quotes">link3</a>. @markdown</li>
 </ul>
-<p>[link]: https://www.wikipedia.org/portal/wikipedia.org/assets/img/Wikipedia-logo-v2@2x.png &quot;Title&quot; class=external style=&quot;border: solid black 1px;&quot;</p>
+<p>[link]: image.png &quot;Title&quot; class=external style=&quot;border: solid black 1px;&quot;</p>
 <h2>Footnotes</h2>
 <ul>
 <li>Footnotes [^This is a mmd inline footnote] @mmd</li>
@@ -341,27 +351,27 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'" clas'+'s="em' + 'ail">'+'&#x4
 <p>Very powerful but complicated. See more at <a href="http://pandoc.org/README.html#citations">Citations---Pandoc Documentation</a>.</p>
 <h2>Images</h2>
 <ul>
-<li><img src="https://www.wikipedia.org/portal/wikipedia.org/assets/img/Wikipedia-logo-v2@2x.png" title="Optional Title" alt="Alt Text" /> @markdown</li>
+<li><img src="image.png" title="Optional Title" alt="Alt Text" /> @markdown</li>
 </ul>
 <h3>Reference Images</h3>
 <ul>
-<li><img src="https://www.wikipedia.org/portal/wikipedia.org/assets/img/Wikipedia-logo-v2@2x.png" title="Optional Title" alt="Alt Text" /> @markdown</li>
+<li><img src="image.png" title="Optional Title" alt="Alt Text" /> @markdown</li>
 <li>[An Image with Attributes][wikipedia] @mmd @pandoc(extension:mmd<em>link</em>attributes)</li>
-<li><img src="https://www.wikipedia.org/portal/wikipedia.org/assets/img/Wikipedia-logo-v2@2x.png" alt="An Image with Attributes" />{#id .class width=30 height=20px} @pandoc @phpextra(partial)</li>
+<li><img src="image.png" alt="An Image with Attributes" />{#id .class width=30 height=20px} @pandoc @phpextra(partial)</li>
 <li>a reference [image][ref] with attributes. @pandoc @phpextra(partial)</li>
 </ul>
-<p>[wikipedia]: https://www.wikipedia.org/portal/wikipedia.org/assets/img/Wikipedia-logo-v2@2x.png &quot;Title of the Image&quot; width=40px height=40px</p>
-<p>[ref]: https://www.wikipedia.org/portal/wikipedia.org/assets/img/Wikipedia-logo-v2@2x.png &quot;optional title&quot; {#id .class key=val key2=&quot;val 2&quot;}</p>
+<p>[wikipedia]: image.png &quot;Title of the Image&quot; width=40px height=40px</p>
+<p>[ref]: image.png &quot;optional title&quot; {#id .class key=val key2=&quot;val 2&quot;}</p>
 <h3>Image with Links by Nesting Image and Link</h3>
 <ul>
-<li><a href="https://www.wikipedia.org/"><img src="https://www.wikipedia.org/portal/wikipedia.org/assets/img/Wikipedia-logo-v2@2x.png" alt="Image Link" /></a> @markdown</li>
+<li><a href="https://www.wikipedia.org/"><img src="image.png" alt="Image Link" /></a> @markdown</li>
 </ul>
 <h3>Block Level Images</h3>
 <ul>
 <li>Block level: HTML <code>figure</code> element in MultiMarkdown @mmd @pandoc</li>
 </ul>
-<p><img src="https://www.wikipedia.org/portal/wikipedia.org/assets/img/Wikipedia-logo-v2@2x.png" title="Optional Title" alt="Block Level" /></p>
-<p><img src="https://www.wikipedia.org/portal/wikipedia.org/assets/img/Wikipedia-logo-v2@2x.png" title="Optional Title" alt="Not Block Level" />\</p>
+<p><img src="image.png" title="Optional Title" alt="Block Level" /></p>
+<p><img src="image.png" title="Optional Title" alt="Not Block Level" />\</p>
 <h2>RAW</h2>
 <h3>HTML</h3>
 <ul>
@@ -382,7 +392,7 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'" clas'+'s="em' + 'ail">'+'&#x4
 <h2>Metadata</h2>
 <h3>MultiMarkdown Metadata Block</h3>
 <p>@mmd @pandoc(extension:mmd<em>title</em>block)</p>
-<p><code>md Title:    A Sample MultiMarkdown Document   Author:   Fletcher T. Penney   Date:     February 9, 2011   Comment:  This is a comment intended to demonstrate             metadata that spans multiple lines, yet             is treated as a single value.   CSS:      http://example.com/standard.css</code></p>
+<p><code>Title:    A Sample MultiMarkdown Document   Author:   Fletcher T. Penney   Date:     February 9, 2011   Comment:  This is a comment intended to demonstrate             metadata that spans multiple lines, yet             is treated as a single value.   CSS:      http://example.com/standard.css</code></p>
 <p>See more at <a href="http://fletcher.github.io/MultiMarkdown-5/metadata.html">Metadata---MultiMarkdown Documentation</a>.</p>
 <h3>Pandoc Title Block</h3>
 <p>@pandoc</p>
@@ -390,7 +400,7 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'" clas'+'s="em' + 'ail">'+'&#x4
 <h3>YAML Metadata Block</h3>
 <p>@Mmd(Partial)</p>
 <p>@pandoc @ghpages</p>
-<h2>```yaml</h2>
+<h2>```</h2>
 <p>title: A Sample MultiMarkdown Document<br />
 author: Fletcher T. Penney<br />
 date: February 9, 2011<br />
@@ -404,11 +414,11 @@ tags: [nothing, nothingness] abstract: | This is the abstract.</p>
 <h3>MultiMarkdown</h3>
 <p>@mmd</p>
 <p><code>{{TOC}}</code>, see beginning. It preprocess the headings and generate a ToC on its own, and doesn't give instruction for LaTeX to generate one. A hack is like this:</p>
-<p><code>markdown --- ... LaTeX Input:    mmd-load-toc-setcounter LaTeX Input:    mmd-load-toc ... --- &lt;!-- \begin{comment} --&gt; {{TOC}} &lt;!-- \end{comment} --&gt; ...</code></p>
+<p><code>--- ... LaTeX Input:    mmd-load-toc-setcounter LaTeX Input:    mmd-load-toc ... --- &lt;!-- \begin{comment} --&gt; {{TOC}} &lt;!-- \end{comment} --&gt; ...</code></p>
 <p>See more at <a href="https://github.com/ickc/peg-multimarkdown-latex-support">ickc/peg-multimarkdown-latex-support: Default support files for generating LaTeX documents with MMD 3 through MMD 5</a>.</p>
 <h3>Kramdown</h3>
 <p>@ghpages</p>
-<p>```markdown</p>
+<p>```</p>
 <h1>Contents</h1>
 <p>{:.no_toc}</p>
 <ul>

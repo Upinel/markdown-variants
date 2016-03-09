@@ -2,6 +2,8 @@
 <html>
 <head>
 	<meta charset="utf-8"/>
+	<meta name="latexheaderlevel" content="1"/>
+	<meta name="thmd" content="chapter"/>
 	<title>Yet Another Markdown Cheatsheet</title>
 	<meta name="subtitle" content="Including MarkDown, MultiMarkdown, pandoc, GFM and LaTeX Math Syntax by MathJax"/>
 	<meta name="keywords" content="MarkDown, MultiMarkDown, LaTeX, pandoc, gfm"/>
@@ -12,8 +14,12 @@
 	<meta name="affiliation" content="University of California, Berkeley"/>
 	<meta name="copyright" content="2016 Kolen Cheung  
 All Rights Reserved."/>
+	<meta name="tocd" content="5"/>
+	<meta name="secd" content="5"/>
 </head>
 <body>
+
+<!-- \begin{comment} -->
 
 <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML-full"></script>
 
@@ -167,15 +173,13 @@ All Rights Reserved."/>
 <li><a href="#pandoctitleblock">Pandoc Title Block</a></li>
 <li><a href="#yamlmetadatablock">YAML Metadata Block</a></li>
 </ul></li>
-<li>[```yaml][yaml]</li>
+<li>[```][]</li>
 <li>[It consists of two paragraphs.][itconsistsoftwoparagraphs.]</li>
-<li><a href="#toc">TOC</a>
+<li>[&#8230;][...]</li>
+</ul></li>
+<li><a href="#contents">Contents</a>
 
 <ul>
-<li><a href="#pandoc">Pandoc</a></li>
-<li><a href="#multimarkdown">MultiMarkdown</a></li>
-<li><a href="#kramdown">Kramdown</a></li>
-</ul></li>
 <li><a href="#math">Math</a>
 
 <ul>
@@ -196,6 +200,8 @@ All Rights Reserved."/>
 </ul>
 </div>
 
+<!-- \end{comment} -->
+
 <h1 id="introduction">Introduction</h1>
 
 <p><a href="#examples">Examples</a> shows explicit examples for different syntaxes. <a href="#othersyntaxes">Other Syntaxes</a> show the syntaxes that can&#8217;t be shown explicitly.</p>
@@ -214,6 +220,12 @@ All Rights Reserved."/>
 <li><code>@pandoc</code>: pandoc-favored markdown</li>
 <li><code>@phpextra</code>: PHP Markdown Extra (inspired some syntax in pandoc and mmd and gfm, not exhaustively tested here)</li>
 </ul></li>
+</ul>
+
+<p>Note:</p>
+
+<ul>
+<li>You might see <code>&lt;!-- \begin{comment} --&gt;...&lt;!-- \end{comment} --&gt;</code>. This is for mmd to tex to pdf use only. Ignore this.</li>
 </ul>
 
 <h1 id="examples">Examples</h1>
@@ -283,6 +295,8 @@ All Rights Reserved."/>
 
 <p>Visually it looks like emphasis. Functionally it is much more, and called Critic Markup @mmd</p>
 
+<!-- \begin{comment} -->
+
 <ul>
 <li>Deletions from the original text: This is {&#8211;is &#8211;}a test.</li>
 <li>Additions: This {++is ++}a test.</li>
@@ -290,6 +304,8 @@ All Rights Reserved."/>
 <li>Highlighting: This is a {==test==}.</li>
 <li>Comments: This is a test{&gt;&gt;What is it a test of?&lt;&lt;}.</li>
 </ul>
+
+<!-- \end{comment} -->
 
 <p>See more at <a href="http://fletcher.github.io/MultiMarkdown-5/criticmarkup.html">CriticMarkup&#8212;MultiMarkdown Documentation</a>.</p>
 
@@ -538,7 +554,7 @@ test
 
 <p>@markdown(partial:language-not-supported) @ghpages @pandoc @mmd</p>
 
-<pre><code class="latex">\nabla \times \mathbf{E} = - \frac{\partial \mathbf{B}}{\partial t}
+<pre><code class="tex">\nabla \times \mathbf{E} = - \frac{\partial \mathbf{B}}{\partial t}
 </code></pre>
 
 <h4 id="method3">Method 3</h4>
@@ -734,6 +750,8 @@ multiple lines.</p>
 
 <p>@ghpages</p>
 
+<!-- \begin{comment} -->
+
 <table>
 <colgroup>
 <col/>
@@ -801,13 +819,11 @@ multiple lines.</p>
 	<td>&#8212;&#8212;&#8212;&#8212;&#8212;&#8211;+&#8212;&#8212;&#8212;&#8212;+&#8212;&#8212;&#8212;&#8212;&#8212;&#8211;+&#8212;&#8212;&#8212;&#8212;&#8212;-</td>
 </tr>
 </tbody>
-
-<tbody>
-<tr>
-	<td>See <a href="http://kramdown.gettalong.org/syntax.html#tables">Syntax | kramdown</a> </td>
-</tr>
-</tbody>
 </table>
+
+<!-- \end{comment} -->
+
+<p>See <a href="http://kramdown.gettalong.org/syntax.html#tables">Syntax | kramdown</a> </p>
 
 <h2 id="links">Links</h2>
 
@@ -823,8 +839,8 @@ multiple lines.</p>
 
 <ul>
 <li><a href="https://www.google.com">Search here</a> @markdown</li>
-<li>A <a href="https://www.wikipedia.org/portal/wikipedia.org/assets/img/Wikipedia-logo-v2@2x.png" title="Title" class="external" style="border: solid black 1px;">link</a> with attributes. @mmd</li>
-<li><a href="https://www.wikipedia.org/portal/wikipedia.org/assets/img/Wikipedia-logo-v2@2x.png" title="Title" class="external" style="border: solid black 1px;">Another link to the link above</a>. @mmd</li>
+<li>A <a href="image.png" title="Title" class="external" style="border: solid black 1px;">link</a> with attributes. @mmd</li>
+<li><a href="image.png" title="Title" class="external" style="border: solid black 1px;">Another link to the link above</a>. @mmd</li>
 <li>A <a href="/foo/bar.html" title="My title, optional">link1</a> with attributes. @markdown</li>
 <li><a href="http://fsf.org" title="The free software foundation">Another link</a>. @markdown</li>
 <li><a href="/bar#special" title="A title in single quotes">link3</a>. @markdown</li>
@@ -878,24 +894,24 @@ isn&#8217;t indented.</p>
 <h2 id="images">Images</h2>
 
 <ul>
-<li><img src="https://www.wikipedia.org/portal/wikipedia.org/assets/img/Wikipedia-logo-v2@2x.png" alt="Alt Text" title="Optional Title" /> @markdown</li>
+<li><img src="image.png" alt="Alt Text" title="Optional Title" /> @markdown</li>
 </ul>
 
 <h3 id="referenceimages">Reference Images</h3>
 
 <ul>
-<li><img src="https://www.wikipedia.org/portal/wikipedia.org/assets/img/Wikipedia-logo-v2@2x.png" alt="Alt Text" id="imageid" title="Optional Title" /> @markdown</li>
-<li><img src="https://www.wikipedia.org/portal/wikipedia.org/assets/img/Wikipedia-logo-v2@2x.png" alt="An Image with Attributes" id="wikipedia" title="Title of the Image" style="height:40px;width:40px;" /> @mmd @pandoc(extension:mmd_link_attributes)</li>
-<li><img src="https://www.wikipedia.org/portal/wikipedia.org/assets/img/Wikipedia-logo-v2@2x.png" alt="An Image with Attributes" />{#id .class width=30 height=20px} @pandoc @phpextra(partial)</li>
+<li><img src="image.png" alt="Alt Text" id="imageid" title="Optional Title" /> @markdown</li>
+<li><img src="image.png" alt="An Image with Attributes" id="wikipedia" title="Title of the Image" style="height:40px;width:40px;" /> @mmd @pandoc(extension:mmd_link_attributes)</li>
+<li><img src="image.png" alt="An Image with Attributes" />{#id .class width=30 height=20px} @pandoc @phpextra(partial)</li>
 <li>a reference ![image][ref] with attributes. @pandoc @phpextra(partial)</li>
 </ul>
 
-<p>[ref]: https://www.wikipedia.org/portal/wikipedia.org/assets/img/Wikipedia-logo-v2@2x.png &#8220;optional title&#8221; {#id .class key=val key2=&#8220;val 2&#8221;}</p>
+<p>[ref]: image.png &#8220;optional title&#8221; {#id .class key=val key2=&#8220;val 2&#8221;}</p>
 
 <h3 id="imagewithlinksbynestingimageandlink">Image with Links by Nesting Image and Link</h3>
 
 <ul>
-<li><a href="https://www.wikipedia.org/"><img src="https://www.wikipedia.org/portal/wikipedia.org/assets/img/Wikipedia-logo-v2@2x.png" alt="Image Link" /></a> @markdown</li>
+<li><a href="https://www.wikipedia.org/"><img src="image.png" alt="Image Link" /></a> @markdown</li>
 </ul>
 
 <h3 id="blocklevelimages">Block Level Images</h3>
@@ -905,11 +921,11 @@ isn&#8217;t indented.</p>
 </ul>
 
 <figure>
-<img src="https://www.wikipedia.org/portal/wikipedia.org/assets/img/Wikipedia-logo-v2@2x.png" alt="Block Level" title="Optional Title" />
+<img src="image.png" alt="Block Level" title="Optional Title" />
 <figcaption><strong><em>Block</em></strong> <strong>Level</strong></figcaption>
 </figure>
 
-<p><img src="https://www.wikipedia.org/portal/wikipedia.org/assets/img/Wikipedia-logo-v2@2x.png" alt="Not Block Level" title="Optional Title" />
+<p><img src="image.png" alt="Not Block Level" title="Optional Title" />
 </p>
 
 <h2 id="raw">RAW</h2>
@@ -939,7 +955,7 @@ isn&#8217;t indented.</p>
 
 <p>@mmd @pandoc(extension:mmd_title_block)</p>
 
-<pre><code class="md">Title:    A Sample MultiMarkdown Document  
+<pre><code>Title:    A Sample MultiMarkdown Document  
 Author:   Fletcher T. Penney  
 Date:     February 9, 2011  
 Comment:  This is a comment intended to demonstrate  
@@ -965,7 +981,7 @@ CSS:      http://example.com/standard.css
 
 <p>@pandoc @ghpages</p>
 
-<pre><code class="yaml">---
+<pre><code>---
 title:    A Sample MultiMarkdown Document  
 author:   Fletcher T. Penney  
 date:     February 9, 2011  
@@ -991,7 +1007,7 @@ abstract: |
 
 <p><code>{{TOC}}</code>, see beginning. It preprocess the headings and generate a ToC on its own, and doesn&#8217;t give instruction for LaTeX to generate one. A hack is like this:</p>
 
-<pre><code class="markdown">---
+<pre><code>---
 ...
 LaTeX Input:    mmd-load-toc-setcounter
 LaTeX Input:    mmd-load-toc
@@ -1009,7 +1025,7 @@ LaTeX Input:    mmd-load-toc
 
 <p>@ghpages</p>
 
-<pre><code class="markdown"># Contents
+<pre><code># Contents
 {:.no_toc}
 
 * Will be replaced with the ToC, excluding the &quot;Contents&quot; header
