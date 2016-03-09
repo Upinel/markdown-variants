@@ -220,6 +220,14 @@ All Rights Reserved."/>
 <li><code>@pandoc</code>: pandoc-favored markdown</li>
 <li><code>@phpextra</code>: PHP Markdown Extra (inspired some syntax in pandoc and mmd and gfm, not exhaustively tested here)</li>
 </ul></li>
+<li>TaskPaper Tags
+
+<ul>
+<li><code>@...(partial)</code>: partial supports only</li>
+<li><code>@...(+...)</code>: when the extension is used</li>
+<li><code>@pandoc(--...)</code>: when the command line argument is used</li>
+<li><code>@pandoc(parsed)</code>: not verbatim, but parsed</li>
+</ul></li>
 </ul>
 
 <p>Note:</p>
@@ -264,7 +272,8 @@ All Rights Reserved."/>
 <h3 id="userdefinedreference">User defined reference</h3>
 
 <ul>
-<li><a href="#userdefinedreference">userdefinedreference</a> @mmd @pandoc(extension:mmd_header_identifiers)</li>
+<li><a href="#userdefinedreference">userdefinedreference</a> @mmd</li>
+<li><a href="#userdefinedreference">Link to userdefinedreference</a> @mmd @pandoc(+mmd_header_identifiers)</li>
 <li><a href="#identifier">Link to &#8220;Header Containing Attributes&#8221;</a> @pandoc</li>
 <li><a href="#identifier">another-link</a> @pandoc</li>
 </ul>
@@ -345,20 +354,25 @@ like this</p>
 
 <h2 id="smartypants">Smarty Pants</h2>
 
-<p>@markdown(extension:smartypants) @pandoc(&#8211;smart) @ghpages</p>
+<p>@markdown(+smartypants) @pandoc(&#8211;smart) @ghpages</p>
 
 <ul>
 <li>&#8220;Example 1&#8221;</li>
 <li>&#8216;Example 2&#8217;</li>
-<li>&#8220;Example 3&#8221;</li>
 <li>en&#8211;dash</li>
 <li>em&#8212;dash</li>
 <li>ellipsis&#8230;</li>
 </ul>
 
+<p>@mmd</p>
+
+<ul>
+<li>&#8220;Example 3&#8221;</li>
+</ul>
+
 <h2 id="abbreviationsphpmarkdownextra">Abbreviations (PHP Markdown Extra)</h2>
 
-<p>@mmd @phpextra @pandoc(extension:abbreviations)</p>
+<p>@mmd @phpextra @pandoc(+abbreviations)</p>
 
 <p>Testing abbreviations: <abbr title="HyperText Markup Language">HTML</abbr>, <abbr title="World Wide Web Consortium">W3C</abbr> (mouseover it to see)</p>
 
@@ -828,7 +842,7 @@ multiple lines.</p>
 <h2 id="links">Links</h2>
 
 <ul>
-<li>https://www.wikipedia.org @pandoc(extension:autolink_bare_uris)</li>
+<li>https://www.wikipedia.org @pandoc(+autolink_bare_uris)</li>
 <li><a href="https://www.wikipedia.org">https://www.wikipedia.org</a> @markdown</li>
 <li><a href="https://www.wikipedia.org">Wikipedia.org</a> @markdown</li>
 <li><a href="https://www.wikipedia.org" title="a title">Wikipedia.org</a> @markdown</li>
@@ -901,7 +915,7 @@ isn&#8217;t indented.</p>
 
 <ul>
 <li><img src="image.png" alt="Alt Text" id="imageid" title="Optional Title" /> @markdown</li>
-<li><img src="image.png" alt="An Image with Attributes" id="wikipedia" title="Title of the Image" style="height:40px;width:40px;" /> @mmd @pandoc(extension:mmd_link_attributes)</li>
+<li><img src="image.png" alt="An Image with Attributes" id="wikipedia" title="Title of the Image" style="height:40px;width:40px;" /> @mmd @pandoc(+mmd_link_attributes)</li>
 <li><img src="image.png" alt="An Image with Attributes" />{#id .class width=30 height=20px} @pandoc @phpextra(partial)</li>
 <li>a reference ![image][ref] with attributes. @pandoc @phpextra(partial)</li>
 </ul>
@@ -934,7 +948,7 @@ isn&#8217;t indented.</p>
 
 <ul>
 <li><div>This should <em>not</em> be markdown (or is it?) </div> @markdown</li>
-<li><div>This <em>is</em> markdown</div> @mmd @pandoc(non-default-extension:markdown_attribute)</li>
+<li><div>This <em>is</em> markdown</div> @mmd @pandoc(+markdown_attribute)</li>
 </ul>
 
 <p>See more at <a href="http://fletcher.github.io/MultiMarkdown-5/raw.html">Raw&#8212;MultiMarkdown Documentation</a>. See test in [Babelmark 2 - Compare markdown implementations](http://johnmacfarlane.net/babelmark2/?normalize=1&amp;text=%3Cdiv%3EThis+should+*not*+be+markdown+(or+is+it%3F%29+%3C%2Fdiv%3E%0A%3Cdiv+markdown%3D1%3EThis+*is*+markdown%3C%2Fdiv%3E).</p>
@@ -955,7 +969,7 @@ isn&#8217;t indented.</p>
 
 <h3 id="multimarkdownmetadatablock">MultiMarkdown Metadata Block</h3>
 
-<p>@mmd @pandoc(extension:mmd_title_block)</p>
+<p>@mmd @pandoc(+mmd_title_block)</p>
 
 <pre><code>title:    A Sample MultiMarkdown Document  
 author:   Fletcher T. Penney  
@@ -979,7 +993,7 @@ CSS:      http://example.com/standard.css
 
 <h3 id="yamlmetadatablock">YAML Metadata Block</h3>
 
-<p>@Mmd(Partial)</p>
+<p>@Mmd(partial)</p>
 
 <p>@pandoc @ghpages</p>
 
@@ -1074,7 +1088,7 @@ LaTeX Input:    mmd-load-toc
 
 <h4 id="pandoc">Pandoc</h4>
 
-<p>@pandoc</p>
+<p>@pandoc(&#8211;mathjax)</p>
 
 <p>For pandoc, add <code>--mathjax</code> in the command-line argument.</p>
 
@@ -1084,7 +1098,7 @@ LaTeX Input:    mmd-load-toc
 
 <ul>
 <li><span class="math">\(1+1\)</span></li>
-<li><span class="math">\(1 + 1\)</span></li>
+<li><span class="math">\(1 + 1\)</span> @pandoc(+tex_math_double_backslash)</li>
 </ul>
 
 <h3 id="blockmath">Block Math</h3>

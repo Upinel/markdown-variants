@@ -37,6 +37,13 @@ All Rights Reserved. LaTeX Mode: memoir LaTeX Input: mmd-article-begin-doc tocd:
 <li><code>@pandoc</code>: pandoc-favored markdown</li>
 <li><code>@phpextra</code>: PHP Markdown Extra (inspired some syntax in pandoc and mmd and gfm, not exhaustively tested here)</li>
 </ul></li>
+<li>TaskPaper Tags
+<ul>
+<li><code>@...(partial)</code>: partial supports only</li>
+<li><code>@...(+...)</code>: when the extension is used</li>
+<li><code>@pandoc(--...)</code>: when the command line argument is used</li>
+<li><code>@pandoc(parsed)</code>: not verbatim, but parsed</li>
+</ul></li>
 </ul>
 <p>Note:</p>
 <ul>
@@ -63,7 +70,8 @@ All Rights Reserved. LaTeX Mode: memoir LaTeX Input: mmd-article-begin-doc tocd:
 </ul>
 <h3>User defined reference [userdefinedreference]</h3>
 <ul>
-<li>[userdefinedreference][] @mmd @pandoc(extension:mmd<em>header</em>identifiers)</li>
+<li>[userdefinedreference][] @mmd</li>
+<li><a href="#userdefinedreference">Link to userdefinedreference</a> @mmd @pandoc(+mmd<em>header</em>identifiers)</li>
 <li><a href="#identifier">Link to &quot;Header Containing Attributes&quot;</a> @pandoc</li>
 <li><a href="#identifier">another-link</a> @pandoc</li>
 </ul>
@@ -114,17 +122,20 @@ like this</p>
 <li>P~a\ cat~ @pandoc</li>
 </ul>
 <h2>Smarty Pants</h2>
-<p>@markdown(extension:smartypants) @pandoc(--smart) @ghpages</p>
+<p>@markdown(+smartypants) @pandoc(--smart) @ghpages</p>
 <ul>
 <li>&quot;Example 1&quot;</li>
 <li>'Example 2'</li>
-<li>``Example 3''</li>
 <li>en--dash</li>
 <li>em---dash</li>
 <li>ellipsis...</li>
 </ul>
+<p>@mmd</p>
+<ul>
+<li>``Example 3''</li>
+</ul>
 <h2>Abbreviations (PHP Markdown Extra)</h2>
-<p>@mmd @phpextra @pandoc(extension:abbreviations)</p>
+<p>@mmd @phpextra @pandoc(+abbreviations)</p>
 <p><em>[HTML]: HyperText Markup Language </em>[W3C]: World Wide Web Consortium *[PANDOC]: Pandoc will simply ignore this if the extension is used. A graceful fallback.</p>
 <p>Testing abbreviations: HTML, W3C (mouseover it to see)</p>
 <h2>Lists</h2>
@@ -302,7 +313,7 @@ test
 <p>See <a href="http://kramdown.gettalong.org/syntax.html#tables">Syntax | kramdown</a></p>
 <h2>Links</h2>
 <ul>
-<li>https://www.wikipedia.org @pandoc(extension:autolink<em>bare</em>uris)</li>
+<li>https://www.wikipedia.org @pandoc(+autolink<em>bare</em>uris)</li>
 <li><a href="https://www.wikipedia.org" class="uri">https://www.wikipedia.org</a> @markdown</li>
 <li><a href="https://www.wikipedia.org">Wikipedia.org</a> @markdown</li>
 <li><a href="https://www.wikipedia.org" title="a title">Wikipedia.org</a> @markdown</li>
@@ -356,7 +367,7 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'" clas'+'s="em' + 'ail">'+'&#x4
 <h3>Reference Images</h3>
 <ul>
 <li><img src="image.png" title="Optional Title" alt="Alt Text" /> @markdown</li>
-<li>[An Image with Attributes][wikipedia] @mmd @pandoc(extension:mmd<em>link</em>attributes)</li>
+<li>[An Image with Attributes][wikipedia] @mmd @pandoc(+mmd<em>link</em>attributes)</li>
 <li><img src="image.png" alt="An Image with Attributes" />{#id .class width=30 height=20px} @pandoc @phpextra(partial)</li>
 <li>a reference [image][ref] with attributes. @pandoc @phpextra(partial)</li>
 </ul>
@@ -378,7 +389,7 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'" clas'+'s="em' + 'ail">'+'&#x4
 <li><div>This should *not* be markdown (or is it?) </div>
 @markdown</li>
 <li><div markdown=1>This *is* markdown</div>
-@mmd @pandoc(non-default-extension:markdown_attribute)</li>
+@mmd @pandoc(+markdown_attribute)</li>
 </ul>
 <p>See more at <a href="http://fletcher.github.io/MultiMarkdown-5/raw.html">Raw---MultiMarkdown Documentation</a>. See test in [Babelmark 2 - Compare markdown implementations](http://johnmacfarlane.net/babelmark2/?normalize=1&amp;text=%3Cdiv%3EThis+should+<em>not</em>+be+markdown+(or+is+it%3F%29+%3C%2Fdiv%3E%0A%3Cdiv+markdown%3D1%3EThis+<em>is</em>+markdown%3C%2Fdiv%3E).</p>
 <h3>LaTeX</h3>
@@ -392,14 +403,14 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'" clas'+'s="em' + 'ail">'+'&#x4
 <h2>Metadata</h2>
 <p>Note: mmd accepts capitalized metadata keys but others do not. For maximum compatibility, <code>author(s)</code>, <code>title</code>, etc. should be in lower cases.</p>
 <h3>MultiMarkdown Metadata Block</h3>
-<p>@mmd @pandoc(extension:mmd<em>title</em>block)</p>
+<p>@mmd @pandoc(+mmd<em>title</em>block)</p>
 <p><code>title:    A Sample MultiMarkdown Document   author:   Fletcher T. Penney   date:     February 9, 2011   comment:  This is a comment intended to demonstrate             metadata that spans multiple lines, yet             is treated as a single value.   CSS:      http://example.com/standard.css</code></p>
 <p>See more at <a href="http://fletcher.github.io/MultiMarkdown-5/metadata.html">Metadata---MultiMarkdown Documentation</a>.</p>
 <h3>Pandoc Title Block</h3>
 <p>@pandoc</p>
 <p><code>% title % author(s) (separated by semicolons) % date</code></p>
 <h3>YAML Metadata Block</h3>
-<p>@Mmd(Partial)</p>
+<p>@Mmd(partial)</p>
 <p>@pandoc @ghpages</p>
 <h2>```</h2>
 <p>title: A Sample MultiMarkdown Document<br />
@@ -442,13 +453,13 @@ tags: [nothing, nothingness] abstract: | This is the abstract.</p>
 <p><code>html HTML header:    &lt;script type=&quot;text/javascript&quot;     src=&quot;https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML-full&quot;&gt;     &lt;/script&gt;</code></p>
 <p>MultiMarkdown math delimiter are <code>$...$</code>, <code>$$...$$</code>, <code>\\(...\\)</code> and <code>\\[...\\]</code>.</p>
 <h4>Pandoc</h4>
-<p>@pandoc</p>
+<p>@pandoc(--mathjax)</p>
 <p>For pandoc, add <code>--mathjax</code> in the command-line argument.</p>
 <p>Default math delimiter for pandoc is <code>$...$</code>, <code>$$...$$</code>. Other options are configurable. See more in <a href="http://pandoc.org/README.html#non-pandoc-extensions">Pandoc - Pandoc User’s Guide</a>.</p>
 <h3>Inline Math</h3>
 <ul>
 <li>$1+1$</li>
-<li>\(1 + 1\)</li>
+<li>\(1 + 1\) @pandoc(+tex<em>math</em>double_backslash)</li>
 </ul>
 <h3>Block Math</h3>
 <ul>

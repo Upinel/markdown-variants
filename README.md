@@ -58,10 +58,10 @@ LaTeX Footer:	mmd-memoir-footer
 	- `@pandoc`: pandoc-favored markdown
 	- `@phpextra`: PHP Markdown Extra (inspired some syntax in pandoc and mmd and gfm, not exhaustively tested here)
 - TaskPaper Tags
-	- `@...(extension:...)`: when the extension is used
-	- `@...(--...)`: when the command line argument is used
 	- `@...(partial)`: partial supports only
-	- `@...(parsed)`: not verbatim, but parsed
+	- `@...(+...)`: when the extension is used
+	- `@pandoc(--...)`: when the command line argument is used
+	- `@pandoc(parsed)`: not verbatim, but parsed
 
 Note:
 
@@ -100,7 +100,8 @@ See [Emphasis][] and [Other Syntaxes][] to see alternative Setext-style header s
 
 ### User defined reference [userdefinedreference]
 
-- [userdefinedreference][] @mmd @pandoc(extension:mmd_header_identifiers)
+- [userdefinedreference][] @mmd
+- [Link to userdefinedreference](#userdefinedreference) @mmd @pandoc(+mmd_header_identifiers)
 - [Link to "Header Containing Attributes"](#identifier) @pandoc
 - [another-link] @pandoc
 
@@ -179,18 +180,21 @@ like this
 
 ## Smarty Pants ##
 
-@markdown(extension:smartypants) @pandoc(--smart) @ghpages
+@markdown(+smartypants) @pandoc(--smart) @ghpages
 
 - "Example 1"
 - 'Example 2'
-- ``Example 3''
 - en--dash
 - em---dash
 - ellipsis...
 
+@mmd
+
+- ``Example 3''
+
 ## Abbreviations (PHP Markdown Extra) ##
 
-@mmd @phpextra @pandoc(extension:abbreviations)
+@mmd @phpextra @pandoc(+abbreviations)
 
 *[HTML]: HyperText Markup Language
 *[W3C]:  World Wide Web Consortium
@@ -511,7 +515,7 @@ See [Syntax | kramdown](http://kramdown.gettalong.org/syntax.html#tables)
 
 ## Links
 
-- https://www.wikipedia.org @pandoc(extension:autolink_bare_uris)
+- https://www.wikipedia.org @pandoc(+autolink_bare_uris)
 - <https://www.wikipedia.org> @markdown
 - [Wikipedia.org](https://www.wikipedia.org) @markdown
 - [Wikipedia.org](https://www.wikipedia.org "a title") @markdown
@@ -599,7 +603,7 @@ Very powerful but complicated. See more at [Citations---Pandoc Documentation](ht
 ### Reference Images
 
 - ![Alt Text][imageid] @markdown
-- ![An Image with Attributes][wikipedia] @mmd @pandoc(extension:mmd_link_attributes)
+- ![An Image with Attributes][wikipedia] @mmd @pandoc(+mmd_link_attributes)
 - ![An Image with Attributes](image.png){#id .class width=30 height=20px} @pandoc @phpextra(partial)
 - a reference ![image][ref] with attributes. @pandoc @phpextra(partial)
 
@@ -627,7 +631,7 @@ Very powerful but complicated. See more at [Citations---Pandoc Documentation](ht
 ### HTML ###
 
 - <div>This should *not* be markdown (or is it?) </div> @markdown
-- <div markdown=1>This *is* markdown</div> @mmd @pandoc(extension:markdown_attribute)
+- <div markdown=1>This *is* markdown</div> @mmd @pandoc(+markdown_attribute)
 
 See more at [Raw---MultiMarkdown Documentation](http://fletcher.github.io/MultiMarkdown-5/raw.html). See test in [Babelmark 2 - Compare markdown implementations](http://johnmacfarlane.net/babelmark2/?normalize=1&text=%3Cdiv%3EThis+should+*not*+be+markdown+(or+is+it%3F%29+%3C%2Fdiv%3E%0A%3Cdiv+markdown%3D1%3EThis+*is*+markdown%3C%2Fdiv%3E).
 
@@ -646,7 +650,7 @@ Note: mmd accepts capitalized metadata keys but others do not. For maximum compa
 
 ### MultiMarkdown Metadata Block ###
 
-@mmd @pandoc(extension:mmd_title_block)
+@mmd @pandoc(+mmd_title_block)
 
 ```
 title:    A Sample MultiMarkdown Document  
@@ -773,7 +777,7 @@ MultiMarkdown math delimiter are `$...$`, `$$...$$`, `\\(...\\)` and `\\[...\\]`
 
 #### Pandoc ####
 
-@pandoc
+@pandoc(--mathjax)
 
 For pandoc, add `--mathjax` in the command-line argument.
 
@@ -782,7 +786,7 @@ Default math delimiter for pandoc is `$...$`, `$$...$$`. Other options are confi
 ### Inline Math ###
 
 - $1+1$
-- \\(1 + 1\\)
+- \\(1 + 1\\) @pandoc(+tex_math_double_backslash)
 
 ### Block Math ###
 

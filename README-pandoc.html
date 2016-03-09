@@ -65,7 +65,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li><a href="#header-unnumbered">Header Unnumbered</a></li>
 <li><a href="#header-unnumbered-2">Header Unnumbered 2</a></li>
 <li><a href="#auto-cross-reference">Auto Cross Reference</a></li>
-<li><a href="#user-defined-reference-userdefinedreference">User defined reference [userdefinedreference]</a></li>
+<li><a href="#userdefinedreference">User defined reference</a></li>
 <li><a href="#deeper-levels-of-headers">Deeper Levels of Headers</a></li>
 </ul></li>
 <li><a href="#backslash-escapes">Backslash Escapes</a></li>
@@ -152,12 +152,12 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <h1 id="contents">Contents</h1>
 <p>{:.no_toc}</p>
 <ul>
-<li>Will be replaced with the ToC, excluding the &quot;Contents&quot; header {:toc}</li>
+<li>Will be replaced with the ToC, excluding the “Contents” header {:toc}</li>
 </ul>
 <p>{{TOC}}</p>
 <!-- \end{comment} -->
 <h1 id="introduction">Introduction</h1>
-<p><a href="#examples">Examples</a> shows explicit examples for different syntaxes. <a href="#other-syntaxes">Other Syntaxes</a> show the syntaxes that can't be shown explicitly.</p>
+<p><a href="#examples">Examples</a> shows explicit examples for different syntaxes. <a href="#other-syntaxes">Other Syntaxes</a> show the syntaxes that can’t be shown explicitly.</p>
 <h2 id="organization">Organization</h2>
 <ul>
 <li>Header levels (except possibly the last header level): features in groups</li>
@@ -165,10 +165,17 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li>TaskPaper-styled tags to indicate in what favor of Markdown such syntax is supported
 <ul>
 <li><code>@markdown</code>: supported by original markdown, hence understood to be supported by all variants of markdown</li>
-<li><code>@ghpages</code>: GitHub-Favored Markdown, built by kramdown with GFM option. i.e. GitHub Pages' GitHub-Favored Markdown</li>
+<li><code>@ghpages</code>: GitHub-Favored Markdown, built by kramdown with GFM option. i.e. GitHub Pages’ GitHub-Favored Markdown</li>
 <li><code>@mmd</code>: MultiMarkdown </li>
 <li><code>@pandoc</code>: pandoc-favored markdown</li>
 <li><code>@phpextra</code>: PHP Markdown Extra (inspired some syntax in pandoc and mmd and gfm, not exhaustively tested here)</li>
+</ul></li>
+<li>TaskPaper Tags
+<ul>
+<li><code>@...(partial)</code>: partial supports only</li>
+<li><code>@...(+...)</code>: when the extension is used</li>
+<li><code>@pandoc(--...)</code>: when the command line argument is used</li>
+<li><code>@pandoc(parsed)</code>: not verbatim, but parsed</li>
 </ul></li>
 </ul>
 <p>Note:</p>
@@ -194,10 +201,11 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li><a href="#header">Header</a> <span class="citation">@mmd</span> @pandoc</li>
 <li><a href="#header">Header</a> <span class="citation">@mmd</span> @pandoc</li>
 </ul>
-<h3 id="user-defined-reference-userdefinedreference">User defined reference [userdefinedreference]</h3>
+<h3 id="userdefinedreference">User defined reference</h3>
 <ul>
-<li>[userdefinedreference][] <span class="citation">@mmd</span> <span class="citation">@pandoc</span>(extension:mmd_header_identifiers)</li>
-<li><a href="#identifier">Link to &quot;Header Containing Attributes&quot;</a> <span class="citation">@pandoc</span></li>
+<li>[userdefinedreference][] <span class="citation">@mmd</span></li>
+<li><a href="#userdefinedreference">Link to userdefinedreference</a> <span class="citation">@mmd</span> <span class="citation">@pandoc</span>(+mmd_header_identifiers)</li>
+<li><a href="#identifier">Link to “Header Containing Attributes”</a> <span class="citation">@pandoc</span></li>
 <li><a href="#identifier">another-link</a> <span class="citation">@pandoc</span></li>
 </ul>
 <h3 id="deeper-levels-of-headers">Deeper Levels of Headers</h3>
@@ -218,14 +226,14 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>Visually it looks like emphasis. Functionally it is much more, and called Critic Markup <span class="citation">@mmd</span></p>
 <!-- \begin{comment} -->
 <ul>
-<li>Deletions from the original text: This is {--is --}a test.</li>
+<li>Deletions from the original text: This is {–is –}a test.</li>
 <li>Additions: This {++is ++}a test.</li>
-<li>Substitutions: This {<sub><sub>isn't</sub>&gt;is</sub>~} a test.</li>
+<li>Substitutions: This {<sub><sub>isn’t</sub>&gt;is</sub>~} a test.</li>
 <li>Highlighting: This is a {==test==}.</li>
 <li>Comments: This is a test{&gt;&gt;What is it a test of?&lt;&lt;}.</li>
 </ul>
 <!-- \end{comment} -->
-<p>See more at <a href="http://fletcher.github.io/MultiMarkdown-5/criticmarkup.html">CriticMarkup---MultiMarkdown Documentation</a>.</p>
+<p>See more at <a href="http://fletcher.github.io/MultiMarkdown-5/criticmarkup.html">CriticMarkup—MultiMarkdown Documentation</a>.</p>
 <h2 id="horizontal-rules">Horizontal Rules</h2>
 <p><span class="citation">@markdown</span></p>
 <hr />
@@ -247,18 +255,20 @@ like this</p>
 <li>P<sub>a cat</sub> <span class="citation">@pandoc</span></li>
 </ul>
 <h2 id="smarty-pants">Smarty Pants</h2>
-<p><span class="citation">@markdown</span>(extension:smartypants) <span class="citation">@pandoc</span>(--smart) <span class="citation">@ghpages</span></p>
+<p><span class="citation">@markdown</span>(+smartypants) <span class="citation">@pandoc</span>(–smart) <span class="citation">@ghpages</span></p>
 <ul>
-<li>&quot;Example 1&quot;</li>
-<li>'Example 2'</li>
-<li>``Example 3''</li>
-<li>en--dash</li>
-<li>em---dash</li>
-<li>ellipsis...</li>
+<li>“Example 1”</li>
+<li>‘Example 2’</li>
+<li>en–dash</li>
+<li>em—dash</li>
+<li>ellipsis…</li>
+</ul>
+<p><span class="citation">@mmd</span></p>
+<ul>
+<li>``Example 3’’</li>
 </ul>
 <h2 id="abbreviations-php-markdown-extra">Abbreviations (PHP Markdown Extra)</h2>
-<p><span class="citation">@mmd</span> <span class="citation">@phpextra</span> <span class="citation">@pandoc</span>(extension:abbreviations)</p>
-<p><em><a href="#html">HTML</a>: HyperText Markup Language </em>[W3C]: World Wide Web Consortium *<a href="#pandoc-2">PANDOC</a>: Pandoc will simply ignore this if the extension is used. A graceful fallback.</p>
+<p><span class="citation">@mmd</span> <span class="citation">@phpextra</span> <span class="citation">@pandoc</span>(+abbreviations)</p>
 <p>Testing abbreviations: HTML, W3C (mouseover it to see)</p>
 <h2 id="lists">Lists</h2>
 <h3 id="ordered-lists">Ordered Lists</h3>
@@ -390,7 +400,7 @@ like this</p>
 <li><p>My third example will be numbered (3).</p></li>
 <li><p>This is a good example.</p></li>
 </ol>
-<p>As (4) illustrates, ...</p>
+<p>As (4) illustrates, …</p>
 <h2 id="code">Code</h2>
 <ul>
 <li><code>testing</code> <span class="citation">@markdown</span></li>
@@ -451,7 +461,7 @@ test
 <p><span class="citation">@ghpages</span>(partial) <span class="citation">@pandoc</span></p>
 <p>The limerick packs laughs anatomical<br />
 In space that is quite economical.<br />
-   But the good ones I've seen<br />
+   But the good ones I’ve seen<br />
    So seldom are clean<br />
 And the clean ones so seldom are comical</p>
 <p>200 Main St.<br />
@@ -492,7 +502,7 @@ Berkeley, CA 94718</p>
 </table>
 <h3 id="method-2-2">Method 2</h3>
 <p><span class="citation">@mmd</span></p>
-<p>[Table Caption] | | Grouping || | Left align | Right align | Center align | |:-----------|------------:|:------------:| | This | This | This | | column | column | column | | will | will | will | | be | be | be | | left | right | center | | aligned | aligned | aligned |<br />
+<p>[Table Caption] | | Grouping || | Left align | Right align | Center align | |:———–|————:|:————:| | This | This | This | | column | column | column | | will | will | will | | be | be | be | | left | right | center | | aligned | aligned | aligned |<br />
 | And a big grouping is like this |||</p>
 <h3 id="method-3-1">Method 3</h3>
 <p><span class="citation">@pandoc</span></p>
@@ -530,7 +540,7 @@ Berkeley, CA 94718</p>
 <h3 id="method-4">Method 4</h3>
 <p><span class="citation">@pandoc</span></p>
 <table style="width:85%;">
-<caption>Here's the caption. It, too, may span multiple lines.</caption>
+<caption>Here’s the caption. It, too, may span multiple lines.</caption>
 <colgroup>
 <col width="16%" />
 <col width="11%" />
@@ -556,7 +566,7 @@ Berkeley, CA 94718</p>
 <td align="center">Second</td>
 <td align="left">row</td>
 <td align="right">5.0</td>
-<td align="left">Here's another one. Note the blank line between rows.</td>
+<td align="left">Here’s another one. Note the blank line between rows.</td>
 </tr>
 </tbody>
 </table>
@@ -598,12 +608,12 @@ Berkeley, CA 94718</p>
 <h3 id="method-6">Method 6</h3>
 <p><span class="citation">@ghpages</span></p>
 <!-- \begin{comment} -->
-<p>|-----------------+------------+-----------------+----------------| | Default aligned |Left aligned| Center aligned | Right aligned | |-----------------|:-----------|:---------------:|---------------:| | First body part |Second cell | Third cell | fourth cell | | Second line |foo | <strong>strong</strong> | blah | | Third line |blah | blah | bar | |-----------------+------------+-----------------+----------------| | Second body | | | | | 2 line | | | | |=================+============+=================+================| | Footer row | | | | |-----------------+------------+-----------------+----------------|</p>
+<p>|—————–+————+—————–+—————-| | Default aligned |Left aligned| Center aligned | Right aligned | |—————–|:———–|:—————:|—————:| | First body part |Second cell | Third cell | fourth cell | | Second line |foo | <strong>strong</strong> | blah | | Third line |blah | blah | bar | |—————–+————+—————–+—————-| | Second body | | | | | 2 line | | | | |=================+============+=================+================| | Footer row | | | | |—————–+————+—————–+—————-|</p>
 <!-- \end{comment} -->
 <p>See <a href="http://kramdown.gettalong.org/syntax.html#tables">Syntax | kramdown</a></p>
 <h2 id="links">Links</h2>
 <ul>
-<li>https://www.wikipedia.org <span class="citation">@pandoc</span>(extension:autolink_bare_uris)</li>
+<li><a href="https://www.wikipedia.org" class="uri">https://www.wikipedia.org</a> <span class="citation">@pandoc</span>(+autolink_bare_uris)</li>
 <li><a href="https://www.wikipedia.org" class="uri">https://www.wikipedia.org</a> <span class="citation">@markdown</span></li>
 <li><a href="https://www.wikipedia.org">Wikipedia.org</a> <span class="citation">@markdown</span></li>
 <li><a href="https://www.wikipedia.org" title="a title">Wikipedia.org</a> <span class="citation">@markdown</span></li>
@@ -617,13 +627,12 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'" clas'+'s="em' + 'ail">'+'&#x4
 <h3 id="reference-links">Reference Links</h3>
 <ul>
 <li><a href="https://www.google.com">Search here</a> <span class="citation">@markdown</span></li>
-<li>A [link][] with attributes. <span class="citation">@mmd</span></li>
-<li>[Another link to the link above][link]. <span class="citation">@mmd</span></li>
+<li>A <a href="image.png" class="external" style="border: solid black 1px;" title="Title">link</a> with attributes. <span class="citation">@mmd</span></li>
+<li><a href="image.png" class="external" style="border: solid black 1px;" title="Title">Another link to the link above</a>. <span class="citation">@mmd</span></li>
 <li>A <a href="/foo/bar.html" title="My title, optional">link1</a> with attributes. <span class="citation">@markdown</span></li>
 <li><a href="http://fsf.org" title="The free software foundation">Another link</a>. <span class="citation">@markdown</span></li>
 <li><a href="/bar#special" title="A title in single quotes">link3</a>. <span class="citation">@markdown</span></li>
 </ul>
-<p>[link]: image.png &quot;Title&quot; class=external style=&quot;border: solid black 1px;&quot;</p>
 <h2 id="footnotes">Footnotes</h2>
 <ul>
 <li>Footnotes [^This is a mmd inline footnote] <span class="citation">@mmd</span></li>
@@ -634,22 +643,22 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'" clas'+'s="em' + 'ail">'+'&#x4
 <li>Footnotes<a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a> <span class="citation">@markdown</span></li>
 <li>Long Footnotes <a href="#fn3" class="footnoteRef" id="fnref3"><sup>3</sup></a> <span class="citation">@pandoc</span> <span class="citation">@ghpages</span> <span class="citation">@mmd</span></li>
 </ul>
-<p>This paragraph won't be part of the note, because it isn't indented.</p>
+<p>This paragraph won’t be part of the note, because it isn’t indented.</p>
 <h3 id="glossaries">Glossaries</h3>
 <p>A special kind of footnote <a href="#fn4" class="footnoteRef" id="fnref4"><sup>4</sup></a>. <span class="citation">@mmd</span></p>
-<p>See more at <a href="http://fletcher.github.io/MultiMarkdown-5/glossary.html">Glossary---MultiMarkdown Documentation</a>.</p>
+<p>See more at <a href="http://fletcher.github.io/MultiMarkdown-5/glossary.html">Glossary—MultiMarkdown Documentation</a>.</p>
 <h3 id="citations">Citations</h3>
 <p>It can looks like footnotes in HTML output.</p>
 <h4 id="multimarkdown">MultiMarkdown</h4>
 <p><span class="citation">@mmd</span></p>
 <ul>
-<li>This is a statement that should be attributed to its source <a href="John%20Doe.%20*Some%20Big%20Fancy%20Book*.%20Vanity%20Press,%202006.">p. 23</a>.</li>
+<li>This is a statement that should be attributed to its source <a href="John%20Doe.%20*Some%20Big%20Fancy%20Book*.%20Vanity%20Press,%202006.">p. 23</a>.</li>
 </ul>
 <p><a href="John%20Doe.%20*Another%20Big%20Fancy%20Book*.%20Vanity%20Press,%202016.">Not cited</a></p>
-<p>See more at <a href="http://fletcher.github.io/MultiMarkdown-5/citations.html">Citations---MultiMarkdown Documentation</a>.</p>
+<p>See more at <a href="http://fletcher.github.io/MultiMarkdown-5/citations.html">Citations—MultiMarkdown Documentation</a>.</p>
 <h4 id="pandoc">Pandoc</h4>
 <p><span class="citation">@pandoc</span></p>
-<p>Very powerful but complicated. See more at <a href="http://pandoc.org/README.html#citations">Citations---Pandoc Documentation</a>.</p>
+<p>Very powerful but complicated. See more at <a href="http://pandoc.org/README.html#citations">Citations—Pandoc Documentation</a>.</p>
 <h2 id="images">Images</h2>
 <ul>
 <li><img src="image.png" title="Optional Title" alt="Alt Text" /> <span class="citation">@markdown</span></li>
@@ -657,11 +666,10 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'" clas'+'s="em' + 'ail">'+'&#x4
 <h3 id="reference-images">Reference Images</h3>
 <ul>
 <li><img src="image.png" title="Optional Title" alt="Alt Text" /> <span class="citation">@markdown</span></li>
-<li>[An Image with Attributes][wikipedia] <span class="citation">@mmd</span> <span class="citation">@pandoc</span>(extension:mmd_link_attributes)</li>
+<li><img src="image.png" title="Title of the Image" alt="An Image with Attributes" width="40" height="40" /> <span class="citation">@mmd</span> <span class="citation">@pandoc</span>(+mmd_link_attributes)</li>
 <li><img src="image.png" alt="An Image with Attributes" id="id" class="class" width="30" height="20" /> <span class="citation">@pandoc</span> <span class="citation">@phpextra</span>(partial)</li>
 <li>a reference <img src="image.png" title="optional title" alt="image" id="id" class="class" key="val" key2="val 2" /> with attributes. <span class="citation">@pandoc</span> <span class="citation">@phpextra</span>(partial)</li>
 </ul>
-<p>[wikipedia]: image.png &quot;Title of the Image&quot; width=40px height=40px</p>
 <h3 id="image-with-links-by-nesting-image-and-link">Image with Links by Nesting Image and Link</h3>
 <ul>
 <li><a href="https://www.wikipedia.org/"><img src="image.png" alt="Image Link" /></a> <span class="citation">@markdown</span></li>
@@ -685,21 +693,21 @@ This should <em>not</em> be markdown (or is it?)
 <li><div markdown="1">
 This <em>is</em> markdown
 </div>
-<span class="citation">@mmd</span> <span class="citation">@pandoc</span>(non-default-extension:markdown_attribute)</li>
+<span class="citation">@mmd</span> <span class="citation">@pandoc</span>(+markdown_attribute)</li>
 </ul>
-<p>See more at <a href="http://fletcher.github.io/MultiMarkdown-5/raw.html">Raw---MultiMarkdown Documentation</a>. See test in [Babelmark 2 - Compare markdown implementations](http://johnmacfarlane.net/babelmark2/?normalize=1&amp;text=%3Cdiv%3EThis+should+<em>not</em>+be+markdown+(or+is+it%3F%29+%3C%2Fdiv%3E%0A%3Cdiv+markdown%3D1%3EThis+<em>is</em>+markdown%3C%2Fdiv%3E).</p>
+<p>See more at <a href="http://fletcher.github.io/MultiMarkdown-5/raw.html">Raw—MultiMarkdown Documentation</a>. See test in [Babelmark 2 - Compare markdown implementations](<a href="http://johnmacfarlane.net/babelmark2/?normalize=1&amp;text=%3Cdiv%3EThis+should+*not*+be+markdown+(or+is+it%3F%29+%3C%2Fdiv%3E%0A%3Cdiv+markdown%3D1%3EThis+*is*+markdown%3C%2Fdiv%3E)">http://johnmacfarlane.net/babelmark2/?normalize=1&amp;text=%3Cdiv%3EThis+should+*not*+be+markdown+(or+is+it%3F%29+%3C%2Fdiv%3E%0A%3Cdiv+markdown%3D1%3EThis+*is*+markdown%3C%2Fdiv%3E)</a>.</p>
 <h3 id="latex">LaTeX</h3>
 <ul>
 <li><!-- \newcommand\rawlatex{} -->
 <span class="citation">@mmd</span></li>
 <li><span class="citation">@pandoc</span>(parsed)</li>
-<li>\begin{...} <span class="citation">@pandoc</span></li>
+<li>\begin{…} <span class="citation">@pandoc</span></li>
 </ul>
 <h1 id="other-syntaxes">Other Syntaxes</h1>
 <h2 id="metadata">Metadata</h2>
 <p>Note: mmd accepts capitalized metadata keys but others do not. For maximum compatibility, <code>author(s)</code>, <code>title</code>, etc. should be in lower cases.</p>
 <h3 id="multimarkdown-metadata-block">MultiMarkdown Metadata Block</h3>
-<p><span class="citation">@mmd</span> <span class="citation">@pandoc</span>(extension:mmd_title_block)</p>
+<p><span class="citation">@mmd</span> <span class="citation">@pandoc</span>(+mmd_title_block)</p>
 <pre><code>title:    A Sample MultiMarkdown Document  
 author:   Fletcher T. Penney  
 date:     February 9, 2011  
@@ -707,14 +715,14 @@ comment:  This is a comment intended to demonstrate
           metadata that spans multiple lines, yet  
           is treated as a single value.  
 CSS:      http://example.com/standard.css</code></pre>
-<p>See more at <a href="http://fletcher.github.io/MultiMarkdown-5/metadata.html">Metadata---MultiMarkdown Documentation</a>.</p>
+<p>See more at <a href="http://fletcher.github.io/MultiMarkdown-5/metadata.html">Metadata—MultiMarkdown Documentation</a>.</p>
 <h3 id="pandoc-title-block">Pandoc Title Block</h3>
 <p><span class="citation">@pandoc</span></p>
 <pre><code>% title
 % author(s) (separated by semicolons)
 % date</code></pre>
 <h3 id="yaml-metadata-block">YAML Metadata Block</h3>
-<p><span class="citation">@Mmd</span>(Partial)</p>
+<p><span class="citation">@Mmd</span>(partial)</p>
 <p><span class="citation">@pandoc</span> <span class="citation">@ghpages</span></p>
 <pre><code>---
 title:    A Sample MultiMarkdown Document  
@@ -732,7 +740,7 @@ abstract: |
 <p>Use <code>--toc</code> as a command argument.</p>
 <h3 id="multimarkdown-1">MultiMarkdown</h3>
 <p><span class="citation">@mmd</span></p>
-<p><code>{{TOC}}</code>, see beginning. It preprocess the headings and generate a ToC on its own, and doesn't give instruction for LaTeX to generate one. A hack is like this:</p>
+<p><code>{{TOC}}</code>, see beginning. It preprocess the headings and generate a ToC on its own, and doesn’t give instruction for LaTeX to generate one. A hack is like this:</p>
 <pre><code>---
 ...
 LaTeX Input:    mmd-load-toc-setcounter
@@ -772,18 +780,18 @@ LaTeX Input:    mmd-load-toc
     <span class="kw">&lt;/script&gt;</span></code></pre></div>
 <p>MultiMarkdown math delimiter are <code>$...$</code>, <code>$$...$$</code>, <code>\\(...\\)</code> and <code>\\[...\\]</code>.</p>
 <h4 id="pandoc-2">Pandoc</h4>
-<p><span class="citation">@pandoc</span></p>
+<p><span class="citation">@pandoc</span>(–mathjax)</p>
 <p>For pandoc, add <code>--mathjax</code> in the command-line argument.</p>
 <p>Default math delimiter for pandoc is <code>$...$</code>, <code>$$...$$</code>. Other options are configurable. See more in <a href="http://pandoc.org/README.html#non-pandoc-extensions">Pandoc - Pandoc User’s Guide</a>.</p>
 <h3 id="inline-math">Inline Math</h3>
 <ul>
 <li><span class="math inline">\(1+1\)</span></li>
-<li>\(1 + 1\)</li>
+<li><span class="math inline">\(1 + 1\)</span> <span class="citation">@pandoc</span>(+tex_math_double_backslash)</li>
 </ul>
 <h3 id="block-math">Block Math</h3>
 <ul>
 <li><span class="math display">\[R R^T = I\]</span></li>
-<li>\[A^T_S = B\]</li>
+<li><span class="math display">\[A^T_S = B\]</span></li>
 </ul>
 <h3 id="other-examples">Other Examples</h3>
 <ul>
@@ -818,12 +826,12 @@ LaTeX Input:    mmd-load-toc
 </ul>
 <h2 id="file-transclusion">File Transclusion</h2>
 <p><span class="citation">@mmd</span></p>
-<p>See more at <a href="http://fletcher.github.io/MultiMarkdown-5/transclusion.html">File Transclusion---MultiMarkdown Documentation</a>.</p>
+<p>See more at <a href="http://fletcher.github.io/MultiMarkdown-5/transclusion.html">File Transclusion—MultiMarkdown Documentation</a>.</p>
 <h1 id="references">References</h1>
 <p>Some examples are directly or indirectly copied from the following documentations:</p>
 <ol style="list-style-type: decimal">
 <li><a href="http://pandoc.org/README.html">Pandoc - Pandoc User’s Guide</a></li>
-<li><a href="http://fletcher.github.io/MultiMarkdown-5/">MultiMarkdown User's Guide</a></li>
+<li><a href="http://fletcher.github.io/MultiMarkdown-5/">MultiMarkdown User’s Guide</a></li>
 <li><a href="http://kramdown.gettalong.org/syntax.html#tables">Syntax | kramdown</a></li>
 </ol>
 <div class="footnotes">
@@ -831,7 +839,7 @@ LaTeX Input:    mmd-load-toc
 <ol>
 <li id="fn1"><p>This is a pandoc inline footnote<a href="#fnref1">↩</a></p></li>
 <li id="fn2"><p>This is a footnote<a href="#fnref2">↩</a></p></li>
-<li id="fn3"><p>Here's one with multiple blocks.</p>
+<li id="fn3"><p>Here’s one with multiple blocks.</p>
 <p>Subsequent paragraphs are indented to show that they belong to the previous footnote.</p>
 <pre><code>{ some.code }</code></pre>
 <p>The whole paragraph can be indented, or just the first line. In this way, multi-paragraph footnotes work like multi-paragraph list items.<a href="#fnref3">↩</a></p></li>
