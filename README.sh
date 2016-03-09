@@ -8,4 +8,4 @@ pandoc --toc -s -o README-pandoc.pdf README.md
 multimarkdown -t latex README.md > temp.tex
 latexmk -pdf temp.tex
 mv temp.pdf README-mmd.pdf
-mv temp.tex ~/.Trash/
+find . -iname 'temp.*' -exec mv '{}' ~/.Trash/ \;
