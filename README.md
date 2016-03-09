@@ -1,4 +1,14 @@
 ---
+HTML Header Level:	1
+LaTeX Header Level:	1
+LaTeX Input:	mmd-article-header
+LaTeX input:	mmd-natbib-plain
+LaTeX Input:	mmd-load-physics-related
+LaTeX Input:	mmd-load-tables-related
+LaTeX Input:	mmd-load-pdfpages
+LaTeX Input:	mmd-load-headings
+thmd:	chapter
+LaTeX Input:	mmd-load-amsthm
 Title:	Yet Another Markdown Cheatsheet
 Subtitle:	Including MarkDown, MultiMarkdown, pandoc, GFM and LaTeX Math Syntax by MathJax  
 Keywords:	MarkDown, MultiMarkDown, LaTeX, pandoc, gfm  
@@ -9,8 +19,16 @@ Email:	khcheung@berkeley.edu
 Affiliation:	University of California, Berkeley
 Copyright:	2016 Kolen Cheung  
  	All Rights Reserved.
+LaTeX Mode:	memoir
+LaTeX Input:	mmd-article-begin-doc
+tocd:	5
+secd:	5
+LaTeX Input:	mmd-load-toc-setcounter
+LaTeX Input:	mmd-load-toc
+LaTeX Footer:	mmd-memoir-footer
 ---
 
+<!-- \begin{comment} -->
 <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML-full"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/styles/default.min.css"><script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/highlight.min.js"></script><script>hljs.initHighlightingOnLoad();</script>
 
@@ -21,6 +39,9 @@ Copyright:	2016 Kolen Cheung
 {:toc}
 
 {{TOC}}
+
+<!-- \end{comment} -->
+
 
 # Introduction #
 
@@ -103,11 +124,15 @@ Emphasis
 
 Visually it looks like emphasis. Functionally it is much more, and called Critic Markup @mmd
 
+<!-- \begin{comment} -->
+
 - Deletions from the original text: This is {--is --}a test.
 - Additions: This {++is ++}a test.
 - Substitutions: This {~~isn't~>is~~} a test.
 - Highlighting: This is a {==test==}.
 - Comments: This is a test{>>What is it a test of?<<}.
+
+<!-- \end{comment} -->
 
 See more at [CriticMarkup---MultiMarkdown Documentation](http://fletcher.github.io/MultiMarkdown-5/criticmarkup.html).
 
@@ -318,7 +343,7 @@ As (@good) illustrates, ...
 
 @markdown(partial:language-not-supported) @ghpages @pandoc @mmd
 
-```latex
+```tex
 \nabla \times \mathbf{E} = - \frac{\partial \mathbf{B}}{\partial t}
 ```
 
@@ -456,6 +481,8 @@ multiple lines.
 
 @ghpages
 
+<!-- \begin{comment} -->
+
 |-----------------+------------+-----------------+----------------|
 | Default aligned |Left aligned| Center aligned  | Right aligned  |
 |-----------------|:-----------|:---------------:|---------------:|
@@ -467,7 +494,9 @@ multiple lines.
 | 2 line          |            |                 |                |
 |=================+============+=================+================|
 | Footer row      |            |                 |                |
-|-----------------+------------+-----------------+----------------|
+|-----------------+------------+-----------------+----------------|  
+
+<!-- \end{comment} -->
 
 See [Syntax | kramdown](http://kramdown.gettalong.org/syntax.html#tables)  
 
@@ -489,7 +518,7 @@ See [Syntax | kramdown](http://kramdown.gettalong.org/syntax.html#tables)
 - [link3]. @markdown
 
 [Google]: https://www.google.com
-[link]:  https://www.wikipedia.org/portal/wikipedia.org/assets/img/Wikipedia-logo-v2@2x.png "Title" class=external
+[link]:  image.png "Title" class=external
          style="border: solid black 1px;"
 
 [link1]: /foo/bar.html  "My title, optional"
@@ -556,33 +585,33 @@ Very powerful but complicated. See more at [Citations---Pandoc Documentation](ht
 
 ## Images
 
-- ![Alt Text](https://www.wikipedia.org/portal/wikipedia.org/assets/img/Wikipedia-logo-v2@2x.png "Optional Title") @markdown
+- ![Alt Text](image.png "Optional Title") @markdown
 
 ### Reference Images
 
 - ![Alt Text][imageid] @markdown
 - ![An Image with Attributes][wikipedia] @mmd @pandoc(extension:mmd_link_attributes)
-- ![An Image with Attributes](https://www.wikipedia.org/portal/wikipedia.org/assets/img/Wikipedia-logo-v2@2x.png){#id .class width=30 height=20px} @pandoc @phpextra(partial)
+- ![An Image with Attributes](image.png){#id .class width=30 height=20px} @pandoc @phpextra(partial)
 - a reference ![image][ref] with attributes. @pandoc @phpextra(partial)
 
 
-[imageid]: https://www.wikipedia.org/portal/wikipedia.org/assets/img/Wikipedia-logo-v2@2x.png "Optional Title"
+[imageid]: image.png "Optional Title"
 
-[wikipedia]: https://www.wikipedia.org/portal/wikipedia.org/assets/img/Wikipedia-logo-v2@2x.png "Title of the Image" width=40px height=40px
+[wikipedia]: image.png "Title of the Image" width=40px height=40px
 
-[ref]: https://www.wikipedia.org/portal/wikipedia.org/assets/img/Wikipedia-logo-v2@2x.png "optional title" {#id .class key=val key2="val 2"}
+[ref]: image.png "optional title" {#id .class key=val key2="val 2"}
 
 ### Image with Links by Nesting Image and Link ###
 
-- [![Image Link](https://www.wikipedia.org/portal/wikipedia.org/assets/img/Wikipedia-logo-v2@2x.png)](https://www.wikipedia.org/) @markdown
+- [![Image Link](image.png)](https://www.wikipedia.org/) @markdown
 
 ### Block Level Images ###
 
 - Block level: HTML `figure` element in MultiMarkdown @mmd @pandoc
 
-![***Block*** **Level**](https://www.wikipedia.org/portal/wikipedia.org/assets/img/Wikipedia-logo-v2@2x.png "Optional Title")
+![***Block*** **Level**](image.png "Optional Title")
 
-![***Not*** Block **Level**](https://www.wikipedia.org/portal/wikipedia.org/assets/img/Wikipedia-logo-v2@2x.png "Optional Title")\
+![***Not*** Block **Level**](image.png "Optional Title")\
 
 ## RAW ##
 
@@ -608,7 +637,7 @@ Other Syntaxes
 
 @mmd @pandoc(extension:mmd_title_block)
 
-```md
+```
 Title:    A Sample MultiMarkdown Document  
 Author:   Fletcher T. Penney  
 Date:     February 9, 2011  
@@ -636,7 +665,7 @@ See more at [Metadata---MultiMarkdown Documentation](http://fletcher.github.io/M
 
 @pandoc @ghpages
 
-```yaml
+```
 ---
 title:    A Sample MultiMarkdown Document  
 author:   Fletcher T. Penney  
@@ -663,7 +692,7 @@ Use `--toc` as a command argument.
 
 `{{TOC}}`, see beginning. It preprocess the headings and generate a ToC on its own, and doesn't give instruction for LaTeX to generate one. A hack is like this:
 
-```markdown
+```
 ---
 ...
 LaTeX Input:	mmd-load-toc-setcounter
@@ -682,7 +711,7 @@ See more at [ickc/peg-multimarkdown-latex-support: Default support files for gen
 
 @ghpages
 
-```markdown
+```
 # Contents
 {:.no_toc}
 
