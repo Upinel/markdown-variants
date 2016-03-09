@@ -9,9 +9,9 @@
 </head>
 <body>
 <hr />
-<p>HTML Header Level: 1 LaTeX Header Level: 1 LaTeX Input: mmd-article-header LaTeX input: mmd-natbib-plain LaTeX Input: mmd-load-physics-related LaTeX Input: mmd-load-tables-related LaTeX Input: mmd-load-pdfpages LaTeX Input: mmd-load-headings thmd: chapter LaTeX Input: mmd-load-amsthm Title: Yet Another Markdown Cheatsheet Subtitle: Including MarkDown, MultiMarkdown, pandoc, GFM and LaTeX Math Syntax by MathJax<br />
+<p>HTML Header Level: 1 LaTeX Header Level: 1 LaTeX Input: mmd-article-header LaTeX input: mmd-natbib-plain LaTeX Input: mmd-load-physics-related LaTeX Input: mmd-load-tables-related LaTeX Input: mmd-load-pdfpages LaTeX Input: mmd-load-headings thmd: chapter LaTeX Input: mmd-load-amsthm title: Yet Another Markdown Cheatsheet subtitle: Including MarkDown, MultiMarkdown, pandoc, GFM and LaTeX Math Syntax by MathJax<br />
 Keywords: MarkDown, MultiMarkDown, LaTeX, pandoc, gfm<br />
-Revision: 0.10 Language: English Author: Kolen Cheung Email: khcheung@berkeley.edu Affiliation: University of California, Berkeley Copyright: 2016 Kolen Cheung<br />
+Revision: 0.10 Language: English author: Kolen Cheung Email: khcheung@berkeley.edu Affiliation: University of California, Berkeley Copyright: 2016 Kolen Cheung<br />
 All Rights Reserved. LaTeX Mode: memoir LaTeX Input: mmd-article-begin-doc tocd: 5 secd: 5 LaTeX Input: mmd-load-toc-setcounter LaTeX Input: mmd-load-toc LaTeX Footer: mmd-memoir-footer ---</p>
 <!-- \begin{comment} -->
 <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML-full"></script>
@@ -390,9 +390,10 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'" clas'+'s="em' + 'ail">'+'&#x4
 </ul>
 <h1>Other Syntaxes</h1>
 <h2>Metadata</h2>
+<p>Note: mmd accepts capitalized metadata keys but others do not. For maximum compatibility, <code>author(s)</code>, <code>title</code>, etc. should be in lower cases.</p>
 <h3>MultiMarkdown Metadata Block</h3>
 <p>@mmd @pandoc(extension:mmd<em>title</em>block)</p>
-<p><code>Title:    A Sample MultiMarkdown Document   Author:   Fletcher T. Penney   Date:     February 9, 2011   Comment:  This is a comment intended to demonstrate             metadata that spans multiple lines, yet             is treated as a single value.   CSS:      http://example.com/standard.css</code></p>
+<p><code>title:    A Sample MultiMarkdown Document   author:   Fletcher T. Penney   date:     February 9, 2011   comment:  This is a comment intended to demonstrate             metadata that spans multiple lines, yet             is treated as a single value.   CSS:      http://example.com/standard.css</code></p>
 <p>See more at <a href="http://fletcher.github.io/MultiMarkdown-5/metadata.html">Metadata---MultiMarkdown Documentation</a>.</p>
 <h3>Pandoc Title Block</h3>
 <p>@pandoc</p>

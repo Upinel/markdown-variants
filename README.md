@@ -9,12 +9,12 @@ LaTeX Input:	mmd-load-pdfpages
 LaTeX Input:	mmd-load-headings
 thmd:	chapter
 LaTeX Input:	mmd-load-amsthm
-Title:	Yet Another Markdown Cheatsheet
-Subtitle:	Including MarkDown, MultiMarkdown, pandoc, GFM and LaTeX Math Syntax by MathJax  
+title:	Yet Another Markdown Cheatsheet
+subtitle:	Including MarkDown, MultiMarkdown, pandoc, GFM and LaTeX Math Syntax by MathJax  
 Keywords:	MarkDown, MultiMarkDown, LaTeX, pandoc, gfm  
 Revision:	0.10
 Language:	English
-Author:	Kolen Cheung
+author:	Kolen Cheung
 Email:	khcheung@berkeley.edu
 Affiliation:	University of California, Berkeley
 Copyright:	2016 Kolen Cheung  
@@ -637,15 +637,17 @@ Other Syntaxes
 
 ## Metadata ##
 
+Note: mmd accepts capitalized metadata keys but others do not. For maximum compatibility, `author(s)`, `title`, etc. should be in lower cases.
+
 ### MultiMarkdown Metadata Block ###
 
 @mmd @pandoc(extension:mmd_title_block)
 
 ```
-Title:    A Sample MultiMarkdown Document  
-Author:   Fletcher T. Penney  
-Date:     February 9, 2011  
-Comment:  This is a comment intended to demonstrate  
+title:    A Sample MultiMarkdown Document  
+author:   Fletcher T. Penney  
+date:     February 9, 2011  
+comment:  This is a comment intended to demonstrate  
           metadata that spans multiple lines, yet  
           is treated as a single value.  
 CSS:      http://example.com/standard.css

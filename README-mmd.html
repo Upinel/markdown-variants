@@ -951,14 +951,16 @@ isn&#8217;t indented.</p>
 
 <h2 id="metadata">Metadata</h2>
 
+<p>Note: mmd accepts capitalized metadata keys but others do not. For maximum compatibility, <code>author(s)</code>, <code>title</code>, etc. should be in lower cases.</p>
+
 <h3 id="multimarkdownmetadatablock">MultiMarkdown Metadata Block</h3>
 
 <p>@mmd @pandoc(extension:mmd_title_block)</p>
 
-<pre><code>Title:    A Sample MultiMarkdown Document  
-Author:   Fletcher T. Penney  
-Date:     February 9, 2011  
-Comment:  This is a comment intended to demonstrate  
+<pre><code>title:    A Sample MultiMarkdown Document  
+author:   Fletcher T. Penney  
+date:     February 9, 2011  
+comment:  This is a comment intended to demonstrate  
           metadata that spans multiple lines, yet  
           is treated as a single value.  
 CSS:      http://example.com/standard.css
