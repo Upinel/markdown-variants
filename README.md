@@ -57,6 +57,11 @@ LaTeX Footer:	mmd-memoir-footer
 	- `@mmd`: MultiMarkdown 
 	- `@pandoc`: pandoc-favored markdown
 	- `@phpextra`: PHP Markdown Extra (inspired some syntax in pandoc and mmd and gfm, not exhaustively tested here)
+- TaskPaper Tags
+	- `@...(extension:...)`: when the extension is used
+	- `@...(--...)`: when the command line argument is used
+	- `@...(partial)`: partial supports only
+	- `@...(parsed)`: not verbatim, but parsed
 
 Note:
 
@@ -622,7 +627,7 @@ Very powerful but complicated. See more at [Citations---Pandoc Documentation](ht
 ### HTML ###
 
 - <div>This should *not* be markdown (or is it?) </div> @markdown
-- <div markdown=1>This *is* markdown</div> @mmd @pandoc(non-default-extension:markdown_attribute)
+- <div markdown=1>This *is* markdown</div> @mmd @pandoc(extension:markdown_attribute)
 
 See more at [Raw---MultiMarkdown Documentation](http://fletcher.github.io/MultiMarkdown-5/raw.html). See test in [Babelmark 2 - Compare markdown implementations](http://johnmacfarlane.net/babelmark2/?normalize=1&text=%3Cdiv%3EThis+should+*not*+be+markdown+(or+is+it%3F%29+%3C%2Fdiv%3E%0A%3Cdiv+markdown%3D1%3EThis+*is*+markdown%3C%2Fdiv%3E).
 
@@ -667,7 +672,7 @@ See more at [Metadata---MultiMarkdown Documentation](http://fletcher.github.io/M
 
 ### YAML Metadata Block ###
 
-@Mmd(Partial)
+@Mmd(partial)
 
 @pandoc @ghpages
 
