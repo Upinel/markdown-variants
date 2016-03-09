@@ -248,9 +248,9 @@ Note about LaTeX output in mmd/pandoc:
  9)  Ninth
 10)  Tenth
 11)  Eleventh
-       i. subone
-      ii. subtwo
-     iii. subthree
+       i. `i`
+      ii. `ii`
+     iii. `iii`
 (2) Two
 (5) Three
 1.  Four
@@ -340,7 +340,7 @@ test
 	# test
 ~~~
 
-## Blockquotes
+## Block-quotes
 
 @markdown
 
@@ -356,7 +356,7 @@ test
 
 > * test
 
-### Blockquotes Quoting Codes ###
+### Block-quotes Quoting Codes ###
 
 @markdown
 
@@ -460,8 +460,8 @@ multiple lines.
 | Default aligned |Left aligned| Center aligned  | Right aligned  |
 |-----------------|:-----------|:---------------:|---------------:|
 | First body part |Second cell | Third cell      | fourth cell    |
-| Second line     |foo         | **strong**      | baz            |
-| Third line      |quux        | baz             | bar            |
+| Second line     |foo         | **strong**      | blah            |
+| Third line      |blah        | blah             | bar            |
 |-----------------+------------+-----------------+----------------|
 | Second body     |            |                 |                |
 | 2 line          |            |                 |                |
@@ -715,7 +715,7 @@ Depending on the markdown parser, extra tricks might be needed to make sure noth
 
 ### MultiMarkdown and Pandoc ###
 
-There are subtleties how math should be used in HTML+MathJax and LaTeX output from single markdown source. See more in [Testing LaTeX Environments Usage in MathJax From Markdown Convertion (including mmd and pandoc)](https://github.com/ickc/mathjax-latex-md-mmd-pandoc).
+There are subtleties how math should be used in HTML+MathJax and LaTeX output from single markdown source. See more in [Testing LaTeX Environments Usage in MathJax From Markdown Conversion (including mmd and pandoc)](https://github.com/ickc/mathjax-latex-md-mmd-pandoc).
 
 #### MultiMarkdown ####
 
@@ -785,3 +785,11 @@ $$
 @mmd
 
 See more at [File Transclusion---MultiMarkdown Documentation](http://fletcher.github.io/MultiMarkdown-5/transclusion.html).
+
+# References #
+
+Some examples are directly or indirectly copied from the following documentations:
+
+1. [Pandoc - Pandoc User’s Guide](http://pandoc.org/README.html)
+2. [MultiMarkdown User's Guide](http://fletcher.github.io/MultiMarkdown-5/)
+3. [Syntax | kramdown](http://kramdown.gettalong.org/syntax.html#tables)

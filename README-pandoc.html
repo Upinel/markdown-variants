@@ -87,8 +87,8 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li><a href="#code">Code</a><ul>
 <li><a href="#fenced-code-blocks">Fenced Code Blocks</a></li>
 </ul></li>
-<li><a href="#blockquotes">Blockquotes</a><ul>
-<li><a href="#blockquotes-quoting-codes">Blockquotes Quoting Codes</a></li>
+<li><a href="#block-quotes">Block-quotes</a><ul>
+<li><a href="#block-quotes-quoting-codes">Block-quotes Quoting Codes</a></li>
 </ul></li>
 <li><a href="#line-blocks">Line Blocks</a></li>
 <li><a href="#tables">Tables</a><ul>
@@ -135,6 +135,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </ul></li>
 <li><a href="#file-transclusion">File Transclusion</a></li>
 </ul></li>
+<li><a href="#references">References</a></li>
 </ul>
 </div>
 <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML-full"></script>
@@ -325,9 +326,9 @@ like this</p>
 <li>Tenth</li>
 <li>Eleventh
 <ol style="list-style-type: lower-roman">
-<li>subone</li>
-<li>subtwo</li>
-<li>subthree</li>
+<li><code>i</code></li>
+<li><code>ii</code></li>
+<li><code>iii</code></li>
 </ol></li>
 </ol>
 <ol start="2" style="list-style-type: decimal">
@@ -405,7 +406,7 @@ test
 test
 <span class="bn">    test</span>
 <span class="bn">    # test</span></code></pre></td></tr></table></div>
-<h2 id="blockquotes">Blockquotes</h2>
+<h2 id="block-quotes">Block-quotes</h2>
 <p><span class="citation">@markdown</span></p>
 <blockquote>
 <h4 id="test">Test</h4>
@@ -427,7 +428,7 @@ test
 <li>test</li>
 </ul>
 </blockquote>
-<h3 id="blockquotes-quoting-codes">Blockquotes Quoting Codes</h3>
+<h3 id="block-quotes-quoting-codes">Block-quotes Quoting Codes</h3>
 <p><span class="citation">@markdown</span></p>
 <blockquote>
 <pre><code>\newcommand...</code></pre>
@@ -582,7 +583,7 @@ Berkeley, CA 94718</p>
 </table>
 <h3 id="method-6">Method 6</h3>
 <p><span class="citation">@ghpages</span></p>
-<p>|-----------------+------------+-----------------+----------------| | Default aligned |Left aligned| Center aligned | Right aligned | |-----------------|:-----------|:---------------:|---------------:| | First body part |Second cell | Third cell | fourth cell | | Second line |foo | <strong>strong</strong> | baz | | Third line |quux | baz | bar | |-----------------+------------+-----------------+----------------| | Second body | | | | | 2 line | | | | |=================+============+=================+================| | Footer row | | | | |-----------------+------------+-----------------+----------------|</p>
+<p>|-----------------+------------+-----------------+----------------| | Default aligned |Left aligned| Center aligned | Right aligned | |-----------------|:-----------|:---------------:|---------------:| | First body part |Second cell | Third cell | fourth cell | | Second line |foo | <strong>strong</strong> | blah | | Third line |blah | blah | bar | |-----------------+------------+-----------------+----------------| | Second body | | | | | 2 line | | | | |=================+============+=================+================| | Footer row | | | | |-----------------+------------+-----------------+----------------|</p>
 <p>See <a href="http://kramdown.gettalong.org/syntax.html#tables">Syntax | kramdown</a></p>
 <h2 id="links">Links</h2>
 <ul>
@@ -745,7 +746,7 @@ LaTeX Input:    mmd-load-toc
 <p>MathJax delimiter are <code>$$...$$</code>, <code>\\(...\\)</code> and <code>\\[...\\]</code> (because an extra <code>\</code> can be used to escape from MarkDown).</p>
 <p>Depending on the markdown parser, extra tricks might be needed to make sure nothing within the math delimiter is treated as markdown (see <a href="http://mathjax.readthedocs.org/en/latest/tex.html#tex-and-latex-in-html-documents">TeX and LaTeX in HTML documents — MathJax 2.6 documentation</a>). <code>$...$</code> can be used with MathJax configuration (see <a href="http://mathjax.readthedocs.org/en/latest/tex.html#tex-and-latex-math-delimiters">TeX and LaTeX math delimiters — MathJax 2.6 documentation</a>).</p>
 <h3 id="multimarkdown-and-pandoc">MultiMarkdown and Pandoc</h3>
-<p>There are subtleties how math should be used in HTML+MathJax and LaTeX output from single markdown source. See more in <a href="https://github.com/ickc/mathjax-latex-md-mmd-pandoc">Testing LaTeX Environments Usage in MathJax From Markdown Convertion (including mmd and pandoc)</a>.</p>
+<p>There are subtleties how math should be used in HTML+MathJax and LaTeX output from single markdown source. See more in <a href="https://github.com/ickc/mathjax-latex-md-mmd-pandoc">Testing LaTeX Environments Usage in MathJax From Markdown Conversion (including mmd and pandoc)</a>.</p>
 <h4 id="multimarkdown-2">MultiMarkdown</h4>
 <p><span class="citation">@mmd</span></p>
 <p>Add the following metadata at the beginning of the document:</p>
@@ -801,6 +802,13 @@ LaTeX Input:    mmd-load-toc
 <h2 id="file-transclusion">File Transclusion</h2>
 <p><span class="citation">@mmd</span></p>
 <p>See more at <a href="http://fletcher.github.io/MultiMarkdown-5/transclusion.html">File Transclusion---MultiMarkdown Documentation</a>.</p>
+<h1 id="references">References</h1>
+<p>Some examples are directly or indirectly copied from the following documentations:</p>
+<ol style="list-style-type: decimal">
+<li><a href="http://pandoc.org/README.html">Pandoc - Pandoc User’s Guide</a></li>
+<li><a href="http://fletcher.github.io/MultiMarkdown-5/">MultiMarkdown User's Guide</a></li>
+<li><a href="http://kramdown.gettalong.org/syntax.html#tables">Syntax | kramdown</a></li>
+</ol>
 <div class="footnotes">
 <hr />
 <ol>

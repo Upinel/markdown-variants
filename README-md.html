@@ -192,7 +192,7 @@ like this</p>
 <p>@pandoc</p>
 <h1>. one</h1>
 <h1>. two</h1>
-<p>9) Ninth 10) Tenth 11) Eleventh i. subone ii. subtwo iii. subthree (2) Two (5) Three 1. Four * Five</p>
+<p>9) Ninth 10) Tenth 11) Eleventh i. <code>i</code> ii. <code>ii</code> iii. <code>iii</code> (2) Two (5) Three 1. Four * Five</p>
 <h2>Definition Lists</h2>
 <h3>Method 1</h3>
 <p>@mmd @phpextra @pandoc @ghpages</p>
@@ -232,7 +232,7 @@ test
 <p>@pandoc</p>
 <p>~~~markdown test test test # test ~~~</p>
 <p>~~~ {#mycode .markdown .numberLines startFrom=&quot;100&quot;} test test test # test ~~~</p>
-<h2>Blockquotes</h2>
+<h2>Block-quotes</h2>
 <p>@markdown</p>
 <blockquote>
 <h4>Test</h4>
@@ -254,7 +254,7 @@ test
 <li>test</li>
 </ul>
 </blockquote>
-<h3>Blockquotes Quoting Codes</h3>
+<h3>Block-quotes Quoting Codes</h3>
 <p>@markdown</p>
 <blockquote>
 <pre><code>\newcommand...</code></pre>
@@ -288,7 +288,7 @@ test
 <p>+---------------+---------------+--------------------+ | Fruit | Price | Advantages | +===============+===============+====================+ | Bananas | $1.34 | - built-in wrapper | | | | - bright color | +---------------+---------------+--------------------+ | Oranges | $2.10 | - cures scurvy | | | | - tasty | +---------------+---------------+--------------------+</p>
 <h3>Method 6</h3>
 <p>@ghpages</p>
-<p>|-----------------+------------+-----------------+----------------| | Default aligned |Left aligned| Center aligned | Right aligned | |-----------------|:-----------|:---------------:|---------------:| | First body part |Second cell | Third cell | fourth cell | | Second line |foo | <strong>strong</strong> | baz | | Third line |quux | baz | bar | |-----------------+------------+-----------------+----------------| | Second body | | | | | 2 line | | | | |=================+============+=================+================| | Footer row | | | | |-----------------+------------+-----------------+----------------|</p>
+<p>|-----------------+------------+-----------------+----------------| | Default aligned |Left aligned| Center aligned | Right aligned | |-----------------|:-----------|:---------------:|---------------:| | First body part |Second cell | Third cell | fourth cell | | Second line |foo | <strong>strong</strong> | blah | | Third line |blah | blah | bar | |-----------------+------------+-----------------+----------------| | Second body | | | | | 2 line | | | | |=================+============+=================+================| | Footer row | | | | |-----------------+------------+-----------------+----------------|</p>
 <p>See <a href="http://kramdown.gettalong.org/syntax.html#tables">Syntax | kramdown</a></p>
 <h2>Links</h2>
 <ul>
@@ -424,7 +424,7 @@ tags: [nothing, nothingness] abstract: | This is the abstract.</p>
 <p>MathJax delimiter are <code>$$...$$</code>, <code>\\(...\\)</code> and <code>\\[...\\]</code> (because an extra <code>\</code> can be used to escape from MarkDown).</p>
 <p>Depending on the markdown parser, extra tricks might be needed to make sure nothing within the math delimiter is treated as markdown (see <a href="http://mathjax.readthedocs.org/en/latest/tex.html#tex-and-latex-in-html-documents">TeX and LaTeX in HTML documents — MathJax 2.6 documentation</a>). <code>$...$</code> can be used with MathJax configuration (see <a href="http://mathjax.readthedocs.org/en/latest/tex.html#tex-and-latex-math-delimiters">TeX and LaTeX math delimiters — MathJax 2.6 documentation</a>).</p>
 <h3>MultiMarkdown and Pandoc</h3>
-<p>There are subtleties how math should be used in HTML+MathJax and LaTeX output from single markdown source. See more in <a href="https://github.com/ickc/mathjax-latex-md-mmd-pandoc">Testing LaTeX Environments Usage in MathJax From Markdown Convertion (including mmd and pandoc)</a>.</p>
+<p>There are subtleties how math should be used in HTML+MathJax and LaTeX output from single markdown source. See more in <a href="https://github.com/ickc/mathjax-latex-md-mmd-pandoc">Testing LaTeX Environments Usage in MathJax From Markdown Conversion (including mmd and pandoc)</a>.</p>
 <h4>MultiMarkdown</h4>
 <p>@mmd</p>
 <p>Add the following metadata at the beginning of the document:</p>
@@ -458,5 +458,12 @@ tags: [nothing, nothingness] abstract: | This is the abstract.</p>
 <h2>File Transclusion</h2>
 <p>@mmd</p>
 <p>See more at <a href="http://fletcher.github.io/MultiMarkdown-5/transclusion.html">File Transclusion---MultiMarkdown Documentation</a>.</p>
+<h1>References</h1>
+<p>Some examples are directly or indirectly copied from the following documentations:</p>
+<ol>
+<li><a href="http://pandoc.org/README.html">Pandoc - Pandoc User’s Guide</a></li>
+<li><a href="http://fletcher.github.io/MultiMarkdown-5/">MultiMarkdown User's Guide</a></li>
+<li><a href="http://kramdown.gettalong.org/syntax.html#tables">Syntax | kramdown</a></li>
+</ol>
 </body>
 </html>
