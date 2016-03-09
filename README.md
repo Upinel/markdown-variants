@@ -58,6 +58,10 @@ LaTeX Footer:	mmd-memoir-footer
 	- `@pandoc`: pandoc-favored markdown
 	- `@phpextra`: PHP Markdown Extra (inspired some syntax in pandoc and mmd and gfm, not exhaustively tested here)
 
+Note:
+
+- You might see `<!-- \begin{comment} -->...<!-- \end{comment} -->`. This is for mmd to tex to pdf use only. Ignore this.
+
 # Examples #
 
 ## Header
