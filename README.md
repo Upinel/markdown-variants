@@ -95,61 +95,74 @@ Emphasis
 - **bold** or __bold__ @markdown
 - ***bold italic*** or ___bold italic___ @markdown
 - ~~strikethrough~~ @pandoc
-
-## Links
-
-- https://www.wikipedia.org @pandoc(extension:autolink_bare_uris)
-- <https://www.wikipedia.org> @markdown
-- [Wikipedia.org](https://www.wikipedia.org) @markdown
-- [Wikipedia.org](https://www.wikipedia.org "a title") @markdown
-- [Mail to GitHub](mailto:support@github.com) @markdown
-
-### Reference Links
-
-- [Search here][Google] @markdown
-- A [link][] with attributes. @mmd
-- [Another link to the link above][link]. @mmd
-- A [link1][] with attributes. @markdown
-- [Another link][link2]. @markdown
-- [link3]. @markdown
-
-[Google]: https://www.google.com
-[link]:  https://www.wikipedia.org/portal/wikipedia.org/assets/img/Wikipedia-logo-v2@2x.png "Title" class=external
-         style="border: solid black 1px;"
-
-[link1]: /foo/bar.html  "My title, optional"
-[link2]: http://fsf.org (The free software foundation)
-[link3]: /bar#special  'A title in single quotes'
-
-## Image Links
-
-- ![Alt Text](https://www.wikipedia.org/portal/wikipedia.org/assets/img/Wikipedia-logo-v2@2x.png "Optional Title") @markdown
-
-### Reference Images
-
-- ![Alt Text][imageid] @markdown
-- ![An Image with Attributes][wikipedia] @mmd @pandoc(extension:mmd_link_attributes)
-- ![An Image with Attributes](https://www.wikipedia.org/portal/wikipedia.org/assets/img/Wikipedia-logo-v2@2x.png){#id .class width=30 height=20px} @pandoc @phpextra(partial)
-- a reference ![image][ref] with attributes. @pandoc @phpextra(partial)
+- <span style="font-variant:small-caps;">Small caps</span> @pandoc @markdown(html)
 
 
-[imageid]: https://www.wikipedia.org/portal/wikipedia.org/assets/img/Wikipedia-logo-v2@2x.png "Optional Title"
 
-[wikipedia]: https://www.wikipedia.org/portal/wikipedia.org/assets/img/Wikipedia-logo-v2@2x.png "Title of the Image" width=40px height=40px
+### CriticMarkup ###
 
-[ref]: https://www.wikipedia.org/portal/wikipedia.org/assets/img/Wikipedia-logo-v2@2x.png "optional title" {#id .class key=val key2="val 2"}
+Visually it looks like emphasis. Functionally it is much more, and called Critic Markup @mmd
 
-### Image with Links by Nesting Image and Link ###
+- Deletions from the original text: This is {--is --}a test.
+- Additions: This {++is ++}a test.
+- Substitutions: This {~~isn't~>is~~} a test.
+- Highlighting: This is a {==test==}.
+- Comments: This is a test{>>What is it a test of?<<}.
 
-- [![Image Link](https://www.wikipedia.org/portal/wikipedia.org/assets/img/Wikipedia-logo-v2@2x.png)](https://www.wikipedia.org/) @markdown
+See more at [CriticMarkup---MultiMarkdown Documentation](http://fletcher.github.io/MultiMarkdown-5/criticmarkup.html).
 
-### Block Level Images ###
+## Horizontal Rules
 
-- Block level: HTML `figure` element in MultiMarkdown @mmd @pandoc
+@markdown
 
-![***Block*** **Level**](https://www.wikipedia.org/portal/wikipedia.org/assets/img/Wikipedia-logo-v2@2x.png "Optional Title")
+***
 
-![***Not*** Block **Level**](https://www.wikipedia.org/portal/wikipedia.org/assets/img/Wikipedia-logo-v2@2x.png "Optional Title")\
+3 or more hyphens or asterisks
+
+---
+
+## Break ##
+
+@markdown
+
+No break
+like this
+
+Soft break  
+like this
+
+Hard break
+
+like this
+
+## Superscript & Subscript
+
+- x^2 @mmd
+- d~o @mmd
+- x^a+b^ @mmd @pandoc
+- x~y,z~ @mmd @pandoc
+- P~a\ cat~ @pandoc
+
+## Smarty Pants ##
+
+@markdown(extension:smartypants) @pandoc(--smart) @ghpages
+
+- "Example 1"
+- 'Example 2'
+- ``Example 3''
+- en--dash
+- em---dash
+- ellipsis...
+
+## Abbreviations (PHP Markdown Extra) ##
+
+@mmd @phpextra @pandoc(extension:abbreviations)
+
+*[HTML]: HyperText Markup Language
+*[W3C]:  World Wide Web Consortium
+*[PANDOC]: Pandoc will simply ignore this if the extension is used. A graceful fallback.
+
+Testing abbreviations: HTML, W3C (mouseover it to see)
 
 ## Lists
 
@@ -184,22 +197,9 @@ Emphasis
     3. test
 * test
 
-### Fancy Lists ###
+Note about LaTeX output in mmd/pandoc:
 
-@pandoc
-
-#. one
-#. two
- 9)  Ninth
-10)  Tenth
-11)  Eleventh
-       i. subone
-      ii. subtwo
-     iii. subthree
-(2) Two
-(5) Three
-1.  Four
-*   Five
+- The Maximum nesting level of lists in LaTeX is 4. The quick hack is to mix itemize and enumerate alternatively to go beyond this.
 
 ### Cutoff a List ###
 
@@ -239,270 +239,22 @@ Emphasis
 
         { code }
 
-## Blockquotes
-
-@markdown
-
-> #### Test
-> 
-> test
-> 
-> > test
-
-> > test
-> 
-> * test
-
-> * test
-
-### Blockquotes Quoting Codes ###
-
-@markdown
-
->     \newcommand...
-
-## Code
-
-- `testing` @markdown
-- `\[\ket{a}\]`{.latex} @pandoc
-
-### Fenced Code Blocks
-
-#### Method 1
-
-@markdown
-
-	test
-	test
-		test
-		# test
-
-#### Method 2
-
-@markdown(partial:language-not-supported) @ghpages @pandoc @mmd
-
-```latex
-\nabla \times \mathbf{E} = - \frac{\partial \mathbf{B}}{\partial t}
-```
-
-#### Method 3 ####
+### Fancy Lists ###
 
 @pandoc
 
-~~~markdown
-test
-test
-	test
-	# test
-~~~
-
-~~~ {#mycode .markdown .numberLines startFrom="100"}
-test
-test
-	test
-	# test
-~~~
-
-## Line Blocks ##
-
-@ghpages(partial) @pandoc
-
-| The limerick packs laughs anatomical
-| In space that is quite economical.
-|    But the good ones I've seen
-|    So seldom are clean
-| And the clean ones so seldom are comical
-
-| 200 Main St.
-| Berkeley, CA 94718
-
-## Horizontal Rules (Asterisk also works)
-
-### Hyphen ###
-
-#### Test1
-
--
-
-#### Test2
-
---
-
-#### Test3
-
-@markdown
-
----
-
-#### Test4
-
-@markdown
-
-----
-
-#### Test5
-
-@markdown
-
------
-
-#### test6
-
-@markdown
-
-------
-
-### Asterisks ###
-
-#### Test1
-
-*
-
-#### Test2
-
-**
-
-#### Test3
-
-@markdown
-
-***
-
-#### Test4
-
-@markdown
-
-****
-
-#### Test5
-
-@markdown
-
-*****
-
-#### test6
-
-@markdown
-
-******
-
-## Break ##
-
-@markdown
-
-No break
-like this
-
-Soft break  
-like this
-
-Hard break
-
-like this
-
-## Tables
-
-### Method 1
-
-@ghpages @pandoc @mmd
-
-| 1 | 2 | 3 |  
-| -------- | -----: | ---: |  
-| **test** | _test_ | test |  
-
-### Method 2
-
-@pandoc
-
-| Right | Left | Default | Center |
-|------:|:-----|---------|:------:|
-|   12  |  12  |    12   |    12  |
-|  123  |  123 |   123   |   123  |
-|    1  |    1 |     1   |     1  |
-
-: Table Caption
-
-### Method 3
-
-@mmd
-
-[Table Caption]
-|            |        Grouping           ||
-| Left align | Right align | Center align |
-|:-----------|------------:|:------------:|
-| This       |        This |     This     |
-| column     |      column |    column    |
-| will       |        will |     will     |
-| be         |          be |      be      |
-| left       |       right |    center    |
-| aligned    |     aligned |   aligned    |  
-| And a big grouping is like this	|||  
-
-### Method 4 ###
-
-@pandoc
-
-  Right     Left     Center     Default
--------     ------ ----------   -------
-     12     12        12            12
-    123     123       123          123
-      1     1          1             1
-
-Table:  Demonstration of simple table syntax.
-
-### Method 5 ###
-
-@pandoc
-
--------------------------------------------------------------
- Centered   Default           Right Left
-  Header    Aligned         Aligned Aligned
------------ ------- --------------- -------------------------
-   First    row                12.0 Example of a row that
-                                    spans multiple lines.
-
-  Second    row                 5.0 Here's another one. Note
-                                    the blank line between
-                                    rows.
--------------------------------------------------------------
-
-Table: Here's the caption. It, too, may span
-multiple lines.
-
-### Method 6 ###
-
-@pandoc
-
-: Sample grid table.
-
-+---------------+---------------+--------------------+
-| Fruit         | Price         | Advantages         |
-+===============+===============+====================+
-| Bananas       | $1.34         | - built-in wrapper |
-|               |               | - bright color     |
-+---------------+---------------+--------------------+
-| Oranges       | $2.10         | - cures scurvy     |
-|               |               | - tasty            |
-+---------------+---------------+--------------------+  
-
-### Method 7 ###
-
-@ghpages
-
-|-----------------+------------+-----------------+----------------|
-| Default aligned |Left aligned| Center aligned  | Right aligned  |
-|-----------------|:-----------|:---------------:|---------------:|
-| First body part |Second cell | Third cell      | fourth cell    |
-| Second line     |foo         | **strong**      | baz            |
-| Third line      |quux        | baz             | bar            |
-|-----------------+------------+-----------------+----------------|
-| Second body     |            |                 |                |
-| 2 line          |            |                 |                |
-|=================+============+=================+================|
-| Footer row      |            |                 |                |
-|-----------------+------------+-----------------+----------------|
-
-See [Syntax | kramdown](http://kramdown.gettalong.org/syntax.html#tables)  
+#. one
+#. two
+ 9)  Ninth
+10)  Tenth
+11)  Eleventh
+       i. subone
+      ii. subtwo
+     iii. subthree
+(2) Two
+(5) Three
+1.  Four
+*   Five
 
 ## Definition Lists
 
@@ -546,55 +298,215 @@ Explanation of examples.
 
 As (@good) illustrates, ...
 
-## Glossaries ##
+## Code
 
-A special kind of footnote [^glossaryfootnote]. @mmd @markdown(regarded-as-footnote)
+- `testing` @markdown
+- `\[\ket{a}\]`{.latex} @pandoc
 
-[^glossaryfootnote]: glossary: term (optional sort key)
-    The actual definition belongs on a new line, and can continue on
-    just as other footnotes.
+### Fenced Code Blocks
 
-See more at [Glossary---MultiMarkdown Documentation](http://fletcher.github.io/MultiMarkdown-5/glossary.html).
+#### Method 1
 
-## Superscript & Subscript
+@markdown
 
-- x^2 @mmd
-- d~o @mmd
-- x^a+b^ @mmd @pandoc
-- x~y,z~ @mmd @pandoc
-- P~a\ cat~ @pandoc
+	test
+	test
+		test
+		# test
 
-## Smarty Pants ##
+#### Method 2
 
-@markdown(extension:smartypants) @pandoc(--smart) @ghpages
+@markdown(partial:language-not-supported) @ghpages @pandoc @mmd
 
-- "Example 1"
-- 'Example 2'
-- ``Example 3''
-- en--dash
-- em---dash
-- ellipsis...
+```latex
+\nabla \times \mathbf{E} = - \frac{\partial \mathbf{B}}{\partial t}
+```
 
-## Abbreviations (PHP Markdown Extra) ##
+#### Method 3 ####
 
-@mmd @phpextra @pandoc(partial-with-extension:abbreviations)
+@pandoc
 
-*[HTML]: HyperText Markup Language
-*[W3C]:  World Wide Web Consortium
+~~~markdown
+test
+test
+	test
+	# test
+~~~
 
-Testing abbreviations: HTML, W3C (mouseover it to see)
+~~~ {#mycode .markdown .numberLines startFrom="100"}
+test
+test
+	test
+	# test
+~~~
+
+## Blockquotes
+
+@markdown
+
+> #### Test
+> 
+> test
+> 
+> > test
+
+> > test
+> 
+> * test
+
+> * test
+
+### Blockquotes Quoting Codes ###
+
+@markdown
+
+>     \newcommand...
+
+## Line Blocks ##
+
+@ghpages(partial) @pandoc
+
+| The limerick packs laughs anatomical
+| In space that is quite economical.
+|    But the good ones I've seen
+|    So seldom are clean
+| And the clean ones so seldom are comical
+
+| 200 Main St.
+| Berkeley, CA 94718
+
+## Tables
+
+### Method 1
+
+@ghpages @pandoc @mmd
+
+| Right | Left | Default | Center |
+|------:|:-----|---------|:------:|
+|   12  |  12  |    12   |    12  |
+|  123  |  123 |   123   |   123  |
+|    1  |    1 |     1   |     1  |
+
+: Notice how pandoc can have optional caption like this
+
+### Method 2
+
+@mmd
+
+[Table Caption]
+|            |        Grouping           ||
+| Left align | Right align | Center align |
+|:-----------|------------:|:------------:|
+| This       |        This |     This     |
+| column     |      column |    column    |
+| will       |        will |     will     |
+| be         |          be |      be      |
+| left       |       right |    center    |
+| aligned    |     aligned |   aligned    |  
+| And a big grouping is like this	|||  
+
+### Method 3 ###
+
+@pandoc
+
+  Right     Left     Center     Default
+-------     ------ ----------   -------
+     12     12        12            12
+    123     123       123          123
+      1     1          1             1
+
+Table:  Demonstration of simple table syntax.
+
+### Method 4 ###
+
+@pandoc
+
+-------------------------------------------------------------
+ Centered   Default           Right Left
+  Header    Aligned         Aligned Aligned
+----------- ------- --------------- -------------------------
+   First    row                12.0 Example of a row that
+                                    spans multiple lines.
+
+  Second    row                 5.0 Here's another one. Note
+                                    the blank line between
+                                    rows.
+-------------------------------------------------------------
+
+Table: Here's the caption. It, too, may span
+multiple lines.
+
+### Method 5 ###
+
+@pandoc
+
+: Sample grid table.
+
++---------------+---------------+--------------------+
+| Fruit         | Price         | Advantages         |
++===============+===============+====================+
+| Bananas       | $1.34         | - built-in wrapper |
+|               |               | - bright color     |
++---------------+---------------+--------------------+
+| Oranges       | $2.10         | - cures scurvy     |
+|               |               | - tasty            |
++---------------+---------------+--------------------+  
+
+### Method 6 ###
+
+@ghpages
+
+|-----------------+------------+-----------------+----------------|
+| Default aligned |Left aligned| Center aligned  | Right aligned  |
+|-----------------|:-----------|:---------------:|---------------:|
+| First body part |Second cell | Third cell      | fourth cell    |
+| Second line     |foo         | **strong**      | baz            |
+| Third line      |quux        | baz             | bar            |
+|-----------------+------------+-----------------+----------------|
+| Second body     |            |                 |                |
+| 2 line          |            |                 |                |
+|=================+============+=================+================|
+| Footer row      |            |                 |                |
+|-----------------+------------+-----------------+----------------|
+
+See [Syntax | kramdown](http://kramdown.gettalong.org/syntax.html#tables)  
+
+## Links
+
+- https://www.wikipedia.org @pandoc(extension:autolink_bare_uris)
+- <https://www.wikipedia.org> @markdown
+- [Wikipedia.org](https://www.wikipedia.org) @markdown
+- [Wikipedia.org](https://www.wikipedia.org "a title") @markdown
+- [Mail to GitHub](mailto:support@github.com) @markdown
+
+### Reference Links
+
+- [Search here][Google] @markdown
+- A [link][] with attributes. @mmd
+- [Another link to the link above][link]. @mmd
+- A [link1][] with attributes. @markdown
+- [Another link][link2]. @markdown
+- [link3]. @markdown
+
+[Google]: https://www.google.com
+[link]:  https://www.wikipedia.org/portal/wikipedia.org/assets/img/Wikipedia-logo-v2@2x.png "Title" class=external
+         style="border: solid black 1px;"
+
+[link1]: /foo/bar.html  "My title, optional"
+[link2]: http://fsf.org (The free software foundation)
+[link3]: /bar#special  'A title in single quotes'
 
 ## Footnotes ##
 
-- Footnotes [^This is a footnote] @mmd
-- Footnotes ^[This is a footnote] @pandoc
+- Footnotes [^This is a mmd inline footnote] @mmd
+- Footnotes ^[This is a pandoc inline footnote] @pandoc
 
-### Reference ###
+### Reference Footnotes ###
 
-- Footnotes[^1] @markdown
+- Footnotes[^whatever] @markdown
 - Long Footnotes [^longnote] @pandoc @ghpages @mmd
 
-[^1]: This is another footnote
+[^whatever]: This is a footnote
 [^longnote]: Here's one with multiple blocks.
 
     Subsequent paragraphs are indented to show that they
@@ -609,47 +521,77 @@ belong to the previous footnote.
 This paragraph won't be part of the note, because it
 isn't indented.
 
-## Citations ##
+### Glossaries ###
 
-### MultiMarkdown ###
+A special kind of footnote [^glossaryfootnote]. @mmd
 
-- This is a statement that should be attributed to its source [p. 23][#Doe:2006]. @mmd
+[^glossaryfootnote]: glossary: term (optional sort key)
+    The actual definition belongs on a new line, and can continue on
+    just as other footnotes. Note how it fallbacks gracefully in Markdown.
 
-[Not cited][#notcited] @mmd
+See more at [Glossary---MultiMarkdown Documentation](http://fletcher.github.io/MultiMarkdown-5/glossary.html).
+
+### Citations ###
+
+It can looks like footnotes in HTML output.
+
+#### MultiMarkdown ####
+
+@mmd
+
+- This is a statement that should be attributed to its source [p. 23][#Doe:2006].
+
+[Not cited][#notcited]
 
 [#Doe:2006]: John Doe. *Some Big Fancy Book*.  Vanity Press, 2006.    
 [#notcited]:  John Doe. *Another Big Fancy Book*.  Vanity Press, 2016.    
 
 See more at [Citations---MultiMarkdown Documentation](http://fletcher.github.io/MultiMarkdown-5/citations.html).
 
-### Pandoc ###
+#### Pandoc ####
+
+@pandoc
 
 Very powerful but complicated. See more at [Citations---Pandoc Documentation](http://pandoc.org/README.html#citations).
 
-## CriticMarkup ##
+## Images
 
-@mmd
+- ![Alt Text](https://www.wikipedia.org/portal/wikipedia.org/assets/img/Wikipedia-logo-v2@2x.png "Optional Title") @markdown
 
-- Deletions from the original text: This is {--is --}a test.
-- Additions: This {++is ++}a test.
-- Substitutions: This {~~isn't~>is~~} a test.
-- Highlighting: This is a {==test==}.
-- Comments: This is a test{>>What is it a test of?<<}.
+### Reference Images
 
-See more at [CriticMarkup---MultiMarkdown Documentation](http://fletcher.github.io/MultiMarkdown-5/criticmarkup.html).
+- ![Alt Text][imageid] @markdown
+- ![An Image with Attributes][wikipedia] @mmd @pandoc(extension:mmd_link_attributes)
+- ![An Image with Attributes](https://www.wikipedia.org/portal/wikipedia.org/assets/img/Wikipedia-logo-v2@2x.png){#id .class width=30 height=20px} @pandoc @phpextra(partial)
+- a reference ![image][ref] with attributes. @pandoc @phpextra(partial)
 
-## Small Caps ##
 
-<span style="font-variant:small-caps;">Small caps</span> @pandoc @markdown(html) @mmd(html) @ghpages(html)
+[imageid]: https://www.wikipedia.org/portal/wikipedia.org/assets/img/Wikipedia-logo-v2@2x.png "Optional Title"
+
+[wikipedia]: https://www.wikipedia.org/portal/wikipedia.org/assets/img/Wikipedia-logo-v2@2x.png "Title of the Image" width=40px height=40px
+
+[ref]: https://www.wikipedia.org/portal/wikipedia.org/assets/img/Wikipedia-logo-v2@2x.png "optional title" {#id .class key=val key2="val 2"}
+
+### Image with Links by Nesting Image and Link ###
+
+- [![Image Link](https://www.wikipedia.org/portal/wikipedia.org/assets/img/Wikipedia-logo-v2@2x.png)](https://www.wikipedia.org/) @markdown
+
+### Block Level Images ###
+
+- Block level: HTML `figure` element in MultiMarkdown @mmd @pandoc
+
+![***Block*** **Level**](https://www.wikipedia.org/portal/wikipedia.org/assets/img/Wikipedia-logo-v2@2x.png "Optional Title")
+
+![***Not*** Block **Level**](https://www.wikipedia.org/portal/wikipedia.org/assets/img/Wikipedia-logo-v2@2x.png "Optional Title")\
 
 ## RAW ##
 
 ### HTML ###
 
-- <div>This is *not* markdown</div> (a good thing to check is if the *not* is italic or not) @markdown @ghpages
+- <div>This should *not* be markdown (or is it?) </div> @markdown
 - <div markdown=1>This *is* markdown</div> @mmd @pandoc(non-default-extension:markdown_attribute)
 
-See more at [Raw---MultiMarkdown Documentation](http://fletcher.github.io/MultiMarkdown-5/raw.html).
+See more at [Raw---MultiMarkdown Documentation](http://fletcher.github.io/MultiMarkdown-5/raw.html). See test in [Babelmark 2 - Compare markdown implementations](http://johnmacfarlane.net/babelmark2/?normalize=1&text=%3Cdiv%3EThis+should+*not*+be+markdown+(or+is+it%3F%29+%3C%2Fdiv%3E%0A%3Cdiv+markdown%3D1%3EThis+*is*+markdown%3C%2Fdiv%3E).
 
 ### LaTeX ###
 
@@ -662,7 +604,9 @@ Other Syntaxes
 
 ## Metadata ##
 
-### MultiMarkdown Metadata Block @mmd @pandoc(extension:mmd_title_block)
+### MultiMarkdown Metadata Block ###
+
+@mmd @pandoc(extension:mmd_title_block)
 
 ```md
 Title:    A Sample MultiMarkdown Document  
@@ -676,7 +620,9 @@ CSS:      http://example.com/standard.css
 
 See more at [Metadata---MultiMarkdown Documentation](http://fletcher.github.io/MultiMarkdown-5/metadata.html).
 
-### Pandoc Title Block @pandoc
+### Pandoc Title Block ###
+
+@pandoc
 
 ```
 % title
@@ -684,7 +630,11 @@ See more at [Metadata---MultiMarkdown Documentation](http://fletcher.github.io/M
 % date
 ```
 
-### YAML Metadata Block @mmd(partial) @pandoc @ghpages
+### YAML Metadata Block ###
+
+@Mmd(Partial)
+
+@pandoc @ghpages
 
 ```yaml
 ---
@@ -699,19 +649,17 @@ abstract: |
 ---
 ```
 
-## File Transclusion ##
-
-@mmd
-
-See more at [File Transclusion---MultiMarkdown Documentation](http://fletcher.github.io/MultiMarkdown-5/transclusion.html).
-
 ## TOC ##
 
 ### Pandoc ###
 
+@pandoc
+
 Use `--toc` as a command argument.
 
-### MultiMarkdown @mmd
+### MultiMarkdown ###
+
+@mmd
 
 `{{TOC}}`, see beginning. It preprocess the headings and generate a ToC on its own, and doesn't give instruction for LaTeX to generate one. A hack is like this:
 
@@ -730,7 +678,9 @@ LaTeX Input:	mmd-load-toc
 
 See more at [ickc/peg-multimarkdown-latex-support: Default support files for generating LaTeX documents with MMD 3 through MMD 5](https://github.com/ickc/peg-multimarkdown-latex-support).
 
-### ghpages (via kramdown) ###
+### Kramdown ###
+
+@ghpages
 
 ```markdown
 # Contents
@@ -746,6 +696,8 @@ See more at [ickc/peg-multimarkdown-latex-support: Default support files for gen
 MathJax is assumed. MathJax has many configurable options. See [MathJax TeX and LaTeX Support — MathJax 2.6 documentation](http://mathjax.readthedocs.org/en/latest/tex.html).
 
 ### Markdown ###
+
+@markdown
 
 Add the following at the beginning of the document:
 
@@ -767,6 +719,8 @@ There are subtleties how math should be used in HTML+MathJax and LaTeX output fr
 
 #### MultiMarkdown ####
 
+@mmd
+
 Add the following metadata at the beginning of the document:
 
 ```html
@@ -778,6 +732,8 @@ HTML header:    <script type="text/javascript"
 MultiMarkdown math delimiter are `$...$`, `$$...$$`, `\\(...\\)` and `\\[...\\]`.
 
 #### Pandoc ####
+
+@pandoc
 
 For pandoc, add `--mathjax` in the command-line argument.
 
@@ -822,10 +778,10 @@ $$
 $$
 - $$1 +  \frac{q^2}{(1-q)}+\frac{q^6}{(1-q)(1-q^2)}+\cdots =
 \prod_{j=0}^{\infty}\frac{1}{(1-q^{5j+2})(1-q^{5j+3})},
-\quad\quad \text{for $|q|<1$}.$$
+\quad\quad \text{for $|q|<1$}.$$  
 
-# Other Notes #
+## File Transclusion ##
 
-## LaTeX ##
+@mmd
 
-- The Maximum nesting level of lists in LaTeX is 4. The quick hack is to mix itemize and enumerate alternatively to go beyond this.
+See more at [File Transclusion---MultiMarkdown Documentation](http://fletcher.github.io/MultiMarkdown-5/transclusion.html).

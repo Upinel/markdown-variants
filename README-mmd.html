@@ -5,7 +5,7 @@
 	<title>Yet Another Markdown Cheatsheet</title>
 	<meta name="subtitle" content="Including MarkDown, MultiMarkdown, pandoc, GFM and LaTeX Math Syntax by MathJax"/>
 	<meta name="keywords" content="MarkDown, MultiMarkDown, LaTeX, pandoc, gfm"/>
-	<meta name="revision" content="0.9"/>
+	<meta name="revision" content="0.10"/>
 	<meta name="language" content="English"/>
 	<meta name="author" content="Kolen Cheung"/>
 	<meta name="email" content="khcheung@berkeley.edu"/>
@@ -26,9 +26,7 @@ All Rights Reserved."/>
 <ul>
 <li>Will be replaced with the ToC, excluding the &#8220;Contents&#8221; header
 {:toc}</li>
-</ul>
-
-<!-- \begin{comment} --><div class="TOC">
+</ul><div class="TOC">
 
 
 <ul>
@@ -64,25 +62,25 @@ All Rights Reserved."/>
 </ul></li>
 </ul></li>
 </ul></li>
-<li><a href="#emphasis">Emphasis</a></li>
-<li><a href="#links">Links</a>
+<li><a href="#backslashescapes">Backslash Escapes</a></li>
+<li><a href="#emphasis">Emphasis</a>
 
 <ul>
-<li><a href="#referencelinks">Reference Links</a></li>
+<li><a href="#criticmarkup">CriticMarkup</a></li>
 </ul></li>
-<li><a href="#imagelinks">Image Links</a>
-
-<ul>
-<li><a href="#referenceimages">Reference Images</a></li>
-<li><a href="#imagewithlinksbynestingimageandlink">Image with Links by Nesting Image and Link</a></li>
-<li><a href="#blocklevelimages">Block Level Images</a></li>
-</ul></li>
+<li><a href="#horizontalrules">Horizontal Rules</a></li>
+<li><a href="#break">Break</a></li>
+<li><a href="#superscriptsubscript">Superscript &amp; Subscript</a></li>
+<li><a href="#smartypants">Smarty Pants</a></li>
+<li><a href="#abbreviationsphpmarkdownextra">Abbreviations (PHP Markdown Extra)</a></li>
 <li><a href="#lists">Lists</a>
 
 <ul>
 <li><a href="#orderedlists">Ordered Lists</a></li>
 <li><a href="#unorderedlists">Unordered Lists</a></li>
 <li><a href="#nestedlists">Nested Lists</a></li>
+<li><a href="#cutoffalist">Cutoff a List</a></li>
+<li><a href="#listiteminablock">List Item in a Block</a></li>
 <li><a href="#fancylists">Fancy Lists</a></li>
 </ul></li>
 </ul></li>
@@ -90,11 +88,13 @@ All Rights Reserved."/>
 <li><a href="#.two">. two</a>
 
 <ul>
-<li><a href="#blockquotes">Blockquotes</a>
+<li><a href="#definitionlists">Definition Lists</a>
 
 <ul>
-<li><a href="#blockquotesquotingcodes">Blockquotes Quoting Codes</a></li>
+<li><a href="#method1">Method 1</a></li>
+<li><a href="#method2">Method 2</a></li>
 </ul></li>
+<li><a href="#numberedexamplelists">Numbered Example Lists</a></li>
 <li><a href="#code">Code</a>
 
 <ul>
@@ -106,32 +106,12 @@ All Rights Reserved."/>
 <li><a href="#method3">Method 3</a></li>
 </ul></li>
 </ul></li>
+<li><a href="#blockquotes">Blockquotes</a>
+
+<ul>
+<li><a href="#blockquotesquotingcodes">Blockquotes Quoting Codes</a></li>
+</ul></li>
 <li><a href="#lineblocks">Line Blocks</a></li>
-<li><a href="#horizontalrulesasteriskalsoworks">Horizontal Rules (Asterisk also works)</a>
-
-<ul>
-<li><a href="#hyphen">Hyphen</a>
-
-<ul>
-<li><a href="#test1">Test1</a></li>
-<li><a href="#test2">Test2</a></li>
-<li><a href="#test3">Test3</a></li>
-<li><a href="#test4">Test4</a></li>
-<li><a href="#test5">Test5</a></li>
-<li><a href="#test6">test6</a></li>
-</ul></li>
-<li><a href="#asterisks">Asterisks</a>
-
-<ul>
-<li><a href="#test1">Test1</a></li>
-<li><a href="#test2">Test2</a></li>
-<li><a href="#test3">Test3</a></li>
-<li><a href="#test4">Test4</a></li>
-<li><a href="#test5">Test5</a></li>
-<li><a href="#test6">test6</a></li>
-</ul></li>
-</ul></li>
-<li><a href="#break">Break</a></li>
 <li><a href="#tables">Tables</a>
 
 <ul>
@@ -146,30 +126,30 @@ All Rights Reserved."/>
 <li><a href="#method5">Method 5</a></li>
 <li><a href="#method6">Method 6</a></li>
 </ul></li>
-<li><a href="#definitionlists">Definition Lists</a>
+<li><a href="#links">Links</a>
 
 <ul>
-<li><a href="#method1">Method 1</a></li>
-<li><a href="#method2">Method 2</a></li>
+<li><a href="#referencelinks">Reference Links</a></li>
 </ul></li>
-<li><a href="#numberedexamplelists">Numbered Example Lists</a></li>
-<li><a href="#glossaries">Glossaries</a></li>
-<li><a href="#superscriptsubscript">Superscript &amp; Subscript</a></li>
-<li><a href="#smartypants">Smarty Pants</a></li>
-<li><a href="#abbreviationsphpmarkdownextra">Abbreviations (PHP Markdown Extra)</a></li>
 <li><a href="#footnotes">Footnotes</a>
 
 <ul>
-<li><a href="#reference">Reference</a></li>
-</ul></li>
+<li><a href="#referencefootnotes">Reference Footnotes</a></li>
+<li><a href="#glossaries">Glossaries</a></li>
 <li><a href="#citations">Citations</a>
 
 <ul>
 <li><a href="#multimarkdown">MultiMarkdown</a></li>
 <li><a href="#pandoc">Pandoc</a></li>
 </ul></li>
-<li><a href="#criticmarkup">CriticMarkup</a></li>
-<li><a href="#smallcaps">Small Caps</a></li>
+</ul></li>
+<li><a href="#images">Images</a>
+
+<ul>
+<li><a href="#referenceimages">Reference Images</a></li>
+<li><a href="#imagewithlinksbynestingimageandlink">Image with Links by Nesting Image and Link</a></li>
+<li><a href="#blocklevelimages">Block Level Images</a></li>
+</ul></li>
 <li><a href="#raw">RAW</a>
 
 <ul>
@@ -183,19 +163,18 @@ All Rights Reserved."/>
 <li><a href="#metadata">Metadata</a>
 
 <ul>
-<li><a href="#multimarkdownmetadatablockmmdpandocextension:mmd_title_block">MultiMarkdown Metadata Block @mmd @pandoc(extension:mmd_title_block)</a></li>
-<li><a href="#pandoctitleblockpandoc">Pandoc Title Block @pandoc</a></li>
-<li><a href="#yamlmetadatablockmmdpartialpandocgfm">YAML Metadata Block @mmd(partial) @pandoc @gfm</a></li>
+<li><a href="#multimarkdownmetadatablock">MultiMarkdown Metadata Block</a></li>
+<li><a href="#pandoctitleblock">Pandoc Title Block</a></li>
+<li><a href="#yamlmetadatablock">YAML Metadata Block</a></li>
 </ul></li>
 <li>[```yaml][yaml]</li>
 <li>[It consists of two paragraphs.][itconsistsoftwoparagraphs.]</li>
-<li><a href="#filetransclusion">File Transclusion</a></li>
 <li><a href="#toc">TOC</a>
 
 <ul>
 <li><a href="#pandoc">Pandoc</a></li>
-<li><a href="#multimarkdownmmd">MultiMarkdown @mmd</a></li>
-<li><a href="#gfmviakramdown">Gfm (via kramdown)</a></li>
+<li><a href="#multimarkdown">MultiMarkdown</a></li>
+<li><a href="#kramdown">Kramdown</a></li>
 </ul></li>
 <li><a href="#math">Math</a>
 
@@ -211,17 +190,10 @@ All Rights Reserved."/>
 <li><a href="#blockmath">Block Math</a></li>
 <li><a href="#otherexamples">Other Examples</a></li>
 </ul></li>
-</ul></li>
-<li><a href="#othernotes">Other Notes</a>
-
-<ul>
-<li><a href="#markdown">Markdown</a></li>
-<li><a href="#latex">LaTeX</a></li>
+<li><a href="#filetransclusion">File Transclusion</a></li>
 </ul></li>
 </ul>
 </div>
-
-<!-- \end{comment} -->
 
 <h1 id="introduction">Introduction</h1>
 
@@ -235,11 +207,11 @@ All Rights Reserved."/>
 <li>TaskPaper-styled tags to indicate in what favor of Markdown such syntax is supported
 
 <ul>
-<li>@markdown: supported by original markdown, hence understood to be supported by all variants of markdown</li>
-<li>@gfm: GitHub-Favored Markdown, built by kramdown with GFM option. i.e. GitHub Pages&#8217; GitHub-Favored Markdown</li>
-<li>@mmd: MultiMarkdown </li>
-<li>@pandoc: pandoc-favored markdown</li>
-<li>@phpextra: PHP Markdown Extra (inspired some syntax in pandoc and mmd and gfm, not exhaustively tested here)</li>
+<li><code>@markdown</code>: supported by original markdown, hence understood to be supported by all variants of markdown</li>
+<li><code>@ghpages</code>: GitHub-Favored Markdown, built by kramdown with GFM option. i.e. GitHub Pages&#8217; GitHub-Favored Markdown</li>
+<li><code>@mmd</code>: MultiMarkdown </li>
+<li><code>@pandoc</code>: pandoc-favored markdown</li>
+<li><code>@phpextra</code>: PHP Markdown Extra (inspired some syntax in pandoc and mmd and gfm, not exhaustively tested here)</li>
 </ul></li>
 </ul>
 
@@ -270,7 +242,7 @@ All Rights Reserved."/>
 <h3 id="autocrossreference">Auto Cross Reference</h3>
 
 <ul>
-<li><a href="#header">Link to Header</a> @pandoc @gfm @mmd</li>
+<li><a href="#header">Link to Header</a> @pandoc @ghpages @mmd</li>
 <li><a href="#header">Link to Header</a> @pandoc @mmd</li>
 <li><a href="#header">Header</a> @mmd @pandoc</li>
 <li><a href="#header">Header</a> @mmd @pandoc</li>
@@ -292,6 +264,10 @@ All Rights Reserved."/>
 
 <h6 id="header6">Header6</h6>
 
+<h2 id="backslashescapes">Backslash Escapes</h2>
+
+<p>*testing* @markdown</p>
+
 <h2 id="emphasis">Emphasis</h2>
 
 <ul>
@@ -299,65 +275,75 @@ All Rights Reserved."/>
 <li><strong>bold</strong> or <strong>bold</strong> @markdown</li>
 <li><strong><em>bold italic</em></strong> or <strong><em>bold italic</em></strong> @markdown</li>
 <li>~~strikethrough~~ @pandoc</li>
+<li><span style="font-variant:small-caps;">Small caps</span> @pandoc @markdown(html)</li>
 </ul>
 
-<h2 id="links">Links</h2>
+<h3 id="criticmarkup">CriticMarkup</h3>
+
+<p>Visually it looks like emphasis. Functionally it is much more, and called Critic Markup @mmd</p>
 
 <ul>
-<li>https://www.wikipedia.org @pandoc(extension:autolink_bare_uris)</li>
-<li><a href="https://www.wikipedia.org">https://www.wikipedia.org</a> @markdown</li>
-<li><a href="https://www.wikipedia.org">Wikipedia.org</a> @markdown</li>
-<li><a href="https://www.wikipedia.org" title="a title">Wikipedia.org</a> @markdown</li>
-<li><a href="&#109;&#97;&#105;&#108;&#x74;&#111;&#x3a;&#x73;&#x75;&#112;&#x70;&#x6f;&#x72;&#x74;&#64;&#103;&#105;&#116;&#104;&#117;&#98;&#46;&#x63;&#111;&#109;">&#x4d;&#x61;&#x69;&#x6c; &#116;&#x6f; &#x47;&#105;&#116;&#72;&#x75;&#98;</a> @markdown</li>
+<li>Deletions from the original text: This is {&#8211;is &#8211;}a test.</li>
+<li>Additions: This {++is ++}a test.</li>
+<li>Substitutions: This {~~isn&#8217;t<sub>>is</sub><sub>}</sub> a test.</li>
+<li>Highlighting: This is a {==test==}.</li>
+<li>Comments: This is a test{&gt;&gt;What is it a test of?&lt;&lt;}.</li>
 </ul>
 
-<h3 id="referencelinks">Reference Links</h3>
+<p>See more at <a href="http://fletcher.github.io/MultiMarkdown-5/criticmarkup.html">CriticMarkup&#8212;MultiMarkdown Documentation</a>.</p>
+
+<h2 id="horizontalrules">Horizontal Rules</h2>
+
+<p>@markdown</p>
+
+<hr />
+
+<p>3 or more hyphens or asterisks</p>
+
+<hr />
+
+<h2 id="break">Break</h2>
+
+<p>@markdown</p>
+
+<p>No break
+like this</p>
+
+<p>Soft break<br/>
+like this</p>
+
+<p>Hard break</p>
+
+<p>like this</p>
+
+<h2 id="superscriptsubscript">Superscript &amp; Subscript</h2>
 
 <ul>
-<li><a href="https://www.google.com">Search here</a> @markdown</li>
-<li>A <a href="https://www.wikipedia.org/portal/wikipedia.org/assets/img/Wikipedia-logo-v2@2x.png" title="Title" class="external" style="border: solid black 1px;">link</a> with attributes. @mmd</li>
-<li><a href="https://www.wikipedia.org/portal/wikipedia.org/assets/img/Wikipedia-logo-v2@2x.png" title="Title" class="external" style="border: solid black 1px;">Another link to the link above</a>. @mmd</li>
-<li>A <a href="/foo/bar.html" title="My title, optional">link1</a> with attributes. @markdown</li>
-<li><a href="http://fsf.org" title="The free software foundation">Another link</a>. @markdown</li>
-<li><a href="/bar#special" title="A title in single quotes">link3</a>. @markdown</li>
+<li>x<sup>2</sup> @mmd</li>
+<li>d<sub>o</sub> @mmd</li>
+<li>x<sup>a+b</sup> @mmd @pandoc</li>
+<li>x<sub>y,z</sub> @mmd @pandoc</li>
+<li>P<sub>a</sub>\ cat~ @pandoc</li>
 </ul>
 
-<h2 id="imagelinks">Image Links</h2>
+<h2 id="smartypants">Smarty Pants</h2>
+
+<p>@markdown(extension:smartypants) @pandoc(&#8211;smart) @ghpages</p>
 
 <ul>
-<li><img src="https://www.wikipedia.org/portal/wikipedia.org/assets/img/Wikipedia-logo-v2@2x.png" alt="Alt Text" title="Optional Title" /> @markdown</li>
+<li>&#8220;Example 1&#8221;</li>
+<li>&#8216;Example 2&#8217;</li>
+<li>&#8220;Example 3&#8221;</li>
+<li>en&#8211;dash</li>
+<li>em&#8212;dash</li>
+<li>ellipsis&#8230;</li>
 </ul>
 
-<h3 id="referenceimages">Reference Images</h3>
+<h2 id="abbreviationsphpmarkdownextra">Abbreviations (PHP Markdown Extra)</h2>
 
-<ul>
-<li><img src="https://www.wikipedia.org/portal/wikipedia.org/assets/img/Wikipedia-logo-v2@2x.png" alt="Alt Text" id="imageid" title="Optional Title" /> @markdown</li>
-<li><img src="https://www.wikipedia.org/portal/wikipedia.org/assets/img/Wikipedia-logo-v2@2x.png" alt="An Image with Attributes" id="wikipedia" title="Title of the Image" style="height:40px;width:40px;" /> @mmd @pandoc(extension:mmd_link_attributes)</li>
-<li><img src="https://www.wikipedia.org/portal/wikipedia.org/assets/img/Wikipedia-logo-v2@2x.png" alt="An Image with Attributes" />{#id .class width=30 height=20px} @pandoc @phpextra(partial)</li>
-<li>a reference ![image][ref] with attributes. @pandoc @phpextra(partial)</li>
-</ul>
+<p>@mmd @phpextra @pandoc(extension:abbreviations)</p>
 
-<p>[ref]: https://www.wikipedia.org/portal/wikipedia.org/assets/img/Wikipedia-logo-v2@2x.png &#8220;optional title&#8221; {#id .class key=val key2=&#8220;val 2&#8221;}</p>
-
-<h3 id="imagewithlinksbynestingimageandlink">Image with Links by Nesting Image and Link</h3>
-
-<ul>
-<li><a href="https://www.wikipedia.org/"><img src="https://www.wikipedia.org/portal/wikipedia.org/assets/img/Wikipedia-logo-v2@2x.png" alt="Image Link" /></a> @markdown</li>
-</ul>
-
-<h3 id="blocklevelimages">Block Level Images</h3>
-
-<ul>
-<li>Block level: <abbr title="HyperText Markup Language">HTML</abbr> <code>figure</code> element in MultiMarkdown @mmd @pandoc</li>
-</ul>
-
-<figure>
-<img src="https://www.wikipedia.org/portal/wikipedia.org/assets/img/Wikipedia-logo-v2@2x.png" alt="Block Level" title="Optional Title" />
-<figcaption><strong><em>Block</em></strong> <strong>Level</strong></figcaption>
-</figure>
-
-<p><img src="https://www.wikipedia.org/portal/wikipedia.org/assets/img/Wikipedia-logo-v2@2x.png" alt="Not Block Level" title="Optional Title" />
-</p>
+<p>Testing abbreviations: <abbr title="HyperText Markup Language">HTML</abbr>, <abbr title="World Wide Web Consortium">W3C</abbr> (mouseover it to see)</p>
 
 <h2 id="lists">Lists</h2>
 
@@ -410,24 +396,11 @@ All Rights Reserved."/>
 <li>test</li>
 </ul>
 
-<h3 id="fancylists">Fancy Lists</h3>
+<p>Note about LaTeX output in mmd/pandoc:</p>
 
-<p>@pandoc</p>
-
-<h1 id=".one">. one</h1>
-
-<h1 id=".two">. two</h1>
-
-<p>9) Ninth
-10) Tenth
-11) Eleventh
- i. subone
- ii. subtwo
- iii. subthree
-(2) Two
-(5) Three
-1. Four
-* Five</p>
+<ul>
+<li>The Maximum nesting level of lists in LaTeX is 4. The quick hack is to mix itemize and enumerate alternatively to go beyond this.</li>
+</ul>
 
 <h3 id="cutoffalist">Cutoff a List</h3>
 
@@ -474,6 +447,117 @@ eight spaces:</p>
 </code></pre></li>
 </ul>
 
+<h3 id="fancylists">Fancy Lists</h3>
+
+<p>@pandoc</p>
+
+<h1 id=".one">. one</h1>
+
+<h1 id=".two">. two</h1>
+
+<p>9) Ninth
+10) Tenth
+11) Eleventh
+ i. subone
+ ii. subtwo
+ iii. subthree
+(2) Two
+(5) Three
+1. Four
+* Five</p>
+
+<h2 id="definitionlists">Definition Lists</h2>
+
+<h3 id="method1">Method 1</h3>
+
+<p>@mmd @phpextra @pandoc @ghpages</p>
+
+<dl>
+<dt>Physics</dt>
+<dd>The Fundamental of Science</dd>
+
+<dd>Describe the Nature</dd>
+
+<dd>Make Prediction</dd>
+</dl>
+
+<h3 id="method2">Method 2</h3>
+
+<p>@ghpages @pandoc @mmd</p>
+
+<dl>
+<dt>Term 1</dt>
+<dd>Definition 1</dd>
+
+<dt>Term 2 with <em>inline markup</em></dt>
+<dd>
+<p>Definition 2</p>
+
+<pre><code>{ some code, part of Definition 2 }
+</code></pre>
+
+<p>Third paragraph of definition 2.</p></dd>
+</dl>
+
+<h2 id="numberedexamplelists">Numbered Example Lists</h2>
+
+<p>@pandoc</p>
+
+<p>(@) My first example will be numbered (1).
+(@) My second example will be numbered (2).</p>
+
+<p>Explanation of examples.</p>
+
+<p>(@) My third example will be numbered (3).</p>
+
+<p>(@good) This is a good example.</p>
+
+<p>As (@good) illustrates, &#8230;</p>
+
+<h2 id="code">Code</h2>
+
+<ul>
+<li><code>testing</code> @markdown</li>
+<li><code>\[\ket{a}\]</code>{.latex} @pandoc</li>
+</ul>
+
+<h3 id="fencedcodeblocks">Fenced Code Blocks</h3>
+
+<h4 id="method1">Method 1</h4>
+
+<p>@markdown</p>
+
+<pre><code>test
+test
+    test
+    # test
+</code></pre>
+
+<h4 id="method2">Method 2</h4>
+
+<p>@markdown(partial:language-not-supported) @ghpages @pandoc @mmd</p>
+
+<pre><code class="latex">\nabla \times \mathbf{E} = - \frac{\partial \mathbf{B}}{\partial t}
+</code></pre>
+
+<h4 id="method3">Method 3</h4>
+
+<p>@pandoc</p>
+
+<p>~~~markdown
+test
+test
+ test
+ # test
+~~~</p>
+
+<p>~~~ {#mycode .markdown .numberLines startFrom=&#8220;100&#8221;}
+test
+test
+ test
+ # test
+~~~</p>
+
 <h2 id="blockquotes">Blockquotes</h2>
 
 <p>@markdown</p>
@@ -504,53 +588,9 @@ eight spaces:</p>
 </code></pre>
 </blockquote>
 
-<h2 id="code">Code</h2>
-
-<ul>
-<li><code>testing</code> @markdown</li>
-<li><code>\[\ket{a}\]</code>{.latex} @pandoc</li>
-</ul>
-
-<h3 id="fencedcodeblocks">Fenced Code Blocks</h3>
-
-<h4 id="method1">Method 1</h4>
-
-<p>@markdown</p>
-
-<pre><code>test
-test
-    test
-    # test
-</code></pre>
-
-<h4 id="method2">Method 2</h4>
-
-<p>@markdown(partial:language-not-supported) @gfm @pandoc @mmd</p>
-
-<pre><code class="latex">\nabla \times \mathbf{E} = - \frac{\partial \mathbf{B}}{\partial t}
-</code></pre>
-
-<h4 id="method3">Method 3</h4>
-
-<p>@pandoc</p>
-
-<p>~~~markdown
-test
-test
- test
- # test
-~~~</p>
-
-<p>~~~ {#mycode .markdown .numberLines startFrom=&#8220;100&#8221;}
-test
-test
- test
- # test
-~~~</p>
-
 <h2 id="lineblocks">Line Blocks</h2>
 
-<p>@gfm(partial) @pandoc</p>
+<p>@ghpages(partial) @pandoc</p>
 
 <p>| The limerick packs laughs anatomical
 | In space that is quite economical.
@@ -561,121 +601,11 @@ test
 <p>| 200 Main St.
 | Berkeley, CA 94718</p>
 
-<h2 id="horizontalrulesasteriskalsoworks">Horizontal Rules (Asterisk also works)</h2>
-
-<h3 id="hyphen">Hyphen</h3>
-
-<h4 id="test1">Test1</h4>
-
-<p>-</p>
-
-<h4 id="test2">Test2</h4>
-
-<p>&#8211;</p>
-
-<h4 id="test3">Test3</h4>
-
-<p>@markdown</p>
-
-<hr />
-
-<h4 id="test4">Test4</h4>
-
-<p>@markdown</p>
-
-<hr />
-
-<h4 id="test5">Test5</h4>
-
-<p>@markdown</p>
-
-<hr />
-
-<h4 id="test6">test6</h4>
-
-<p>@markdown</p>
-
-<hr />
-
-<h3 id="asterisks">Asterisks</h3>
-
-<h4 id="test1">Test1</h4>
-
-<p>*</p>
-
-<h4 id="test2">Test2</h4>
-
-<p>**</p>
-
-<h4 id="test3">Test3</h4>
-
-<p>@markdown</p>
-
-<hr />
-
-<h4 id="test4">Test4</h4>
-
-<p>@markdown</p>
-
-<hr />
-
-<h4 id="test5">Test5</h4>
-
-<p>@markdown</p>
-
-<hr />
-
-<h4 id="test6">test6</h4>
-
-<p>@markdown</p>
-
-<hr />
-
-<h2 id="break">Break</h2>
-
-<p>@markdown</p>
-
-<p>No break
-like this</p>
-
-<p>Soft break<br/>
-like this</p>
-
-<p>Hard break</p>
-
-<p>like this</p>
-
 <h2 id="tables">Tables</h2>
 
 <h3 id="method1">Method 1</h3>
 
-<p>@gfm @pandoc @mmd</p>
-
-<table>
-<colgroup>
-<col/>
-<col style="text-align:right;"/>
-<col style="text-align:right;"/>
-</colgroup>
-
-<thead>
-<tr>
-	<th>1</th>
-	<th style="text-align:right;">2</th>
-	<th style="text-align:right;">3</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-	<td><strong>test</strong></td>
-	<td style="text-align:right;"><em>test</em></td>
-	<td style="text-align:right;">test</td>
-</tr>
-</tbody>
-</table>
-
-<h3 id="method2">Method 2</h3>
+<p>@ghpages @pandoc @mmd</p>
 
 <dl>
 <dt>| Right | Left | Default | Center |</dt>
@@ -683,11 +613,15 @@ like this</p>
 <dt>| 12 | 12 | 12 | 12 |</dt>
 <dt>| 123 | 123 | 123 | 123 |</dt>
 <dt>| 1 | 1 | 1 | 1 |</dt>
-<dd>Table Caption @pandoc</dd>
+<dd>Notice how pandoc can have optional caption like this</dd>
 </dl>
 
+<h3 id="method2">Method 2</h3>
+
+<p>@mmd</p>
+
 <table>
-<caption id="tablecaptionmmd">Table Caption @mmd</caption>
+<caption id="tablecaption">Table Caption</caption>
 <colgroup>
 <col style="text-align:left;"/>
 <col style="text-align:right;"/>
@@ -797,7 +731,7 @@ multiple lines.</p>
 
 <h3 id="method6">Method 6</h3>
 
-<p>@gfm</p>
+<p>@ghpages</p>
 
 <table>
 <colgroup>
@@ -874,150 +808,119 @@ multiple lines.</p>
 </tbody>
 </table>
 
-<h2 id="definitionlists">Definition Lists</h2>
-
-<h3 id="method1">Method 1</h3>
-
-<p>@mmd @phpextra @pandoc @gfm</p>
-
-<dl>
-<dt>Physics</dt>
-<dd>The Fundamental of Science</dd>
-
-<dd>Describe the Nature</dd>
-
-<dd>Make Prediction</dd>
-</dl>
-
-<h3 id="method2">Method 2</h3>
-
-<p>@gfm @pandoc @mmd</p>
-
-<dl>
-<dt>Term 1</dt>
-<dd>Definition 1</dd>
-
-<dt>Term 2 with <em>inline markup</em></dt>
-<dd>
-<p>Definition 2</p>
-
-<pre><code>{ some code, part of Definition 2 }
-</code></pre>
-
-<p>Third paragraph of definition 2.</p></dd>
-</dl>
-
-<h2 id="numberedexamplelists">Numbered Example Lists</h2>
-
-<p>@pandoc</p>
-
-<p>(@) My first example will be numbered (1).
-(@) My second example will be numbered (2).</p>
-
-<p>Explanation of examples.</p>
-
-<p>(@) My third example will be numbered (3).</p>
-
-<p>(@good) This is a good example.</p>
-
-<p>As (@good) illustrates, &#8230;</p>
-
-<h2 id="glossaries">Glossaries</h2>
-
-<p>A special kind of footnote <a href="#fn:1" id="fnref:1" title="see footnote" class="footnote glossary">[1]</a>. @mmd @markdown(regarded-as-footnote)</p>
-
-<p>See more at <a href="http://fletcher.github.io/MultiMarkdown-5/glossary.html">Glossary&#8212;MultiMarkdown Documentation</a>.</p>
-
-<h2 id="superscriptsubscript">Superscript &amp; Subscript</h2>
+<h2 id="links">Links</h2>
 
 <ul>
-<li>x<sup>2</sup> @mmd</li>
-<li>d<sub>o</sub> @mmd</li>
-<li>x<sup>a+b</sup> @mmd @pandoc</li>
-<li>x<sub>y,z</sub> @mmd @pandoc</li>
-<li>P<sub>a</sub>\ cat~ @pandoc</li>
+<li>https://www.wikipedia.org @pandoc(extension:autolink_bare_uris)</li>
+<li><a href="https://www.wikipedia.org">https://www.wikipedia.org</a> @markdown</li>
+<li><a href="https://www.wikipedia.org">Wikipedia.org</a> @markdown</li>
+<li><a href="https://www.wikipedia.org" title="a title">Wikipedia.org</a> @markdown</li>
+<li><a href="&#109;&#97;&#105;&#108;&#x74;&#111;&#x3a;&#x73;&#x75;&#112;&#x70;&#x6f;&#x72;&#x74;&#64;&#103;&#105;&#116;&#104;&#117;&#98;&#46;&#x63;&#111;&#109;">&#x4d;&#x61;&#x69;&#x6c; &#116;&#x6f; &#x47;&#105;&#116;&#72;&#x75;&#98;</a> @markdown</li>
 </ul>
 
-<h2 id="smartypants">Smarty Pants</h2>
-
-<p>@markdown(extension:smartypants) @pandoc(&#8211;smart) @gfm</p>
+<h3 id="referencelinks">Reference Links</h3>
 
 <ul>
-<li>&#8220;Example 1&#8221;</li>
-<li>&#8216;Example 2&#8217;</li>
-<li>&#8220;Example 3&#8221;</li>
-<li>en&#8211;dash</li>
-<li>em&#8212;dash</li>
-<li>ellipsis&#8230;</li>
+<li><a href="https://www.google.com">Search here</a> @markdown</li>
+<li>A <a href="https://www.wikipedia.org/portal/wikipedia.org/assets/img/Wikipedia-logo-v2@2x.png" title="Title" class="external" style="border: solid black 1px;">link</a> with attributes. @mmd</li>
+<li><a href="https://www.wikipedia.org/portal/wikipedia.org/assets/img/Wikipedia-logo-v2@2x.png" title="Title" class="external" style="border: solid black 1px;">Another link to the link above</a>. @mmd</li>
+<li>A <a href="/foo/bar.html" title="My title, optional">link1</a> with attributes. @markdown</li>
+<li><a href="http://fsf.org" title="The free software foundation">Another link</a>. @markdown</li>
+<li><a href="/bar#special" title="A title in single quotes">link3</a>. @markdown</li>
 </ul>
-
-<h2 id="abbreviationsphpmarkdownextra">Abbreviations (PHP Markdown Extra)</h2>
-
-<p>@mmd @phpextra @pandoc(partial-with-extension:abbreviations)</p>
-
-<p>Testing abbreviations: <abbr title="HyperText Markup Language">HTML</abbr>, <abbr title="World Wide Web Consortium">W3C</abbr> (mouseover it to see)</p>
 
 <h2 id="footnotes">Footnotes</h2>
 
 <ul>
-<li>Footnotes <a href="#fn:2" id="fnref:2" title="see footnote" class="footnote">[2]</a> @mmd</li>
-<li>Footnotes ^[This is a footnote] @pandoc</li>
+<li>Footnotes <a href="#fn:1" id="fnref:1" title="see footnote" class="footnote">[1]</a> @mmd</li>
+<li>Footnotes ^[This is a pandoc inline footnote] @pandoc</li>
 </ul>
 
-<h3 id="reference">Reference</h3>
+<h3 id="referencefootnotes">Reference Footnotes</h3>
 
 <ul>
-<li>Footnotes<a href="#fn:3" id="fnref:3" title="see footnote" class="footnote">[3]</a> @markdown</li>
-<li>Long Footnotes <a href="#fn:4" id="fnref:4" title="see footnote" class="footnote">[4]</a> @pandoc @gfm @mmd</li>
+<li>Footnotes<a href="#fn:2" id="fnref:2" title="see footnote" class="footnote">[2]</a> @markdown</li>
+<li>Long Footnotes <a href="#fn:3" id="fnref:3" title="see footnote" class="footnote">[3]</a> @pandoc @ghpages @mmd</li>
 </ul>
 
 <p>This paragraph won&#8217;t be part of the note, because it
 isn&#8217;t indented.</p>
 
-<h2 id="citations">Citations</h2>
+<h3 id="glossaries">Glossaries</h3>
 
-<h3 id="multimarkdown">MultiMarkdown</h3>
+<p>A special kind of footnote <a href="#fn:4" id="fnref:4" title="see footnote" class="footnote glossary">[4]</a>. @mmd</p>
 
-<ul>
-<li>This is a statement that should be attributed to its source <a class="citation" href="#fn:5" title="Jump to citation">[<span class="locator">p. 23</span>, 5]<span class="citekey" style="display:none">Doe:2006</span></a>. @mmd</li>
-</ul>
+<p>See more at <a href="http://fletcher.github.io/MultiMarkdown-5/glossary.html">Glossary&#8212;MultiMarkdown Documentation</a>.</p>
 
-<p><span class="notcited" id="6"><span class="citekey" style="display:none">notcited</span></span> @mmd</p>
+<h3 id="citations">Citations</h3>
 
-<p>See more at <a href="http://fletcher.github.io/MultiMarkdown-5/citations.html">Citations&#8212;MultiMarkdown Documentation</a>.</p>
+<p>It can looks like footnotes in <abbr title="HyperText Markup Language">HTML</abbr> output.</p>
 
-<h3 id="pandoc">Pandoc</h3>
-
-<p>Very powerful but complicated. See more at <a href="http://pandoc.org/README.html#citations">Citations&#8212;Pandoc Documentation</a>.</p>
-
-<h2 id="criticmarkup">CriticMarkup</h2>
+<h4 id="multimarkdown">MultiMarkdown</h4>
 
 <p>@mmd</p>
 
 <ul>
-<li>Deletions from the original text: This is {&#8211;is &#8211;}a test.</li>
-<li>Additions: This {++is ++}a test.</li>
-<li>Substitutions: This {~~isn&#8217;t<sub>>is</sub><sub>}</sub> a test.</li>
-<li>Highlighting: This is a {==test==}.</li>
-<li>Comments: This is a test{&gt;&gt;What is it a test of?&lt;&lt;}.</li>
+<li>This is a statement that should be attributed to its source <a class="citation" href="#fn:5" title="Jump to citation">[<span class="locator">p. 23</span>, 5]<span class="citekey" style="display:none">Doe:2006</span></a>.</li>
 </ul>
 
-<p>See more at <a href="http://fletcher.github.io/MultiMarkdown-5/criticmarkup.html">CriticMarkup&#8212;MultiMarkdown Documentation</a>.</p>
+<p><span class="notcited" id="6"><span class="citekey" style="display:none">notcited</span></span></p>
 
-<h2 id="smallcaps">Small Caps</h2>
+<p>See more at <a href="http://fletcher.github.io/MultiMarkdown-5/citations.html">Citations&#8212;MultiMarkdown Documentation</a>.</p>
 
-<p><span style="font-variant:small-caps;">Small caps</span> @pandoc @markdown(html) @mmd(html) @gfm(html)</p>
+<h4 id="pandoc">Pandoc</h4>
+
+<p>@pandoc</p>
+
+<p>Very powerful but complicated. See more at <a href="http://pandoc.org/README.html#citations">Citations&#8212;Pandoc Documentation</a>.</p>
+
+<h2 id="images">Images</h2>
+
+<ul>
+<li><img src="https://www.wikipedia.org/portal/wikipedia.org/assets/img/Wikipedia-logo-v2@2x.png" alt="Alt Text" title="Optional Title" /> @markdown</li>
+</ul>
+
+<h3 id="referenceimages">Reference Images</h3>
+
+<ul>
+<li><img src="https://www.wikipedia.org/portal/wikipedia.org/assets/img/Wikipedia-logo-v2@2x.png" alt="Alt Text" id="imageid" title="Optional Title" /> @markdown</li>
+<li><img src="https://www.wikipedia.org/portal/wikipedia.org/assets/img/Wikipedia-logo-v2@2x.png" alt="An Image with Attributes" id="wikipedia" title="Title of the Image" style="height:40px;width:40px;" /> @mmd @pandoc(extension:mmd_link_attributes)</li>
+<li><img src="https://www.wikipedia.org/portal/wikipedia.org/assets/img/Wikipedia-logo-v2@2x.png" alt="An Image with Attributes" />{#id .class width=30 height=20px} @pandoc @phpextra(partial)</li>
+<li>a reference ![image][ref] with attributes. @pandoc @phpextra(partial)</li>
+</ul>
+
+<p>[ref]: https://www.wikipedia.org/portal/wikipedia.org/assets/img/Wikipedia-logo-v2@2x.png &#8220;optional title&#8221; {#id .class key=val key2=&#8220;val 2&#8221;}</p>
+
+<h3 id="imagewithlinksbynestingimageandlink">Image with Links by Nesting Image and Link</h3>
+
+<ul>
+<li><a href="https://www.wikipedia.org/"><img src="https://www.wikipedia.org/portal/wikipedia.org/assets/img/Wikipedia-logo-v2@2x.png" alt="Image Link" /></a> @markdown</li>
+</ul>
+
+<h3 id="blocklevelimages">Block Level Images</h3>
+
+<ul>
+<li>Block level: <abbr title="HyperText Markup Language">HTML</abbr> <code>figure</code> element in MultiMarkdown @mmd @pandoc</li>
+</ul>
+
+<figure>
+<img src="https://www.wikipedia.org/portal/wikipedia.org/assets/img/Wikipedia-logo-v2@2x.png" alt="Block Level" title="Optional Title" />
+<figcaption><strong><em>Block</em></strong> <strong>Level</strong></figcaption>
+</figure>
+
+<p><img src="https://www.wikipedia.org/portal/wikipedia.org/assets/img/Wikipedia-logo-v2@2x.png" alt="Not Block Level" title="Optional Title" />
+</p>
 
 <h2 id="raw">RAW</h2>
 
 <h3 id="html">HTML</h3>
 
 <ul>
-<li><div>This is <em>not</em> markdown</div> (a good thing to check is if the <em>not</em> is italic or not) @markdown @gfm</li>
+<li><div>This should <em>not</em> be markdown (or is it?) </div> @markdown</li>
 <li><div>This <em>is</em> markdown</div> @mmd @pandoc(non-default-extension:markdown_attribute)</li>
 </ul>
 
-<p>See more at <a href="http://fletcher.github.io/MultiMarkdown-5/raw.html">Raw&#8212;MultiMarkdown Documentation</a>.</p>
+<p>See more at <a href="http://fletcher.github.io/MultiMarkdown-5/raw.html">Raw&#8212;MultiMarkdown Documentation</a>. See test in [Babelmark 2 - Compare markdown implementations](http://johnmacfarlane.net/babelmark2/?normalize=1&amp;text=%3Cdiv%3EThis+should+*not*+be+markdown+(or+is+it%3F%29+%3C%2Fdiv%3E%0A%3Cdiv+markdown%3D1%3EThis+*is*+markdown%3C%2Fdiv%3E).</p>
 
 <h3 id="latex">LaTeX</h3>
 
@@ -1031,7 +934,9 @@ isn&#8217;t indented.</p>
 
 <h2 id="metadata">Metadata</h2>
 
-<h3 id="multimarkdownmetadatablockmmdpandocextension:mmd_title_block">MultiMarkdown Metadata Block @mmd @pandoc(extension:mmd_title_block)</h3>
+<h3 id="multimarkdownmetadatablock">MultiMarkdown Metadata Block</h3>
+
+<p>@mmd @pandoc(extension:mmd_title_block)</p>
 
 <pre><code class="md">Title:    A Sample MultiMarkdown Document  
 Author:   Fletcher T. Penney  
@@ -1044,14 +949,20 @@ CSS:      http://example.com/standard.css
 
 <p>See more at <a href="http://fletcher.github.io/MultiMarkdown-5/metadata.html">Metadata&#8212;MultiMarkdown Documentation</a>.</p>
 
-<h3 id="pandoctitleblockpandoc">Pandoc Title Block @pandoc</h3>
+<h3 id="pandoctitleblock">Pandoc Title Block</h3>
+
+<p>@pandoc</p>
 
 <pre><code>% title
 % author(s) (separated by semicolons)
 % date
 </code></pre>
 
-<h3 id="yamlmetadatablockmmdpartialpandocgfm">YAML Metadata Block @mmd(partial) @pandoc @gfm</h3>
+<h3 id="yamlmetadatablock">YAML Metadata Block</h3>
+
+<p>@Mmd(Partial)</p>
+
+<p>@pandoc @ghpages</p>
 
 <pre><code class="yaml">---
 title:    A Sample MultiMarkdown Document  
@@ -1065,19 +976,17 @@ abstract: |
 ---
 </code></pre>
 
-<h2 id="filetransclusion">File Transclusion</h2>
-
-<p>@mmd</p>
-
-<p>See more at <a href="http://fletcher.github.io/MultiMarkdown-5/transclusion.html">File Transclusion&#8212;MultiMarkdown Documentation</a>.</p>
-
 <h2 id="toc">TOC</h2>
 
 <h3 id="pandoc">Pandoc</h3>
 
+<p>@pandoc</p>
+
 <p>Use <code>--toc</code> as a command argument.</p>
 
-<h3 id="multimarkdownmmd">MultiMarkdown @mmd</h3>
+<h3 id="multimarkdown">MultiMarkdown</h3>
+
+<p>@mmd</p>
 
 <p><code>{{TOC}}</code>, see beginning. It preprocess the headings and generate a ToC on its own, and doesn&#8217;t give instruction for LaTeX to generate one. A hack is like this:</p>
 
@@ -1085,16 +994,19 @@ abstract: |
 ...
 LaTeX Input:    mmd-load-toc-setcounter
 LaTeX Input:    mmd-load-toc
-LaTeX Footer:   mmd-memoir-footer
+...
 ---
 &lt;!-- \begin{comment} --&gt;
 {{TOC}}
 &lt;!-- \end{comment} --&gt;
+...
 </code></pre>
 
 <p>See more at <a href="https://github.com/ickc/peg-multimarkdown-latex-support">ickc/peg-multimarkdown-latex-support: Default support files for generating LaTeX documents with MMD 3 through MMD 5</a>.</p>
 
-<h3 id="gfmviakramdown">Gfm (via kramdown)</h3>
+<h3 id="kramdown">Kramdown</h3>
+
+<p>@ghpages</p>
 
 <pre><code class="markdown"># Contents
 {:.no_toc}
@@ -1108,6 +1020,8 @@ LaTeX Footer:   mmd-memoir-footer
 <p>MathJax is assumed. MathJax has many configurable options. See <a href="http://mathjax.readthedocs.org/en/latest/tex.html">MathJax TeX and LaTeX Support — MathJax 2.6 documentation</a>.</p>
 
 <h3 id="markdown">Markdown</h3>
+
+<p>@markdown</p>
 
 <p>Add the following at the beginning of the document:</p>
 
@@ -1128,6 +1042,8 @@ LaTeX Footer:   mmd-memoir-footer
 
 <h4 id="multimarkdown">MultiMarkdown</h4>
 
+<p>@mmd</p>
+
 <p>Add the following metadata at the beginning of the document:</p>
 
 <pre><code class="html">HTML header:    &lt;script type=&quot;text/javascript&quot;
@@ -1138,6 +1054,8 @@ LaTeX Footer:   mmd-memoir-footer
 <p>MultiMarkdown math delimiter are <code>$...$</code>, <code>$$...$$</code>, <code>\\(...\\)</code> and <code>\\[...\\]</code>.</p>
 
 <h4 id="pandoc">Pandoc</h4>
+
+<p>@pandoc</p>
 
 <p>For pandoc, add <code>--mathjax</code> in the command-line argument.</p>
 
@@ -1190,27 +1108,18 @@ $$</li>
 \quad\quad \text{for $|q|<1$}.\]</span></li>
 </ul>
 
-<h1 id="othernotes">Other Notes</h1>
+<h2 id="filetransclusion">File Transclusion</h2>
 
-<h2 id="markdown">Markdown</h2>
+<p>@mmd</p>
 
-<p>@markdown</p>
-
-<p>Backslash escapes: *testing*</p>
-
-<h2 id="latex">LaTeX</h2>
-
-<ul>
-<li>The Maximum nesting level of lists in LaTeX is 4. The quick hack is to mix itemize and enumerate alternatively to go beyond this.</li>
-</ul>
+<p>See more at <a href="http://fletcher.github.io/MultiMarkdown-5/transclusion.html">File Transclusion&#8212;MultiMarkdown Documentation</a>.</p>
 
 <div class="footnotes">
 <hr />
 <ol>
 
 <li id="fn:1">
-<span class="glossary name">term </span><span class="glossary sort" style="display:none">optional sort key</span>: <p>The actual definition belongs on a new line, and can continue on
-just as other footnotes. <a href="#fnref:1" title="return to article" class="reversefootnote">&#160;&#8617;</a></p>
+<p>This is a mmd inline footnote <a href="#fnref:1" title="return to article" class="reversefootnote">&#160;&#8617;</a></p>
 </li>
 
 <li id="fn:2">
@@ -1218,10 +1127,6 @@ just as other footnotes. <a href="#fnref:1" title="return to article" class="rev
 </li>
 
 <li id="fn:3">
-<p>This is another footnote <a href="#fnref:3" title="return to article" class="reversefootnote">&#160;&#8617;</a></p>
-</li>
-
-<li id="fn:4">
 <p>Here&#8217;s one with multiple blocks.</p>
 
 <p>Subsequent paragraphs are indented to show that they
@@ -1232,7 +1137,12 @@ belong to the previous footnote.</p>
 
 <p>The whole paragraph can be indented, or just the first
 line. In this way, multi-paragraph footnotes work like
-multi-paragraph list items. <a href="#fnref:4" title="return to article" class="reversefootnote">&#160;&#8617;</a></p>
+multi-paragraph list items. <a href="#fnref:3" title="return to article" class="reversefootnote">&#160;&#8617;</a></p>
+</li>
+
+<li id="fn:4">
+<span class="glossary name">term </span><span class="glossary sort" style="display:none">optional sort key</span>: <p>The actual definition belongs on a new line, and can continue on
+just as other footnotes. Note how it fallbacks gracefully in Markdown. <a href="#fnref:4" title="return to article" class="reversefootnote">&#160;&#8617;</a></p>
 </li>
 
 <li id="fn:5" class="citation"><span class="citekey" style="display:none">Doe:2006</span><p>John Doe. <em>Some Big Fancy Book</em>. Vanity Press, 2006. </p>
