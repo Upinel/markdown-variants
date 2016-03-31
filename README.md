@@ -549,6 +549,7 @@ See [Syntax | kramdown](http://kramdown.gettalong.org/syntax.html#tables)
 - Long Footnotes [^longnote] @pandoc @ghpages @mmd
 
 [^whatever]: This is a footnote
+
 [^longnote]: Here's one with multiple blocks.
 
     Subsequent paragraphs are indented to show that they
