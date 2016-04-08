@@ -1,6 +1,6 @@
 ---
 HTML Header Level:	1
-LaTeX Header Level:	1
+LaTeX Header Level:	2
 LaTeX Input:	mmd-article-header
 LaTeX input:	mmd-natbib-plain
 LaTeX Input:	mmd-load-physics-related
@@ -17,8 +17,6 @@ Language:	English
 author:	Kolen Cheung
 Email:	khcheung@berkeley.edu
 Affiliation:	University of California, Berkeley
-Copyright:	2016 Kolen Cheung  
- 	All Rights Reserved.
 LaTeX Mode:	memoir
 LaTeX Input:	mmd-article-begin-doc
 tocd:	5
@@ -134,15 +132,11 @@ Emphasis
 
 Visually it looks like emphasis. Functionally it is much more, and called Critic Markup @mmd
 
-<!-- \begin{comment} -->
-
 - Deletions from the original text: This is {--is --}a test.
 - Additions: This {++is ++}a test.
 - Substitutions: This {~~isn't~>is~~} a test.
 - Highlighting: This is a {==test==}.
 - Comments: This is a test{>>What is it a test of?<<}.
-
-<!-- \end{comment} -->
 
 See more at [CriticMarkup---MultiMarkdown Documentation](http://fletcher.github.io/MultiMarkdown-5/criticmarkup.html).
 

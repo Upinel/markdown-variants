@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta charset="utf-8"/>
-	<meta name="latexheaderlevel" content="1"/>
+	<meta name="latexheaderlevel" content="2"/>
 	<meta name="thmd" content="chapter"/>
 	<title>Yet Another Markdown Cheatsheet</title>
 	<meta name="subtitle" content="Including MarkDown, MultiMarkdown, pandoc, GFM and LaTeX Math Syntax by MathJax"/>
@@ -12,8 +12,6 @@
 	<meta name="author" content="Kolen Cheung"/>
 	<meta name="email" content="khcheung@berkeley.edu"/>
 	<meta name="affiliation" content="University of California, Berkeley"/>
-	<meta name="copyright" content="2016 Kolen Cheung  
-All Rights Reserved."/>
 	<meta name="tocd" content="5"/>
 	<meta name="secd" content="5"/>
 </head>
@@ -304,17 +302,13 @@ All Rights Reserved."/>
 
 <p>Visually it looks like emphasis. Functionally it is much more, and called Critic Markup @mmd</p>
 
-<!-- \begin{comment} -->
-
 <ul>
-<li>Deletions from the original text: This is {&#8211;is &#8211;}a test.</li>
-<li>Additions: This {++is ++}a test.</li>
-<li>Substitutions: This {~~isn&#8217;t<sub>>is</sub><sub>}</sub> a test.</li>
-<li>Highlighting: This is a {==test==}.</li>
-<li>Comments: This is a test{&gt;&gt;What is it a test of?&lt;&lt;}.</li>
+<li>Deletions from the original text: This is <del>is </del>a test.</li>
+<li>Additions: This <ins>is </ins>a test.</li>
+<li>Substitutions: This <del>isn&#8217;t</del><ins>is</ins> a test.</li>
+<li>Highlighting: This is a <mark>test</mark>.</li>
+<li>Comments: This is a test.</li>
 </ul>
-
-<!-- \end{comment} -->
 
 <p>See more at <a href="http://fletcher.github.io/MultiMarkdown-5/criticmarkup.html">CriticMarkup&#8212;MultiMarkdown Documentation</a>.</p>
 
