@@ -198,6 +198,24 @@ Testing abbreviations: HTML, W3C (mouseover it to see)
 
 ## Lists
 
+### Compact vs Loose Lists ###
+
+The following effects are the same for different kind of lists @markdown
+
+#### Compact ####
+
+- test 1
+- test 2
+- test 3
+  
+#### Loose ####
+
+- test 1
+
+- test 2
+
+- test 3
+
 ### Ordered Lists ###
 
 @markdown

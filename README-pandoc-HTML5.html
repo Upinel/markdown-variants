@@ -44,6 +44,27 @@ code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Ann
 code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
 code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
   </style>
+  <script type="text/x-mathjax-config">
+    MathJax.Ajax.config.path["Contrib"] = "https://cdn.mathjax.org/mathjax/contrib";
+    MathJax.Hub.Register.StartupHook("TeX Jax Ready",function () {
+      MathJax.Hub.Insert(MathJax.InputJax.TeX.Definitions.macros,{
+        cancel: ["Extension","cancel"],
+        bcancel: ["Extension","cancel"],
+        xcancel: ["Extension","cancel"],
+        cancelto: ["Extension","cancel"]
+      });
+    });
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        processEscapes: true
+      },
+      TeX: {
+        equationNumbers: { autoNumber: "AMS"},
+        extensions: ["[Contrib]/physics/physics.js","[Contrib]/siunitx/siunitx.js"]
+      }
+    });
+  </script>
   <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
   <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
@@ -87,12 +108,16 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li><a href="#smarty-pants"><span class="toc-section-number">3.7</span> Smarty Pants</a></li>
 <li><a href="#abbreviations-php-markdown-extra"><span class="toc-section-number">3.8</span> Abbreviations (PHP Markdown Extra)</a></li>
 <li><a href="#lists"><span class="toc-section-number">3.9</span> Lists</a><ul>
-<li><a href="#ordered-lists"><span class="toc-section-number">3.9.1</span> Ordered Lists</a></li>
-<li><a href="#unordered-lists"><span class="toc-section-number">3.9.2</span> Unordered Lists</a></li>
-<li><a href="#nested-lists"><span class="toc-section-number">3.9.3</span> Nested Lists</a></li>
-<li><a href="#cutoff-a-list"><span class="toc-section-number">3.9.4</span> Cutoff a List</a></li>
-<li><a href="#list-item-in-a-block"><span class="toc-section-number">3.9.5</span> List Item in a Block</a></li>
-<li><a href="#fancy-lists"><span class="toc-section-number">3.9.6</span> Fancy Lists</a></li>
+<li><a href="#compact-vs-loose-lists"><span class="toc-section-number">3.9.1</span> Compact vs Loose Lists</a><ul>
+<li><a href="#compact"><span class="toc-section-number">3.9.1.1</span> Compact</a></li>
+<li><a href="#loose"><span class="toc-section-number">3.9.1.2</span> Loose</a></li>
+</ul></li>
+<li><a href="#ordered-lists"><span class="toc-section-number">3.9.2</span> Ordered Lists</a></li>
+<li><a href="#unordered-lists"><span class="toc-section-number">3.9.3</span> Unordered Lists</a></li>
+<li><a href="#nested-lists"><span class="toc-section-number">3.9.4</span> Nested Lists</a></li>
+<li><a href="#cutoff-a-list"><span class="toc-section-number">3.9.5</span> Cutoff a List</a></li>
+<li><a href="#list-item-in-a-block"><span class="toc-section-number">3.9.6</span> List Item in a Block</a></li>
+<li><a href="#fancy-lists"><span class="toc-section-number">3.9.7</span> Fancy Lists</a></li>
 </ul></li>
 <li><a href="#definition-lists"><span class="toc-section-number">3.10</span> Definition Lists</a><ul>
 <li><a href="#method-1"><span class="toc-section-number">3.10.1</span> Method 1</a></li>
@@ -288,21 +313,35 @@ like this</p>
 <p><span class="citation" data-cites="mmd">@mmd</span> <span class="citation" data-cites="phpextra">@phpextra</span> <span class="citation" data-cites="pandoc">@pandoc</span>(+abbreviations)</p>
 <p>Testing abbreviations: HTML, W3C (mouseover it to see)</p>
 <h2 id="lists"><span class="header-section-number">3.9</span> Lists</h2>
-<h3 id="ordered-lists"><span class="header-section-number">3.9.1</span> Ordered Lists</h3>
+<h3 id="compact-vs-loose-lists"><span class="header-section-number">3.9.1</span> Compact vs Loose Lists</h3>
+<p>The following effects are the same for different kind of lists <span class="citation" data-cites="markdown">@markdown</span></p>
+<h4 id="compact"><span class="header-section-number">3.9.1.1</span> Compact</h4>
+<ul>
+<li>test 1</li>
+<li>test 2</li>
+<li>test 3</li>
+</ul>
+<h4 id="loose"><span class="header-section-number">3.9.1.2</span> Loose</h4>
+<ul>
+<li><p>test 1</p></li>
+<li><p>test 2</p></li>
+<li><p>test 3</p></li>
+</ul>
+<h3 id="ordered-lists"><span class="header-section-number">3.9.2</span> Ordered Lists</h3>
 <p><span class="citation" data-cites="markdown">@markdown</span></p>
 <ol type="1">
 <li>test</li>
 <li>test</li>
 <li>test</li>
 </ol>
-<h3 id="unordered-lists"><span class="header-section-number">3.9.2</span> Unordered Lists</h3>
+<h3 id="unordered-lists"><span class="header-section-number">3.9.3</span> Unordered Lists</h3>
 <p><span class="citation" data-cites="markdown">@markdown</span></p>
 <ul>
 <li>test</li>
 <li>test</li>
 <li>test</li>
 </ul>
-<h3 id="nested-lists"><span class="header-section-number">3.9.3</span> Nested Lists</h3>
+<h3 id="nested-lists"><span class="header-section-number">3.9.4</span> Nested Lists</h3>
 <p><span class="citation" data-cites="markdown">@markdown</span></p>
 <ul>
 <li>test
@@ -328,7 +367,7 @@ like this</p>
 <ul>
 <li>The Maximum nesting level of lists in LaTeX is 4. The quick hack is to mix itemize and enumerate alternatively to go beyond this.</li>
 </ul>
-<h3 id="cutoff-a-list"><span class="header-section-number">3.9.4</span> Cutoff a List</h3>
+<h3 id="cutoff-a-list"><span class="header-section-number">3.9.5</span> Cutoff a List</h3>
 <p><span class="citation" data-cites="markdown">@markdown</span></p>
 <ol type="1">
 <li>one</li>
@@ -348,7 +387,7 @@ like this</p>
 </ul>
 <!-- end of list -->
 <pre><code>{ my code block }</code></pre>
-<h3 id="list-item-in-a-block"><span class="header-section-number">3.9.5</span> List Item in a Block</h3>
+<h3 id="list-item-in-a-block"><span class="header-section-number">3.9.6</span> List Item in a Block</h3>
 <p><span class="citation" data-cites="markdown">@markdown</span></p>
 <ul>
 <li><p>First paragraph.</p>
@@ -356,7 +395,7 @@ like this</p>
 <li><p>Second paragraph. With a code block, which must be indented eight spaces:</p>
 <pre><code>{ code }</code></pre></li>
 </ul>
-<h3 id="fancy-lists"><span class="header-section-number">3.9.6</span> Fancy Lists</h3>
+<h3 id="fancy-lists"><span class="header-section-number">3.9.7</span> Fancy Lists</h3>
 <p><span class="citation" data-cites="pandoc">@pandoc</span></p>
 <ol>
 <li>one</li>
