@@ -1,0 +1,1488 @@
+\def\htmlheaderlevel{1}
+\input{mmd-article-header}
+\input{mmd-natbib-plain}
+\input{mmd-load-physics-related}
+\input{mmd-load-tables-related}
+\input{mmd-load-pdfpages}
+\input{mmd-load-headings}
+\def\thmd{chapter}
+\input{mmd-load-amsthm}
+\def\mytitle{Yet Another Markdown Cheatsheet}
+\def\subtitle{Including MarkDown, MultiMarkdown, pandoc, GFM and LaTeX Math Syntax by MathJax}
+\def\keywords{MarkDown, MultiMarkDown, LaTeX, pandoc, gfm}
+\def\revision{0.10}
+\def\language{English}
+\def\myauthor{Kolen Cheung}
+\def\email{khcheung@berkeley.edu}
+\def\affiliation{University of California, Berkeley}
+\def\latexmode{memoir}
+\input{mmd-article-begin-doc}
+\def\tocd{5}
+\def\secd{5}
+\input{mmd-load-toc-setcounter}
+\input{mmd-load-toc}
+\newacro{pandocpandocwillsimplyignorethisiftheextensionisused.agracefulfallback.}[PANDOC]{Pandoc will simply ignore this if the extension is used. A graceful fallback.}
+\newacro{w3cworldwidewebconsortium}[W3C]{World Wide Web Consortium}
+\newacro{htmlhypertextmarkuplanguage}[HTML]{HyperText Markup Language}
+
+ \begin{comment} 
+
+
+
+\chapter{Contents}
+\label{contents}
+
+\{:.no\_toc\}
+
+\begin{itemize}
+\item Will be replaced with the ToC, excluding the ``Contents'' header
+\{:toc\}
+
+\end{itemize}
+
+\begin{itemize}
+\item Contents (\autoref{contents})
+
+\item Introduction (\autoref{introduction})
+
+\begin{itemize}
+\item Organization (\autoref{organization})
+
+\end{itemize}
+
+\item Examples (\autoref{examples})
+
+\begin{itemize}
+\item Header (\autoref{header})
+
+\begin{itemize}
+\item Header \emph{Containing} \textbf{\emph{Styling}} and a Link (\autoref{headercontainingstylingandalink})
+
+\item Header Containing Attributes \{\#identifier .class1 key=value1\} (\autoref{headercontainingattributesidentifier.class1keyvalue1})
+
+\item Header Unnumbered \{-\} (\autoref{headerunnumbered-})
+
+\item Header Unnumbered 2 \{.Unnumbered\} (\autoref{headerunnumbered2.unnumbered})
+
+\item Auto Cross Reference (\autoref{autocrossreference})
+
+\item User defined reference (\autoref{userdefinedreference})
+
+\item Deeper Levels of Headers (\autoref{deeperlevelsofheaders})
+
+\begin{itemize}
+\item Header4 (\autoref{header4})
+
+\begin{itemize}
+\item Header5 (\autoref{header5})
+
+\begin{itemize}
+\item Header6 (\autoref{header6})
+
+\end{itemize}
+
+\end{itemize}
+
+\end{itemize}
+
+\end{itemize}
+
+\item Backslash Escapes (\autoref{backslashescapes})
+
+\item Emphasis (\autoref{emphasis})
+
+\begin{itemize}
+\item CriticMarkup (\autoref{criticmarkup})
+
+\end{itemize}
+
+\item Horizontal Rules (\autoref{horizontalrules})
+
+\item Break (\autoref{break})
+
+\item Superscript \& Subscript (\autoref{superscriptsubscript})
+
+\item Smarty Pants (\autoref{smartypants})
+
+\item Abbreviations (PHP Markdown Extra) (\autoref{abbreviationsphpmarkdownextra})
+
+\item Lists (\autoref{lists})
+
+\begin{itemize}
+\item Ordered Lists (\autoref{orderedlists})
+
+\item Unordered Lists (\autoref{unorderedlists})
+
+\item Nested Lists (\autoref{nestedlists})
+
+\item Cutoff a List (\autoref{cutoffalist})
+
+\item List Item in a Block (\autoref{listiteminablock})
+
+\item Fancy Lists (\autoref{fancylists})
+
+\end{itemize}
+
+\end{itemize}
+
+\item . one (\autoref{.one})
+
+\item . two (\autoref{.two})
+
+\begin{itemize}
+\item Definition Lists (\autoref{definitionlists})
+
+\begin{itemize}
+\item Method 1 (\autoref{method1})
+
+\item Method 2 (\autoref{method2})
+
+\end{itemize}
+
+\item Numbered Example Lists (\autoref{numberedexamplelists})
+
+\item Code (\autoref{code})
+
+\begin{itemize}
+\item Fenced Code Blocks (\autoref{fencedcodeblocks})
+
+\begin{itemize}
+\item Method 1 (\autoref{method1})
+
+\item Method 2 (\autoref{method2})
+
+\item Method 3 (\autoref{method3})
+
+\end{itemize}
+
+\end{itemize}
+
+\item Block-quotes (\autoref{block-quotes})
+
+\begin{itemize}
+\item Block-quotes Quoting Codes (\autoref{block-quotesquotingcodes})
+
+\end{itemize}
+
+\item Line Blocks (\autoref{lineblocks})
+
+\item Tables (\autoref{tables})
+
+\begin{itemize}
+\item Method 1 (\autoref{method1})
+
+\item Method 2 (\autoref{method2})
+
+\item Method 3 (\autoref{method3})
+
+\item Method 4 (\autoref{method4})
+
+\end{itemize}
+
+\item [ rows.][rows.]
+
+\begin{itemize}
+\item Method 5 (\autoref{method5})
+
+\item Method 6 (\autoref{method6})
+
+\end{itemize}
+
+\item Links (\autoref{links})
+
+\begin{itemize}
+\item Reference Links (\autoref{referencelinks})
+
+\end{itemize}
+
+\item Footnotes (\autoref{footnotes})
+
+\begin{itemize}
+\item Reference Footnotes (\autoref{referencefootnotes})
+
+\item Glossaries (\autoref{glossaries})
+
+\item Citations (\autoref{citations})
+
+\begin{itemize}
+\item MultiMarkdown (\autoref{multimarkdown})
+
+\item Pandoc (\autoref{pandoc})
+
+\end{itemize}
+
+\end{itemize}
+
+\item Images (\autoref{images})
+
+\begin{itemize}
+\item Reference Images (\autoref{referenceimages})
+
+\item Image with Links by Nesting Image and Link (\autoref{imagewithlinksbynestingimageandlink})
+
+\item Block Level Images (\autoref{blocklevelimages})
+
+\end{itemize}
+
+\item RAW (\autoref{raw})
+
+\begin{itemize}
+\item HTML (\autoref{html})
+
+\item LaTeX (\autoref{latex})
+
+\end{itemize}
+
+\end{itemize}
+
+\item Other Syntaxes (\autoref{othersyntaxes})
+
+\begin{itemize}
+\item Metadata (\autoref{metadata})
+
+\begin{itemize}
+\item MultiMarkdown Metadata Block (\autoref{multimarkdownmetadatablock})
+
+\item Pandoc Title Block (\autoref{pandoctitleblock})
+
+\item YAML Metadata Block (\autoref{yamlmetadatablock})
+
+\end{itemize}
+
+\item [```][]
+
+\item [It consists of two paragraphs.][itconsistsoftwoparagraphs.]
+
+\item [{\ldots}][...]
+
+\end{itemize}
+
+\item Contents (\autoref{contents})
+
+\begin{itemize}
+\item Math (\autoref{math})
+
+\begin{itemize}
+\item Markdown (\autoref{markdown})
+
+\item MultiMarkdown and Pandoc (\autoref{multimarkdownandpandoc})
+
+\begin{itemize}
+\item MultiMarkdown (\autoref{multimarkdown})
+
+\item Pandoc (\autoref{pandoc})
+
+\end{itemize}
+
+\item Inline Math (\autoref{inlinemath})
+
+\item Block Math (\autoref{blockmath})
+
+\item Other Examples (\autoref{otherexamples})
+
+\end{itemize}
+
+\item File Transclusion (\autoref{filetransclusion})
+
+\end{itemize}
+
+\item References (\autoref{references})
+
+\end{itemize}
+
+ \end{comment} 
+
+\chapter{Introduction}
+\label{introduction}
+
+Examples (\autoref{examples}) shows explicit examples for different syntaxes. Other Syntaxes (\autoref{othersyntaxes}) show the syntaxes that can't be shown explicitly.
+
+\section{Organization}
+\label{organization}
+
+\begin{itemize}
+\item Header levels (except possibly the last header level): features in groups
+
+\item Last header level or a list: different syntaxes
+
+\item TaskPaper-styled tags to indicate in what favor of Markdown such syntax is supported
+
+\begin{itemize}
+\item \texttt{@markdown}: supported by original markdown, hence understood to be supported by all variants of markdown
+
+\item \texttt{@ghpages}: GitHub-Favored Markdown, built by kramdown with GFM option. i.e. GitHub Pages' GitHub-Favored Markdown
+
+\item \texttt{@mmd}: MultiMarkdown 
+
+\item \texttt{@pandoc}: pandoc-favored markdown
+
+\item \texttt{@phpextra}: PHP Markdown Extra (inspired some syntax in pandoc and mmd and gfm, not exhaustively tested here)
+
+\end{itemize}
+
+\item TaskPaper Tags
+
+\begin{itemize}
+\item \texttt{@...(partial)}: partial supports only
+
+\item \texttt{@...(+...)}: when the extension is used
+
+\item \texttt{@pandoc(-{}-...)}: when the command line argument is used
+
+\item \texttt{@pandoc(parsed)}: not verbatim, but parsed
+
+\end{itemize}
+
+\end{itemize}
+
+Note:
+
+\begin{itemize}
+\item You might see \texttt{$<$!-{}- \textbackslash{}begin\{comment\} -{}-$>$...$<$!-{}- \textbackslash{}end\{comment\} -{}-$>$}. This is for mmd to tex to pdf use only. Ignore this.
+
+\end{itemize}
+
+\chapter{Examples}
+\label{examples}
+
+\section{Header}
+\label{header}
+
+@markdown
+
+See Emphasis (\autoref{emphasis}) and Other Syntaxes (\autoref{othersyntaxes}) to see alternative Setext-style header styles @markdown
+
+\subsection{Header \emph{Containing} \textbf{\emph{Styling}} and a \href{Https://www.wikipedia.org/}{Link}}
+\label{headercontainingstylingandalink}
+
+@markdown
+
+\subsection{Header Containing Attributes \{\#identifier .class1 key=value1\}}
+\label{headercontainingattributesidentifier.class1keyvalue1}
+
+@pandoc @phpextra
+
+\subsection{Header Unnumbered \{-\}}
+\label{headerunnumbered-}
+
+@pandoc
+
+\subsection{Header Unnumbered 2 \{.Unnumbered\}}
+\label{headerunnumbered2.unnumbered}
+
+@pandoc
+
+\subsection{Auto Cross Reference}
+\label{autocrossreference}
+
+\begin{itemize}
+\item Link to Header (\autoref{header}) @pandoc @ghpages @mmd
+
+\item Link to Header (\autoref{header}) @pandoc @mmd
+
+\item Header (\autoref{header}) @mmd @pandoc
+
+\item Header (\autoref{header}) @mmd @pandoc
+
+\end{itemize}
+
+\subsection{User defined reference}
+\label{userdefinedreference}
+
+\begin{itemize}
+\item userdefinedreference (\autoref{userdefinedreference}) @mmd
+
+\item Link to userdefinedreference (\autoref{userdefinedreference}) @mmd @pandoc(+mmd\_header\_identifiers)
+
+\item Link to ``Header Containing Attributes'' (\autoref{identifier}) @pandoc
+
+\item another-link (\autoref{another-link}) @pandoc
+
+\end{itemize}
+
+\subsection{Deeper Levels of Headers}
+\label{deeperlevelsofheaders}
+
+\subsubsection{Header4}
+\label{header4}
+
+\paragraph{Header5}
+\label{header5}
+
+\subparagraph{Header6}
+\label{header6}
+
+\section{Backslash Escapes}
+\label{backslashescapes}
+
+*testing* @markdown
+
+\section{Emphasis}
+\label{emphasis}
+
+\begin{itemize}
+\item \emph{italic} or \emph{italic} @markdown
+
+\item \textbf{bold} or \textbf{bold} @markdown
+
+\item \textbf{\emph{bold italic}} or \textbf{\emph{bold italic}} @markdown
+
+\item \ensuremath{\sim}\ensuremath{\sim}strikethrough\ensuremath{\sim}\ensuremath{\sim} @pandoc
+
+\item Small caps @pandoc @markdown(html)
+
+\end{itemize}
+
+\subsection{CriticMarkup}
+\label{criticmarkup}
+
+Visually it looks like emphasis. Functionally it is much more, and called Critic Markup @mmd
+
+\begin{itemize}
+\item Deletions from the original text: This is is a test.
+
+\item Additions: This a test.
+
+\item Substitutions: This isn't a test.
+
+\item Highlighting: This is a test.
+
+\item Comments: This is a test.
+
+\end{itemize}
+
+See more at \href{http://fletcher.github.io/MultiMarkdown-5/criticmarkup.html}{CriticMarkup---MultiMarkdown Documentation}\footnote{\href{http://fletcher.github.io/MultiMarkdown-5/criticmarkup.html}{http:/\slash fletcher.github.io\slash MultiMarkdown-5\slash criticmarkup.html}}.
+
+\section{Horizontal Rules}
+\label{horizontalrules}
+
+@markdown
+
+\begin{center}\rule{3in}{0.4pt}\end{center}
+
+
+3 or more hyphens or asterisks
+
+\begin{center}\rule{3in}{0.4pt}\end{center}
+
+
+\section{Break}
+\label{break}
+
+@markdown
+
+No break
+like this
+
+Soft break\\
+like this
+
+Hard break
+
+like this
+
+\section{Superscript \& Subscript}
+\label{superscriptsubscript}
+
+\begin{itemize}
+\item x\textsuperscript{2} @mmd
+
+\item d\textsubscript{o} @mmd
+
+\item x\textsuperscript{a+b} @mmd @pandoc
+
+\item x\textsubscript{y,z} @mmd @pandoc
+
+\item P\textsubscript{a}\textbackslash{} cat\ensuremath{\sim} @pandoc
+
+\end{itemize}
+
+\section{Smarty Pants}
+\label{smartypants}
+
+@markdown(+smartypants) @pandoc(--smart) @ghpages
+
+\begin{itemize}
+\item ``Example 1''
+
+\item `Example 2'
+
+\item en--dash
+
+\item em---dash
+
+\item ellipsis{\ldots}
+
+\end{itemize}
+
+@mmd
+
+\begin{itemize}
+\item ``Example 3''
+
+\end{itemize}
+
+\section{Abbreviations (PHP Markdown Extra)}
+\label{abbreviationsphpmarkdownextra}
+
+@mmd @phpextra @pandoc(+abbreviations)
+
+Testing abbreviations: \ac{htmlhypertextmarkuplanguage}, \ac{w3cworldwidewebconsortium} (mouseover it to see)
+
+\section{Lists}
+\label{lists}
+
+\subsection{Ordered Lists}
+\label{orderedlists}
+
+@markdown
+
+\begin{enumerate}
+\item test
+
+\item test
+
+\item test
+
+\end{enumerate}
+
+\subsection{Unordered Lists}
+\label{unorderedlists}
+
+@markdown
+
+\begin{itemize}
+\item test
+
+\item test
+
+\item test
+
+\end{itemize}
+
+\subsection{Nested Lists}
+\label{nestedlists}
+
+@markdown
+
+\begin{itemize}
+\item test
+
+\begin{itemize}
+\item test
+
+\end{itemize}
+
+\item test
+
+\begin{enumerate}
+\item test
+
+\item test
+
+\begin{itemize}
+\item test
+
+\begin{enumerate}
+\item test
+
+\item test
+
+\end{enumerate}
+
+\end{itemize}
+
+\item test
+
+\end{enumerate}
+
+\item test
+
+\end{itemize}
+
+Note about LaTeX output in mmd\slash pandoc:
+
+\begin{itemize}
+\item The Maximum nesting level of lists in LaTeX is 4. The quick hack is to mix itemize and enumerate alternatively to go beyond this.
+
+\end{itemize}
+
+\subsection{Cutoff a List}
+\label{cutoffalist}
+
+@markdown
+
+\begin{enumerate}
+\item one
+
+\item two
+
+\item three
+
+\end{enumerate}
+
+ 
+
+\begin{enumerate}
+\item uno
+
+\item dos
+
+\item tres
+
+\end{enumerate}
+
+ 
+
+\begin{itemize}
+\item item one
+
+\item item two
+
+\end{itemize}
+
+ end of list 
+
+\begin{adjustwidth}{2.5em}{2.5em}
+\begin{verbatim}
+
+{ my code block }
+
+\end{verbatim}
+\end{adjustwidth}
+
+\subsection{List Item in a Block}
+\label{listiteminablock}
+
+@markdown
+
+\begin{itemize}
+\item First paragraph.
+
+Continued.
+
+\item Second paragraph. With a code block, which must be indented
+eight spaces:
+
+\begin{verbatim}
+{ code }
+\end{verbatim}
+
+\end{itemize}
+
+\subsection{Fancy Lists}
+\label{fancylists}
+
+@pandoc
+
+\chapter{. one}
+\label{.one}
+
+\chapter{. two}
+\label{.two}
+
+9) Ninth
+10) Tenth
+11) Eleventh
+ i. \texttt{i}
+ ii. \texttt{ii}
+ iii. \texttt{iii}
+(2) Two
+(5) Three
+1. Four
+* Five
+
+\section{Definition Lists}
+\label{definitionlists}
+
+\subsection{Method 1}
+\label{method1}
+
+@mmd @phpextra @pandoc @ghpages
+
+\begin{description}
+
+\item[Physics]
+
+The Fundamental of Science
+
+Describe the Nature
+
+Make Prediction
+\end{description}
+
+\subsection{Method 2}
+\label{method2}
+
+@ghpages @pandoc @mmd
+
+\begin{description}
+
+\item[Term 1]
+
+Definition 1
+
+\item[Term 2 with \emph{inline markup}]
+
+Definition 2
+
+\begin{verbatim}
+{ some code, part of Definition 2 }
+\end{verbatim}
+
+Third paragraph of definition 2.
+\end{description}
+
+\section{Numbered Example Lists}
+\label{numberedexamplelists}
+
+@pandoc
+
+(@) My first example will be numbered (1).
+(@) My second example will be numbered (2).
+
+Explanation of examples.
+
+(@) My third example will be numbered (3).
+
+(@good) This is a good example.
+
+As (@good) illustrates, {\ldots}
+
+\section{Code}
+\label{code}
+
+\begin{itemize}
+\item \texttt{testing} @markdown
+
+\item \texttt{\textbackslash{}[\textbackslash{}ket\{a\}\textbackslash{}]}\{.latex\} @pandoc
+
+\end{itemize}
+
+\subsection{Fenced Code Blocks}
+\label{fencedcodeblocks}
+
+\subsubsection{Method 1}
+\label{method1}
+
+@markdown
+
+\begin{adjustwidth}{2.5em}{2.5em}
+\begin{verbatim}
+
+test
+test
+    test
+    # test
+
+\end{verbatim}
+\end{adjustwidth}
+
+\subsubsection{Method 2}
+\label{method2}
+
+@markdown(partial:language-not-supported) @ghpages @pandoc @mmd
+
+\begin{adjustwidth}{2.5em}{2.5em}
+\begin{lstlisting}[language=tex]
+\nabla \times \mathbf{E} = - \frac{\partial \mathbf{B}}{\partial t}
+
+\end{lstlisting}
+\end{adjustwidth}
+
+\subsubsection{Method 3}
+\label{method3}
+
+@pandoc
+
+\ensuremath{\sim}\ensuremath{\sim}\ensuremath{\sim}markdown
+test
+test
+ test
+ \# test
+\ensuremath{\sim}\ensuremath{\sim}\ensuremath{\sim}
+
+\ensuremath{\sim}\ensuremath{\sim}\ensuremath{\sim} \{\#mycode .markdown .numberLines startFrom=``100''\}
+test
+test
+ test
+ \# test
+\ensuremath{\sim}\ensuremath{\sim}\ensuremath{\sim}
+
+\section{Block-quotes}
+\label{block-quotes}
+
+@markdown
+
+\begin{quote}
+
+\subsubsection{Test}
+\label{test}
+
+test
+
+\begin{quote}
+
+test
+
+test
+\end{quote}
+
+\begin{itemize}
+\item test
+
+\item test
+
+\end{itemize}
+\end{quote}
+
+\subsection{Block-quotes Quoting Codes}
+\label{block-quotesquotingcodes}
+
+@markdown
+
+\begin{quote}
+
+\begin{verbatim}
+\newcommand...
+\end{verbatim}
+\end{quote}
+
+\section{Line Blocks}
+\label{lineblocks}
+
+@ghpages(partial) @pandoc
+
+\textbar{} The limerick packs laughs anatomical
+\textbar{} In space that is quite economical.
+\textbar{} But the good ones I've seen
+\textbar{} So seldom are clean
+\textbar{} And the clean ones so seldom are comical
+
+\textbar{} 200 Main St.
+\textbar{} Berkeley, CA 94718
+
+\section{Tables}
+\label{tables}
+
+\subsection{Method 1}
+\label{method1}
+
+@ghpages @pandoc @mmd
+
+\begin{description}
+
+\item[\textbar{} Right \textbar{} Left \textbar{} Default \textbar{} Center \textbar{}]
+
+\item[\textbar{}------:\textbar{}:-----\textbar{}---------\textbar{}:------:\textbar{}]
+
+\item[\textbar{} 12 \textbar{} 12 \textbar{} 12 \textbar{} 12 \textbar{}]
+
+\item[\textbar{} 123 \textbar{} 123 \textbar{} 123 \textbar{} 123 \textbar{}]
+
+\item[\textbar{} 1 \textbar{} 1 \textbar{} 1 \textbar{} 1 \textbar{}]
+
+Notice how pandoc can have optional caption like this
+\end{description}
+
+\subsection{Method 2}
+\label{method2}
+
+@mmd
+
+\begin{table}[htbp]
+\begin{minipage}{\linewidth}
+\setlength{\tymax}{0.5\linewidth}
+\centering
+\small
+\caption{Table Caption}
+\label{tablecaption}
+\begin{tabulary}{\textwidth}{@{}LRC@{}} \toprule
+&\multicolumn{2}{r}{Grouping}\\
+Left align&Right align&Center align\\
+\midrule
+This&This&This\\
+column&column&column\\
+will&will&will\\
+be&be&be\\
+left&right&center\\
+aligned&aligned&aligned\\
+\multicolumn{3}{l}{And a big grouping is like this}\\
+
+\bottomrule
+
+\end{tabulary}
+\end{minipage}
+\end{table}
+
+\subsection{Method 3}
+\label{method3}
+
+@pandoc
+
+Right Left Center Default
+------- ------ ---------- -------
+ 12 12 12 12
+ 123 123 123 123
+ 1 1 1 1
+
+Table: Demonstration of simple table syntax.
+
+\subsection{Method 4}
+\label{method4}
+
+@pandoc
+
+\begin{center}\rule{3in}{0.4pt}\end{center}
+
+
+Centered Default Right Left
+ Header Aligned Aligned Aligned
+----------- ------- --------------- -------------------------
+ First row 12.0 Example of a row that
+ spans multiple lines.
+
+Second row 5.0 Here's another one. Note
+ the blank line between
+
+\begin{adjustwidth}{2.5em}{2.5em}
+\begin{verbatim}
+
+                                rows.
+
+\end{verbatim}
+\end{adjustwidth}
+
+\begin{center}\rule{3in}{0.4pt}\end{center}
+
+
+Table: Here's the caption. It, too, may span
+multiple lines.
+
+\subsection{Method 5}
+\label{method5}
+
+\begin{description}
+
+\item[@pandoc]
+
+Sample grid table.
+\end{description}
+
++---------------+---------------+--------------------+
+\textbar{} Fruit \textbar{} Price \textbar{} Advantages \textbar{}
++===============+===============+====================+
+\textbar{} Bananas \textbar{} \$1.34 \textbar{} - built-in wrapper \textbar{}
+\textbar{} \textbar{} \textbar{} - bright color \textbar{}
++---------------+---------------+--------------------+
+\textbar{} Oranges \textbar{} \$2.10 \textbar{} - cures scurvy \textbar{}
+\textbar{} \textbar{} \textbar{} - tasty \textbar{}
++---------------+---------------+--------------------+ 
+
+\subsection{Method 6}
+\label{method6}
+
+@ghpages
+
+ \begin{comment} 
+
+\begin{table}[htbp]
+\begin{minipage}{\linewidth}
+\setlength{\tymax}{0.5\linewidth}
+\centering
+\small
+\begin{tabulary}{\textwidth}{@{}LLCR@{}} \toprule
+-----------------+------------+-----------------+----------------\\
+Default aligned&Left aligned&Center aligned&Right aligned\\
+\midrule
+First body part&Second cell&Third cell&fourth cell\\
+Second line&foo&\textbf{strong}&blah\\
+Third line&blah&blah&bar\\
+-----------------+------------+-----------------+----------------\\
+Second body&&&\\
+2 line&&&\\
+=================+============+=================+================\\
+Footer row&&&\\
+-----------------+------------+-----------------+----------------\\
+
+\bottomrule
+
+\end{tabulary}
+\end{minipage}
+\end{table}
+
+ \end{comment} 
+
+See \href{http://kramdown.gettalong.org/syntax.html#tables}{Syntax \textbar{} kramdown}\footnote{\href{http://kramdown.gettalong.org/syntax.html\#tables}{http:/\slash kramdown.gettalong.org\slash syntax.html\#tables}} 
+
+\section{Links}
+\label{links}
+
+\begin{itemize}
+\item https:\slash \slash www.wikipedia.org @pandoc(+autolink\_bare\_uris)
+
+\item \href{https://www.wikipedia.org}{https:/\slash www.wikipedia.org} @markdown
+
+\item \href{https://www.wikipedia.org}{Wikipedia.org}\footnote{\href{https://www.wikipedia.org}{https:/\slash www.wikipedia.org}} @markdown
+
+\item \href{https://www.wikipedia.org}{Wikipedia.org}\footnote{\href{https://www.wikipedia.org}{https:/\slash www.wikipedia.org}} @markdown
+
+\item \href{mailto:support@github.com}{Mail to GitHub}\footnote{\href{mailto:support@github.com}{mailto:support@github.com}} @markdown
+
+\end{itemize}
+
+\subsection{Reference Links}
+\label{referencelinks}
+
+\begin{itemize}
+\item \href{https://www.google.com}{Search here}\footnote{\href{https://www.google.com}{https:/\slash www.google.com}} @markdown
+
+\item A \href{image.png}{link}\footnote{\href{image.png}{image.png}} with attributes. @mmd
+
+\item \href{image.png}{Another link to the link above}\footnote{\href{image.png}{image.png}}. @mmd
+
+\item A \href{/foo/bar.html}{link1}\footnote{\href{/foo/bar.html}{\slash foo\slash bar.html}} with attributes. @markdown
+
+\item \href{http://fsf.org}{Another link}\footnote{\href{http://fsf.org}{http:/\slash fsf.org}}. @markdown
+
+\item \href{/bar#special}{link3}\footnote{\href{/bar\#special}{\slash bar\#special}}. @markdown
+
+\end{itemize}
+
+\section{Footnotes}
+\label{footnotes}
+
+\begin{itemize}
+\item Footnotes \footnote{This is a mmd inline footnote} @mmd
+
+\item Footnotes \^{}[This is a pandoc inline footnote] @pandoc
+
+\end{itemize}
+
+\subsection{Reference Footnotes}
+\label{referencefootnotes}
+
+\begin{itemize}
+\item Footnotes\footnote{This is a footnote} @markdown
+
+\item Long Footnotes \footnote{Here's one with multiple blocks.
+
+Subsequent paragraphs are indented to show that they
+belong to the previous footnote.
+
+\begin{verbatim}
+{ some.code }
+\end{verbatim}
+
+The whole paragraph can be indented, or just the first
+line. In this way, multi-paragraph footnotes work like
+multi-paragraph list items.} @pandoc @ghpages @mmd
+
+\end{itemize}
+
+This paragraph won't be part of the note, because it
+isn't indented.
+
+\subsection{Glossaries}
+\label{glossaries}
+
+A special kind of footnote \newglossaryentry{term }{sort={optional sort key},name={term },description={The actual definition belongs on a new line, and can continue on
+just as other footnotes. Note how it fallbacks gracefully in Markdown.}}\glsadd{term }. @mmd
+
+See more at \href{http://fletcher.github.io/MultiMarkdown-5/glossary.html}{Glossary---MultiMarkdown Documentation}\footnote{\href{http://fletcher.github.io/MultiMarkdown-5/glossary.html}{http:/\slash fletcher.github.io\slash MultiMarkdown-5\slash glossary.html}}.
+
+\subsection{Citations}
+\label{citations}
+
+It can looks like footnotes in \ac{htmlhypertextmarkuplanguage} output.
+
+\subsubsection{MultiMarkdown}
+\label{multimarkdown}
+
+@mmd
+
+\begin{itemize}
+\item This is a statement that should be attributed to its source ~\citep[p. 23]{Doe:2006}.
+
+\end{itemize}
+
+~\nocite{notcited}
+
+See more at \href{http://fletcher.github.io/MultiMarkdown-5/citations.html}{Citations---MultiMarkdown Documentation}\footnote{\href{http://fletcher.github.io/MultiMarkdown-5/citations.html}{http:/\slash fletcher.github.io\slash MultiMarkdown-5\slash citations.html}}.
+
+\subsubsection{Pandoc}
+\label{pandoc}
+
+@pandoc
+
+Very powerful but complicated. See more at \href{http://pandoc.org/README.html#citations}{Citations---Pandoc Documentation}\footnote{\href{http://pandoc.org/README.html\#citations}{http:/\slash pandoc.org\slash README.html\#citations}}.
+
+\section{Images}
+\label{images}
+
+\begin{itemize}
+\item \includegraphics[keepaspectratio,width=\textwidth,height=0.75\textheight]{image.png} @markdown
+
+\end{itemize}
+
+\subsection{Reference Images}
+\label{referenceimages}
+
+\begin{itemize}
+\item \includegraphics[keepaspectratio,width=\textwidth,height=0.75\textheight]{image.png} @markdown
+
+\item \includegraphics[width=40pt,height=40pt]{image.png} @mmd @pandoc(+mmd\_link\_attributes)
+
+\item \includegraphics[keepaspectratio,width=\textwidth,height=0.75\textheight]{image.png}\{\#id .class width=30 height=20px\} @pandoc @phpextra(partial)
+
+\item a reference ![image][ref] with attributes. @pandoc @phpextra(partial)
+
+\end{itemize}
+
+[ref]: image.png ``optional title'' \{\#id .class key=val key2=``val 2''\}
+
+\subsection{Image with Links by Nesting Image and Link}
+\label{imagewithlinksbynestingimageandlink}
+
+\begin{itemize}
+\item \href{https://www.wikipedia.org/}{\includegraphics[keepaspectratio,width=\textwidth,height=0.75\textheight]{image.png}}\footnote{\href{https://www.wikipedia.org/}{https:/\slash www.wikipedia.org\slash }} @markdown
+
+\end{itemize}
+
+\subsection{Block Level Images}
+\label{blocklevelimages}
+
+\begin{itemize}
+\item Block level: \ac{htmlhypertextmarkuplanguage} \texttt{figure} element in MultiMarkdown @mmd @pandoc
+
+\end{itemize}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[keepaspectratio,width=\textwidth,height=0.75\textheight]{image.png}
+\caption{\textbf{\emph{Block}} \textbf{Level}}
+\end{figure}
+
+\includegraphics[keepaspectratio,width=\textwidth,height=0.75\textheight]{image.png}
+
+
+\section{RAW}
+\label{raw}
+
+\subsection{HTML}
+\label{html}
+
+\begin{itemize}
+\item This should \emph{not} be markdown (or is it?)  @markdown
+
+\item This \emph{is} markdown @mmd @pandoc(+markdown\_attribute)
+
+\end{itemize}
+
+See more at \href{http://fletcher.github.io/MultiMarkdown-5/raw.html}{Raw---MultiMarkdown Documentation}\footnote{\href{http://fletcher.github.io/MultiMarkdown-5/raw.html}{http:/\slash fletcher.github.io\slash MultiMarkdown-5\slash raw.html}}. See test in [Babelmark 2 - Compare markdown implementations](http:\slash \slash johnmacfarlane.net\slash babelmark2\slash ?normalize=1\&text=\%3Cdiv\%3EThis+should+\emph{not}+be+markdown+(or+is+it\%3F\%29+\%3C\%2Fdiv\%3E\%0A\%3Cdiv+markdown\%3D1\%3EThis+\emph{is}+markdown\%3C\%2Fdiv\%3E).
+
+\subsection{LaTeX}
+\label{latex}
+
+\begin{itemize}
+\item  \newcommand\rawlatex{}  @mmd
+
+\item \textbackslash{}newcommand\textbackslash{}rawlatex\{\} @pandoc(parsed)
+
+\item \textbackslash{}begin\{{\ldots}\} @pandoc
+
+\end{itemize}
+
+\chapter{Other Syntaxes}
+\label{othersyntaxes}
+
+\section{Metadata}
+\label{metadata}
+
+Note: mmd accepts capitalized metadata keys but others do not. For maximum compatibility, \texttt{author(s)}, \texttt{title}, etc. should be in lower cases.
+
+\subsection{MultiMarkdown Metadata Block}
+\label{multimarkdownmetadatablock}
+
+@mmd @pandoc(+mmd\_title\_block)
+
+\begin{adjustwidth}{2.5em}{2.5em}
+\begin{verbatim}
+
+title:    A Sample MultiMarkdown Document  
+author:   Fletcher T. Penney  
+date:     February 9, 2011  
+comment:  This is a comment intended to demonstrate  
+          metadata that spans multiple lines, yet  
+          is treated as a single value.  
+CSS:      http://example.com/standard.css
+
+\end{verbatim}
+\end{adjustwidth}
+
+See more at \href{http://fletcher.github.io/MultiMarkdown-5/metadata.html}{Metadata---MultiMarkdown Documentation}\footnote{\href{http://fletcher.github.io/MultiMarkdown-5/metadata.html}{http:/\slash fletcher.github.io\slash MultiMarkdown-5\slash metadata.html}}.
+
+\subsection{Pandoc Title Block}
+\label{pandoctitleblock}
+
+@pandoc
+
+\begin{adjustwidth}{2.5em}{2.5em}
+\begin{verbatim}
+
+% title
+% author(s) (separated by semicolons)
+% date
+
+\end{verbatim}
+\end{adjustwidth}
+
+\subsection{YAML Metadata Block}
+\label{yamlmetadatablock}
+
+@Mmd(partial)
+
+@pandoc @ghpages
+
+\begin{adjustwidth}{2.5em}{2.5em}
+\begin{verbatim}
+
+---
+title:    A Sample MultiMarkdown Document  
+author:   Fletcher T. Penney  
+date:     February 9, 2011  
+tags: [nothing, nothingness]
+abstract: |
+  This is the abstract.
+
+  It consists of two paragraphs.
+---
+
+\end{verbatim}
+\end{adjustwidth}
+
+\section{TOC}
+\label{toc}
+
+\subsection{Pandoc}
+\label{pandoc}
+
+@pandoc
+
+Use \texttt{-{}-toc} as a command argument.
+
+\subsection{MultiMarkdown}
+\label{multimarkdown}
+
+@mmd
+
+\texttt{\{\{TOC\}\}}, see beginning. It preprocess the headings and generate a ToC on its own, and doesn't give instruction for LaTeX to generate one. A hack is like this:
+
+\begin{adjustwidth}{2.5em}{2.5em}
+\begin{verbatim}
+
+---
+...
+LaTeX Input:    mmd-load-toc-setcounter
+LaTeX Input:    mmd-load-toc
+...
+---
+<!-- \begin{comment} -->
+{{TOC}}
+<!-- \end{comment} -->
+...
+
+\end{verbatim}
+\end{adjustwidth}
+
+See more at \href{https://github.com/ickc/peg-multimarkdown-latex-support}{ickc\slash peg-multimarkdown-latex-support: Default support files for generating LaTeX documents with MMD 3 through MMD 5}\footnote{\href{https://github.com/ickc/peg-multimarkdown-latex-support}{https:/\slash github.com\slash ickc\slash peg-multimarkdown-latex-support}}.
+
+\subsection{Kramdown}
+\label{kramdown}
+
+@ghpages
+
+\begin{adjustwidth}{2.5em}{2.5em}
+\begin{verbatim}
+
+# Contents
+{:.no_toc}
+
+* Will be replaced with the ToC, excluding the "Contents" header
+{:toc}
+
+\end{verbatim}
+\end{adjustwidth}
+
+\section{Math}
+\label{math}
+
+MathJax is assumed. MathJax has many configurable options. See \href{http://mathjax.readthedocs.org/en/latest/tex.html}{MathJax TeX and LaTeX Support — MathJax 2.6 documentation}\footnote{\href{http://mathjax.readthedocs.org/en/latest/tex.html}{http:/\slash mathjax.readthedocs.org\slash en\slash latest\slash tex.html}}.
+
+\subsection{Markdown}
+\label{markdown}
+
+@markdown
+
+Add the following at the beginning of the document:
+
+\begin{adjustwidth}{2.5em}{2.5em}
+\begin{lstlisting}[language=html]
+<script type="text/javascript"
+    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML-full">
+    </script>
+
+\end{lstlisting}
+\end{adjustwidth}
+
+MathJax.js is used and any codes within math delimiters are treated as raw \ac{htmlhypertextmarkuplanguage} and to be processed by MathJax.
+
+MathJax delimiter are \texttt{\$\$...\$\$}, \texttt{\textbackslash{}\textbackslash{}(...\textbackslash{}\textbackslash{})} and \texttt{\textbackslash{}\textbackslash{}[...\textbackslash{}\textbackslash{}]} (because an extra \texttt{\textbackslash{}} can be used to escape from MarkDown).
+
+Depending on the markdown parser, extra tricks might be needed to make sure nothing within the math delimiter is treated as markdown (see \href{http://mathjax.readthedocs.org/en/latest/tex.html#tex-and-latex-in-html-documents}{TeX and LaTeX in \ac{htmlhypertextmarkuplanguage} documents — MathJax 2.6 documentation}\footnote{\href{http://mathjax.readthedocs.org/en/latest/tex.html\#tex-and-latex-in-html-documents}{http:/\slash mathjax.readthedocs.org\slash en\slash latest\slash tex.html\#tex-and-latex-in-html-documents}}). \texttt{\$...\$} can be used with MathJax configuration (see \href{http://mathjax.readthedocs.org/en/latest/tex.html#tex-and-latex-math-delimiters}{TeX and LaTeX math delimiters — MathJax 2.6 documentation}\footnote{\href{http://mathjax.readthedocs.org/en/latest/tex.html\#tex-and-latex-math-delimiters}{http:/\slash mathjax.readthedocs.org\slash en\slash latest\slash tex.html\#tex-and-latex-math-delimiters}}).
+
+\subsection{MultiMarkdown and Pandoc}
+\label{multimarkdownandpandoc}
+
+There are subtleties how math should be used in HTML+MathJax and LaTeX output from single markdown source. See more in \href{https://github.com/ickc/mathjax-latex-md-mmd-pandoc}{Testing LaTeX Environments Usage in MathJax From Markdown Conversion (including mmd and pandoc)}\footnote{\href{https://github.com/ickc/mathjax-latex-md-mmd-pandoc}{https:/\slash github.com\slash ickc\slash mathjax-latex-md-mmd-pandoc}}.
+
+\subsubsection{MultiMarkdown}
+\label{multimarkdown}
+
+@mmd
+
+Add the following metadata at the beginning of the document:
+
+\begin{adjustwidth}{2.5em}{2.5em}
+\begin{lstlisting}[language=html]
+HTML header:    <script type="text/javascript"
+    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML-full">
+    </script>
+
+\end{lstlisting}
+\end{adjustwidth}
+
+MultiMarkdown math delimiter are \texttt{\$...\$}, \texttt{\$\$...\$\$}, \texttt{\textbackslash{}\textbackslash{}(...\textbackslash{}\textbackslash{})} and \texttt{\textbackslash{}\textbackslash{}[...\textbackslash{}\textbackslash{}]}.
+
+\subsubsection{Pandoc}
+\label{pandoc}
+
+@pandoc(--mathjax)
+
+For pandoc, add \texttt{-{}-mathjax} in the command-line argument.
+
+Default math delimiter for pandoc is \texttt{\$...\$}, \texttt{\$\$...\$\$}. Other options are configurable. See more in \href{http://pandoc.org/README.html#non-pandoc-extensions}{Pandoc - Pandoc User’s Guide}\footnote{\href{http://pandoc.org/README.html\#non-pandoc-extensions}{http:/\slash pandoc.org\slash README.html\#non-pandoc-extensions}}.
+
+\subsection{Inline Math}
+\label{inlinemath}
+
+\begin{itemize}
+\item $1+1$
+
+\item $1 + 1$ @pandoc(+tex\_math\_double\_backslash)
+
+\end{itemize}
+
+\subsection{Block Math}
+\label{blockmath}
+
+\begin{itemize}
+\item $$R R^T = I$$
+
+\item \[A^T_S = B\]
+
+\end{itemize}
+
+\subsection{Other Examples}
+\label{otherexamples}
+
+\begin{itemize}
+\item $$x = {-b \pm \sqrt{b^2-4ac} \over 2a}$$
+
+\item \$\$
+\textbackslash{}begin\{aligned\}
+\textbackslash{}dot\{x\} \& = \textbackslash{}sigma(y-x) \textbackslash{}
+\textbackslash{}dot\{y\} \& = \textbackslash{}rho x - y - xz \textbackslash{}
+\textbackslash{}dot\{z\} \& = -\textbackslash{}beta z + xy
+\textbackslash{}end\{aligned\}
+\$\$
+
+\item $$\left( \sum_{k=1}^n a_k b_k \right)^2 \leq \left( \sum_{k=1}^n a_k^2 \right) \left( \sum_{k=1}^n b_k^2 \right)$$
+
+\item $$\mathbf{V}_1 \times \mathbf{V}_2 =  \begin{vmatrix}
+\mathbf{i} & \mathbf{j} & \mathbf{k} \\\
+\frac{\partial X}{\partial u} &  \frac{\partial Y}{\partial u} & 0 \\\
+\frac{\partial X}{\partial v} &  \frac{\partial Y}{\partial v} & 0
+\end{vmatrix}$$
+
+\item $$P(E) = {n \choose k} p^k (1-p)^{n-k}$$
+
+\item $$\frac{1}{\Bigl(\sqrt{\phi \sqrt{5}}-\phi\Bigr) e^{\frac25 \pi}} =
+1+\frac{e^{-2\pi}} {1+\frac{e^{-4\pi}} {1+\frac{e^{-6\pi}}
+{1+\frac{e^{-8\pi}} {1+\ldots} } } }$$
+
+\item \$\$
+\textbackslash{}begin\{aligned\}
+\textbackslash{}nabla \textbackslash{}times \textbackslash{}vec\{\textbackslash{}mathbf\{B\}\} -\textbackslash{}, \textbackslash{}frac1c\textbackslash{}, \textbackslash{}frac\{\textbackslash{}partial\textbackslash{}vec\{\textbackslash{}mathbf\{E\}\}\}\{\textbackslash{}partial t\} \& = \textbackslash{}frac\{4\textbackslash{}pi\}\{c\}\textbackslash{}vec\{\textbackslash{}mathbf\{j\}\} \textbackslash{}
+\textbackslash{}nabla \textbackslash{}cdot \textbackslash{}vec\{\textbackslash{}mathbf\{E\}\} \& = 4 \textbackslash{}pi \textbackslash{}rho \textbackslash{}
+\textbackslash{}nabla \textbackslash{}times \textbackslash{}vec\{\textbackslash{}mathbf\{E\}\}\textbackslash{}, +\textbackslash{}, \textbackslash{}frac1c\textbackslash{}, \textbackslash{}frac\{\textbackslash{}partial\textbackslash{}vec\{\textbackslash{}mathbf\{B\}\}\}\{\textbackslash{}partial t\} \& = \textbackslash{}vec\{\textbackslash{}mathbf\{0\}\} \textbackslash{}
+\textbackslash{}nabla \textbackslash{}cdot \textbackslash{}vec\{\textbackslash{}mathbf\{B\}\} \& = 0 \textbackslash{}end\{aligned\}
+\$\$
+
+\item $$1 +  \frac{q^2}{(1-q)}+\frac{q^6}{(1-q)(1-q^2)}+\cdots =
+\prod_{j=0}^{\infty}\frac{1}{(1-q^{5j+2})(1-q^{5j+3})},
+\quad\quad \text{for $|q|<1$}.$$
+
+\end{itemize}
+
+\section{File Transclusion}
+\label{filetransclusion}
+
+@mmd
+
+See more at \href{http://fletcher.github.io/MultiMarkdown-5/transclusion.html}{File Transclusion---MultiMarkdown Documentation}\footnote{\href{http://fletcher.github.io/MultiMarkdown-5/transclusion.html}{http:/\slash fletcher.github.io\slash MultiMarkdown-5\slash transclusion.html}}.
+
+\chapter{References}
+\label{references}
+
+Some examples are directly or indirectly copied from the following documentations:
+
+\begin{enumerate}
+\item \href{http://pandoc.org/README.html}{Pandoc - Pandoc User’s Guide}\footnote{\href{http://pandoc.org/README.html}{http:/\slash pandoc.org\slash README.html}}
+
+\item \href{http://fletcher.github.io/MultiMarkdown-5/}{MultiMarkdown User's Guide}\footnote{\href{http://fletcher.github.io/MultiMarkdown-5/}{http:/\slash fletcher.github.io\slash MultiMarkdown-5\slash }}
+
+\item \href{http://kramdown.gettalong.org/syntax.html#tables}{Syntax \textbar{} kramdown}\footnote{\href{http://kramdown.gettalong.org/syntax.html\#tables}{http:/\slash kramdown.gettalong.org\slash syntax.html\#tables}}
+
+\end{enumerate}
+
+\begin{thebibliography}{0}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\bibitem{Doe:2006}
+John Doe. \emph{Some Big Fancy Book}. Vanity Press, 2006. 
+\bibitem{notcited}
+John Doe. \emph{Another Big Fancy Book}. Vanity Press, 2016. 
+
+\end{thebibliography}
+
+\input{mmd-memoir-footer}
+
+\end{document}
