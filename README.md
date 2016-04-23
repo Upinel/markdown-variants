@@ -51,7 +51,7 @@ LaTeX Footer:	mmd-memoir-footer
 - Last header level or a list: different syntaxes
 - TaskPaper-styled tags to indicate in what favor of Markdown such syntax is supported
 	- `@markdown`: supported by original markdown, hence understood to be supported by all variants of markdown
-	- `@ghpages`: GitHub-Favored Markdown, built by kramdown with GFM option. i.e. GitHub Pages' GitHub-Favored Markdown
+	- `@ghpages`: GitHub-Favored Markdown, built by kramdown with GFM option. i.e. GitHub Pages' GitHub-Favored Markdown (not exhaustively tested here. See [kramdown's documentation](http://kramdown.gettalong.org/syntax.html#tables) for other possible syntaxes)
 	- `@mmd`: MultiMarkdown 
 	- `@pandoc`: pandoc-favored markdown
 	- `@phpextra`: PHP Markdown Extra (inspired some syntax in pandoc and mmd and gfm, not exhaustively tested here)
@@ -130,7 +130,9 @@ Emphasis
 
 ### CriticMarkup ###
 
-Visually it looks like emphasis. Functionally it is much more, and called Critic Markup @mmd
+@mmd
+
+Visually it looks like emphasis. Functionally it is much more, and called Critic Markup
 
 - Deletions from the original text: This is {--is --}a test.
 - Additions: This {++is ++}a test.

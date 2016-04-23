@@ -30,7 +30,8 @@
             linkcolor=Maroon,
             citecolor=blue,
             urlcolor=blue,
-            breaklinks=true}
+            breaklinks=true,
+}
 \urlstyle{same}  % don't use monospace font for urls
 \usepackage{color}
 \usepackage{fancyvrb}
@@ -159,7 +160,10 @@ show the syntaxes that can't be shown explicitly.
     to be supported by all variants of markdown
   \item
     \texttt{@ghpages}: GitHub-Favored Markdown, built by kramdown with
-    GFM option. i.e.~GitHub Pages' GitHub-Favored Markdown
+    GFM option. i.e.~GitHub Pages' GitHub-Favored Markdown (not
+    exhaustively tested here. See
+    \href{http://kramdown.gettalong.org/syntax.html\#tables}{kramdown's
+    documentation} for other possible syntaxes)
   \item
     \texttt{@mmd}: MultiMarkdown~
   \item
@@ -285,8 +289,10 @@ Header6
 
 \subsubsection{CriticMarkup}\label{criticmarkup}
 
+@mmd
+
 Visually it looks like emphasis. Functionally it is much more, and
-called Critic Markup @mmd
+called Critic Markup
 
 \begin{itemize}
 \tightlist
