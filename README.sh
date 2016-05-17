@@ -1,6 +1,5 @@
 #!/bin/bash
-DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-cd $DIR
+cd "$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 # MMD to HTML
 multimarkdown --accept --reject README.md > README-mmd.html
