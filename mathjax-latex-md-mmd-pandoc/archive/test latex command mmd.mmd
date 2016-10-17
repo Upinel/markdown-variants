@@ -1,0 +1,131 @@
+---
+HTML Header:	<script type="text/x-mathjax-config">MathJax.Ajax.config.path.Contrib="https://cdn.mathjax.org/mathjax/contrib",MathJax.Hub.Register.StartupHook("TeX Jax Ready",function(){MathJax.Hub.Insert(MathJax.InputJax.TeX.Definitions.macros,{cancel:["Extension","cancel"],bcancel:["Extension","cancel"],xcancel:["Extension","cancel"],cancelto:["Extension","cancel"]})}),MathJax.Hub.Config({TeX:{equationNumbers:{autoNumber:"AMS"},extensions:["[Contrib]/physics/physics.js","[Contrib]/siunitx/siunitx.js"]}});</script><script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML-full"></script>
+CSS:	https://ickc.github.io/multimarkdown-latex-css/combined-css/multimarkdown-latex.css
+HTML Header Level:	1
+LaTeX Header Level:	2
+LaTeX Input:	mmd-article-header
+LaTeX input:	mmd-natbib-plain
+LaTeX Input:	mmd-load-physics-related
+LaTeX Input:	mmd-load-tables-related
+LaTeX Input:	mmd-load-pdfpages
+LaTeX Input:	mmd-load-headings
+thmd:	chapter
+LaTeX Input:	mmd-load-amsthm
+Title:	Temp Title
+Subtitle:	Temp Subtitle
+Keywords:	Temp Keyword
+Revision:	0.1
+Language:	English
+Author:	Kolen Cheung
+Email:	khcheung@berkeley.edu
+Affiliation:	University of California, Berkeley
+Copyright:	2016 Kolen Cheung  
+ 	All Rights Reserved.
+LaTeX Mode:	memoir
+LaTeX Input:	mmd-article-begin-doc
+tocd:	5
+secd:	5
+LaTeX Input:	mmd-load-toc-setcounter
+LaTeX Input:	mmd-load-toc
+LaTeX Footer:	mmd-memoir-footer
+---
+<!-- \begin{comment} -->
+{{TOC}}
+<!-- \end{comment} -->
+  
+# Simple Equations #
+
+## Single Dollar ##
+
+$\nabla \times \mathbf{E} = - \frac{\partial \mathbf{B}}{\partial t}$
+
+## Double Dollars ##
+
+$$\nabla \times \mathbf{E} = - \frac{\partial \mathbf{B}}{\partial t}$$
+
+## Parenthesis ##
+
+\\(\nabla \times \mathbf{E} = - \frac{\partial \mathbf{B}}{\partial t}\\)
+
+## Bracket ##
+
+\\[\nabla \times \mathbf{E} = - \frac{\partial \mathbf{B}}{\partial t}\\]
+
+# Begin Equations #
+
+## In Delimiter ##
+
+### Single Dollar ###
+
+$\begin{equation}\nabla \times \mathbf{E} = - \frac{\partial \mathbf{B}}{\partial t}\end{equation}$
+
+### Double Dollar ###
+
+$$\begin{equation}\nabla \times \mathbf{E} = - \frac{\partial \mathbf{B}}{\partial t}\end{equation}$$
+
+### Parenthesis ###
+
+\\(\begin{equation}\nabla \times \mathbf{E} = - \frac{\partial \mathbf{B}}{\partial t}\end{equation}\\)
+
+### Bracket ###
+
+\\[\begin{equation}\nabla \times \mathbf{E} = - \frac{\partial \mathbf{B}}{\partial t}\end{equation}\\]
+
+# Begin... #
+
+## With Bracket ##
+
+
+\\[\begin{equation}
+\nabla \times \mathbf{E} = - \frac{\partial \mathbf{B}}{\partial t}
+\end{equation}\\]
+
+\\[\begin{equation*}
+\nabla \times \mathbf{E} = - \frac{\partial \mathbf{B}}{\partial t}
+\end{equation*}\\]
+
+\\[\begin{align}
+\nabla \times \mathbf{E} = - \frac{\partial \mathbf{B}}{\partial t}
+\end{align}\\]
+
+\\[\begin{align*}
+\nabla \times \mathbf{E} = - \frac{\partial \mathbf{B}}{\partial t}
+\end{align*}\\]
+
+## Without Bracket ##
+
+\begin{equation}
+\nabla \times \mathbf{E} = - \frac{\partial \mathbf{B}}{\partial t}
+\end{equation}
+
+\begin{equation*}
+\nabla \times \mathbf{E} = - \frac{\partial \mathbf{B}}{\partial t}
+\end{equation*}
+
+\begin{align}
+\nabla \times \mathbf{E} = - \frac{\partial \mathbf{B}}{\partial t}
+\end{align}
+
+\begin{align*}
+\nabla \times \mathbf{E} = - \frac{\partial \mathbf{B}}{\partial t}
+\end{align*}
+
+# In Comment #
+
+## In Line
+
+`\begin{equation}\nabla \times \mathbf{E} = - \frac{\partial \mathbf{B}}{\partial t}\end{equation}`
+
+## Fenced ##
+
+
+```
+\begin{equation}\nabla \times \mathbf{E} = - \frac{\partial \mathbf{B}}{\partial t}\end{equation}
+```
+
+## Fenced With Language ##
+
+```latex
+\begin{equation}\nabla \times \mathbf{E} = - \frac{\partial \mathbf{B}}{\partial t}\end{equation}
+```
+

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+<script type="text/x-mathjax-config">MathJax.Ajax.config.path.Contrib="https://cdn.mathjax.org/mathjax/contrib",MathJax.Hub.Register.StartupHook("TeX Jax Ready",function(){MathJax.Hub.Insert(MathJax.InputJax.TeX.Definitions.macros,{cancel:["Extension","cancel"],bcancel:["Extension","cancel"],xcancel:["Extension","cancel"],cancelto:["Extension","cancel"]})}),MathJax.Hub.Config({TeX:{equationNumbers:{autoNumber:"AMS"},extensions:["[Contrib]/physics/physics.js","[Contrib]/siunitx/siunitx.js"]}});</script><script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML-full"></script>
+	<link type="text/css" rel="stylesheet" href="https://ickc.github.io/markdown-latex-css/combined-css/multimarkdown-latex.css"/>
+	<meta name="latexheaderlevel" content="2"/>
+	<meta name="latexinput" content="mmd-article-header"/>
+	<meta name="latexinput" content="mmd-natbib-plain"/>
+	<meta name="latexinput" content="mmd-load-physics-related"/>
+	<meta name="latexinput" content="mmd-load-tables-related"/>
+	<meta name="latexinput" content="mmd-load-pdfpages"/>
+	<meta name="latexinput" content="mmd-load-headings"/>
+	<meta name="thmd" content="chapter"/>
+	<meta name="latexinput" content="mmd-load-amsthm"/>
+	<title>Temp Title</title>
+	<meta name="subtitle" content="Temp Subtitle"/>
+	<meta name="keywords" content="Temp Keyword"/>
+	<meta name="revision" content="0.1"/>
+	<meta name="language" content="English"/>
+	<meta name="author" content="Kolen Cheung"/>
+	<meta name="email" content="khcheung@berkeley.edu"/>
+	<meta name="affiliation" content="University of California, Berkeley"/>
+	<meta name="copyright" content="2016 Kolen Cheung  
+All Rights Reserved."/>
+	<meta name="latexmode" content="memoir"/>
+	<meta name="latexinput" content="mmd-article-begin-doc"/>
+	<meta name="tocd" content="5"/>
+	<meta name="secd" content="5"/>
+	<meta name="latexinput" content="mmd-load-toc-setcounter"/>
+	<meta name="latexinput" content="mmd-load-toc"/>
+	<meta name="latexfooter" content="mmd-memoir-footer"/>
+</head>
+<body>
+
+<!-- \begin{comment} --><div class="TOC">
+
+
+<ul>
+<li><a href="#simpleequations">Simple Equations</a>
+
+<ul>
+<li><a href="#singledollar">Single Dollar</a></li>
+<li><a href="#doubledollars">Double Dollars</a></li>
+<li><a href="#parenthesis">Parenthesis</a></li>
+<li><a href="#bracket">Bracket</a></li>
+</ul></li>
+<li><a href="#beginequations">Begin Equations</a>
+
+<ul>
+<li><a href="#indelimiter">In Delimiter</a>
+
+<ul>
+<li><a href="#singledollar">Single Dollar</a></li>
+<li><a href="#doubledollar">Double Dollar</a></li>
+<li><a href="#parenthesis">Parenthesis</a></li>
+<li><a href="#bracket">Bracket</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#begin...">Begin&#8230;</a>
+
+<ul>
+<li><a href="#withbracket">With Bracket</a></li>
+<li><a href="#withoutbracket">Without Bracket</a></li>
+</ul></li>
+<li><a href="#incomment">In Comment</a>
+
+<ul>
+<li><a href="#inline">In Line</a></li>
+<li><a href="#fenced">Fenced</a></li>
+<li><a href="#fencedwithlanguage">Fenced With Language</a></li>
+</ul></li>
+</ul>
+</div>
+
+<!-- \end{comment} -->
+
+<h1 id="simpleequations">Simple Equations</h1>
+
+<h2 id="singledollar">Single Dollar</h2>
+
+<p><span class="math">\(\nabla \times \mathbf{E} = - \frac{\partial \mathbf{B}}{\partial t}\)</span></p>
+
+<h2 id="doubledollars">Double Dollars</h2>
+
+<p><span class="math">\[\nabla \times \mathbf{E} = - \frac{\partial \mathbf{B}}{\partial t}\]</span></p>
+
+<h2 id="parenthesis">Parenthesis</h2>
+
+<p><span class="math">\(\nabla \times \mathbf{E} = - \frac{\partial \mathbf{B}}{\partial t}\)</span></p>
+
+<h2 id="bracket">Bracket</h2>
+
+<p><span class="math">\[\nabla \times \mathbf{E} = - \frac{\partial \mathbf{B}}{\partial t}\]</span></p>
+
+<h1 id="beginequations">Begin Equations</h1>
+
+<h2 id="indelimiter">In Delimiter</h2>
+
+<h3 id="singledollar">Single Dollar</h3>
+
+<p><span class="math">\(\begin{equation}\nabla \times \mathbf{E} = - \frac{\partial \mathbf{B}}{\partial t}\end{equation}\)</span></p>
+
+<h3 id="doubledollar">Double Dollar</h3>
+
+<p><span class="math">\[\begin{equation}\nabla \times \mathbf{E} = - \frac{\partial \mathbf{B}}{\partial t}\end{equation}\]</span></p>
+
+<h3 id="parenthesis">Parenthesis</h3>
+
+<p><span class="math">\(\begin{equation}\nabla \times \mathbf{E} = - \frac{\partial \mathbf{B}}{\partial t}\end{equation}\)</span></p>
+
+<h3 id="bracket">Bracket</h3>
+
+<p><span class="math">\[\begin{equation}\nabla \times \mathbf{E} = - \frac{\partial \mathbf{B}}{\partial t}\end{equation}\]</span></p>
+
+<h1 id="begin...">Begin&#8230;</h1>
+
+<h2 id="withbracket">With Bracket</h2>
+
+<p><span class="math">\[\begin{equation}
+\nabla \times \mathbf{E} = - \frac{\partial \mathbf{B}}{\partial t}
+\end{equation}\]</span></p>
+
+<p><span class="math">\[\begin{equation*}
+\nabla \times \mathbf{E} = - \frac{\partial \mathbf{B}}{\partial t}
+\end{equation*}\]</span></p>
+
+<p><span class="math">\[\begin{align}
+\nabla \times \mathbf{E} = - \frac{\partial \mathbf{B}}{\partial t}
+\end{align}\]</span></p>
+
+<p><span class="math">\[\begin{align*}
+\nabla \times \mathbf{E} = - \frac{\partial \mathbf{B}}{\partial t}
+\end{align*}\]</span></p>
+
+<h2 id="withoutbracket">Without Bracket</h2>
+
+<p>\begin{equation}
+\nabla \times \mathbf{E} = - \frac{\partial \mathbf{B}}{\partial t}
+\end{equation}</p>
+
+<p>\begin{equation*}
+\nabla \times \mathbf{E} = - \frac{\partial \mathbf{B}}{\partial t}
+\end{equation*}</p>
+
+<p>\begin{align}
+\nabla \times \mathbf{E} = - \frac{\partial \mathbf{B}}{\partial t}
+\end{align}</p>
+
+<p>\begin{align*}
+\nabla \times \mathbf{E} = - \frac{\partial \mathbf{B}}{\partial t}
+\end{align*}</p>
+
+<h1 id="incomment">In Comment</h1>
+
+<h2 id="inline">In Line</h2>
+
+<p><code>\begin{equation}\nabla \times \mathbf{E} = - \frac{\partial \mathbf{B}}{\partial t}\end{equation}</code></p>
+
+<h2 id="fenced">Fenced</h2>
+
+<pre><code>\begin{equation}\nabla \times \mathbf{E} = - \frac{\partial \mathbf{B}}{\partial t}\end{equation}
+</code></pre>
+
+<h2 id="fencedwithlanguage">Fenced With Language</h2>
+
+<pre><code class="latex">\begin{equation}\nabla \times \mathbf{E} = - \frac{\partial \mathbf{B}}{\partial t}\end{equation}
+</code></pre>
+
+</body>
+</html>

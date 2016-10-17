@@ -1,0 +1,126 @@
+---
+---
+<div class="TOC">
+<ul>
+<li><a href="#theissue:mathjaxdocumentationisambiguousonhowenvironmentsshouldbeused">The Issue: MathJax Documentation Is Ambiguous on How Environments Should Be Used</a></li>
+<li><a href="#interpretations">Interpretations</a>
+
+<ul>
+<li><a href="#mathjaxofficialusage">MathJax Official Usage</a></li>
+<li><a href="#multimarkdown">MultiMarkdown</a></li>
+<li><a href="#pandoc">Pandoc</a></li>
+</ul></li>
+<li><a href="#anoteonthetestfiles">A Note on the Test Files</a></li>
+<li><a href="#definingtexmacros">Defining TeX Macros</a></li>
+</ul>
+</div>
+
+<p>These are some tests to see how to use LaTeX environments that works in both MathJax and LaTeX. And then in vanilla Markdown, MultiMarkdown, and Pandoc Markdown, examples are given on how to write those LaTeX environments that works in both HTML and TeX generations. <a href="#fn:1" id="fnref:1" title="see footnote" class="footnote">[1]</a></p>
+
+<p>TD;DR: While MathJax accepts many different ways of using the environments, it can handle the environments written in the way LaTeX uses. i.e. if the environment do not require to be in math mode (e.g. <code>\begin{equation}...</code>), you can write it in the same way in MathJax. So even if MathJax didn&#8217;t specify how the environments should be used, one can find instead how it should be used in LaTeX, and do the same thing in MathJax (of course it restricts to those environments supported by MathJax). The same is not true for Markdown converter though, like MMD, see details below.</p>
+
+<h1 id="theissue:mathjaxdocumentationisambiguousonhowenvironmentsshouldbeused">The Issue: MathJax Documentation Is Ambiguous on How Environments Should Be Used</h1>
+
+<p>In the end of <a href="http://docs.mathjax.org/en/latest/tex.html">MathJax TeX and LaTeX Support — MathJax 2.6 documentation</a>, it is mentioned under heading <a href="http://docs.mathjax.org/en/latest/tex.html#environments">Environments</a> that some LaTeX environments is replicated in MathJax. However it didn&#8217;t specify clearly how to use it.</p>
+
+<p>In particular, in the same page under heading <a href="http://docs.mathjax.org/en/latest/tex.html#defining-tex-macros">Defining TeX macros</a>:</p>
+
+<pre><code>Unlike actual TeX, however, in order for MathJax to process these, they must be enclosed in math delimiters (since MathJax only processes macros in math-mode).
+</code></pre>
+
+<p>Although that was from a different context, but it still might leads one to think the environments should also be enclosed in math delimiters, e.g. <code>\[\begin{equation}...</code> (although in LaTeX <code>\begin{equation}...</code> should not be used with <code>\[...</code>). Furthermore, MathJax is pretty lenient on giving you the correct result even if you write &#8220;wrong&#8221; code.</p>
+
+<p>And from the <a href="https://github.com/mathjax/MathJax-docs/issues/146">Issue #146 · mathjax/MathJax-docs</a>, it is said that the ambiguity originates from the historical development of MathJax.</p>
+
+<p>The result of this is different writers will interpret it differently and so write codes differently. And hence authors of different Markdown converter (in this context, mmd and pandoc) might made different assumptions on the source code in Markdown where environment is involved and to be converted in HTML and LaTeX.</p>
+
+<p>And then a related problem is, the authors of those Markdown converter (again, mmd and pandoc in this context) also did not documents it clearly in the documentation about how those environments should be used in the corresponding Markdown code.</p>
+
+<h1 id="interpretations">Interpretations</h1>
+
+<h2 id="mathjaxofficialusage">MathJax Official Usage</h2>
+
+<p>According to the test suite provided by MathJax in <a href="https://github.com/mathjax/MathJax/tree/master/test">MathJax/test at master · mathjax/MathJax</a>, in the following examples:</p>
+
+<ul>
+<li><code>/test/sample-eqnum.html</code>:
+
+<ul>
+<li><code>\begin{split}...</code> is in <code>\begin{equation}...</code></li>
+<li>The followings are <em>not</em> in <code>\[...</code>:
+
+<ul>
+<li><code>\begin{multline}</code></li>
+<li><code>\begin{multline*}</code></li>
+<li>\begin{gather}</li>
+<li>\begin{gather*}</li>
+<li>\begin{align}</li>
+<li>\begin{align*}</li>
+</ul></li>
+</ul></li>
+<li><code>/test/sample.html</code>:
+
+<ul>
+<li><code>\begin{vmatrix}</code> is in <code>\[...</code></li>
+</ul></li>
+</ul>
+
+<p>In short, from the MathJax examples, the code you should write is identical to the code you should write in LaTeX. For details, compare <a href="MWE.html">MWE.html</a> and <a href="MWE.tex">MWE.tex</a>: the math codes are identical.</p>
+
+<h2 id="multimarkdown">MultiMarkdown</h2>
+
+<p>MultiMarkdown takes the assumption suggested by <a href="http://docs.mathjax.org/en/latest/tex.html#defining-tex-macros">Defining TeX macros</a>: <code>begin{...</code> should be within <code>\\[...</code>. In HTML output, it will be identical to the sources (<code>\[\begin{...</code>). In LaTeX output, it will becomes <code>\begin{...</code>. This will leads to a problem that some <code>begin{...</code> environment like <code>\begin{aligned}...</code> expects a equation environment (e.g. <code>\[\begin{aligned}...</code>. See workarounds below, and in <a href="MWE-mmd.mmd">MWE-mmd.mmd</a> and its output.</p>
+
+<p>Notes: There is an issue about using <code>$$</code> and <code>begin{...</code> together and is fixed in the latest MMD: <a href="http://support.fletcherpenney.net/discussions/problems/677-begin-equation-in">begin equation in $$ / Problems / Discussion Area - MultiMarkdown Support</a></p>
+
+<h2 id="pandoc">Pandoc</h2>
+
+<p>Pandora is similar to the MathJax Official Usage: the source math code is identical to the generated HTML and LaTeX code. See <a href="MWE-pandoc.md">MWE-pandoc.md</a> and its output.</p>
+
+<h1 id="anoteonthetestfiles">A Note on the Test Files</h1>
+
+<p>I got lazy so in all environments I used the same equation to test.</p>
+
+<p>All environments listed under <a href="http://docs.mathjax.org/en/latest/tex.html#environments">Environments in MathJax Documentation</a> are used.</p>
+
+<p>All <code>*.PDF</code> are generated by the corresponding <code>*.TeX</code> file.</p>
+
+<ul>
+<li><code>/archive/</code>: forget about these. It&#8217;s the first tests I did to try to figure out what MathJax, mmd, and pandoc assumes.</li>
+<li><code>MWE.*</code>: vanilla HTML and LaTeX respectively. The math codes involved are identical: the official way MathJax is supposed to be used.</li>
+<li><code>MWE-md.*</code>: Written in vanilla Markdown. The only difference in the math code is the use of <code>\\[...</code> instead of <code>\[...</code>. An example HTML is generated by MMD2HTML (but the HTML produced is <em>supposed</em> to be identical <a href="#fn:2" id="fnref:2" title="see footnote" class="footnote">[2]</a>).</li>
+<li><code>MWE-mmd.*</code>: Written in MultiMarkdown, meaning that <code>begin{...</code> is typed as <code>\\[begin{...</code> instead. In case the environment really expects to be within another environment, a line break is used such that <code>\\[</code> and <code>begin{...</code> is not consecutive. HTML and TeX are generated by MMD2HTML and MMD2TeX <a href="#fn:3" id="fnref:3" title="see footnote" class="footnote">[3]</a></li>
+<li><code>MWE-pandoc.*</code>: Written in pandoc&#8217;s Markdown. <code>$$</code> is used, but otherwise identical to <code>MWE.md</code>. <code>--mathjax</code> argument is used in the conversion to HTML: <code>pandoc --mathjax -s -o ...</code>. <a href="#fn:4" id="fnref:4" title="see footnote" class="footnote">[4]</a>. TeX is generated by <code>pandoc -s -o ...</code> <a href="#fn:5" id="fnref:5" title="see footnote" class="footnote">[5]</a>.</li>
+</ul>
+
+<h1 id="definingtexmacros">Defining TeX Macros</h1>
+
+<p>Added a folder <code>newcommand</code> when LaTeX command <code>\newcommand</code> is used. Currently there is no way to generate correct HTML and LaTeX results from the same md sources, in both mmd and pandoc. It is because MathJax requires an extra delimiter around the <code>\newcommand</code>, but LaTeX doesn&#8217;t. mmd is smart enough to handle this in <code>\\(\begin{...</code> situation, but not <code>\\(\newcommand...</code>.</p>
+
+<div class="footnotes">
+<hr />
+<ol>
+
+<li id="fn:1">
+<p>For vanilla Markdown, only HTML output is discussed. <a href="#fnref:1" title="return to article" class="reversefootnote">&#160;&#8617;</a></p>
+</li>
+
+<li id="fn:2">
+<p>although the <code>\</code> could becomes the trouble maker <a href="#fnref:2" title="return to article" class="reversefootnote">&#160;&#8617;</a></p>
+</li>
+
+<li id="fn:3">
+<p>where <a href="https://github.com/ickc/peg-multimarkdown-latex-support">ickc/peg-multimarkdown-latex-support: Default support files for generating LaTeX documents with MMD 3 through MMD 5</a> is used for easy LaTeX setup (e.g. loading packages) <a href="#fnref:3" title="return to article" class="reversefootnote">&#160;&#8617;</a></p>
+</li>
+
+<li id="fn:4">
+<p>done in the way I did (that I load the MathJax in the md file), MathJax would be loaded twice. However, without <code>--mathjax</code> many equations would disappeared from the HTML output. Probably the best way is to change the template of how MathJax is loaded instead, but I didn&#8217;t dig into it. <a href="#fnref:4" title="return to article" class="reversefootnote">&#160;&#8617;</a></p>
+</li>
+
+<li id="fn:5">
+<p>and I ignored the error that complains about <code>amscd</code> is not loaded. Again probably one should change the template. <a href="#fnref:5" title="return to article" class="reversefootnote">&#160;&#8617;</a></p>
+</li>
+
+</ol>
+</div>
+

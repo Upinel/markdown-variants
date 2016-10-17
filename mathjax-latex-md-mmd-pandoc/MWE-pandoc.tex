@@ -1,0 +1,169 @@
+\documentclass[]{article}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+\else % if luatex or xelatex
+  \ifxetex
+    \usepackage{mathspec}
+  \else
+    \usepackage{fontspec}
+  \fi
+  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+\fi
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{%
+\usepackage{microtype}
+\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\usepackage{hyperref}
+\hypersetup{unicode=true,
+            pdfborder={0 0 0},
+            breaklinks=true}
+\urlstyle{same}  % don't use monospace font for urls
+\IfFileExists{parskip.sty}{%
+\usepackage{parskip}
+}{% else
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+}
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{0}
+% Redefines (sub)paragraphs to behave more like sections
+\ifx\paragraph\undefined\else
+\let\oldparagraph\paragraph
+\renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+\let\oldsubparagraph\subparagraph
+\renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+
+\date{}
+
+\begin{document}
+
+\section{Test Simple Equations}\label{test-simple-equations}
+
+\(\nabla \times \mathbf{E} = - \frac{\partial \mathbf{B}}{\partial t}\)
+
+\[\nabla \times \mathbf{E} = - \frac{\partial \mathbf{B}}{\partial t}\]
+
+\section{Test MathJax Environments}\label{test-mathjax-environments}
+
+\begin{align}
+\nabla \times \mathbf{E} = - \frac{\partial \mathbf{B}}{\partial t}
+\end{align}
+
+\begin{align*}
+\nabla \times \mathbf{E} = - \frac{\partial \mathbf{B}}{\partial t}
+\end{align*}
+
+\begin{alignat}{2}
+\nabla \times \mathbf{E} = - \frac{\partial \mathbf{B}}{\partial t}
+\end{alignat}
+
+\begin{alignat*}{2}
+\nabla \times \mathbf{E} = - \frac{\partial \mathbf{B}}{\partial t}
+\end{alignat*}
+
+\[\begin{aligned}
+\nabla \times \mathbf{E} = - \frac{\partial \mathbf{B}}{\partial t}
+\end{aligned}\]
+
+\[\begin{alignedat}{2}
+\nabla \times \mathbf{E} = - \frac{\partial \mathbf{B}}{\partial t}
+\end{alignedat}\]
+
+\[\begin{array}{lcl}
+\nabla \times \mathbf{E} = - \frac{\partial \mathbf{B}}{\partial t}
+\end{array}\]
+
+\[\begin{Bmatrix}
+\nabla \times \mathbf{E} = - \frac{\partial \mathbf{B}}{\partial t}
+\end{Bmatrix}\]
+
+\[\begin{bmatrix}
+\nabla \times \mathbf{E} = - \frac{\partial \mathbf{B}}{\partial t}
+\end{bmatrix}\]
+
+\[\begin{cases}
+\nabla \times \mathbf{E} = - \frac{\partial \mathbf{B}}{\partial t}
+\end{cases}\]
+
+\[\begin{CD}
+\nabla \times \mathbf{E} = - \frac{\partial \mathbf{B}}{\partial t}
+\end{CD}\]
+
+\begin{eqnarray}
+\nabla \times \mathbf{E} = - \frac{\partial \mathbf{B}}{\partial t}
+\end{eqnarray}
+
+\begin{eqnarray*}
+\nabla \times \mathbf{E} = - \frac{\partial \mathbf{B}}{\partial t}
+\end{eqnarray*}
+
+\begin{equation}
+\nabla \times \mathbf{E} = - \frac{\partial \mathbf{B}}{\partial t}
+\end{equation}
+
+\begin{equation*}
+\nabla \times \mathbf{E} = - \frac{\partial \mathbf{B}}{\partial t}
+\end{equation*}
+
+\begin{gather}
+\nabla \times \mathbf{E} = - \frac{\partial \mathbf{B}}{\partial t}
+\end{gather}
+
+\begin{gather*}
+\nabla \times \mathbf{E} = - \frac{\partial \mathbf{B}}{\partial t}
+\end{gather*}
+
+\[\begin{gathered}
+\nabla \times \mathbf{E} = - \frac{\partial \mathbf{B}}{\partial t}
+\end{gathered}\]
+
+\[\begin{matrix}
+\nabla \times \mathbf{E} = - \frac{\partial \mathbf{B}}{\partial t}
+\end{matrix}\]
+
+\begin{multline}
+\nabla \times \mathbf{E} = - \frac{\partial \mathbf{B}}{\partial t}
+\end{multline}
+
+\begin{multline*}
+\nabla \times \mathbf{E} = - \frac{\partial \mathbf{B}}{\partial t}
+\end{multline*}
+
+\[\begin{pmatrix}
+\nabla \times \mathbf{E} = - \frac{\partial \mathbf{B}}{\partial t}
+\end{pmatrix}\]
+
+\[\begin{smallmatrix}
+\nabla \times \mathbf{E} = - \frac{\partial \mathbf{B}}{\partial t}
+\end{smallmatrix}\]
+
+\[\begin{split}
+\nabla \times \mathbf{E} = - \frac{\partial \mathbf{B}}{\partial t}
+\end{split}\]
+
+\[\begin{subarray}
+\nabla \times \mathbf{E} = - \frac{\partial \mathbf{B}}{\partial t}
+\end{subarray}\]
+
+\[\begin{Vmatrix}
+\nabla \times \mathbf{E} = - \frac{\partial \mathbf{B}}{\partial t}
+\end{Vmatrix}\]
+
+\[\begin{vmatrix}
+\nabla \times \mathbf{E} = - \frac{\partial \mathbf{B}}{\partial t}
+\end{vmatrix}\]
+
+\end{document}

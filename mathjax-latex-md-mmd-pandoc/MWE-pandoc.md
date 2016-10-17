@@ -1,0 +1,133 @@
+<script type="text/x-mathjax-config">
+	MathJax.Hub.Config({
+	    TeX: {
+	        equationNumbers: {
+	            autoNumber: "AMS"
+	        },
+	        extensions: ["AMScd.js"]
+	    }
+	});
+	MathJax.Hub.Config({
+	  tex2jax: {
+	    inlineMath: [['$','$'], ['\\(','\\)']],
+	    processEscapes: true
+	  }
+	});
+</script>
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML-full"></script>
+  
+# Test Simple Equations #
+
+$\nabla \times \mathbf{E} = - \frac{\partial \mathbf{B}}{\partial t}$
+
+$$\nabla \times \mathbf{E} = - \frac{\partial \mathbf{B}}{\partial t}$$
+
+# Test MathJax Environments #
+
+\begin{align}
+\nabla \times \mathbf{E} = - \frac{\partial \mathbf{B}}{\partial t}
+\end{align}
+
+\begin{align*}
+\nabla \times \mathbf{E} = - \frac{\partial \mathbf{B}}{\partial t}
+\end{align*}
+
+\begin{alignat}{2}
+\nabla \times \mathbf{E} = - \frac{\partial \mathbf{B}}{\partial t}
+\end{alignat}
+
+\begin{alignat*}{2}
+\nabla \times \mathbf{E} = - \frac{\partial \mathbf{B}}{\partial t}
+\end{alignat*}
+
+$$\begin{aligned}
+\nabla \times \mathbf{E} = - \frac{\partial \mathbf{B}}{\partial t}
+\end{aligned}$$
+
+$$\begin{alignedat}{2}
+\nabla \times \mathbf{E} = - \frac{\partial \mathbf{B}}{\partial t}
+\end{alignedat}$$
+
+$$\begin{array}{lcl}
+\nabla \times \mathbf{E} = - \frac{\partial \mathbf{B}}{\partial t}
+\end{array}$$
+
+$$\begin{Bmatrix}
+\nabla \times \mathbf{E} = - \frac{\partial \mathbf{B}}{\partial t}
+\end{Bmatrix}$$
+
+$$\begin{bmatrix}
+\nabla \times \mathbf{E} = - \frac{\partial \mathbf{B}}{\partial t}
+\end{bmatrix}$$
+
+$$\begin{cases}
+\nabla \times \mathbf{E} = - \frac{\partial \mathbf{B}}{\partial t}
+\end{cases}$$
+
+$$\begin{CD}
+\nabla \times \mathbf{E} = - \frac{\partial \mathbf{B}}{\partial t}
+\end{CD}$$
+
+\begin{eqnarray}
+\nabla \times \mathbf{E} = - \frac{\partial \mathbf{B}}{\partial t}
+\end{eqnarray}
+
+\begin{eqnarray*}
+\nabla \times \mathbf{E} = - \frac{\partial \mathbf{B}}{\partial t}
+\end{eqnarray*}
+
+\begin{equation}
+\nabla \times \mathbf{E} = - \frac{\partial \mathbf{B}}{\partial t}
+\end{equation}
+
+\begin{equation*}
+\nabla \times \mathbf{E} = - \frac{\partial \mathbf{B}}{\partial t}
+\end{equation*}
+
+\begin{gather}
+\nabla \times \mathbf{E} = - \frac{\partial \mathbf{B}}{\partial t}
+\end{gather}
+
+\begin{gather*}
+\nabla \times \mathbf{E} = - \frac{\partial \mathbf{B}}{\partial t}
+\end{gather*}
+
+$$\begin{gathered}
+\nabla \times \mathbf{E} = - \frac{\partial \mathbf{B}}{\partial t}
+\end{gathered}$$
+
+$$\begin{matrix}
+\nabla \times \mathbf{E} = - \frac{\partial \mathbf{B}}{\partial t}
+\end{matrix}$$
+
+\begin{multline}
+\nabla \times \mathbf{E} = - \frac{\partial \mathbf{B}}{\partial t}
+\end{multline}
+
+\begin{multline*}
+\nabla \times \mathbf{E} = - \frac{\partial \mathbf{B}}{\partial t}
+\end{multline*}
+
+$$\begin{pmatrix}
+\nabla \times \mathbf{E} = - \frac{\partial \mathbf{B}}{\partial t}
+\end{pmatrix}$$
+
+$$\begin{smallmatrix}
+\nabla \times \mathbf{E} = - \frac{\partial \mathbf{B}}{\partial t}
+\end{smallmatrix}$$
+
+$$\begin{split}
+\nabla \times \mathbf{E} = - \frac{\partial \mathbf{B}}{\partial t}
+\end{split}$$
+
+$$\begin{subarray}
+\nabla \times \mathbf{E} = - \frac{\partial \mathbf{B}}{\partial t}
+\end{subarray}$$
+
+$$\begin{Vmatrix}
+\nabla \times \mathbf{E} = - \frac{\partial \mathbf{B}}{\partial t}
+\end{Vmatrix}$$
+
+$$\begin{vmatrix}
+\nabla \times \mathbf{E} = - \frac{\partial \mathbf{B}}{\partial t}
+\end{vmatrix}$$
