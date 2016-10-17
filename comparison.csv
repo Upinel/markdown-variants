@@ -30,7 +30,7 @@ raw_html,,1,1,1,1,1,1,
 markdown_in_html_blocks,,1,1,,,,,
 native_divs,,1,1,,,,,
 native_spans,,1,1,,,,,
-raw_tex,,1,1,,,1,,pandoc said mmd support this
+raw_tex,,1,1,,,,,
 latex_macros,,1,1,,,,,
 shortcut_reference_links,,1,1,1,1,1,,
 implicit_figures,,1,1,,,,,
