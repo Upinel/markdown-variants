@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# find smart quotes and unsmart them
+# find Greek unicode character and replace with LaTeX code
 sed -i \
     -e 's/α/\\alpha /g' \
     -e 's/β/\\beta /g' \
