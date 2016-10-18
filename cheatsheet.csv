@@ -1,6 +1,6 @@
-,naming scheme,Classification,markdown_pandoc,markdown_pandoc_extended,markdown_phpextra,markdown_github,markdown_mmd,markdown_strict,Notes
-paragraphs,,,markdown_pandoc,markdown_pandoc_extended,markdown_phpextra,markdown_github,markdown_mmd,markdown_strict,
-escaped_line_breaks,pandoc extension,,markdown_pandoc,markdown_pandoc_extended,,,,,
+,naming scheme,Classification,markdown_pandoc,markdown_pandoc_extended,markdown_phpextra,markdown_github,markdown_mmd,markdown_strict,Todo
+paragraphs,,,markdown_pandoc,markdown_pandoc_extended,markdown_phpextra,markdown_github,markdown_mmd,markdown_strict,done
+escaped_line_breaks,pandoc extension,,markdown_pandoc,markdown_pandoc_extended,,,,,done
 blank_before_header,pandoc extension,,markdown_pandoc,markdown_pandoc_extended,,,,,
 header_attributes,pandoc extension,,markdown_pandoc,markdown_pandoc_extended,markdown_phpextra,,,,
 auto_identifiers,pandoc extension,,markdown_pandoc,markdown_pandoc_extended,,markdown_github,markdown_mmd,,
