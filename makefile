@@ -17,9 +17,6 @@ MD := $(wildcard */*.md)
 # building
 all: $(CSV2MDpandoc) $(CSV2MDpandocExtended) $(CSV2MDphpExtra) $(CSV2MDgithub) $(CSV2MDmmd) $(CSV2MDstrict) $(CSV2MDmaster)
 
-touch: cheatsheet.csv
-	STRING=$$(grep "markdown_strict" $< | cut -d, -f 1 | tail -n +2 | sed -e 's=^=cheatsheet/=g' -e 's=$$=.md=g'); touch $$STRING
-
 # cleaning generated files
 clean:
 	rm -f $(CSV2MDpandoc) $(CSV2MDpandocExtended) $(CSV2MDphpExtra) $(CSV2MDgithub) $(CSV2MDmmd) $(CSV2MDstrict) $(CSV2MDmaster)
@@ -33,6 +30,10 @@ normalize:
 	find */*.md -exec sed -i 's/[ \t]*$//' '{}' \; # delete trailing whitespace (spaces, tabs) from end of each line
 	find */*.md -exec sed -i '/./,/^$/!d' '{}' \; # delete all CONSECUTIVE blank lines from file except the first; deletes all blank lines from top and end of file; allows 0 blanks at top, 1 at EOF
 	find */*.md -exec sed -i '1i\'$'\n' '{}' \; # add leading new line
+
+# this touches all md files expected from the csv, in case they aren't written yet.
+touch: cheatsheet.csv
+	STRING=$$(cut -d, -f 1 $< | tail -n +2 | sed -e 's=^=cheatsheet/=g' -e 's=$$=.md=g'); touch $$STRING
 
 ###############################################################################
 
