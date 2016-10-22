@@ -22,3 +22,7 @@ $$\newcommand...
 ```
 
 It can spans multiline, but cannot contain `$` within (due to the limitation of the preprocessor, which is just `sed`, that "non-greedy" is not available).
+
+# `Unicode-to-math.sh`
+
+It is designed as a post-processor after pandoc from `.docx` to `.md` conversion, that includes unicode Math. It tries to guess which are Math and convert it to LaTeX Math. It does the trick for a closed source project most of the time, but not perfect.
