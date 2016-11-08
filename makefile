@@ -2,7 +2,7 @@ SHELL := /bin/bash
 
 markdownVariants := markdown_pandoc markdown_pandoc_extended markdown_phpextra markdown_github markdown_mmd markdown_strict
 
-CSV := $(wildcard *.csv)
+CSV := cheatsheet.csv
 
 CSV2MDpandoc := $(patsubst %.csv,%-pandoc.md,$(CSV))
 CSV2MDpandocExtended := $(patsubst %.csv,%-pandoc-extended.md,$(CSV))

@@ -1,0 +1,9 @@
+,Markdown?,LaTeX?,Note
+GitBook,Yes,Yes,
+Overleaf,No,,
+Paper Now,No,,
+Asciidoctor,No,,
+softcover,Yes,Yes,
+Typora,Yes,Yes,pandoc variant
+dllup,No,,
+MultiMarkdown,Yes,Yes,
