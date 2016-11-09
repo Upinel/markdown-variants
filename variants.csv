@@ -1,4 +1,5 @@
 ,Markdown?,LaTeX?,Note
+pandoc,,,
 GitBook,Yes,Yes,
 Overleaf,No,,
 Paper Now,No,,
@@ -7,3 +8,5 @@ softcover,Yes,Yes,
 Typora,Yes,Yes,pandoc variant
 dllup,No,,
 MultiMarkdown,Yes,Yes,
+ipymd,Yes,,
+podoc,Yes,,pandoc variant
