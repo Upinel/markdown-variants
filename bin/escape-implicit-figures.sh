@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # pandoc only: escape implicit_figures
 sed -i \

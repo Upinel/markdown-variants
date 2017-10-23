@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # find and replace mmd style inline footnote to pandoc style inline footnote
 sed \

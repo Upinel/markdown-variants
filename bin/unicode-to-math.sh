@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # unicode to LaTeX
 ## 20. transliteration of unicode Greek
 ## 21. degree symbols

@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # find and replace LaTeX environments and macros with extra dollar signs
 sed \
